@@ -37,6 +37,7 @@ Public Class frmCari
                 Return oDS
             Else
                 MsgBox("Data tidak ditemukan", MsgBoxStyle.Exclamation)
+                Return oDS
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
@@ -52,28 +53,38 @@ Public Class frmCari
     Private Sub frmCari_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txtQuery.Focus()
         Me.TitleText = "Cari " & Title
-        grid.DataSource = oBind
-        oBind.DataSource = DataSet().Tables(0)
+        With DataSet()
+            If .Tables(0).Rows.Count > 0 Then
+                grid.DataSource = oBind
+                oBind.DataSource = .Tables(0)
 
-        grid.RowHeadersWidth = 20
-        grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        grid.Columns(0).HeaderText = "Kode"
-        grid.Columns(0).FillWeight = 45
-        grid.Columns(0).MinimumWidth = 60
-        grid.Columns(0).AutoSizeMode = DataGridViewAutoSizeColumnMode.None
-        grid.Columns(1).FillWeight = 45
-        grid.Columns(1).MinimumWidth = 60
-        grid.Columns(1).HeaderText = Col1
-        If Col2 <> "" Then
-            grid.Columns(2).FillWeight = 45
-            grid.Columns(2).MinimumWidth = 60
-            grid.Columns(2).HeaderText = Col2
-        End If
-        If Col3 <> "" Then
-            grid.Columns(3).FillWeight = 45
-            grid.Columns(3).MinimumWidth = 60
-            grid.Columns(3).HeaderText = Col3
-        End If
+                grid.RowHeadersWidth = 20
+                grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+                grid.Columns(0).HeaderText = "Kode"
+                grid.Columns(0).FillWeight = 45
+                grid.Columns(0).MinimumWidth = 60
+                grid.Columns(0).AutoSizeMode = DataGridViewAutoSizeColumnMode.None
+                grid.Columns(1).FillWeight = 45
+                grid.Columns(1).MinimumWidth = 60
+                grid.Columns(1).HeaderText = Col1
+                'grid.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                If Col2 <> "" Then
+                    grid.Columns(2).FillWeight = 45
+                    grid.Columns(2).MinimumWidth = 60
+                    grid.Columns(2).HeaderText = Col2
+                    'grid.Columns(2).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                End If
+                If Col3 <> "" Then
+                    grid.Columns(3).FillWeight = 45
+                    grid.Columns(3).MinimumWidth = 60
+                    grid.Columns(3).HeaderText = Col3
+                End If
+            Else
+                btnOK.Enabled = False
+            End If
+
+        End With
+
     End Sub
 
     Private Sub grid_DoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grid.CellDoubleClick

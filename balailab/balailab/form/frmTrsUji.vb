@@ -14,7 +14,7 @@ Public Class frmTrsUji
 
     Private Sub xTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xTimer.Tick
         'If Trim(txtKdReg.Text) = "" Then
-        txtJamUji.Text = TimeOfDay
+        txtJamUji.Text = Format(TimeOfDay, "HH:mm:ss")
         txtTglUji.Text = Format(Today, "yyyy/MM/dd")
         'End If
     End Sub
@@ -198,8 +198,8 @@ Public Class frmTrsUji
         Dim oSample As New clsTrsSample
         Dim xRow As Integer
         Dim oBooks As Object = oXcl.Workbooks
-        Dim ci As System.Globalization.CultureInfo = New System.Globalization.CultureInfo("en-US")
-        oBooks.GetType().InvokeMember("Add", Reflection.BindingFlags.InvokeMethod, Nothing, oBooks, Nothing, ci)
+        Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
+        System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
 
         oUser.vKode = My.Settings.KdPetugas
         oReg.vKode = txtKdReg.Text

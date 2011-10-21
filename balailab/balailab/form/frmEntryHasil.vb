@@ -246,7 +246,7 @@ Public Class frmEntryHasil
 
     Private Sub xTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xTimer.Tick
         If Trim(txtKdHasil.Text) = "" Then
-            txtJamHasil.Text = TimeOfDay
+            txtJamHasil.Text = Format(TimeOfDay, "HH:mm:ss")
             txtTglHasil.Text = Format(Today, "yyyy/MM/dd")
         End If
 
