@@ -237,7 +237,8 @@ Public Class frmTrsRegistrasi
 
     Private Sub xTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xTimer.Tick
         If Trim(txtKdReg.Text) = "" Then
-            txtJamReg.Text = TimeOfDay
+            txtTglReg.Text = Format(Today, "yyyy/MM/dd")
+            txtJamReg.Text = Format(TimeOfDay, "HH:mm:ss")
         End If
     End Sub
 
@@ -286,9 +287,14 @@ Public Class frmTrsRegistrasi
         Dim oReg As New clsTrsRegistrasi
         Dim oSample As New clsTrsSample
         Dim oRjk As New clsPerujuk
-        Dim oBooks As Object = oXcl.Workbooks
-        Dim ci As System.Globalization.CultureInfo = New System.Globalization.CultureInfo("en-US")
-        oBooks.GetType().InvokeMember("Add", Reflection.BindingFlags.InvokeMethod, Nothing, oBooks, Nothing, ci)
+        'oXcl.Visible = True
+        'oXcl.UserControl = True
+        'Dim oBooks As Object = oXcl.Workbooks
+        'Dim ci As System.Globalization.CultureInfo = New System.Globalization.CultureInfo("en-US")
+        'oBooks.GetType().InvokeMember("Add", Reflection.BindingFlags.InvokeMethod, Nothing, oBooks, Nothing, ci)
+
+        Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
+        System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
 
         oReg.Kode = txtKdRegNew.Text
         oReg.vKode = oReg.Kode
@@ -297,6 +303,8 @@ Public Class frmTrsRegistrasi
         oXcl.Visible = False
         With oReg.SampleDS.Tables(0)
             oXcl.Workbooks.Add(My.Settings.AppPath & "\templates\BBLK_FPC-.xlt")
+            'System.Threading.Thread.CurrentThread.CurrentCulture = oldCI
+
             oXcl.Cells.Replace("#KdReg#", oReg.Kode)
             If .Rows.Count > 1 Then
                 oXcl.Cells.Replace("#KodeSample#", "'" & .Rows(0)("fs_kd_sample") & " - " & .Rows(.Rows.Count - 1)("fs_kd_sample"))

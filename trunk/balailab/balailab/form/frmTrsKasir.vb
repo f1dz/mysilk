@@ -21,7 +21,7 @@ Public Class frmTrsKasir
     Private Sub xTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xTimer.Tick
         If Trim(txtKdBayar.Text) = "" Then
             txtTglBayar.Text = Format(Today, "yyyy/MM/dd")
-            txtJamBayar.Text = TimeOfDay
+            txtJamBayar.Text = Format(TimeOfDay, "HH:mm:ss")
         End If
     End Sub
 
@@ -202,8 +202,8 @@ Lanjut:
     Private Sub CetakKW()
         Dim oXcl As New Excel.Application
         Dim oBooks As Object = oXcl.Workbooks
-        Dim ci As System.Globalization.CultureInfo = New System.Globalization.CultureInfo("en-US")
-        oBooks.GetType().InvokeMember("Add", Reflection.BindingFlags.InvokeMethod, Nothing, oBooks, Nothing, ci)
+        Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
+        System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
         oXcl.Workbooks.Add(My.Settings.AppPath & "\templates\BBLK_KW-.xlt")
 
         oTrs.vKodeBayar = txtKdBayarNew.Text

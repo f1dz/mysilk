@@ -55,7 +55,7 @@ Public Class frmMain
     End Sub
 
     Private Sub xTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xTimer.Tick
-        xTglJam.Text = Format(Today, "yyyy-MM-dd") & " " & TimeOfDay
+        xTglJam.Text = Format(Today, "yyyy-MM-dd") & " " & Format(TimeOfDay, "HH:mm:ss")
     End Sub
 
 

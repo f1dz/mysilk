@@ -104,6 +104,8 @@
                  & "FROM    TA_JENIS_UJI aa " & vbCrLf _
                  & "LEFT JOIN TA_GRUP_JENIS_UJI bb ON aa.fs_kd_grup_jenis_uji = bb.fs_kd_grup_jenis_uji "
             Dim oFrmcari As New frmCari("Cari Jenis Uji", sSql, "fs_nm_jenis_uji", "Pengujian", "Grup uji", "")
+            oFrmcari.grid.DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopLeft
+            oFrmcari.grid.DefaultCellStyle.WrapMode = DataGridViewTriState.True
             oFrmcari.ShowDialog()
             'GridUji.Item(col, i).Value = oFrmcari.Kode
             oTarif.vKodeUji = oFrmcari.Kode

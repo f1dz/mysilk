@@ -145,8 +145,8 @@ Public Class frmCetakHasil
         Dim oMR As New clsMR
         Dim oInst As New clsInstalasi
         Dim oBooks As Object = oXcl.Workbooks
-        Dim ci As System.Globalization.CultureInfo = New System.Globalization.CultureInfo("en-US")
-        oBooks.GetType().InvokeMember("Add", Reflection.BindingFlags.InvokeMethod, Nothing, oBooks, Nothing, ci)
+        Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
+        System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
 
         oHasil.vKode = txtKdHasil.Text
         oSample.vKode = txtKdSample.Text

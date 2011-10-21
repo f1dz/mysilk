@@ -24,12 +24,12 @@ Partial Class frmCariSample
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelEx1 = New DevComponents.DotNetBar.PanelEx()
-        Me.btnCancel = New DevComponents.DotNetBar.ButtonX()
-        Me.ButtonX2 = New DevComponents.DotNetBar.ButtonX()
-        Me.PanelEx2 = New DevComponents.DotNetBar.PanelEx()
-        Me.grid = New DevComponents.DotNetBar.Controls.DataGridViewX()
         Me.LabelX1 = New DevComponents.DotNetBar.LabelX()
         Me.txtQuery = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.PanelEx2 = New DevComponents.DotNetBar.PanelEx()
+        Me.grid = New DevComponents.DotNetBar.Controls.DataGridViewX()
+        Me.btnCancel = New DevComponents.DotNetBar.ButtonX()
+        Me.ButtonX2 = New DevComponents.DotNetBar.ButtonX()
         Me.PanelEx1.SuspendLayout()
         Me.PanelEx2.SuspendLayout()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,7 +44,7 @@ Partial Class frmCariSample
         Me.PanelEx1.Controls.Add(Me.PanelEx2)
         Me.PanelEx1.Location = New System.Drawing.Point(1, 6)
         Me.PanelEx1.Name = "PanelEx1"
-        Me.PanelEx1.Size = New System.Drawing.Size(367, 274)
+        Me.PanelEx1.Size = New System.Drawing.Size(455, 274)
         Me.PanelEx1.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
         Me.PanelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
@@ -54,27 +54,32 @@ Partial Class frmCariSample
         Me.PanelEx1.Style.GradientAngle = 90
         Me.PanelEx1.TabIndex = 0
         '
-        'btnCancel
+        'LabelX1
         '
-        Me.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btnCancel.Location = New System.Drawing.Point(293, 289)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btnCancel.TabIndex = 1
-        Me.btnCancel.Text = "&Cancel"
         '
-        'ButtonX2
         '
-        Me.ButtonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.ButtonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.ButtonX2.Location = New System.Drawing.Point(212, 289)
-        Me.ButtonX2.Name = "ButtonX2"
-        Me.ButtonX2.Size = New System.Drawing.Size(75, 23)
-        Me.ButtonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.ButtonX2.TabIndex = 2
-        Me.ButtonX2.Text = "&OK"
+        '
+        Me.LabelX1.BackgroundStyle.Class = ""
+        Me.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX1.Location = New System.Drawing.Point(6, 4)
+        Me.LabelX1.Name = "LabelX1"
+        Me.LabelX1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LabelX1.Size = New System.Drawing.Size(51, 23)
+        Me.LabelX1.TabIndex = 5
+        Me.LabelX1.Text = "Keyword"
+        '
+        'txtQuery
+        '
+        '
+        '
+        '
+        Me.txtQuery.Border.Class = "TextBoxBorder"
+        Me.txtQuery.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtQuery.Location = New System.Drawing.Point(63, 6)
+        Me.txtQuery.MaxLength = 30
+        Me.txtQuery.Name = "txtQuery"
+        Me.txtQuery.Size = New System.Drawing.Size(389, 20)
+        Me.txtQuery.TabIndex = 4
         '
         'PanelEx2
         '
@@ -83,7 +88,7 @@ Partial Class frmCariSample
         Me.PanelEx2.Controls.Add(Me.grid)
         Me.PanelEx2.Location = New System.Drawing.Point(3, 33)
         Me.PanelEx2.Name = "PanelEx2"
-        Me.PanelEx2.Size = New System.Drawing.Size(361, 238)
+        Me.PanelEx2.Size = New System.Drawing.Size(449, 238)
         Me.PanelEx2.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
         Me.PanelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
@@ -112,41 +117,36 @@ Partial Class frmCariSample
         Me.grid.Name = "grid"
         Me.grid.ReadOnly = True
         Me.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grid.Size = New System.Drawing.Size(361, 238)
+        Me.grid.Size = New System.Drawing.Size(449, 238)
         Me.grid.TabIndex = 0
         '
-        'LabelX1
+        'btnCancel
         '
+        Me.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btnCancel.Location = New System.Drawing.Point(381, 286)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btnCancel.TabIndex = 1
+        Me.btnCancel.Text = "&Cancel"
         '
+        'ButtonX2
         '
-        '
-        Me.LabelX1.BackgroundStyle.Class = ""
-        Me.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.LabelX1.Location = New System.Drawing.Point(6, 4)
-        Me.LabelX1.Name = "LabelX1"
-        Me.LabelX1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LabelX1.Size = New System.Drawing.Size(51, 23)
-        Me.LabelX1.TabIndex = 5
-        Me.LabelX1.Text = "Keyword"
-        '
-        'txtQuery
-        '
-        '
-        '
-        '
-        Me.txtQuery.Border.Class = "TextBoxBorder"
-        Me.txtQuery.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txtQuery.Location = New System.Drawing.Point(63, 6)
-        Me.txtQuery.MaxLength = 30
-        Me.txtQuery.Name = "txtQuery"
-        Me.txtQuery.Size = New System.Drawing.Size(301, 20)
-        Me.txtQuery.TabIndex = 4
+        Me.ButtonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ButtonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.ButtonX2.Location = New System.Drawing.Point(300, 286)
+        Me.ButtonX2.Name = "ButtonX2"
+        Me.ButtonX2.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.ButtonX2.TabIndex = 2
+        Me.ButtonX2.Text = "&OK"
         '
         'frmCariSample
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(369, 316)
+        Me.ClientSize = New System.Drawing.Size(460, 316)
         Me.Controls.Add(Me.ButtonX2)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.PanelEx1)
