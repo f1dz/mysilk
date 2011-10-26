@@ -169,7 +169,7 @@ Public Class frmEntryHasil
             .Columns(4).HeaderText = "Hasil"
             .Columns(4).Name = "Hasil"
             .Columns(4).MinimumWidth = 100
-            .Columns(4).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                    .Columns(4).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns(5).HeaderText = "Standar"
             .Columns(5).ReadOnly = True
             .Columns(5).Name = "Standar"
@@ -268,9 +268,24 @@ Public Class frmEntryHasil
         txtKdReg.Clear()
         txtKdHasil.Clear()
         txtKesimpulan.Clear()
+        txtPermenkes.Clear()
+        txtISO.Clear()
+        txtKet.Clear()
+        txtNoInstalasi.Clear()
     End Sub
 
     Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
+        ' Jika ada haisl yg belum terisi
+        For i As Integer = 0 To grid.RowCount - 1
+            If IsDBNull(grid.Item("Hasil", i).Value) Then
+                If MsgBox("Ada hasil yang belum terisi, lanjut simpan?", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = MsgBoxResult.No Then
+                    Exit Sub
+                Else
+                    Exit For
+                End If
+            End If
+        Next
+
         oHasil.KodeReg = txtKdReg.Text
         oHasil.KodeSample = txtKdSample.Text
         oHasil.TglHasil = oParam.tglYMD(txtTglHasil.Text)
@@ -280,6 +295,10 @@ Public Class frmEntryHasil
         oHasil.Pengambil = txtPengambil.Text
         oHasil.Kesimpulan = txtKesimpulan.Text
         oHasil.KodePetugas = My.Settings.KdPetugas
+        oHasil.Permenkes = txtPermenkes.Text
+        oHasil.ISO = txtISO.Text
+        oHasil.Ket = txtKet.Text
+        oHasil.NoInstalasi = txtNoInstalasi.Text
 
         ' Jika Kode Hasil Kosong
         If Trim(txtKdHasil.Text) = "" Then
@@ -301,7 +320,7 @@ Public Class frmEntryHasil
         For i As Integer = 0 To grid.RowCount - 1
             oHasil.NoUrut = i + 1
             oHasil.KdJnsUji = grid.Item("KodeUji", i).Value
-            oHasil.Hasil = grid.Item("Hasil", i).Value
+            oHasil.Hasil = grid.Item("Hasil", i).Value.ToString
             oHasil.SaveDetil()
         Next
         MsgBox("Entry hasil berhasil disimpan", MsgBoxStyle.Information)
@@ -321,6 +340,15 @@ Public Class frmEntryHasil
                         Exit Sub
                     Else
                         oHasil.vKode = txtKdHasil.Text
+                        If oHasil.Cetak Then
+                            MsgBox("Hasil sudah pernah dicetak dengan Nomor Seri " & oHasil.NoSeri & vbCrLf & _
+                                      "Proses edit hasil dibatalkan" & vbCrLf & _
+                                      "Hubungi bagian Cetak Hasil", MsgBoxStyle.Exclamation)
+                            txtKdHasil.Focus()
+                            ClrScr()
+                            Exit Sub
+                        End If
+
                         txtKdReg.Text = oHasil.KodeReg
                         txtKdSample.Text = oHasil.KodeSample
                         txtTglHasil.Text = oParam.tglYMDdp(oHasil.TglHasil)
@@ -329,6 +357,10 @@ Public Class frmEntryHasil
                         txtPengambil.Text = oHasil.Pengambil
                         txtKesimpulan.Text = oHasil.Kesimpulan
                         txtKdInstalasi.Text = oHasil.KodeInstalasi
+                        txtPermenkes.Text = oHasil.Permenkes
+                        txtISO.Text = oHasil.ISO
+                        txtKet.Text = oHasil.Ket
+                        txtNoInstalasi.Text = oHasil.NoInstalasi
                         FillGrid()
                         txtKdReg.ReadOnly = True
                         txtKdSample.ReadOnly = True

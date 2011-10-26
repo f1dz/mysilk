@@ -102,6 +102,20 @@ Namespace My.Resources
             End Get
         End Property
         
+        Public ReadOnly Property control_panel() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("control_panel", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Public ReadOnly Property lab_50x50() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("lab-50x50", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Public ReadOnly Property Log_off() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Log off", resourceCulture)
@@ -112,6 +126,13 @@ Namespace My.Resources
         Public ReadOnly Property microscope_icon_50x50() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("microscope-icon-50x50", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Public ReadOnly Property param_komp() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("param_komp", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

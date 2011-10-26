@@ -9,7 +9,7 @@ Public Class frmTrsUji
     Dim oUser As New clsUser
 
     Private Sub frmTrsUji_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+        txtTglEstimasi.Text = Format(Today, "yyyy/MM/dd")
     End Sub
 
     Private Sub xTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xTimer.Tick
@@ -48,7 +48,7 @@ Public Class frmTrsUji
                 txtAlmRujuk1.Text = oRjk.Alm1
                 txtAlmRujuk2.Text = oRjk.Alm2
                 txtKotaRujuk.Text = oRjk.Kota
-
+                'txtTglEstimasi.MinDate = Format(Today, "yyyy/MM/dd")
                 ' Isi Grid
                 grid.Rows.Clear()
                 With oTrs.TarifDS.Tables(0)
@@ -148,6 +148,7 @@ Public Class frmTrsUji
         oTrs.KdReg = txtKdReg.Text
         oTrs.JamUji = txtJamUji.Text
         oTrs.TglUji = oParam.tglYMD(txtTglUji.Text)
+        oTrs.TglEstimasi = oParam.tglYMD(txtTglEstimasi.Text)
         oTrs.KdPetugas = My.Settings.KdPetugas
 
         ' Hitung Total
@@ -217,8 +218,9 @@ Public Class frmTrsUji
             .Replace("#KotaReg#", oRjk.Kota)
             .Replace("#TeleponReg#", oRjk.Telpon)
             .Replace("#Angka#", "Rp. " & txtTotal.Text)
+            .Replace("#TglEst#", txtTglEstimasi.Text)
             .Replace("#Petugas#", oReg.NmPetugas)
-            .Replace("#Pelanggan#", "an. " & oReg.NmRujukan)
+            .Replace("#Pelanggan#", oReg.NmRujukan)
             With oTrs.TarifDS.Tables(0)
                 For i As Integer = 0 To .Rows.Count - 1
                     oXcl.Cells(16 + i, 4).value = i + 1 & ". " & .Rows(i)("fs_nm_tarif")
@@ -285,5 +287,13 @@ Public Class frmTrsUji
         txtKdReg.Text = ""
         grid.Rows.Clear()
 
+    End Sub
+
+    Private Sub txtTgl_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtTglUji.KeyDown, txtJamUji.KeyDown
+        If e.KeyCode = Keys.F11 Then
+            xTimer.Stop()
+        ElseIf e.KeyCode = Keys.F12 Then
+            xTimer.Start()
+        End If
     End Sub
 End Class

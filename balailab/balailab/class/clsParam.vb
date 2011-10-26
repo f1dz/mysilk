@@ -8,6 +8,9 @@ Public Class clsParam
     Dim sSql As String
     Dim m_Kode As String
     Dim xKode As String
+    Public Property KdKomp As String
+    Public Property KdParam As String
+    Public Property ValueParam As String
 
     Public Function getKode(ByVal xPref As String)
         sSql = "SELECT fs_value FROM TZ_PARAMETER " _
@@ -113,7 +116,7 @@ Public Class clsParam
         Return oDS
     End Function
 
-    ' Get Def Param
+    ' Get Def Kode Param
     Public Function getDefault(ByVal KodeKomp As String, ByVal KodeParam As String) As String
         Dim value As String
         sSql = "SELECT TOP 1 * FROM TZ_PARAMETER_KOMP " & vbCrLf _
@@ -131,4 +134,33 @@ Public Class clsParam
         conn.close()
         Return value
     End Function
+
+    Public Sub DelParamKomp()
+        sSql = "DELETE TZ_PARAMETER_KOMP " & vbCrLf _
+             & "WHERE fs_kd_komp = '" & KdKomp & "' "
+        Try
+            conn.open()
+            oCmd = New OleDbCommand(sSql, conn.oConn)
+            oCmd.ExecuteNonQuery()
+            conn.close()
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+        End Try
+    End Sub
+
+    Public Sub InsertParam()
+        sSql = "INSERT INTO TZ_PARAMETER_KOMP (fs_kd_komp,fs_kd_param,fs_value)" & vbCrLf _
+             & "VALUES " & vbCrLf _
+             & "        ('" & KdKomp & "' " & vbCrLf _
+             & "        ,'" & KdParam & "' " & vbCrLf _
+             & "        ,'" & ValueParam & "') "
+        Try
+            conn.open()
+            oCmd = New OleDbCommand(sSql, conn.oConn)
+            oCmd.ExecuteNonQuery()
+            conn.close()
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+        End Try
+    End Sub
 End Class

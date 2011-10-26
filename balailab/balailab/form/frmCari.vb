@@ -99,7 +99,28 @@ Public Class frmCari
         Me.Close()
     End Sub
 
+    Private Sub txtQuery_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtQuery.KeyDown
+        Select Case e.KeyCode
+            Case Keys.Enter
+                Dim i As Integer = grid.CurrentRow.Index
+                Kode = grid.Item(0, i).Value
+                Me.Close()
+            Case Keys.Up, Keys.Down
+                'oHelper.SendTab()
+                grid.Focus()
+        End Select
+    End Sub
+
     Private Sub txtQuery_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtQuery.TextChanged
         oBind.Filter = FilterColumn & " LIKE '%" & txtQuery.Text & "%'"
+    End Sub
+
+    Private Sub grid_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles grid.KeyDown
+        Select Case e.KeyCode
+            Case Keys.Enter
+                Dim i As Integer = grid.CurrentRow.Index
+                Kode = grid.Item(0, i).Value
+                Me.Close()
+        End Select
     End Sub
 End Class

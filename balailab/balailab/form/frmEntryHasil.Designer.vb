@@ -23,7 +23,7 @@ Partial Class frmEntryHasil
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupPanel1 = New DevComponents.DotNetBar.Controls.GroupPanel()
         Me.PanelEx2 = New DevComponents.DotNetBar.PanelEx()
         Me.grid = New DevComponents.DotNetBar.Controls.DataGridViewX()
@@ -50,6 +50,7 @@ Partial Class frmEntryHasil
         Me.txtJnsBahan = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.LabelX9 = New DevComponents.DotNetBar.LabelX()
         Me.PanelEx3 = New DevComponents.DotNetBar.PanelEx()
+        Me.txtKdHasilNew = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.LabelX15 = New DevComponents.DotNetBar.LabelX()
         Me.txtKdHasil = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txtJamHasil = New DevComponents.DotNetBar.Controls.TextBoxX()
@@ -62,13 +63,24 @@ Partial Class frmEntryHasil
         Me.txtTglHasil = New DevComponents.Editors.DateTimeAdv.DateTimeInput()
         Me.LabelX3 = New DevComponents.DotNetBar.LabelX()
         Me.LabelX4 = New DevComponents.DotNetBar.LabelX()
-        Me.PanelEx6 = New DevComponents.DotNetBar.PanelEx()
-        Me.LabelX14 = New DevComponents.DotNetBar.LabelX()
-        Me.txtKesimpulan = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.btnExit = New DevComponents.DotNetBar.ButtonX()
         Me.btnSave = New DevComponents.DotNetBar.ButtonX()
         Me.xTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.txtKdHasilNew = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.SuperTabControl1 = New DevComponents.DotNetBar.SuperTabControl()
+        Me.SuperTabControlPanel4 = New DevComponents.DotNetBar.SuperTabControlPanel()
+        Me.txtKet = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.tabKet = New DevComponents.DotNetBar.SuperTabItem()
+        Me.SuperTabControlPanel3 = New DevComponents.DotNetBar.SuperTabControlPanel()
+        Me.txtISO = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.SuperTabItem3 = New DevComponents.DotNetBar.SuperTabItem()
+        Me.SuperTabControlPanel2 = New DevComponents.DotNetBar.SuperTabControlPanel()
+        Me.txtPermenkes = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.SuperTabItem2 = New DevComponents.DotNetBar.SuperTabItem()
+        Me.SuperTabControlPanel1 = New DevComponents.DotNetBar.SuperTabControlPanel()
+        Me.txtKesimpulan = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.SuperTabItem1 = New DevComponents.DotNetBar.SuperTabItem()
+        Me.LabelX14 = New DevComponents.DotNetBar.LabelX()
+        Me.txtNoInstalasi = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.GroupPanel1.SuspendLayout()
         Me.PanelEx2.SuspendLayout()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,7 +89,12 @@ Partial Class frmEntryHasil
         Me.PanelEx4.SuspendLayout()
         Me.PanelEx3.SuspendLayout()
         CType(Me.txtTglHasil, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelEx6.SuspendLayout()
+        CType(Me.SuperTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuperTabControl1.SuspendLayout()
+        Me.SuperTabControlPanel4.SuspendLayout()
+        Me.SuperTabControlPanel3.SuspendLayout()
+        Me.SuperTabControlPanel2.SuspendLayout()
+        Me.SuperTabControlPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupPanel1
@@ -88,7 +105,7 @@ Partial Class frmEntryHasil
         Me.GroupPanel1.Controls.Add(Me.PanelEx1)
         Me.GroupPanel1.Location = New System.Drawing.Point(6, 5)
         Me.GroupPanel1.Name = "GroupPanel1"
-        Me.GroupPanel1.Size = New System.Drawing.Size(900, 457)
+        Me.GroupPanel1.Size = New System.Drawing.Size(900, 437)
         '
         '
         '
@@ -129,7 +146,7 @@ Partial Class frmEntryHasil
         Me.PanelEx2.Controls.Add(Me.grid)
         Me.PanelEx2.Location = New System.Drawing.Point(3, 145)
         Me.PanelEx2.Name = "PanelEx2"
-        Me.PanelEx2.Size = New System.Drawing.Size(888, 303)
+        Me.PanelEx2.Size = New System.Drawing.Size(888, 283)
         Me.PanelEx2.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
         Me.PanelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
@@ -145,19 +162,19 @@ Partial Class frmEntryHasil
         Me.grid.AllowUserToAddRows = False
         Me.grid.AllowUserToDeleteRows = False
         Me.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.grid.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.grid.DefaultCellStyle = DataGridViewCellStyle2
         Me.grid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grid.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
         Me.grid.Location = New System.Drawing.Point(0, 0)
         Me.grid.Name = "grid"
-        Me.grid.Size = New System.Drawing.Size(888, 303)
+        Me.grid.Size = New System.Drawing.Size(888, 283)
         Me.grid.TabIndex = 8
         '
         'PanelEx1
@@ -560,6 +577,23 @@ Partial Class frmEntryHasil
         Me.PanelEx3.Style.GradientAngle = 90
         Me.PanelEx3.TabIndex = 20
         '
+        'txtKdHasilNew
+        '
+        '
+        '
+        '
+        Me.txtKdHasilNew.Border.Class = "TextBoxBorder"
+        Me.txtKdHasilNew.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtKdHasilNew.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtKdHasilNew.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtKdHasilNew.Location = New System.Drawing.Point(173, 6)
+        Me.txtKdHasilNew.MaxLength = 10
+        Me.txtKdHasilNew.Name = "txtKdHasilNew"
+        Me.txtKdHasilNew.ReadOnly = True
+        Me.txtKdHasilNew.Size = New System.Drawing.Size(78, 20)
+        Me.txtKdHasilNew.TabIndex = 43
+        Me.txtKdHasilNew.TabStop = False
+        '
         'LabelX15
         '
         Me.LabelX15.BackColor = System.Drawing.Color.Transparent
@@ -784,55 +818,6 @@ Partial Class frmEntryHasil
         Me.LabelX4.TabIndex = 18
         Me.LabelX4.Text = "Tanggal Uji"
         '
-        'PanelEx6
-        '
-        Me.PanelEx6.CanvasColor = System.Drawing.SystemColors.Control
-        Me.PanelEx6.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.PanelEx6.Controls.Add(Me.LabelX14)
-        Me.PanelEx6.Controls.Add(Me.txtKesimpulan)
-        Me.PanelEx6.Location = New System.Drawing.Point(6, 468)
-        Me.PanelEx6.Name = "PanelEx6"
-        Me.PanelEx6.Size = New System.Drawing.Size(601, 56)
-        Me.PanelEx6.Style.Alignment = System.Drawing.StringAlignment.Center
-        Me.PanelEx6.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
-        Me.PanelEx6.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
-        Me.PanelEx6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine
-        Me.PanelEx6.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder
-        Me.PanelEx6.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText
-        Me.PanelEx6.Style.GradientAngle = 90
-        Me.PanelEx6.TabIndex = 1
-        '
-        'LabelX14
-        '
-        Me.LabelX14.BackColor = System.Drawing.Color.Transparent
-        '
-        '
-        '
-        Me.LabelX14.BackgroundStyle.Class = ""
-        Me.LabelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.LabelX14.Location = New System.Drawing.Point(17, 6)
-        Me.LabelX14.Name = "LabelX14"
-        Me.LabelX14.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LabelX14.Size = New System.Drawing.Size(75, 23)
-        Me.LabelX14.TabIndex = 42
-        Me.LabelX14.Text = "Kesimpulan"
-        '
-        'txtKesimpulan
-        '
-        '
-        '
-        '
-        Me.txtKesimpulan.Border.Class = "TextBoxBorder"
-        Me.txtKesimpulan.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txtKesimpulan.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtKesimpulan.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtKesimpulan.Location = New System.Drawing.Point(98, 6)
-        Me.txtKesimpulan.MaxLength = 250
-        Me.txtKesimpulan.Multiline = True
-        Me.txtKesimpulan.Name = "txtKesimpulan"
-        Me.txtKesimpulan.Size = New System.Drawing.Size(496, 45)
-        Me.txtKesimpulan.TabIndex = 8
-        '
         'btnExit
         '
         Me.btnExit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
@@ -860,31 +845,205 @@ Partial Class frmEntryHasil
         Me.xTimer.Enabled = True
         Me.xTimer.Interval = 1000
         '
-        'txtKdHasilNew
+        'SuperTabControl1
         '
         '
         '
         '
-        Me.txtKdHasilNew.Border.Class = "TextBoxBorder"
-        Me.txtKdHasilNew.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txtKdHasilNew.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtKdHasilNew.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtKdHasilNew.Location = New System.Drawing.Point(173, 6)
-        Me.txtKdHasilNew.MaxLength = 10
-        Me.txtKdHasilNew.Name = "txtKdHasilNew"
-        Me.txtKdHasilNew.ReadOnly = True
-        Me.txtKdHasilNew.Size = New System.Drawing.Size(78, 20)
-        Me.txtKdHasilNew.TabIndex = 43
-        Me.txtKdHasilNew.TabStop = False
+        '
+        '
+        '
+        Me.SuperTabControl1.ControlBox.CloseBox.Name = ""
+        '
+        '
+        '
+        Me.SuperTabControl1.ControlBox.MenuBox.Name = ""
+        Me.SuperTabControl1.ControlBox.Name = ""
+        Me.SuperTabControl1.ControlBox.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.SuperTabControl1.ControlBox.MenuBox, Me.SuperTabControl1.ControlBox.CloseBox})
+        Me.SuperTabControl1.Controls.Add(Me.SuperTabControlPanel1)
+        Me.SuperTabControl1.Controls.Add(Me.SuperTabControlPanel2)
+        Me.SuperTabControl1.Controls.Add(Me.SuperTabControlPanel3)
+        Me.SuperTabControl1.Controls.Add(Me.SuperTabControlPanel4)
+        Me.SuperTabControl1.Location = New System.Drawing.Point(6, 447)
+        Me.SuperTabControl1.Name = "SuperTabControl1"
+        Me.SuperTabControl1.ReorderTabsEnabled = True
+        Me.SuperTabControl1.SelectedTabFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.SuperTabControl1.SelectedTabIndex = 3
+        Me.SuperTabControl1.Size = New System.Drawing.Size(601, 77)
+        Me.SuperTabControl1.TabFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SuperTabControl1.TabIndex = 11
+        Me.SuperTabControl1.Tabs.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.SuperTabItem1, Me.SuperTabItem2, Me.SuperTabItem3, Me.tabKet})
+        Me.SuperTabControl1.Text = "SuperTabControl1"
+        '
+        'SuperTabControlPanel4
+        '
+        Me.SuperTabControlPanel4.Controls.Add(Me.txtKet)
+        Me.SuperTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SuperTabControlPanel4.Location = New System.Drawing.Point(0, 25)
+        Me.SuperTabControlPanel4.Name = "SuperTabControlPanel4"
+        Me.SuperTabControlPanel4.Size = New System.Drawing.Size(601, 52)
+        Me.SuperTabControlPanel4.TabIndex = 0
+        Me.SuperTabControlPanel4.TabItem = Me.tabKet
+        '
+        'txtKet
+        '
+        '
+        '
+        '
+        Me.txtKet.Border.Class = "TextBoxBorder"
+        Me.txtKet.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtKet.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtKet.Location = New System.Drawing.Point(5, 3)
+        Me.txtKet.MaxLength = 250
+        Me.txtKet.Multiline = True
+        Me.txtKet.Name = "txtKet"
+        Me.txtKet.Size = New System.Drawing.Size(589, 45)
+        Me.txtKet.TabIndex = 11
+        '
+        'tabKet
+        '
+        Me.tabKet.AttachedControl = Me.SuperTabControlPanel4
+        Me.tabKet.GlobalItem = False
+        Me.tabKet.Name = "tabKet"
+        Me.tabKet.Text = "Keterangan"
+        '
+        'SuperTabControlPanel3
+        '
+        Me.SuperTabControlPanel3.Controls.Add(Me.txtISO)
+        Me.SuperTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SuperTabControlPanel3.Location = New System.Drawing.Point(0, 25)
+        Me.SuperTabControlPanel3.Name = "SuperTabControlPanel3"
+        Me.SuperTabControlPanel3.Size = New System.Drawing.Size(601, 52)
+        Me.SuperTabControlPanel3.TabIndex = 0
+        Me.SuperTabControlPanel3.TabItem = Me.SuperTabItem3
+        '
+        'txtISO
+        '
+        '
+        '
+        '
+        Me.txtISO.Border.Class = "TextBoxBorder"
+        Me.txtISO.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtISO.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtISO.Location = New System.Drawing.Point(5, 3)
+        Me.txtISO.MaxLength = 250
+        Me.txtISO.Multiline = True
+        Me.txtISO.Name = "txtISO"
+        Me.txtISO.Size = New System.Drawing.Size(589, 45)
+        Me.txtISO.TabIndex = 10
+        '
+        'SuperTabItem3
+        '
+        Me.SuperTabItem3.AttachedControl = Me.SuperTabControlPanel3
+        Me.SuperTabItem3.GlobalItem = False
+        Me.SuperTabItem3.Name = "SuperTabItem3"
+        Me.SuperTabItem3.Text = "ISO/IEC"
+        '
+        'SuperTabControlPanel2
+        '
+        Me.SuperTabControlPanel2.Controls.Add(Me.txtPermenkes)
+        Me.SuperTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SuperTabControlPanel2.Location = New System.Drawing.Point(0, 25)
+        Me.SuperTabControlPanel2.Name = "SuperTabControlPanel2"
+        Me.SuperTabControlPanel2.Size = New System.Drawing.Size(601, 52)
+        Me.SuperTabControlPanel2.TabIndex = 0
+        Me.SuperTabControlPanel2.TabItem = Me.SuperTabItem2
+        '
+        'txtPermenkes
+        '
+        '
+        '
+        '
+        Me.txtPermenkes.Border.Class = "TextBoxBorder"
+        Me.txtPermenkes.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtPermenkes.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPermenkes.Location = New System.Drawing.Point(5, 3)
+        Me.txtPermenkes.MaxLength = 250
+        Me.txtPermenkes.Multiline = True
+        Me.txtPermenkes.Name = "txtPermenkes"
+        Me.txtPermenkes.Size = New System.Drawing.Size(589, 45)
+        Me.txtPermenkes.TabIndex = 10
+        '
+        'SuperTabItem2
+        '
+        Me.SuperTabItem2.AttachedControl = Me.SuperTabControlPanel2
+        Me.SuperTabItem2.GlobalItem = False
+        Me.SuperTabItem2.Name = "SuperTabItem2"
+        Me.SuperTabItem2.Text = "Permenkes"
+        '
+        'SuperTabControlPanel1
+        '
+        Me.SuperTabControlPanel1.Controls.Add(Me.txtKesimpulan)
+        Me.SuperTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SuperTabControlPanel1.Location = New System.Drawing.Point(0, 25)
+        Me.SuperTabControlPanel1.Name = "SuperTabControlPanel1"
+        Me.SuperTabControlPanel1.Size = New System.Drawing.Size(601, 52)
+        Me.SuperTabControlPanel1.TabIndex = 1
+        Me.SuperTabControlPanel1.TabItem = Me.SuperTabItem1
+        '
+        'txtKesimpulan
+        '
+        '
+        '
+        '
+        Me.txtKesimpulan.Border.Class = "TextBoxBorder"
+        Me.txtKesimpulan.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtKesimpulan.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtKesimpulan.Location = New System.Drawing.Point(5, 3)
+        Me.txtKesimpulan.MaxLength = 250
+        Me.txtKesimpulan.Multiline = True
+        Me.txtKesimpulan.Name = "txtKesimpulan"
+        Me.txtKesimpulan.Size = New System.Drawing.Size(589, 45)
+        Me.txtKesimpulan.TabIndex = 9
+        '
+        'SuperTabItem1
+        '
+        Me.SuperTabItem1.AttachedControl = Me.SuperTabControlPanel1
+        Me.SuperTabItem1.GlobalItem = False
+        Me.SuperTabItem1.Name = "SuperTabItem1"
+        Me.SuperTabItem1.Text = "Kesimpulan"
+        '
+        'LabelX14
+        '
+        Me.LabelX14.BackColor = System.Drawing.Color.Transparent
+        '
+        '
+        '
+        Me.LabelX14.BackgroundStyle.Class = ""
+        Me.LabelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX14.Location = New System.Drawing.Point(623, 448)
+        Me.LabelX14.Name = "LabelX14"
+        Me.LabelX14.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LabelX14.Size = New System.Drawing.Size(66, 23)
+        Me.LabelX14.TabIndex = 47
+        Me.LabelX14.Text = "No. Instalasi"
+        '
+        'txtNoInstalasi
+        '
+        '
+        '
+        '
+        Me.txtNoInstalasi.Border.Class = "TextBoxBorder"
+        Me.txtNoInstalasi.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtNoInstalasi.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNoInstalasi.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNoInstalasi.Location = New System.Drawing.Point(695, 448)
+        Me.txtNoInstalasi.MaxLength = 20
+        Me.txtNoInstalasi.Name = "txtNoInstalasi"
+        Me.txtNoInstalasi.Size = New System.Drawing.Size(211, 20)
+        Me.txtNoInstalasi.TabIndex = 46
+        Me.txtNoInstalasi.TabStop = False
         '
         'frmEntryHasil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(913, 525)
+        Me.ClientSize = New System.Drawing.Size(913, 532)
+        Me.Controls.Add(Me.LabelX14)
+        Me.Controls.Add(Me.txtNoInstalasi)
+        Me.Controls.Add(Me.SuperTabControl1)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnExit)
-        Me.Controls.Add(Me.PanelEx6)
         Me.Controls.Add(Me.GroupPanel1)
         Me.DoubleBuffered = True
         Me.Name = "frmEntryHasil"
@@ -898,7 +1057,12 @@ Partial Class frmEntryHasil
         Me.PanelEx4.ResumeLayout(False)
         Me.PanelEx3.ResumeLayout(False)
         CType(Me.txtTglHasil, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelEx6.ResumeLayout(False)
+        CType(Me.SuperTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SuperTabControl1.ResumeLayout(False)
+        Me.SuperTabControlPanel4.ResumeLayout(False)
+        Me.SuperTabControlPanel3.ResumeLayout(False)
+        Me.SuperTabControlPanel2.ResumeLayout(False)
+        Me.SuperTabControlPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -933,9 +1097,6 @@ Partial Class frmEntryHasil
     Friend WithEvents LabelX10 As DevComponents.DotNetBar.LabelX
     Friend WithEvents txtJnsBahan As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents LabelX9 As DevComponents.DotNetBar.LabelX
-    Friend WithEvents PanelEx6 As DevComponents.DotNetBar.PanelEx
-    Friend WithEvents txtKesimpulan As DevComponents.DotNetBar.Controls.TextBoxX
-    Friend WithEvents LabelX14 As DevComponents.DotNetBar.LabelX
     Friend WithEvents btnExit As DevComponents.DotNetBar.ButtonX
     Friend WithEvents btnSave As DevComponents.DotNetBar.ButtonX
     Friend WithEvents txtKdInstalasi As DevComponents.DotNetBar.Controls.TextBoxX
@@ -947,4 +1108,19 @@ Partial Class frmEntryHasil
     Friend WithEvents LabelX15 As DevComponents.DotNetBar.LabelX
     Friend WithEvents txtKdHasil As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents txtKdHasilNew As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents SuperTabControl1 As DevComponents.DotNetBar.SuperTabControl
+    Friend WithEvents SuperTabControlPanel1 As DevComponents.DotNetBar.SuperTabControlPanel
+    Friend WithEvents txtKesimpulan As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents SuperTabItem1 As DevComponents.DotNetBar.SuperTabItem
+    Friend WithEvents SuperTabControlPanel3 As DevComponents.DotNetBar.SuperTabControlPanel
+    Friend WithEvents txtISO As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents SuperTabItem3 As DevComponents.DotNetBar.SuperTabItem
+    Friend WithEvents SuperTabControlPanel2 As DevComponents.DotNetBar.SuperTabControlPanel
+    Friend WithEvents txtPermenkes As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents SuperTabItem2 As DevComponents.DotNetBar.SuperTabItem
+    Friend WithEvents SuperTabControlPanel4 As DevComponents.DotNetBar.SuperTabControlPanel
+    Friend WithEvents tabKet As DevComponents.DotNetBar.SuperTabItem
+    Friend WithEvents txtKet As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents LabelX14 As DevComponents.DotNetBar.LabelX
+    Friend WithEvents txtNoInstalasi As DevComponents.DotNetBar.Controls.TextBoxX
 End Class

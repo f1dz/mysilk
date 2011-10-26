@@ -27,6 +27,12 @@ Public Class clsEntryHasil
     Public Property JamVerif As String
     Public Property KodePetugasVerif As String
     Public Property isLock As Boolean
+    Public Property Permenkes As String
+    Public Property ISO As String
+    Public Property Ket As String
+    Public Property NoSeri As String
+    Public Property Cetak As Boolean
+    Public Property NoInstalasi As String
 
     Public Function UjiPerInstDS() As DataSet
         sSql = "SELECT  dd.fs_nm_grup_jenis_uji , " & vbCrLf _
@@ -79,7 +85,12 @@ Public Class clsEntryHasil
              & "            ,fs_kd_instalasi " & vbCrLf _
              & "            ,fs_merk " & vbCrLf _
              & "            ,fs_pengambil " & vbCrLf _
-             & "            ,fs_kesimpulan) " & vbCrLf _
+             & "            ,fs_kesimpulan " & vbCrLf _
+             & "            ,fs_permenkes " & vbCrLf _
+             & "            ,fs_iso " & vbCrLf _
+             & "            ,fs_ket " & vbCrLf _
+             & "            ,fs_no_seri " & vbCrLf _
+             & "            ,fs_no_instalasi) " & vbCrLf _
              & "    VALUES " & vbCrLf _
              & "            ('" & KodeHasil & "' " & vbCrLf _
              & "            ,'" & TglHasil & "' " & vbCrLf _
@@ -90,7 +101,12 @@ Public Class clsEntryHasil
              & "            ,'" & KodeInstalasi & "' " & vbCrLf _
              & "            ,'" & Merk & "' " & vbCrLf _
              & "            ,'" & Pengambil & "' " & vbCrLf _
-             & "            ,'" & Kesimpulan & "') "
+             & "            ,'" & Kesimpulan & "' " & vbCrLf _
+             & "            ,'" & Permenkes & "' " & vbCrLf _
+             & "            ,'" & ISO & "' " & vbCrLf _
+             & "            ,'" & Ket & "' " & vbCrLf _
+             & "            ,'" & NoSeri & "' " & vbCrLf _
+             & "            ,'" & NoInstalasi & "') "
         Try
             If conn.oConn.State = ConnectionState.Closed Then
                 conn.open()
@@ -203,10 +219,44 @@ Public Class clsEntryHasil
                 JamVerif = oDR("fs_jam_ver")
                 KodePetugasVerif = oDR("fs_kd_petugas_ver")
                 isLock = oDR("fb_lock")
+                Permenkes = oDR("fs_permenkes")
+                ISO = oDR("fs_iso")
+                Ket = oDR("fs_ket")
+                NoSeri = oDR("fs_no_seri")
+                Cetak = oDR("fb_cetak")
+                NoInstalasi = oDR("fs_no_instalasi")
                 conn.close()
             Catch ex As Exception
                 MsgBox(ex.Message, MsgBoxStyle.Exclamation)
             End Try
         End Set
     End Property
+
+    Public Sub UpdateNoSeri()
+        sSql = "UPDATE  TA_TRS_HASIL " & vbCrLf _
+             & "   SET  fs_no_seri = '" & NoSeri & "' " & vbCrLf _
+             & "WHERE   fs_kd_trs = '" & KodeHasil & "' "
+        Try
+            conn.open()
+            oCmd = New OleDbCommand(sSql, conn.oConn)
+            oCmd.ExecuteNonQuery()
+            conn.close()
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+        End Try
+    End Sub
+
+    Public Sub UpdateStatusCetak()
+        sSql = "UPDATE  TA_TRS_HASIL " & vbCrLf _
+             & "   SET  fb_cetak = '" & Cetak & "' " & vbCrLf _
+             & "WHERE   fs_kd_trs = '" & KodeHasil & "' "
+        Try
+            conn.open()
+            oCmd = New OleDbCommand(sSql, conn.oConn)
+            oCmd.ExecuteNonQuery()
+            conn.close()
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+        End Try
+    End Sub
 End Class
