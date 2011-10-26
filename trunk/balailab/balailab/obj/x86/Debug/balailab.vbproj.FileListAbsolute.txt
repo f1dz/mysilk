@@ -61,3 +61,6 @@ D:\Latihan\VB\balailab\balailab\obj\x86\Debug\balailab.frmCetakHasil.resources
 D:\Latihan\VB\balailab\balailab\obj\x86\Debug\balailab.exe.licenses
 D:\Latihan\VB\balailab\balailab\obj\x86\Debug\balailab.frmSetupTarif.resources
 D:\Latihan\VB\balailab\balailab\obj\x86\Debug\balailab.frmSetupKomponen.resources
+D:\Latihan\VB\balailab\balailab\obj\x86\Debug\balailab.frmParamKomp.resources
+D:\Latihan\VB\balailab\balailab\obj\x86\Debug\balailab.frmSetupGrupJenisUji.resources
+D:\Latihan\VB\balailab\balailab\obj\x86\Debug\balailab.frmSetupJenisUji.resources

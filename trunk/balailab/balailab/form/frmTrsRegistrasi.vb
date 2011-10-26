@@ -22,10 +22,19 @@ Public Class frmTrsRegistrasi
         Dim oReg As New clsTrsRegistrasi
         Dim oParam As New clsParam
 
+        For i As Integer = 0 To dgvSample.RowCount - 1
+            If dgvSample.Item(0, i).Value <> "" Or dgvSample.RowCount = 1 Then
+                If dgvSample.Item(1, i).Value = "" Then
+                    MsgBox("Data belum terisi dengan lengkap" & vbCrLf & "Cek Sample dan Nomor MR", MsgBoxStyle.Exclamation)
+                    Exit Sub
+                End If
+            End If
+        Next
+
         oReg.KdRujukan = Trim(txtKdRujuk.Text)
         oReg.Tgl = oParam.tglYMD(txtTglReg.Text)
         oReg.Jam = txtJamReg.Text
-        oReg.KdPetugas = "ADMIN"
+        oReg.KdPetugas = My.Settings.KdPetugas
         If Trim(txtKdReg.Text) = "" Then
             oReg.Kode = oParam.getKode("RG")
             oReg.Save()

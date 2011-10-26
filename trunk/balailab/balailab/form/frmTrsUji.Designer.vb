@@ -55,6 +55,8 @@ Partial Class frmTrsUji
         Me.btnVoid = New DevComponents.DotNetBar.ButtonX()
         Me.btnSave = New DevComponents.DotNetBar.ButtonX()
         Me.txtTotal = New DevComponents.Editors.DoubleInput()
+        Me.LabelX2 = New DevComponents.DotNetBar.LabelX()
+        Me.txtTglEstimasi = New DevComponents.Editors.DateTimeAdv.DateTimeInput()
         Me.GroupPanel1.SuspendLayout()
         Me.PanelEx2.SuspendLayout()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -64,6 +66,7 @@ Partial Class frmTrsUji
         Me.PanelEx1.SuspendLayout()
         CType(Me.txtTglUji, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTotal, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTglEstimasi, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupPanel1
@@ -162,7 +165,7 @@ Partial Class frmTrsUji
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grid.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.grid.Size = New System.Drawing.Size(595, 303)
-        Me.grid.TabIndex = 0
+        Me.grid.TabIndex = 5
         '
         'KodeTarif
         '
@@ -255,6 +258,8 @@ Partial Class frmTrsUji
         '
         Me.PanelEx1.CanvasColor = System.Drawing.SystemColors.Control
         Me.PanelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.PanelEx1.Controls.Add(Me.LabelX2)
+        Me.PanelEx1.Controls.Add(Me.txtTglEstimasi)
         Me.PanelEx1.Controls.Add(Me.LabelX3)
         Me.PanelEx1.Controls.Add(Me.LabelX5)
         Me.PanelEx1.Controls.Add(Me.LabelX1)
@@ -414,7 +419,7 @@ Partial Class frmTrsUji
         Me.txtJamUji.MaxLength = 10
         Me.txtJamUji.Name = "txtJamUji"
         Me.txtJamUji.Size = New System.Drawing.Size(64, 20)
-        Me.txtJamUji.TabIndex = 12
+        Me.txtJamUji.TabIndex = 3
         Me.txtJamUji.Text = "24:00:00"
         '
         'txtTglUji
@@ -470,7 +475,7 @@ Partial Class frmTrsUji
         Me.txtTglUji.Name = "txtTglUji"
         Me.txtTglUji.Size = New System.Drawing.Size(94, 20)
         Me.txtTglUji.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.txtTglUji.TabIndex = 11
+        Me.txtTglUji.TabIndex = 2
         Me.txtTglUji.Value = New Date(2011, 1, 1, 0, 0, 0, 0)
         '
         'txtKdReg
@@ -546,6 +551,77 @@ Partial Class frmTrsUji
         Me.txtTotal.Size = New System.Drawing.Size(213, 38)
         Me.txtTotal.TabIndex = 4
         '
+        'LabelX2
+        '
+        Me.LabelX2.BackColor = System.Drawing.Color.Transparent
+        '
+        '
+        '
+        Me.LabelX2.BackgroundStyle.Class = ""
+        Me.LabelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX2.Location = New System.Drawing.Point(22, 63)
+        Me.LabelX2.Name = "LabelX2"
+        Me.LabelX2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LabelX2.Size = New System.Drawing.Size(75, 23)
+        Me.LabelX2.TabIndex = 21
+        Me.LabelX2.Text = "Estimasi"
+        '
+        'txtTglEstimasi
+        '
+        Me.txtTglEstimasi.AllowEmptyState = False
+        '
+        '
+        '
+        Me.txtTglEstimasi.BackgroundStyle.Class = "DateTimeInputBackground"
+        Me.txtTglEstimasi.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtTglEstimasi.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown
+        Me.txtTglEstimasi.ButtonDropDown.Visible = True
+        Me.txtTglEstimasi.CustomFormat = "dd-MM-yyyy"
+        Me.txtTglEstimasi.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTglEstimasi.Format = DevComponents.Editors.eDateTimePickerFormat.Custom
+        Me.txtTglEstimasi.Location = New System.Drawing.Point(101, 66)
+        Me.txtTglEstimasi.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
+        '
+        '
+        '
+        Me.txtTglEstimasi.MonthCalendar.AnnuallyMarkedDates = New Date(-1) {}
+        '
+        '
+        '
+        Me.txtTglEstimasi.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window
+        Me.txtTglEstimasi.MonthCalendar.BackgroundStyle.Class = ""
+        Me.txtTglEstimasi.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtTglEstimasi.MonthCalendar.ClearButtonVisible = True
+        '
+        '
+        '
+        Me.txtTglEstimasi.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2
+        Me.txtTglEstimasi.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90
+        Me.txtTglEstimasi.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground
+        Me.txtTglEstimasi.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid
+        Me.txtTglEstimasi.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder
+        Me.txtTglEstimasi.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1
+        Me.txtTglEstimasi.MonthCalendar.CommandsBackgroundStyle.Class = ""
+        Me.txtTglEstimasi.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtTglEstimasi.MonthCalendar.DisplayMonth = New Date(2011, 9, 1, 0, 0, 0, 0)
+        Me.txtTglEstimasi.MonthCalendar.MarkedDates = New Date(-1) {}
+        Me.txtTglEstimasi.MonthCalendar.MonthlyMarkedDates = New Date(-1) {}
+        '
+        '
+        '
+        Me.txtTglEstimasi.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
+        Me.txtTglEstimasi.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90
+        Me.txtTglEstimasi.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
+        Me.txtTglEstimasi.MonthCalendar.NavigationBackgroundStyle.Class = ""
+        Me.txtTglEstimasi.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtTglEstimasi.MonthCalendar.TodayButtonVisible = True
+        Me.txtTglEstimasi.MonthCalendar.WeeklyMarkedDays = New System.DayOfWeek(-1) {}
+        Me.txtTglEstimasi.Name = "txtTglEstimasi"
+        Me.txtTglEstimasi.Size = New System.Drawing.Size(94, 20)
+        Me.txtTglEstimasi.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.txtTglEstimasi.TabIndex = 4
+        Me.txtTglEstimasi.Value = New Date(2011, 1, 1, 0, 0, 0, 0)
+        '
         'frmTrsUji
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -569,6 +645,7 @@ Partial Class frmTrsUji
         Me.PanelEx1.ResumeLayout(False)
         CType(Me.txtTglUji, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTotal, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTglEstimasi, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -600,4 +677,6 @@ Partial Class frmTrsUji
     Friend WithEvents btnVoid As DevComponents.DotNetBar.ButtonX
     Friend WithEvents btnSave As DevComponents.DotNetBar.ButtonX
     Friend WithEvents txtTotal As DevComponents.Editors.DoubleInput
+    Friend WithEvents LabelX2 As DevComponents.DotNetBar.LabelX
+    Friend WithEvents txtTglEstimasi As DevComponents.Editors.DateTimeAdv.DateTimeInput
 End Class

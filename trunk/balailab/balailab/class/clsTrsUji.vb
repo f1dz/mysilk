@@ -23,6 +23,7 @@ Public Class clsTrsUji
     Public Property NilaiKomponen As Double
     Public Property NilaiTarif As Double
     Public Property NoUrut As Integer
+    Public Property TglEstimasi As String
 
     ' Berisi Header Transaksi Uji
     Public Sub InsertUji()
@@ -31,13 +32,15 @@ Public Class clsTrsUji
              & "            ,fd_tgl_uji " & vbCrLf _
              & "            ,fs_jam_uji " & vbCrLf _
              & "            ,fs_kd_petugas " & vbCrLf _
-             & "            ,fn_total) " & vbCrLf _
+             & "            ,fn_total " & vbCrLf _
+             & "            ,fd_tgl_estimasi) " & vbCrLf _
              & "VALUES  " & vbCrLf _
              & "            ('" & KdReg & "' " & vbCrLf _
              & "            ,'" & TglUji & "' " & vbCrLf _
              & "            ,'" & JamUji & "' " & vbCrLf _
              & "            ,'" & KdPetugas & "' " & vbCrLf _
-             & "            ," & Total & ") "
+             & "            ," & Total & " " & vbCrLf _
+             & "            ,'" & TglEstimasi & "') "
         Try
             conn.open()
             oCmd = New OleDbCommand(sSql, conn.oConn)

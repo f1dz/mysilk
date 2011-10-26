@@ -45,6 +45,17 @@ Public Class frmCetakHasil
                 txtKdHasil.Text = oParam.genKode("HS", txtKdHasil.Text)
                 If oHasil.isExist(txtKdHasil.Text) And Trim(txtKdHasil.Text) <> "" Then
                     KodeHasil = txtKdHasil.Text
+                    oHasil.vKode = txtKdHasil.Text
+
+                    If oHasil.Cetak Then
+                        If MsgBox("Hasil sudah pernah dicetak dengan Nomor Seri " & oHasil.NoSeri & vbCrLf & _
+                                  "Lanjutkan Cetak? ", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = MsgBoxResult.No Then
+                            txtKdHasil.Focus()
+                            ClrScr()
+                            Exit Sub
+                        End If
+                    End If
+
                     FillGrid()
                     oHelper.SendTab()
                 Else
@@ -68,9 +79,13 @@ Public Class frmCetakHasil
         txtMerk.Text = oHasil.Merk
         txtPengambil.Text = oHasil.Pengambil
         txtKesimpulan.Text = oHasil.Kesimpulan
-
+        txtPermenkes.Text = oHasil.Permenkes
+        txtISO.Text = oHasil.ISO
+        txtKet.Text = oHasil.Ket
+        txtNoSeri.Text = oHasil.NoSeri
         oInst.vKodeInst = txtKdInstalasi.Text
         txtNmInstalasi.Text = oInst.NamaInst
+        txtNoSeri.Text = oHasil.NoSeri
 
         oSample.vKode = txtKdSample.Text
         txtJnsBahan.Text = oSample.xNmJenisSample
@@ -107,6 +122,7 @@ Public Class frmCetakHasil
 
     Private Sub ClrScr()
         grid.DataSource = Nothing
+        grid.Rows.Count = 1
         txtKdSample.Clear()
         txtJnsBahan.Clear()
         txtKemasan.Clear()
@@ -121,6 +137,7 @@ Public Class frmCetakHasil
         txtKdReg.Clear()
         txtKdHasil.Clear()
         txtKesimpulan.Clear()
+        txtNoSeri.Clear()
     End Sub
 
     Private Sub btnExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExit.Click
@@ -130,6 +147,8 @@ Public Class frmCetakHasil
     Private Sub btnCetak_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCetak.Click
         ' Cetaaaaaaak
         If Trim(txtKdHasil.Text) <> "" Then
+            oHasil.NoSeri = txtNoSeri.Text
+            oHasil.UpdateNoSeri()
             If MsgBox("Cetak Hasil ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                 CetakHasil()
             End If
@@ -157,13 +176,14 @@ Public Class frmCetakHasil
         With oHasil.UjiPerInstDS.Tables(0)
             oXcl.Workbooks.Add(My.Settings.AppPath & "\templates\BBLK_HS-.xlt")
             With oXcl.Cells
+                .Replace("#NoSeri#", oHasil.NoSeri)
                 .Replace("#NamaMR#", oMR.xNama & " - " & oSample.xKdMR)
                 .Replace("#Alamat#", oMR.xAlm1 & " " & oMR.xAlm2)
                 .Replace("#Kota#", oMR.xKota)
                 .Replace("#Telp#", oMR.xTelp)
                 .Replace("#NamaRujuk#", oReg.NmRujukan)
                 .Replace("#NoReg#", txtKdReg.Text)
-                .Replace("#Instalasi#", oInst.NamaInst)
+                .Replace("#Instalasi#", oHasil.NoInstalasi)
                 .Replace("#NoSample#", txtKdSample.Text)
                 .Replace("#Sample#", oSample.xNmJenisSample)
                 .Replace("#Qty#", oSample.xQty & " " & oSample.xSatQty)
@@ -171,6 +191,15 @@ Public Class frmCetakHasil
                 .Replace("#TglReg#", oParam.tglDMY(oReg.Tgl))
                 .Replace("#TglUji#", txtTglHasil.Text)
                 .Replace("#Kesimpulan#", txtKesimpulan.Text)
+                .Replace("#Permenkes#", txtPermenkes.Text)
+                Dim xISO As String
+                If Trim(txtISO.Text) = "" Then
+                    xISO = ""
+                Else
+                    xISO = "*) " & txtISO.Text
+                End If
+                .Replace("#ISO#", xISO)
+                .Replace("#Ket#", txtKet.Text)
                 .Replace("#Waktu#", Format(Today, "dd-MM-yyyy"))
                 .Replace("#NamaInstalasi#", oInst.NamaInst)
                 .Replace("#NamaKepInstalasi#", oInst.NamaKepInst)
@@ -214,8 +243,21 @@ Public Class frmCetakHasil
             Next
 
         End With
+        oHasil.Cetak = 1
+        oHasil.UpdateStatusCetak()
         oXcl.ActiveWorkbook.PrintOutEx()
         oXcl.ActiveWorkbook.Close(False)
         oXcl = Nothing
+    End Sub
+
+    Private Sub btnEditHasil_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEditHasil.Click
+        oHasil.vKode = txtKdHasil.Text
+        If Trim(txtKdHasil.Text) <> "" And oHasil.isExist(txtKdHasil.Text) And oHasil.Cetak Then
+            If MsgBox("Hasil sudah pernah dicetak dengan Nomor seri " & txtNoSeri.Text & vbCrLf & _
+                      "Lanjutkan edit hasil ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                oHasil.Cetak = 0
+                oHasil.UpdateStatusCetak()
+            End If
+        End If
     End Sub
 End Class

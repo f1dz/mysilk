@@ -10,8 +10,8 @@ Public Class frmTrsKasir
     Dim oTrs As New clsTrsKasir
 
     Private Sub frmTrsKasir_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-
+        txtKdBayar.TabStop = False
+        txtKdReg.Focus()
     End Sub
 
     Private Sub btnExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExit.Click
@@ -34,6 +34,8 @@ Public Class frmTrsKasir
                 If txtKdReg.Text <> "" Then
                     oHelper.SendTab()
                 End If
+            Case Keys.Enter
+                oHelper.SendTab()
         End Select
     End Sub
 
@@ -89,13 +91,17 @@ Lanjut:
             Case Keys.F12
                 txtBayar.Text = txtTotal.Text
         End Select
-
+        If txtBayar.Value < txtTotal.Value Then
+            txtBayar.BackgroundStyle.BackColor = Color.Red
+        Else
+            txtBayar.BackgroundStyle.BackColor = Color.LightGreen
+        End If
     End Sub
 
     Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
         If txtBayar.Value < txtTotal.Value Then
             MsgBox("Nilai pembayaran yang dimasukkan kurang" _
-                   & vbCrLf & "Cek kembali pembayaran" & vbCrLf & oHelper.AngkaToHuruf(txtTotal.Value) & vbCrLf & Application.StartupPath, MsgBoxStyle.Exclamation)
+                   & vbCrLf & "Cek kembali pembayaran", MsgBoxStyle.Exclamation)
             txtBayar.Focus()
             txtBayar.FocusHighlightColor = Color.Red
         Else
@@ -110,13 +116,14 @@ Lanjut:
                 oTrs.Save()
                 oTrs.UpdateRegBayar()
                 clrScr()
-                txtKdBayar.Focus()
+                txtKdReg.Focus()
             Else
                 oTrs.KdKasir = txtKdBayar.Text
                 oTrs.Update()
                 oTrs.UpdateRegBayar()
                 clrScr()
-                txtKdBayar.Focus()
+                txtKdReg.Focus()
+                txtKdReg.ReadOnly = False
             End If
             txtKdBayarNew.Text = oTrs.KdKasir
 

@@ -33,6 +33,9 @@ Partial Class frmTrsRegistrasi
         Me.btnExit = New DevComponents.DotNetBar.ButtonX()
         Me.PanelEx2 = New DevComponents.DotNetBar.PanelEx()
         Me.dgvSample = New DevComponents.DotNetBar.Controls.DataGridViewX()
+        Me.kodeSample = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.kodeMR = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ketSample = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PanelEx1 = New DevComponents.DotNetBar.PanelEx()
         Me.txtKdRegNew = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.LabelX5 = New DevComponents.DotNetBar.LabelX()
@@ -49,9 +52,7 @@ Partial Class frmTrsRegistrasi
         Me.txtKdRujuk = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txtKdReg = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.xTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.kodeSample = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.kodeMR = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ketSample = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LabelX6 = New DevComponents.DotNetBar.LabelX()
         Me.GroupPanel1.SuspendLayout()
         Me.PanelEx2.SuspendLayout()
         CType(Me.dgvSample, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,6 +64,7 @@ Partial Class frmTrsRegistrasi
         '
         Me.GroupPanel1.CanvasColor = System.Drawing.SystemColors.Control
         Me.GroupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007
+        Me.GroupPanel1.Controls.Add(Me.LabelX6)
         Me.GroupPanel1.Controls.Add(Me.btnVoid)
         Me.GroupPanel1.Controls.Add(Me.btnSave)
         Me.GroupPanel1.Controls.Add(Me.btnExit)
@@ -193,6 +195,32 @@ Partial Class frmTrsRegistrasi
         Me.dgvSample.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvSample.Size = New System.Drawing.Size(756, 301)
         Me.dgvSample.TabIndex = 0
+        '
+        'kodeSample
+        '
+        Me.kodeSample.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.kodeSample.FillWeight = 189.6983!
+        Me.kodeSample.HeaderText = "Kode"
+        Me.kodeSample.MaxInputLength = 10
+        Me.kodeSample.Name = "kodeSample"
+        Me.kodeSample.ReadOnly = True
+        Me.kodeSample.Width = 90
+        '
+        'kodeMR
+        '
+        Me.kodeMR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.kodeMR.FillWeight = 103.9825!
+        Me.kodeMR.HeaderText = "Kode MR"
+        Me.kodeMR.MaxInputLength = 10
+        Me.kodeMR.Name = "kodeMR"
+        Me.kodeMR.Width = 90
+        '
+        'ketSample
+        '
+        Me.ketSample.FillWeight = 121.5476!
+        Me.ketSample.HeaderText = "Keterangan"
+        Me.ketSample.Name = "ketSample"
+        Me.ketSample.ReadOnly = True
         '
         'PanelEx1
         '
@@ -484,31 +512,19 @@ Partial Class frmTrsRegistrasi
         Me.xTimer.Enabled = True
         Me.xTimer.Interval = 1000
         '
-        'kodeSample
+        'LabelX6
         '
-        Me.kodeSample.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.kodeSample.FillWeight = 189.6983!
-        Me.kodeSample.HeaderText = "Kode"
-        Me.kodeSample.MaxInputLength = 10
-        Me.kodeSample.Name = "kodeSample"
-        Me.kodeSample.ReadOnly = True
-        Me.kodeSample.Width = 90
+        Me.LabelX6.BackColor = System.Drawing.Color.Transparent
         '
-        'kodeMR
         '
-        Me.kodeMR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.kodeMR.FillWeight = 103.9825!
-        Me.kodeMR.HeaderText = "Kode MR"
-        Me.kodeMR.MaxInputLength = 10
-        Me.kodeMR.Name = "kodeMR"
-        Me.kodeMR.Width = 90
         '
-        'ketSample
-        '
-        Me.ketSample.FillWeight = 121.5476!
-        Me.ketSample.HeaderText = "Keterangan"
-        Me.ketSample.Name = "ketSample"
-        Me.ketSample.ReadOnly = True
+        Me.LabelX6.BackgroundStyle.Class = ""
+        Me.LabelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX6.Location = New System.Drawing.Point(9, 455)
+        Me.LabelX6.Name = "LabelX6"
+        Me.LabelX6.Size = New System.Drawing.Size(163, 23)
+        Me.LabelX6.TabIndex = 5
+        Me.LabelX6.Text = "F12 : Cari MR, F11 : MR Baru"
         '
         'frmTrsRegistrasi
         '
@@ -553,4 +569,5 @@ Partial Class frmTrsRegistrasi
     Friend WithEvents kodeSample As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents kodeMR As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ketSample As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents LabelX6 As DevComponents.DotNetBar.LabelX
 End Class

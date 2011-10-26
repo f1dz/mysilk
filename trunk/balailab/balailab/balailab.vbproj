@@ -123,9 +123,11 @@
     <Compile Include="class\clsEntryHasil.vb" />
     <Compile Include="class\clsHelper.vb" />
     <Compile Include="class\clsInstalasi.vb" />
+    <Compile Include="class\clsJenisUji.vb" />
     <Compile Include="class\clsMR.vb" />
     <Compile Include="class\clsParam.vb" />
     <Compile Include="class\clsPerujuk.vb" />
+    <Compile Include="class\clsSetupGrupUji.vb" />
     <Compile Include="class\clsTarif.vb" />
     <Compile Include="class\clsTrsKasir.vb" />
     <Compile Include="class\clsTrsRegistrasi.vb" />
@@ -174,6 +176,18 @@
     <Compile Include="form\frmEntryHasil.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="form\frmSetupGrupJenisUji.Designer.vb">
+      <DependentUpon>frmSetupGrupJenisUji.vb</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmSetupGrupJenisUji.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frmSetupJenisUji.Designer.vb">
+      <DependentUpon>frmSetupJenisUji.vb</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmSetupJenisUji.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="form\frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -190,6 +204,12 @@
       <DependentUpon>frmCariPerujuk.vb</DependentUpon>
     </Compile>
     <Compile Include="form\frmCariPerujuk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frmParamKomp.Designer.vb">
+      <DependentUpon>frmParamKomp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmParamKomp.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\frmPilihPasien.Designer.vb">
@@ -286,6 +306,12 @@
     <EmbeddedResource Include="form\frmEntryHasil.resx">
       <DependentUpon>frmEntryHasil.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\frmSetupGrupJenisUji.resx">
+      <DependentUpon>frmSetupGrupJenisUji.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frmSetupJenisUji.resx">
+      <DependentUpon>frmSetupJenisUji.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -294,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmCariPerujuk.resx">
       <DependentUpon>frmCariPerujuk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frmParamKomp.resx">
+      <DependentUpon>frmParamKomp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmPilihPasien.resx">
       <DependentUpon>frmPilihPasien.vb</DependentUpon>
@@ -376,6 +405,9 @@
   <ItemGroup>
     <Content Include="lab.ico" />
     <Content Include="laboratory.ico" />
+    <None Include="Resources\lab-50x50.png" />
+    <None Include="Resources\param_komp.png" />
+    <None Include="Resources\control_panel.png" />
     <None Include="Resources\background.png" />
     <None Include="Resources\cetak_hasil-50x50.png" />
     <None Include="Resources\microscope-icon-50x50.png" />

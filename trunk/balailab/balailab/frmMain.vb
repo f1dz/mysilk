@@ -9,7 +9,10 @@ Public Class frmMain
         mnuEntryHasil.Click, _
         mnuCetakHasil.Click, _
         mnuNamaTarif.Click, _
-        mnuKompTarif.Click
+        mnuKompTarif.Click, _
+        mnuParamKomp.Click, _
+        mnuGrupUji.Click, _
+        mnuJenisUji.Click
 
         Select Case sender.Name
             ' FO
@@ -38,6 +41,19 @@ Public Class frmMain
             Case "mnuKompTarif"
                 frmSetupKomponen.MdiParent = Me
                 frmSetupKomponen.Show()
+
+                ' Parameter
+            Case "mnuParamKomp"
+                frmParamKomp.MdiParent = Me
+                frmParamKomp.Show()
+
+                ' Uji
+            Case "mnuGrupUji"
+                frmSetupGrupJenisUji.MdiParent = Me
+                frmSetupGrupJenisUji.Show()
+            Case "mnuJenisUji"
+                frmSetupJenisUji.MdiParent = Me
+                frmSetupJenisUji.Show()
         End Select
 
     End Sub
