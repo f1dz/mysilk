@@ -12,7 +12,8 @@ Public Class frmMain
         mnuKompTarif.Click, _
         mnuParamKomp.Click, _
         mnuGrupUji.Click, _
-        mnuJenisUji.Click
+        mnuJenisUji.Click, _
+        mnuSetupUser.Click
 
         Select Case sender.Name
             ' FO
@@ -46,6 +47,9 @@ Public Class frmMain
             Case "mnuParamKomp"
                 frmParamKomp.MdiParent = Me
                 frmParamKomp.Show()
+            Case "mnuSetupUser"
+                frmSetupUser.MdiParent = Me
+                frmSetupUser.Show()
 
                 ' Uji
             Case "mnuGrupUji"
@@ -68,6 +72,7 @@ Public Class frmMain
         My.Settings.NmKomputer = My.Computer.Name
         My.Settings.AppPath = Application.StartupPath
         'Me.BackgroundImage. = My.Settings.AppPath & "background.jpg"
+
     End Sub
 
     Private Sub xTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xTimer.Tick

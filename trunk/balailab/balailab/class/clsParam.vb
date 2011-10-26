@@ -163,4 +163,27 @@ Public Class clsParam
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
         End Try
     End Sub
+
+    Public Function BitToBool(ByVal bit As Integer) As Boolean
+        Dim state As Boolean
+
+        If bit = 0 Then
+            state = False
+        Else
+            bit = 1
+        End If
+        Return state
+    End Function
+
+    Public Function BoolToBit(ByVal bool As Boolean) As Integer
+        Dim state As Integer
+
+        If bool = True Then
+            state = 1
+        Else
+            state = 0
+        End If
+        Return state
+    End Function
+
 End Class
