@@ -13,13 +13,34 @@ Public Class clsUser
     Public Property Password As String
     Public Property Nip As String
     Public Property KdInstalasi As String
-    Public Property Aktif As Integer
+    Public Property Aktif As Boolean
+    Public Property xMenu As String
 
     Public Function isAktif() As Boolean
         Dim Aktif As Boolean
         sSql = "SELECT * FROM TZ_USER" & vbCrLf _
              & "WHERE   fs_kd_user = '" & User & "' " & vbCrLf _
+             & "        AND fb_aktif = 1 " & vbCrLf _
              & "        AND fs_pwd = '" & oHelper.crypt(Password) & "' "
+        Try
+            conn.open()
+            oCmd = New OleDbCommand(sSql, conn.oConn)
+            If oCmd.ExecuteReader.HasRows Then
+                Aktif = True
+            Else
+                Aktif = False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+        End Try
+        conn.close()
+        Return Aktif
+    End Function
+
+    Public Function isExist(ByVal KdPetugas) As Boolean
+        Dim Aktif As Boolean
+        sSql = "SELECT * FROM TZ_USER" & vbCrLf _
+             & "WHERE   fs_kd_user = '" & KdPetugas & "' "
         Try
             conn.open()
             oCmd = New OleDbCommand(sSql, conn.oConn)
@@ -117,4 +138,52 @@ Public Class clsUser
             End Try
         End Set
     End Property
+
+    Public Function Akses(ByVal Menu As String) As Boolean
+        Dim state As Boolean
+
+        sSql = "SELECT *    FROM TZ_USER2 " & vbCrLf _
+             & "WHERE       fs_menu = '" & Menu & "' " & vbCrLf _
+             & "            AND fs_kd_user = '" & User & "' "
+        Try
+            conn.open()
+            oCmd = New OleDbCommand(sSql, conn.oConn)
+            oDR = oCmd.ExecuteReader
+            If oDR.HasRows Then
+                state = True
+            Else
+                state = False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        Return state
+    End Function
+
+    Public Sub InsertAkses()
+        sSql = "INSERT INTO TZ_USER2 " & vbCrLf _
+             & "VALUES ('" & User & "','" & xMenu & "') "
+        Try
+            conn.open()
+            oCmd = New OleDbCommand(sSql, conn.oConn)
+            oCmd.ExecuteNonQuery()
+            conn.close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Public Sub DeleteAkses()
+        sSql = "DELETE TZ_USER2 " & vbCrLf _
+             & "WHERE fs_kd_user = '" & User & "' "
+        Try
+            conn.open()
+            oCmd = New OleDbCommand(sSql, conn.oConn)
+            oCmd.ExecuteNonQuery()
+            conn.close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class
