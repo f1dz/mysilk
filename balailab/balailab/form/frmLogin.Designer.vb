@@ -27,10 +27,10 @@ Partial Class frmLogin
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PanelEx1 = New DevComponents.DotNetBar.PanelEx()
         Me.txtUser = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.txtNmUser = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.LabelX2 = New DevComponents.DotNetBar.LabelX()
         Me.LabelX1 = New DevComponents.DotNetBar.LabelX()
         Me.btnLogin = New DevComponents.DotNetBar.ButtonX()
-        Me.txtNmUser = New DevComponents.DotNetBar.Controls.TextBoxX()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelEx1.SuspendLayout()
         Me.SuspendLayout()
@@ -59,7 +59,7 @@ Partial Class frmLogin
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(148, 20)
-        Me.txtPassword.TabIndex = 2
+        Me.txtPassword.TabIndex = 3
         '
         'PictureBox1
         '
@@ -105,7 +105,23 @@ Partial Class frmLogin
         Me.txtUser.MaxLength = 50
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(148, 20)
-        Me.txtUser.TabIndex = 0
+        Me.txtUser.TabIndex = 1
+        '
+        'txtNmUser
+        '
+        '
+        '
+        '
+        Me.txtNmUser.Border.Class = "TextBoxBorder"
+        Me.txtNmUser.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtNmUser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNmUser.Enabled = False
+        Me.txtNmUser.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNmUser.Location = New System.Drawing.Point(70, 42)
+        Me.txtNmUser.Name = "txtNmUser"
+        Me.txtNmUser.ReadOnly = True
+        Me.txtNmUser.Size = New System.Drawing.Size(196, 20)
+        Me.txtNmUser.TabIndex = 2
         '
         'LabelX2
         '
@@ -146,22 +162,6 @@ Partial Class frmLogin
         Me.btnLogin.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.btnLogin.TabIndex = 3
         Me.btnLogin.Text = "&Login"
-        '
-        'txtNmUser
-        '
-        '
-        '
-        '
-        Me.txtNmUser.Border.Class = "TextBoxBorder"
-        Me.txtNmUser.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txtNmUser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtNmUser.Enabled = False
-        Me.txtNmUser.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNmUser.Location = New System.Drawing.Point(70, 42)
-        Me.txtNmUser.Name = "txtNmUser"
-        Me.txtNmUser.ReadOnly = True
-        Me.txtNmUser.Size = New System.Drawing.Size(196, 20)
-        Me.txtNmUser.TabIndex = 1
         '
         'frmLogin
         '

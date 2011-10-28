@@ -20,6 +20,7 @@
                 oMR.vKode = .Rows(i)("fs_mr")
                 lvi.Text = .Rows(i)("fs_kd_sample")
                 lvi.SubItems.Add(oMR.xNama)
+                lvi.SubItems.Add(.Rows(i)("fs_nm_jenis_sample"))
                 lstSample.Items.Add(lvi)
                 lstSample.Items(i).Checked = True
             Next
