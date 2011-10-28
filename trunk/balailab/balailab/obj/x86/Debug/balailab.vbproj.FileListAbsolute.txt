@@ -65,3 +65,5 @@ D:\Latihan\VB\balailab\balailab\obj\x86\Debug\balailab.frmParamKomp.resources
 D:\Latihan\VB\balailab\balailab\obj\x86\Debug\balailab.frmSetupGrupJenisUji.resources
 D:\Latihan\VB\balailab\balailab\obj\x86\Debug\balailab.frmSetupJenisUji.resources
 D:\Latihan\VB\balailab\balailab\obj\x86\Debug\balailab.frmSetupUser.resources
+D:\Latihan\VB\balailab\balailab\obj\x86\Debug\balailab.frmSetupGrupSample.resources
+D:\Latihan\VB\balailab\balailab\obj\x86\Debug\balailab.frmSetupJenisSample.resources

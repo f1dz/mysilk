@@ -31,6 +31,7 @@ Partial Class frmPilihPasien
         Me.txtNmTarif = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txtKdTarif = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.btnOK = New DevComponents.DotNetBar.ButtonX()
+        Me.Sample = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.PanelEx1.SuspendLayout()
         Me.PanelEx3.SuspendLayout()
         Me.PanelEx2.SuspendLayout()
@@ -44,7 +45,7 @@ Partial Class frmPilihPasien
         Me.PanelEx1.Controls.Add(Me.PanelEx2)
         Me.PanelEx1.Location = New System.Drawing.Point(5, 5)
         Me.PanelEx1.Name = "PanelEx1"
-        Me.PanelEx1.Size = New System.Drawing.Size(371, 245)
+        Me.PanelEx1.Size = New System.Drawing.Size(449, 245)
         Me.PanelEx1.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
         Me.PanelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
@@ -61,7 +62,7 @@ Partial Class frmPilihPasien
         Me.PanelEx3.Controls.Add(Me.lstSample)
         Me.PanelEx3.Location = New System.Drawing.Point(7, 44)
         Me.PanelEx3.Name = "PanelEx3"
-        Me.PanelEx3.Size = New System.Drawing.Size(358, 193)
+        Me.PanelEx3.Size = New System.Drawing.Size(437, 193)
         Me.PanelEx3.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
         Me.PanelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
@@ -79,7 +80,7 @@ Partial Class frmPilihPasien
         Me.lstSample.Border.Class = "ListViewBorder"
         Me.lstSample.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.lstSample.CheckBoxes = True
-        Me.lstSample.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.KdSample, Me.NmPasien})
+        Me.lstSample.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.KdSample, Me.NmPasien, Me.Sample})
         Me.lstSample.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lstSample.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstSample.FullRowSelect = True
@@ -87,7 +88,7 @@ Partial Class frmPilihPasien
         Me.lstSample.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.lstSample.Location = New System.Drawing.Point(0, 0)
         Me.lstSample.Name = "lstSample"
-        Me.lstSample.Size = New System.Drawing.Size(358, 193)
+        Me.lstSample.Size = New System.Drawing.Size(437, 193)
         Me.lstSample.TabIndex = 1
         Me.lstSample.UseCompatibleStateImageBehavior = False
         Me.lstSample.View = System.Windows.Forms.View.Details
@@ -100,7 +101,7 @@ Partial Class frmPilihPasien
         'NmPasien
         '
         Me.NmPasien.Text = "Pasien"
-        Me.NmPasien.Width = 250
+        Me.NmPasien.Width = 200
         '
         'PanelEx2
         '
@@ -110,7 +111,7 @@ Partial Class frmPilihPasien
         Me.PanelEx2.Controls.Add(Me.txtKdTarif)
         Me.PanelEx2.Location = New System.Drawing.Point(7, 7)
         Me.PanelEx2.Name = "PanelEx2"
-        Me.PanelEx2.Size = New System.Drawing.Size(358, 31)
+        Me.PanelEx2.Size = New System.Drawing.Size(437, 31)
         Me.PanelEx2.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
         Me.PanelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
@@ -156,18 +157,23 @@ Partial Class frmPilihPasien
         '
         Me.btnOK.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.btnOK.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btnOK.Location = New System.Drawing.Point(301, 256)
+        Me.btnOK.Location = New System.Drawing.Point(374, 256)
         Me.btnOK.Name = "btnOK"
         Me.btnOK.Size = New System.Drawing.Size(75, 23)
         Me.btnOK.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.btnOK.TabIndex = 1
         Me.btnOK.Text = "&OK"
         '
+        'Sample
+        '
+        Me.Sample.Text = "Sample"
+        Me.Sample.Width = 150
+        '
         'frmPilihPasien
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(382, 283)
+        Me.ClientSize = New System.Drawing.Size(461, 283)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnOK)
         Me.Controls.Add(Me.PanelEx1)
@@ -193,4 +199,5 @@ Partial Class frmPilihPasien
     Friend WithEvents lstSample As DevComponents.DotNetBar.Controls.ListViewEx
     Friend WithEvents KdSample As System.Windows.Forms.ColumnHeader
     Friend WithEvents NmPasien As System.Windows.Forms.ColumnHeader
+    Friend WithEvents Sample As System.Windows.Forms.ColumnHeader
 End Class

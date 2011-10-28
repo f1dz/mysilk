@@ -35,20 +35,6 @@ Partial Class frmMain
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.StyleManager = New DevComponents.DotNetBar.StyleManager(Me.components)
         Me.RbnMain = New DevComponents.DotNetBar.RibbonControl()
-        Me.RibbonPanel3 = New DevComponents.DotNetBar.RibbonPanel()
-        Me.RbnControlPanel = New DevComponents.DotNetBar.RibbonBar()
-        Me.btnSetupParam = New DevComponents.DotNetBar.ButtonItem()
-        Me.mnuParamSystem = New DevComponents.DotNetBar.ButtonItem()
-        Me.mnuParamKomp = New DevComponents.DotNetBar.ButtonItem()
-        Me.mnuSetupUser = New DevComponents.DotNetBar.ButtonItem()
-        Me.RbnPanelTrs = New DevComponents.DotNetBar.RibbonPanel()
-        Me.RibbonBarBO = New DevComponents.DotNetBar.RibbonBar()
-        Me.mnuEntryHasil = New DevComponents.DotNetBar.ButtonItem()
-        Me.mnuCetakHasil = New DevComponents.DotNetBar.ButtonItem()
-        Me.RibbonBarFO = New DevComponents.DotNetBar.RibbonBar()
-        Me.mnuTrsRegistrasi = New DevComponents.DotNetBar.ButtonItem()
-        Me.mnuTrsUji = New DevComponents.DotNetBar.ButtonItem()
-        Me.mnuTrsKasir = New DevComponents.DotNetBar.ButtonItem()
         Me.RibbonPanel2 = New DevComponents.DotNetBar.RibbonPanel()
         Me.RbnSetupMaster = New DevComponents.DotNetBar.RibbonBar()
         Me.mnuTarif = New DevComponents.DotNetBar.ButtonItem()
@@ -57,6 +43,23 @@ Partial Class frmMain
         Me.mnuSetupUji = New DevComponents.DotNetBar.ButtonItem()
         Me.mnuGrupUji = New DevComponents.DotNetBar.ButtonItem()
         Me.mnuJenisUji = New DevComponents.DotNetBar.ButtonItem()
+        Me.mnuMasterSample = New DevComponents.DotNetBar.ButtonItem()
+        Me.mnuGrupSample = New DevComponents.DotNetBar.ButtonItem()
+        Me.mnuJenisSample = New DevComponents.DotNetBar.ButtonItem()
+        Me.RbnPanelTrs = New DevComponents.DotNetBar.RibbonPanel()
+        Me.RibbonBarBO = New DevComponents.DotNetBar.RibbonBar()
+        Me.mnuEntryHasil = New DevComponents.DotNetBar.ButtonItem()
+        Me.mnuCetakHasil = New DevComponents.DotNetBar.ButtonItem()
+        Me.RibbonBarFO = New DevComponents.DotNetBar.RibbonBar()
+        Me.mnuTrsRegistrasi = New DevComponents.DotNetBar.ButtonItem()
+        Me.mnuTrsUji = New DevComponents.DotNetBar.ButtonItem()
+        Me.mnuTrsKasir = New DevComponents.DotNetBar.ButtonItem()
+        Me.RibbonPanel3 = New DevComponents.DotNetBar.RibbonPanel()
+        Me.RbnControlPanel = New DevComponents.DotNetBar.RibbonBar()
+        Me.btnSetupParam = New DevComponents.DotNetBar.ButtonItem()
+        Me.mnuParamSystem = New DevComponents.DotNetBar.ButtonItem()
+        Me.mnuParamKomp = New DevComponents.DotNetBar.ButtonItem()
+        Me.mnuSetupUser = New DevComponents.DotNetBar.ButtonItem()
         Me.RibbonTabItem1 = New DevComponents.DotNetBar.RibbonTabItem()
         Me.RibbonTabItem2 = New DevComponents.DotNetBar.RibbonTabItem()
         Me.rbnCP = New DevComponents.DotNetBar.RibbonTabItem()
@@ -97,9 +100,9 @@ Partial Class frmMain
         Me.xUser = New System.Windows.Forms.ToolStripStatusLabel()
         Me.xTimer = New System.Windows.Forms.Timer(Me.components)
         Me.RbnMain.SuspendLayout()
-        Me.RibbonPanel3.SuspendLayout()
-        Me.RbnPanelTrs.SuspendLayout()
         Me.RibbonPanel2.SuspendLayout()
+        Me.RbnPanelTrs.SuspendLayout()
+        Me.RibbonPanel3.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -114,8 +117,8 @@ Partial Class frmMain
         '
         Me.RbnMain.BackgroundStyle.Class = ""
         Me.RbnMain.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.RbnMain.Controls.Add(Me.RibbonPanel2)
         Me.RbnMain.Controls.Add(Me.RbnPanelTrs)
+        Me.RbnMain.Controls.Add(Me.RibbonPanel2)
         Me.RbnMain.Controls.Add(Me.RibbonPanel3)
         Me.RbnMain.Dock = System.Windows.Forms.DockStyle.Top
         Me.RbnMain.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.RibbonTabItem1, Me.RibbonTabItem2, Me.rbnCP})
@@ -145,102 +148,140 @@ Partial Class frmMain
         Me.RbnMain.TabIndex = 9
         Me.RbnMain.Text = "RibbonControl1"
         '
-        'RibbonPanel3
+        'RibbonPanel2
         '
-        Me.RibbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.RibbonPanel3.Controls.Add(Me.RbnControlPanel)
-        Me.RibbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanel3.Location = New System.Drawing.Point(0, 26)
-        Me.RibbonPanel3.Name = "RibbonPanel3"
-        Me.RibbonPanel3.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
-        Me.RibbonPanel3.Size = New System.Drawing.Size(1008, 113)
-        '
-        '
-        '
-        Me.RibbonPanel3.Style.Class = ""
-        Me.RibbonPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.RibbonPanel2.Controls.Add(Me.RbnSetupMaster)
+        Me.RibbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanel2.Location = New System.Drawing.Point(0, 26)
+        Me.RibbonPanel2.Name = "RibbonPanel2"
+        Me.RibbonPanel2.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.RibbonPanel2.Size = New System.Drawing.Size(1008, 113)
         '
         '
         '
-        Me.RibbonPanel3.StyleMouseDown.Class = ""
-        Me.RibbonPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonPanel2.Style.Class = ""
+        Me.RibbonPanel2.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
         '
         '
-        Me.RibbonPanel3.StyleMouseOver.Class = ""
-        Me.RibbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.RibbonPanel3.TabIndex = 3
-        Me.RibbonPanel3.Visible = False
-        '
-        'RbnControlPanel
-        '
-        Me.RbnControlPanel.AutoOverflowEnabled = True
+        Me.RibbonPanel2.StyleMouseDown.Class = ""
+        Me.RibbonPanel2.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
         '
         '
-        Me.RbnControlPanel.BackgroundMouseOverStyle.Class = ""
-        Me.RbnControlPanel.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonPanel2.StyleMouseOver.Class = ""
+        Me.RibbonPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonPanel2.TabIndex = 2
+        Me.RibbonPanel2.Visible = False
+        '
+        'RbnSetupMaster
+        '
+        Me.RbnSetupMaster.AutoOverflowEnabled = True
         '
         '
         '
-        Me.RbnControlPanel.BackgroundStyle.Class = ""
-        Me.RbnControlPanel.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.RbnControlPanel.ContainerControlProcessDialogKey = True
-        Me.RbnControlPanel.Dock = System.Windows.Forms.DockStyle.Left
-        Me.RbnControlPanel.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.btnSetupParam, Me.mnuSetupUser})
-        Me.RbnControlPanel.Location = New System.Drawing.Point(3, 0)
-        Me.RbnControlPanel.Name = "RbnControlPanel"
-        Me.RbnControlPanel.Size = New System.Drawing.Size(143, 110)
-        Me.RbnControlPanel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.RbnControlPanel.TabIndex = 0
-        Me.RbnControlPanel.Text = "Control Panel"
+        Me.RbnSetupMaster.BackgroundMouseOverStyle.Class = ""
+        Me.RbnSetupMaster.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
         '
         '
-        Me.RbnControlPanel.TitleStyle.Class = ""
-        Me.RbnControlPanel.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RbnSetupMaster.BackgroundStyle.Class = ""
+        Me.RbnSetupMaster.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RbnSetupMaster.ContainerControlProcessDialogKey = True
+        Me.RbnSetupMaster.Dock = System.Windows.Forms.DockStyle.Left
+        Me.RbnSetupMaster.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.mnuTarif, Me.mnuSetupUji, Me.mnuMasterSample})
+        Me.RbnSetupMaster.Location = New System.Drawing.Point(3, 0)
+        Me.RbnSetupMaster.Name = "RbnSetupMaster"
+        Me.RbnSetupMaster.Size = New System.Drawing.Size(200, 110)
+        Me.RbnSetupMaster.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.RbnSetupMaster.TabIndex = 0
+        Me.RbnSetupMaster.Text = "Setup Master"
         '
         '
         '
-        Me.RbnControlPanel.TitleStyleMouseOver.Class = ""
-        Me.RbnControlPanel.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RbnSetupMaster.TitleStyle.Class = ""
+        Me.RbnSetupMaster.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
-        'btnSetupParam
         '
-        Me.btnSetupParam.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
-        Me.btnSetupParam.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btnSetupParam.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSetupParam.Image = Global.balailab.My.Resources.Resources.param_komp
-        Me.btnSetupParam.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.btnSetupParam.Name = "btnSetupParam"
-        Me.btnSetupParam.PopupSide = DevComponents.DotNetBar.ePopupSide.Bottom
-        Me.btnSetupParam.RibbonWordWrap = False
-        Me.btnSetupParam.Stretch = True
-        Me.btnSetupParam.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.mnuParamSystem, Me.mnuParamKomp})
-        Me.btnSetupParam.SubItemsExpandWidth = 20
-        Me.btnSetupParam.Text = "Parameter"
         '
-        'mnuParamSystem
+        Me.RbnSetupMaster.TitleStyleMouseOver.Class = ""
+        Me.RbnSetupMaster.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
-        Me.mnuParamSystem.Enabled = False
-        Me.mnuParamSystem.Name = "mnuParamSystem"
-        Me.mnuParamSystem.Text = "System [Reserved]"
+        'mnuTarif
         '
-        'mnuParamKomp
+        Me.mnuTarif.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
+        Me.mnuTarif.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.mnuTarif.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.mnuTarif.Image = Global.balailab.My.Resources.Resources._1282710390_Money_Bag_50x50
+        Me.mnuTarif.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.mnuTarif.Name = "mnuTarif"
+        Me.mnuTarif.PopupSide = DevComponents.DotNetBar.ePopupSide.Bottom
+        Me.mnuTarif.RibbonWordWrap = False
+        Me.mnuTarif.Stretch = True
+        Me.mnuTarif.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.mnuNamaTarif, Me.mnuKompTarif})
+        Me.mnuTarif.SubItemsExpandWidth = 20
+        Me.mnuTarif.Text = "Tarif"
         '
-        Me.mnuParamKomp.Name = "mnuParamKomp"
-        Me.mnuParamKomp.Text = "Komputer"
+        'mnuNamaTarif
         '
-        'mnuSetupUser
+        Me.mnuNamaTarif.Name = "mnuNamaTarif"
+        Me.mnuNamaTarif.Text = "Nama Tarif"
         '
-        Me.mnuSetupUser.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
-        Me.mnuSetupUser.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.mnuSetupUser.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.mnuSetupUser.Image = Global.balailab.My.Resources.Resources.user
-        Me.mnuSetupUser.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.mnuSetupUser.Name = "mnuSetupUser"
-        Me.mnuSetupUser.SubItemsExpandWidth = 14
-        Me.mnuSetupUser.Text = "User"
+        'mnuKompTarif
+        '
+        Me.mnuKompTarif.Name = "mnuKompTarif"
+        Me.mnuKompTarif.Text = "Komponen Tarif"
+        '
+        'mnuSetupUji
+        '
+        Me.mnuSetupUji.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
+        Me.mnuSetupUji.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.mnuSetupUji.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.mnuSetupUji.Image = Global.balailab.My.Resources.Resources.lab_50x50
+        Me.mnuSetupUji.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.mnuSetupUji.Name = "mnuSetupUji"
+        Me.mnuSetupUji.PopupSide = DevComponents.DotNetBar.ePopupSide.Bottom
+        Me.mnuSetupUji.RibbonWordWrap = False
+        Me.mnuSetupUji.Stretch = True
+        Me.mnuSetupUji.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.mnuGrupUji, Me.mnuJenisUji})
+        Me.mnuSetupUji.SubItemsExpandWidth = 20
+        Me.mnuSetupUji.Text = "Uji"
+        '
+        'mnuGrupUji
+        '
+        Me.mnuGrupUji.Name = "mnuGrupUji"
+        Me.mnuGrupUji.Text = "Grup Jenis Uji"
+        '
+        'mnuJenisUji
+        '
+        Me.mnuJenisUji.Name = "mnuJenisUji"
+        Me.mnuJenisUji.Text = "Jenis Uji"
+        '
+        'mnuMasterSample
+        '
+        Me.mnuMasterSample.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
+        Me.mnuMasterSample.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.mnuMasterSample.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.mnuMasterSample.Image = Global.balailab.My.Resources.Resources.sample2
+        Me.mnuMasterSample.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.mnuMasterSample.Name = "mnuMasterSample"
+        Me.mnuMasterSample.PopupSide = DevComponents.DotNetBar.ePopupSide.Bottom
+        Me.mnuMasterSample.RibbonWordWrap = False
+        Me.mnuMasterSample.Stretch = True
+        Me.mnuMasterSample.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.mnuGrupSample, Me.mnuJenisSample})
+        Me.mnuMasterSample.SubItemsExpandWidth = 20
+        Me.mnuMasterSample.Text = "Sampling"
+        '
+        'mnuGrupSample
+        '
+        Me.mnuGrupSample.Name = "mnuGrupSample"
+        Me.mnuGrupSample.Text = "Grup Sample"
+        '
+        'mnuJenisSample
+        '
+        Me.mnuJenisSample.Name = "mnuJenisSample"
+        Me.mnuJenisSample.Text = "Jenis Sample"
         '
         'RbnPanelTrs
         '
@@ -268,7 +309,6 @@ Partial Class frmMain
         Me.RbnPanelTrs.StyleMouseOver.Class = ""
         Me.RbnPanelTrs.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.RbnPanelTrs.TabIndex = 1
-        Me.RbnPanelTrs.Visible = False
         '
         'RibbonBarBO
         '
@@ -396,124 +436,112 @@ Partial Class frmMain
         Me.mnuTrsKasir.SubItemsExpandWidth = 14
         Me.mnuTrsKasir.Text = "Kasir"
         '
-        'RibbonPanel2
+        'RibbonPanel3
         '
-        Me.RibbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.RibbonPanel2.Controls.Add(Me.RbnSetupMaster)
-        Me.RibbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanel2.Location = New System.Drawing.Point(0, 26)
-        Me.RibbonPanel2.Name = "RibbonPanel2"
-        Me.RibbonPanel2.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
-        Me.RibbonPanel2.Size = New System.Drawing.Size(1008, 113)
-        '
-        '
-        '
-        Me.RibbonPanel2.Style.Class = ""
-        Me.RibbonPanel2.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.RibbonPanel3.Controls.Add(Me.RbnControlPanel)
+        Me.RibbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanel3.Location = New System.Drawing.Point(0, 26)
+        Me.RibbonPanel3.Name = "RibbonPanel3"
+        Me.RibbonPanel3.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.RibbonPanel3.Size = New System.Drawing.Size(1008, 113)
         '
         '
         '
-        Me.RibbonPanel2.StyleMouseDown.Class = ""
-        Me.RibbonPanel2.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonPanel3.Style.Class = ""
+        Me.RibbonPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
         '
         '
-        Me.RibbonPanel2.StyleMouseOver.Class = ""
-        Me.RibbonPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.RibbonPanel2.TabIndex = 2
-        '
-        'RbnSetupMaster
-        '
-        Me.RbnSetupMaster.AutoOverflowEnabled = True
+        Me.RibbonPanel3.StyleMouseDown.Class = ""
+        Me.RibbonPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
         '
         '
-        Me.RbnSetupMaster.BackgroundMouseOverStyle.Class = ""
-        Me.RbnSetupMaster.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonPanel3.StyleMouseOver.Class = ""
+        Me.RibbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonPanel3.TabIndex = 3
+        Me.RibbonPanel3.Visible = False
+        '
+        'RbnControlPanel
+        '
+        Me.RbnControlPanel.AutoOverflowEnabled = True
         '
         '
         '
-        Me.RbnSetupMaster.BackgroundStyle.Class = ""
-        Me.RbnSetupMaster.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.RbnSetupMaster.ContainerControlProcessDialogKey = True
-        Me.RbnSetupMaster.Dock = System.Windows.Forms.DockStyle.Left
-        Me.RbnSetupMaster.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.mnuTarif, Me.mnuSetupUji})
-        Me.RbnSetupMaster.Location = New System.Drawing.Point(3, 0)
-        Me.RbnSetupMaster.Name = "RbnSetupMaster"
-        Me.RbnSetupMaster.Size = New System.Drawing.Size(200, 110)
-        Me.RbnSetupMaster.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.RbnSetupMaster.TabIndex = 0
-        Me.RbnSetupMaster.Text = "Setup Master"
+        Me.RbnControlPanel.BackgroundMouseOverStyle.Class = ""
+        Me.RbnControlPanel.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
         '
         '
-        Me.RbnSetupMaster.TitleStyle.Class = ""
-        Me.RbnSetupMaster.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RbnControlPanel.BackgroundStyle.Class = ""
+        Me.RbnControlPanel.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RbnControlPanel.ContainerControlProcessDialogKey = True
+        Me.RbnControlPanel.Dock = System.Windows.Forms.DockStyle.Left
+        Me.RbnControlPanel.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.btnSetupParam, Me.mnuSetupUser})
+        Me.RbnControlPanel.Location = New System.Drawing.Point(3, 0)
+        Me.RbnControlPanel.Name = "RbnControlPanel"
+        Me.RbnControlPanel.Size = New System.Drawing.Size(143, 110)
+        Me.RbnControlPanel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.RbnControlPanel.TabIndex = 0
+        Me.RbnControlPanel.Text = "Control Panel"
         '
         '
         '
-        Me.RbnSetupMaster.TitleStyleMouseOver.Class = ""
-        Me.RbnSetupMaster.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RbnControlPanel.TitleStyle.Class = ""
+        Me.RbnControlPanel.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
-        'mnuTarif
         '
-        Me.mnuTarif.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
-        Me.mnuTarif.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.mnuTarif.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.mnuTarif.Image = Global.balailab.My.Resources.Resources._1282710390_Money_Bag_50x50
-        Me.mnuTarif.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.mnuTarif.Name = "mnuTarif"
-        Me.mnuTarif.PopupSide = DevComponents.DotNetBar.ePopupSide.Bottom
-        Me.mnuTarif.RibbonWordWrap = False
-        Me.mnuTarif.Stretch = True
-        Me.mnuTarif.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.mnuNamaTarif, Me.mnuKompTarif})
-        Me.mnuTarif.SubItemsExpandWidth = 20
-        Me.mnuTarif.Text = "Tarif"
         '
-        'mnuNamaTarif
+        Me.RbnControlPanel.TitleStyleMouseOver.Class = ""
+        Me.RbnControlPanel.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
-        Me.mnuNamaTarif.Name = "mnuNamaTarif"
-        Me.mnuNamaTarif.Text = "Nama Tarif"
+        'btnSetupParam
         '
-        'mnuKompTarif
+        Me.btnSetupParam.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
+        Me.btnSetupParam.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btnSetupParam.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSetupParam.Image = Global.balailab.My.Resources.Resources.param_komp
+        Me.btnSetupParam.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.btnSetupParam.Name = "btnSetupParam"
+        Me.btnSetupParam.PopupSide = DevComponents.DotNetBar.ePopupSide.Bottom
+        Me.btnSetupParam.RibbonWordWrap = False
+        Me.btnSetupParam.Stretch = True
+        Me.btnSetupParam.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.mnuParamSystem, Me.mnuParamKomp})
+        Me.btnSetupParam.SubItemsExpandWidth = 20
+        Me.btnSetupParam.Text = "Parameter"
         '
-        Me.mnuKompTarif.Name = "mnuKompTarif"
-        Me.mnuKompTarif.Text = "Komponen Tarif"
+        'mnuParamSystem
         '
-        'mnuSetupUji
+        Me.mnuParamSystem.Enabled = False
+        Me.mnuParamSystem.Name = "mnuParamSystem"
+        Me.mnuParamSystem.Text = "System [Reserved]"
         '
-        Me.mnuSetupUji.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
-        Me.mnuSetupUji.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.mnuSetupUji.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.mnuSetupUji.Image = Global.balailab.My.Resources.Resources.lab_50x50
-        Me.mnuSetupUji.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.mnuSetupUji.Name = "mnuSetupUji"
-        Me.mnuSetupUji.PopupSide = DevComponents.DotNetBar.ePopupSide.Bottom
-        Me.mnuSetupUji.RibbonWordWrap = False
-        Me.mnuSetupUji.Stretch = True
-        Me.mnuSetupUji.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.mnuGrupUji, Me.mnuJenisUji})
-        Me.mnuSetupUji.SubItemsExpandWidth = 20
-        Me.mnuSetupUji.Text = "Uji"
+        'mnuParamKomp
         '
-        'mnuGrupUji
+        Me.mnuParamKomp.Name = "mnuParamKomp"
+        Me.mnuParamKomp.Text = "Komputer"
         '
-        Me.mnuGrupUji.Name = "mnuGrupUji"
-        Me.mnuGrupUji.Text = "Grup Jenis Uji"
+        'mnuSetupUser
         '
-        'mnuJenisUji
-        '
-        Me.mnuJenisUji.Name = "mnuJenisUji"
-        Me.mnuJenisUji.Text = "Jenis Uji"
+        Me.mnuSetupUser.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
+        Me.mnuSetupUser.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.mnuSetupUser.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.mnuSetupUser.Image = Global.balailab.My.Resources.Resources.user
+        Me.mnuSetupUser.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.mnuSetupUser.Name = "mnuSetupUser"
+        Me.mnuSetupUser.SubItemsExpandWidth = 14
+        Me.mnuSetupUser.Text = "User"
         '
         'RibbonTabItem1
         '
+        Me.RibbonTabItem1.Checked = True
         Me.RibbonTabItem1.Name = "RibbonTabItem1"
         Me.RibbonTabItem1.Panel = Me.RbnPanelTrs
         Me.RibbonTabItem1.Text = "Transaksi"
         '
         'RibbonTabItem2
         '
-        Me.RibbonTabItem2.Checked = True
         Me.RibbonTabItem2.Name = "RibbonTabItem2"
         Me.RibbonTabItem2.Panel = Me.RibbonPanel2
         Me.RibbonTabItem2.Text = "Master"
@@ -891,9 +919,9 @@ Partial Class frmMain
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.RbnMain.ResumeLayout(False)
         Me.RbnMain.PerformLayout()
-        Me.RibbonPanel3.ResumeLayout(False)
-        Me.RbnPanelTrs.ResumeLayout(False)
         Me.RibbonPanel2.ResumeLayout(False)
+        Me.RbnPanelTrs.ResumeLayout(False)
+        Me.RibbonPanel3.ResumeLayout(False)
         Me.StatusStrip.ResumeLayout(False)
         Me.StatusStrip.PerformLayout()
         Me.ResumeLayout(False)
@@ -962,5 +990,8 @@ Partial Class frmMain
     Friend WithEvents mnuGrupUji As DevComponents.DotNetBar.ButtonItem
     Friend WithEvents mnuJenisUji As DevComponents.DotNetBar.ButtonItem
     Friend WithEvents mnuSetupUser As DevComponents.DotNetBar.ButtonItem
+    Friend WithEvents mnuMasterSample As DevComponents.DotNetBar.ButtonItem
+    Friend WithEvents mnuJenisSample As DevComponents.DotNetBar.ButtonItem
+    Friend WithEvents mnuGrupSample As DevComponents.DotNetBar.ButtonItem
 
 End Class

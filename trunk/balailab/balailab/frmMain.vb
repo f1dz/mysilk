@@ -1,6 +1,7 @@
 ﻿Imports DevComponents.DotNetBar
 Public Class frmMain
     Inherits DevComponents.DotNetBar.Office2007Form
+    Dim oUser As New clsUser
 
     Private Sub DotNetBarManager_ItemClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles _
         mnuTrsRegistrasi.Click, _
@@ -13,7 +14,9 @@ Public Class frmMain
         mnuParamKomp.Click, _
         mnuGrupUji.Click, _
         mnuJenisUji.Click, _
-        mnuSetupUser.Click
+        mnuSetupUser.Click, _
+        mnuGrupSample.Click, _
+        mnuJenisSample.Click
 
         Select Case sender.Name
             ' FO
@@ -42,6 +45,12 @@ Public Class frmMain
             Case "mnuKompTarif"
                 frmSetupKomponen.MdiParent = Me
                 frmSetupKomponen.Show()
+            Case "mnuGrupSample"
+                frmSetupGrupSample.MdiParent = Me
+                frmSetupGrupSample.Show()
+            Case "mnuJenisSample"
+                frmSetupJenisSample.MdiParent = Me
+                frmSetupJenisSample.Show()
 
                 ' Parameter
             Case "mnuParamKomp"
@@ -72,16 +81,32 @@ Public Class frmMain
         My.Settings.NmKomputer = My.Computer.Name
         My.Settings.AppPath = Application.StartupPath
         'Me.BackgroundImage. = My.Settings.AppPath & "background.jpg"
-
+        UserAkses()
     End Sub
 
     Private Sub xTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xTimer.Tick
         xTglJam.Text = Format(Today, "yyyy-MM-dd") & " " & Format(TimeOfDay, "HH:mm:ss")
     End Sub
 
+    Private Sub UserAkses()
+        oUser.User = My.Settings.KdPetugas
+        For Each ctrl As DevComponents.DotNetBar.ButtonItem In Me.RibbonBarFO.Items
+            ctrl.Enabled = oUser.Akses(ctrl.Name)
+        Next
 
-    Private Sub mnuTarif_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuTarif.Click
+        For Each ctrl As DevComponents.DotNetBar.ButtonItem In Me.RibbonBarBO.Items
+            ctrl.Enabled = oUser.Akses(ctrl.Name)
+        Next
 
+        ' Master
+        For Each ctrl As DevComponents.DotNetBar.ButtonItem In Me.RbnSetupMaster.Items
+            ctrl.Enabled = oUser.Akses(ctrl.Name)
+        Next
+
+        ' Master
+        For Each ctrl As DevComponents.DotNetBar.ButtonItem In Me.RbnControlPanel.Items
+            ctrl.Enabled = oUser.Akses(ctrl.Name)
+        Next
     End Sub
 
 End Class

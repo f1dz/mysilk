@@ -124,6 +124,7 @@
     <Compile Include="class\clsHelper.vb" />
     <Compile Include="class\clsInstalasi.vb" />
     <Compile Include="class\clsJenisUji.vb" />
+    <Compile Include="class\clsMasterSample.vb" />
     <Compile Include="class\clsMR.vb" />
     <Compile Include="class\clsParam.vb" />
     <Compile Include="class\clsPerujuk.vb" />
@@ -176,10 +177,22 @@
     <Compile Include="form\frmEntryHasil.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="form\frmSetupGrupSample.Designer.vb">
+      <DependentUpon>frmSetupGrupSample.vb</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmSetupGrupSample.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="form\frmSetupGrupJenisUji.Designer.vb">
       <DependentUpon>frmSetupGrupJenisUji.vb</DependentUpon>
     </Compile>
     <Compile Include="form\frmSetupGrupJenisUji.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frmSetupJenisSample.Designer.vb">
+      <DependentUpon>frmSetupJenisSample.vb</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmSetupJenisSample.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\frmSetupJenisUji.Designer.vb">
@@ -312,8 +325,14 @@
     <EmbeddedResource Include="form\frmEntryHasil.resx">
       <DependentUpon>frmEntryHasil.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\frmSetupGrupSample.resx">
+      <DependentUpon>frmSetupGrupSample.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\frmSetupGrupJenisUji.resx">
       <DependentUpon>frmSetupGrupJenisUji.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frmSetupJenisSample.resx">
+      <DependentUpon>frmSetupJenisSample.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmSetupJenisUji.resx">
       <DependentUpon>frmSetupJenisUji.vb</DependentUpon>
@@ -414,6 +433,7 @@
   <ItemGroup>
     <Content Include="lab.ico" />
     <Content Include="laboratory.ico" />
+    <None Include="Resources\sample2.png" />
     <None Include="Resources\user.png" />
     <None Include="Resources\lab-50x50.png" />
     <None Include="Resources\param_komp.png" />
