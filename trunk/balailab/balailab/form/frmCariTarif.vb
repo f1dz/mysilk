@@ -51,6 +51,7 @@
             oUji.KdReg = My.Settings.tmpKdReg
             oUji.KdTarif = My.Settings.tmpKdTarif
             oUji.KdSample = oReg.KdSample
+            oUji.DeleteUji4()
             oUji.InsertUji4()
         End If
     End Sub

@@ -141,6 +141,12 @@
     <Compile Include="form\frmCari.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="form\frmCariHasil.Designer.vb">
+      <DependentUpon>frmCariHasil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmCariHasil.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="form\frmCariRegister.Designer.vb">
       <DependentUpon>frmCariRegister.vb</DependentUpon>
     </Compile>
@@ -306,6 +312,9 @@
   <ItemGroup>
     <EmbeddedResource Include="form\frmCari.resx">
       <DependentUpon>frmCari.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frmCariHasil.resx">
+      <DependentUpon>frmCariHasil.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmCariRegister.resx">
       <DependentUpon>frmCariRegister.vb</DependentUpon>

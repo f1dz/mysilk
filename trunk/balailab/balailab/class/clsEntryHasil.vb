@@ -259,4 +259,31 @@ Public Class clsEntryHasil
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
         End Try
     End Sub
+
+    Public Function CariHasilDS()
+        Dim table As New DataTable
+        sSql = "SELECT  aa.fs_kd_trs , " & vbCrLf _
+             & "        bb.fd_tgl_reg , " & vbCrLf _
+             & "        cc.fd_tgl_estimasi , " & vbCrLf _
+             & "        aa.fs_kd_sample , " & vbCrLf _
+             & "        ISNULL(ee.fs_nm_jenis_sample,'') fs_nm_jenis_sample, " & vbCrLf _
+             & "        ISNULL(aa.fs_merk,'') fs_merk, " & vbCrLf _
+             & "        ISNULL(ff.fs_nm_rujukan,'') fs_nm_rujukan " & vbCrLf _
+             & "FROM    TA_TRS_HASIL aa " & vbCrLf _
+             & "        INNER JOIN TA_TRS_REG bb ON aa.fs_kd_reg = bb.fs_kd_reg " & vbCrLf _
+             & "        INNER JOIN TA_TRS_UJI cc ON bb.fs_kd_reg = cc.fs_kd_reg " & vbCrLf _
+             & "        LEFT JOIN TA_TRS_SAMPLE dd ON aa.fs_kd_sample = dd.fs_kd_sample " & vbCrLf _
+             & "        LEFT JOIN TA_JENIS_SAMPLE ee ON dd.fs_kd_jenis_sample = ee.fs_kd_jenis_sample " & vbCrLf _
+             & "        LEFT JOIN TA_RUJUKAN ff ON ff.fs_kd_rujukan = bb.fs_kd_rujukan " & vbCrLf _
+             & "ORDER BY aa.fs_kd_trs "
+        Try
+            conn.open()
+            oDA = New OleDbDataAdapter(sSql, conn.oConn)
+            oDA.Fill(table)
+            conn.close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        Return table
+    End Function
 End Class

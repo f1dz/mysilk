@@ -18,18 +18,19 @@ Public Class frmCetakHasil
             Case Keys.Enter
                 oHelper.SendTab()
             Case Keys.F12
-                Dim sSql As String
-                sSql = "SELECT  aa.fs_kd_trs , " & vbCrLf _
-                     & "        aa.fs_kd_reg, " & vbCrLf _
-                     & "        cc.fs_nm_pasien " & vbCrLf _
-                     & "FROM    TA_TRS_HASIL aa " & vbCrLf _
-                     & "INNER JOIN TA_TRS_REG2 bb ON aa.fs_kd_sample = bb.fs_kd_sample " & vbCrLf _
-                     & "INNER JOIN TC_MR cc ON cc.fs_mr = bb.fs_mr " & vbCrLf _
-                     & "WHERE   aa.fd_tgl_trs BETWEEN '" & Format(DateAdd(DateInterval.Day, -30, Today), "yyyy-MM-dd") & "' AND '" & Format(Today, "yyyy-MM-dd") & "' "
-                Dim oFrmCari As New frmCari("Cari Hasil", sSql, "fs_nm_pasien", "Kode Reg.", "Pasien", "")
-                oFrmCari.ShowDialog()
-                txtKdHasil.Text = oFrmCari.Kode
-                oHelper.SendTab()
+                'Dim sSql As String
+                'sSql = "SELECT  aa.fs_kd_trs , " & vbCrLf _
+                '     & "        aa.fs_kd_reg, " & vbCrLf _
+                '     & "        cc.fs_nm_pasien " & vbCrLf _
+                '     & "FROM    TA_TRS_HASIL aa " & vbCrLf _
+                '     & "INNER JOIN TA_TRS_REG2 bb ON aa.fs_kd_sample = bb.fs_kd_sample " & vbCrLf _
+                '     & "INNER JOIN TC_MR cc ON cc.fs_mr = bb.fs_mr " & vbCrLf _
+                '     & "WHERE   aa.fd_tgl_trs BETWEEN '" & Format(DateAdd(DateInterval.Day, -30, Today), "yyyy-MM-dd") & "' AND '" & Format(Today, "yyyy-MM-dd") & "' "
+                'Dim oFrmCari As New frmCari("Cari Hasil", sSql, "fs_nm_pasien", "Kode Reg.", "Pasien", "")
+                'oFrmCari.ShowDialog()
+                'txtKdHasil.Text = oFrmCari.Kode
+                'oHelper.SendTab()
+                CariHasil()
         End Select
     End Sub
 
@@ -259,5 +260,12 @@ Public Class frmCetakHasil
                 oHasil.UpdateStatusCetak()
             End If
         End If
+    End Sub
+
+    Private Sub CariHasil()
+        Dim oFrmCari As New frmCariHasil
+        oFrmCari.ShowDialog()
+        txtKdHasil.Text = oFrmCari.Kode
+        oHelper.SendTab()
     End Sub
 End Class
