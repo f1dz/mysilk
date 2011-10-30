@@ -22,10 +22,10 @@ Partial Class frmSetupTarif
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelEx1 = New DevComponents.DotNetBar.PanelEx()
         Me.SuperTabControl1 = New DevComponents.DotNetBar.SuperTabControl()
         Me.SuperTabControlPanel2 = New DevComponents.DotNetBar.SuperTabControlPanel()
@@ -36,6 +36,9 @@ Partial Class frmSetupTarif
         Me.SuperTabItem2 = New DevComponents.DotNetBar.SuperTabItem()
         Me.SuperTabControlPanel1 = New DevComponents.DotNetBar.SuperTabControlPanel()
         Me.GridKomp = New DevComponents.DotNetBar.Controls.DataGridViewX()
+        Me.kode = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.komponen = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nilai = New DevComponents.DotNetBar.Controls.DataGridViewDoubleInputColumn()
         Me.SuperTabItem1 = New DevComponents.DotNetBar.SuperTabItem()
         Me.PanelEx2 = New DevComponents.DotNetBar.PanelEx()
         Me.txtNmTarif = New DevComponents.DotNetBar.Controls.TextBoxX()
@@ -44,9 +47,6 @@ Partial Class frmSetupTarif
         Me.LabelX1 = New DevComponents.DotNetBar.LabelX()
         Me.btnExit = New DevComponents.DotNetBar.ButtonX()
         Me.btnSave = New DevComponents.DotNetBar.ButtonX()
-        Me.kode = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.komponen = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nilai = New DevComponents.DotNetBar.Controls.DataGridViewDoubleInputColumn()
         Me.PanelEx1.SuspendLayout()
         CType(Me.SuperTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuperTabControl1.SuspendLayout()
@@ -92,8 +92,8 @@ Partial Class frmSetupTarif
         Me.SuperTabControl1.ControlBox.MenuBox.Name = ""
         Me.SuperTabControl1.ControlBox.Name = ""
         Me.SuperTabControl1.ControlBox.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.SuperTabControl1.ControlBox.MenuBox, Me.SuperTabControl1.ControlBox.CloseBox})
-        Me.SuperTabControl1.Controls.Add(Me.SuperTabControlPanel2)
         Me.SuperTabControl1.Controls.Add(Me.SuperTabControlPanel1)
+        Me.SuperTabControl1.Controls.Add(Me.SuperTabControlPanel2)
         Me.SuperTabControl1.Location = New System.Drawing.Point(3, 73)
         Me.SuperTabControl1.Name = "SuperTabControl1"
         Me.SuperTabControl1.ReorderTabsEnabled = True
@@ -109,9 +109,9 @@ Partial Class frmSetupTarif
         '
         Me.SuperTabControlPanel2.Controls.Add(Me.PanelEx3)
         Me.SuperTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SuperTabControlPanel2.Location = New System.Drawing.Point(0, 25)
+        Me.SuperTabControlPanel2.Location = New System.Drawing.Point(0, 0)
         Me.SuperTabControlPanel2.Name = "SuperTabControlPanel2"
-        Me.SuperTabControlPanel2.Size = New System.Drawing.Size(500, 193)
+        Me.SuperTabControlPanel2.Size = New System.Drawing.Size(500, 218)
         Me.SuperTabControlPanel2.TabIndex = 0
         Me.SuperTabControlPanel2.TabItem = Me.SuperTabItem2
         '
@@ -123,7 +123,7 @@ Partial Class frmSetupTarif
         Me.PanelEx3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelEx3.Location = New System.Drawing.Point(0, 0)
         Me.PanelEx3.Name = "PanelEx3"
-        Me.PanelEx3.Size = New System.Drawing.Size(500, 193)
+        Me.PanelEx3.Size = New System.Drawing.Size(500, 218)
         Me.PanelEx3.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
         Me.PanelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
@@ -139,19 +139,19 @@ Partial Class frmSetupTarif
         Me.GridUji.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.GridUji.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridUji.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.KodeUji, Me.Pengujian})
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.GridUji.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.GridUji.DefaultCellStyle = DataGridViewCellStyle4
         Me.GridUji.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridUji.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
         Me.GridUji.Location = New System.Drawing.Point(0, 0)
         Me.GridUji.Name = "GridUji"
-        Me.GridUji.Size = New System.Drawing.Size(500, 193)
+        Me.GridUji.Size = New System.Drawing.Size(500, 218)
         Me.GridUji.TabIndex = 3
         '
         'KodeUji
@@ -192,20 +192,60 @@ Partial Class frmSetupTarif
         Me.GridKomp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.GridKomp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridKomp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kode, Me.komponen, Me.nilai})
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.GridKomp.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.GridKomp.DefaultCellStyle = DataGridViewCellStyle3
         Me.GridKomp.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridKomp.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
         Me.GridKomp.Location = New System.Drawing.Point(0, 0)
         Me.GridKomp.Name = "GridKomp"
         Me.GridKomp.Size = New System.Drawing.Size(500, 193)
         Me.GridKomp.TabIndex = 2
+        '
+        'kode
+        '
+        Me.kode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.kode.DefaultCellStyle = DataGridViewCellStyle1
+        Me.kode.HeaderText = "Kode"
+        Me.kode.MaxInputLength = 10
+        Me.kode.Name = "kode"
+        Me.kode.ToolTipText = "..."
+        Me.kode.Width = 57
+        '
+        'komponen
+        '
+        Me.komponen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.komponen.HeaderText = "Komponen"
+        Me.komponen.MaxInputLength = 50
+        Me.komponen.MinimumWidth = 30
+        Me.komponen.Name = "komponen"
+        Me.komponen.ReadOnly = True
+        '
+        'nilai
+        '
+        '
+        '
+        '
+        Me.nilai.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window
+        Me.nilai.BackgroundStyle.Class = "DataGridViewNumericBorder"
+        Me.nilai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.nilai.BackgroundStyle.TextColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.nilai.DefaultCellStyle = DataGridViewCellStyle2
+        Me.nilai.DisplayFormat = "#,###.00"
+        Me.nilai.HeaderText = "Nilai"
+        Me.nilai.Increment = 1.0R
+        Me.nilai.MaxInputLength = 15
+        Me.nilai.MaxValue = 99999999.0R
+        Me.nilai.MinValue = 0.0R
+        Me.nilai.Name = "nilai"
+        Me.nilai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
         'SuperTabItem1
         '
@@ -270,12 +310,13 @@ Partial Class frmSetupTarif
         '
         Me.txtKdTarif.Border.Class = "TextBoxBorder"
         Me.txtKdTarif.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtKdTarif.ButtonCustom.Visible = True
         Me.txtKdTarif.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtKdTarif.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKdTarif.Location = New System.Drawing.Point(84, 5)
         Me.txtKdTarif.MaxLength = 10
         Me.txtKdTarif.Name = "txtKdTarif"
-        Me.txtKdTarif.Size = New System.Drawing.Size(78, 20)
+        Me.txtKdTarif.Size = New System.Drawing.Size(92, 20)
         Me.txtKdTarif.TabIndex = 0
         '
         'LabelX1
@@ -314,46 +355,6 @@ Partial Class frmSetupTarif
         Me.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.btnSave.TabIndex = 4
         Me.btnSave.Text = "&Save"
-        '
-        'kode
-        '
-        Me.kode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.kode.DefaultCellStyle = DataGridViewCellStyle2
-        Me.kode.HeaderText = "Kode"
-        Me.kode.MaxInputLength = 10
-        Me.kode.Name = "kode"
-        Me.kode.ToolTipText = "..."
-        Me.kode.Width = 57
-        '
-        'komponen
-        '
-        Me.komponen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.komponen.HeaderText = "Komponen"
-        Me.komponen.MaxInputLength = 50
-        Me.komponen.MinimumWidth = 30
-        Me.komponen.Name = "komponen"
-        Me.komponen.ReadOnly = True
-        '
-        'nilai
-        '
-        '
-        '
-        '
-        Me.nilai.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window
-        Me.nilai.BackgroundStyle.Class = "DataGridViewNumericBorder"
-        Me.nilai.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.nilai.BackgroundStyle.TextColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.nilai.DefaultCellStyle = DataGridViewCellStyle3
-        Me.nilai.DisplayFormat = "#,###.00"
-        Me.nilai.HeaderText = "Nilai"
-        Me.nilai.Increment = 1.0R
-        Me.nilai.MaxInputLength = 15
-        Me.nilai.MaxValue = 99999999.0R
-        Me.nilai.MinValue = 0.0R
-        Me.nilai.Name = "nilai"
-        Me.nilai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
         'frmSetupTarif
         '

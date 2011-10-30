@@ -570,12 +570,13 @@ Partial Class frmCetakHasil
         '
         Me.txtKdHasil.Border.Class = "TextBoxBorder"
         Me.txtKdHasil.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtKdHasil.ButtonCustom.Visible = True
         Me.txtKdHasil.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtKdHasil.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKdHasil.Location = New System.Drawing.Point(84, 5)
         Me.txtKdHasil.MaxLength = 10
         Me.txtKdHasil.Name = "txtKdHasil"
-        Me.txtKdHasil.Size = New System.Drawing.Size(78, 20)
+        Me.txtKdHasil.Size = New System.Drawing.Size(94, 20)
         Me.txtKdHasil.TabIndex = 0
         Me.txtKdHasil.WatermarkText = "BARU"
         '

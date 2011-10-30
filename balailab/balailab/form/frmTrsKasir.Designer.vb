@@ -23,10 +23,10 @@ Partial Class frmTrsKasir
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupPanel1 = New DevComponents.DotNetBar.Controls.GroupPanel()
         Me.PanelEx2 = New DevComponents.DotNetBar.PanelEx()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
@@ -165,21 +165,21 @@ Partial Class frmTrsKasir
         Me.grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.KodeTarif, Me.NmTarif, Me.Qty, Me.Tarif})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.grid.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.grid.DefaultCellStyle = DataGridViewCellStyle2
         Me.grid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grid.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
         Me.grid.Location = New System.Drawing.Point(0, 0)
         Me.grid.Name = "grid"
         Me.grid.ReadOnly = True
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grid.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grid.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.grid.Size = New System.Drawing.Size(537, 225)
         Me.grid.TabIndex = 1
         '
@@ -208,9 +208,9 @@ Partial Class frmTrsKasir
         Me.Qty.BackgroundStyle.Class = "DataGridViewNumericBorder"
         Me.Qty.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.Qty.BackgroundStyle.TextColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle1.Format = "#,###.00"
-        Me.Qty.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "#,###.00"
+        Me.Qty.DefaultCellStyle = DataGridViewCellStyle5
         Me.Qty.HeaderText = "Qty"
         Me.Qty.MaxInputLength = 5
         Me.Qty.MaxValue = 500
@@ -232,9 +232,9 @@ Partial Class frmTrsKasir
         Me.Tarif.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.Tarif.BackgroundStyle.TextColor = System.Drawing.SystemColors.ControlText
         Me.Tarif.ButtonDropDown.Enabled = False
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle2.Format = "#,###.00"
-        Me.Tarif.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle1.Format = "#,###.00"
+        Me.Tarif.DefaultCellStyle = DataGridViewCellStyle1
         Me.Tarif.HeaderText = "Tarif"
         Me.Tarif.Increment = 1.0R
         Me.Tarif.MinValue = 0.0R
@@ -408,7 +408,7 @@ Partial Class frmTrsKasir
         Me.txtKdBayarNew.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.txtKdBayarNew.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtKdBayarNew.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtKdBayarNew.Location = New System.Drawing.Point(177, 17)
+        Me.txtKdBayarNew.Location = New System.Drawing.Point(190, 17)
         Me.txtKdBayarNew.MaxLength = 10
         Me.txtKdBayarNew.Name = "txtKdBayarNew"
         Me.txtKdBayarNew.ReadOnly = True
@@ -422,12 +422,13 @@ Partial Class frmTrsKasir
         '
         Me.txtKdBayar.Border.Class = "TextBoxBorder"
         Me.txtKdBayar.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtKdBayar.ButtonCustom.Visible = True
         Me.txtKdBayar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtKdBayar.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKdBayar.Location = New System.Drawing.Point(93, 17)
         Me.txtKdBayar.MaxLength = 10
         Me.txtKdBayar.Name = "txtKdBayar"
-        Me.txtKdBayar.Size = New System.Drawing.Size(78, 20)
+        Me.txtKdBayar.Size = New System.Drawing.Size(94, 20)
         Me.txtKdBayar.TabIndex = 1
         '
         'LabelX5
@@ -632,12 +633,13 @@ Partial Class frmTrsKasir
         '
         Me.txtKdReg.Border.Class = "TextBoxBorder"
         Me.txtKdReg.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtKdReg.ButtonCustom.Visible = True
         Me.txtKdReg.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtKdReg.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKdReg.Location = New System.Drawing.Point(93, 43)
         Me.txtKdReg.MaxLength = 10
         Me.txtKdReg.Name = "txtKdReg"
-        Me.txtKdReg.Size = New System.Drawing.Size(78, 20)
+        Me.txtKdReg.Size = New System.Drawing.Size(94, 20)
         Me.txtKdReg.TabIndex = 1
         '
         'LabelX1
