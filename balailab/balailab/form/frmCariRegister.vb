@@ -28,6 +28,14 @@
         txtTgl2.Text = Format(Today, "yyyy/MM/dd")
     End Sub
 
+    Private Sub txtQuery_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtQuery.KeyDown
+        Select Case e.KeyCode
+            Case Keys.Up, Keys.Down
+                grid.Focus()
+        End Select
+
+    End Sub
+
     Private Sub txtQuery_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtQuery.TextChanged, txtTgl1.TextChanged, txtTgl2.TextChanged
         Dim state As String
 
@@ -66,5 +74,17 @@
                      & "AND fd_tgl_reg >= '" & txtTgl1.Text & "' " _
                      & "AND fd_tgl_reg <= '" & txtTgl2.Text & "' " _
                      & state
+    End Sub
+
+    Private Sub grid_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles grid.KeyDown
+        Select Case e.KeyCode
+            Case Keys.Enter
+                Dim i As Integer = grid.CurrentRow.Index
+                KodeReg = grid.Item(0, i).Value
+                Me.Close()
+            Case Keys.Escape
+                KodeReg = ""
+                Me.Close()
+        End Select
     End Sub
 End Class

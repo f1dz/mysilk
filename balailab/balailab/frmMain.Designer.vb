@@ -218,7 +218,7 @@ Partial Class frmMain
         Me.mnuEntryHasil.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
         Me.mnuEntryHasil.Name = "mnuEntryHasil"
         Me.mnuEntryHasil.SubItemsExpandWidth = 14
-        Me.mnuEntryHasil.Text = "Entry Hasil"
+        Me.mnuEntryHasil.Text = "Hasil Uji"
         '
         'mnuCetakHasil
         '
@@ -277,7 +277,7 @@ Partial Class frmMain
         Me.mnuTrsRegistrasi.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
         Me.mnuTrsRegistrasi.Name = "mnuTrsRegistrasi"
         Me.mnuTrsRegistrasi.SubItemsExpandWidth = 14
-        Me.mnuTrsRegistrasi.Text = "Registrasi"
+        Me.mnuTrsRegistrasi.Text = "Sampling"
         '
         'mnuTrsUji
         '
@@ -288,7 +288,7 @@ Partial Class frmMain
         Me.mnuTrsUji.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
         Me.mnuTrsUji.Name = "mnuTrsUji"
         Me.mnuTrsUji.SubItemsExpandWidth = 14
-        Me.mnuTrsUji.Text = "Pengujian"
+        Me.mnuTrsUji.Text = "Billing"
         '
         'mnuTrsKasir
         '

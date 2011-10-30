@@ -105,8 +105,8 @@ Public Class frmTrsRegistrasi
             Case Keys.F11
                 Select Case col
                     Case 1
-                        Dim mrKode As String
-                        mrKode = dgvSample.CurrentCell.Value
+                        Dim mrKode As String = ""
+                        'mrKode = dgvSample.CurrentCell.Value
                         Dim oFrmMR As New frmMR(mrKode)
                         Dim oMR As New clsMR
                         Dim oSample As New clsTrsSample
@@ -385,14 +385,16 @@ Public Class frmTrsRegistrasi
             End If
 
         ElseIf e.ColumnIndex = 1 Then
-            Dim mrKode As String
-            mrKode = dgvSample.CurrentCell.Value
-            Dim oFrmMR As New frmMR(mrKode)
+            Dim sSQL As String
             Dim oMR As New clsMR
             Dim oSample As New clsTrsSample
-            oFrmMR.ShowDialog()
-            dgvSample.CurrentCell.Value = oFrmMR.xKode
-            oMR.vKode = oFrmMR.xKode
+            sSQL = "SELECT fs_mr,fs_nm_pasien,fs_alm_pasien + ' ' + fs_alm_pasien2,fs_kota FROM TC_MR"
+            Dim oFrmCari As New frmCari("Cari MR", sSQL, "fs_nm_pasien", "Nama Pasien", "Alamat", "Kota")
+            oFrmCari.grid.RowTemplate.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+            oFrmCari.grid.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.TopLeft
+            oFrmCari.ShowDialog()
+            dgvSample.CurrentCell.Value = oFrmCari.Kode
+            oMR.vKode = oFrmCari.Kode
             oSample.vKode = dgvSample.Item(0, dgvSample.CurrentRow.Index).Value
             dgvSample.Item(2, dgvSample.CurrentRow.Index).Value = _
                 oMR.xNama & " | " & oSample.xKetDetil

@@ -105,7 +105,8 @@ Public Class frmEntryHasil
                              & "FROM    TA_TRS_HASIL aa " & vbCrLf _
                              & "INNER JOIN TA_TRS_REG2 bb ON aa.fs_kd_sample = bb.fs_kd_sample " & vbCrLf _
                              & "INNER JOIN TC_MR cc ON cc.fs_mr = bb.fs_mr " & vbCrLf _
-                             & "WHERE   aa.fd_tgl_trs BETWEEN '" & Format(DateAdd(DateInterval.Day, -30, Today), "yyyy-MM-dd") & "' AND '" & Format(Today, "yyyy-MM-dd") & "' "
+                             & "WHERE   aa.fd_tgl_trs BETWEEN '" & Format(DateAdd(DateInterval.Day, -30, Today), "yyyy-MM-dd") & "' AND '" & Format(Today, "yyyy-MM-dd") & "' " & vbCrLf _
+                             & "        AND fb_cetak = 0 "
                         Dim oFrmCari As New frmCari("Cari Hasil", sSql, "fs_nm_pasien", "Kode Reg.", "Pasien", "")
                         oFrmCari.ShowDialog()
                         txtKdHasil.Text = oFrmCari.Kode
@@ -277,7 +278,7 @@ Public Class frmEntryHasil
     Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
         ' Jika ada haisl yg belum terisi
         For i As Integer = 0 To grid.RowCount - 1
-            If IsDBNull(grid.Item("Hasil", i).Value) Then
+            If IsDBNull(grid.Item("Hasil", i).Value) Or Trim(grid.Item("Hasil", i).Value.ToString) = "" Then
                 If MsgBox("Ada hasil yang belum terisi, lanjut simpan?", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = MsgBoxResult.No Then
                     Exit Sub
                 Else
