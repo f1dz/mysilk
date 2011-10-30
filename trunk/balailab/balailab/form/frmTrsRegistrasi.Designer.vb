@@ -28,6 +28,7 @@ Partial Class frmTrsRegistrasi
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupPanel1 = New DevComponents.DotNetBar.Controls.GroupPanel()
+        Me.LabelX6 = New DevComponents.DotNetBar.LabelX()
         Me.btnVoid = New DevComponents.DotNetBar.ButtonX()
         Me.btnSave = New DevComponents.DotNetBar.ButtonX()
         Me.btnExit = New DevComponents.DotNetBar.ButtonX()
@@ -52,7 +53,6 @@ Partial Class frmTrsRegistrasi
         Me.txtKdRujuk = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txtKdReg = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.xTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.LabelX6 = New DevComponents.DotNetBar.LabelX()
         Me.GroupPanel1.SuspendLayout()
         Me.PanelEx2.SuspendLayout()
         CType(Me.dgvSample, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -105,6 +105,20 @@ Partial Class frmTrsRegistrasi
         Me.GroupPanel1.StyleMouseOver.Class = ""
         Me.GroupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.GroupPanel1.TabIndex = 0
+        '
+        'LabelX6
+        '
+        Me.LabelX6.BackColor = System.Drawing.Color.Transparent
+        '
+        '
+        '
+        Me.LabelX6.BackgroundStyle.Class = ""
+        Me.LabelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX6.Location = New System.Drawing.Point(9, 455)
+        Me.LabelX6.Name = "LabelX6"
+        Me.LabelX6.Size = New System.Drawing.Size(163, 23)
+        Me.LabelX6.TabIndex = 5
+        Me.LabelX6.Text = "F12 : Cari MR, F11 : MR Baru"
         '
         'btnVoid
         '
@@ -262,7 +276,7 @@ Partial Class frmTrsRegistrasi
         Me.txtKdRegNew.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtKdRegNew.Enabled = False
         Me.txtKdRegNew.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtKdRegNew.Location = New System.Drawing.Point(202, 19)
+        Me.txtKdRegNew.Location = New System.Drawing.Point(219, 19)
         Me.txtKdRegNew.MaxLength = 10
         Me.txtKdRegNew.Name = "txtKdRegNew"
         Me.txtKdRegNew.ReadOnly = True
@@ -482,12 +496,13 @@ Partial Class frmTrsRegistrasi
         '
         Me.txtKdRujuk.Border.Class = "TextBoxBorder"
         Me.txtKdRujuk.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtKdRujuk.ButtonCustom.Visible = True
         Me.txtKdRujuk.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtKdRujuk.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKdRujuk.Location = New System.Drawing.Point(119, 45)
         Me.txtKdRujuk.MaxLength = 10
         Me.txtKdRujuk.Name = "txtKdRujuk"
-        Me.txtKdRujuk.Size = New System.Drawing.Size(78, 20)
+        Me.txtKdRujuk.Size = New System.Drawing.Size(94, 20)
         Me.txtKdRujuk.TabIndex = 1
         Me.txtKdRujuk.WatermarkText = "PERUJUK"
         '
@@ -498,12 +513,13 @@ Partial Class frmTrsRegistrasi
         '
         Me.txtKdReg.Border.Class = "TextBoxBorder"
         Me.txtKdReg.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtKdReg.ButtonCustom.Visible = True
         Me.txtKdReg.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtKdReg.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKdReg.Location = New System.Drawing.Point(119, 19)
         Me.txtKdReg.MaxLength = 10
         Me.txtKdReg.Name = "txtKdReg"
-        Me.txtKdReg.Size = New System.Drawing.Size(78, 20)
+        Me.txtKdReg.Size = New System.Drawing.Size(94, 20)
         Me.txtKdReg.TabIndex = 0
         Me.txtKdReg.WatermarkText = "BARU"
         '
@@ -511,20 +527,6 @@ Partial Class frmTrsRegistrasi
         '
         Me.xTimer.Enabled = True
         Me.xTimer.Interval = 1000
-        '
-        'LabelX6
-        '
-        Me.LabelX6.BackColor = System.Drawing.Color.Transparent
-        '
-        '
-        '
-        Me.LabelX6.BackgroundStyle.Class = ""
-        Me.LabelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.LabelX6.Location = New System.Drawing.Point(9, 455)
-        Me.LabelX6.Name = "LabelX6"
-        Me.LabelX6.Size = New System.Drawing.Size(163, 23)
-        Me.LabelX6.TabIndex = 5
-        Me.LabelX6.Text = "F12 : Cari MR, F11 : MR Baru"
         '
         'frmTrsRegistrasi
         '

@@ -2,6 +2,7 @@
     Dim oHelper As New clsHelper
     Dim oUser As New clsUser
     Dim oFrmMain As New frmMain
+    'Dim i As Integer = 1
 
     Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
         Application.Exit()
@@ -13,26 +14,13 @@
         oUser.User = User
         oUser.Password = Pass
 
-        'For i As Integer = 1 To 3
-        '    If oUser.isAktif Then
-        '        My.Settings.KdPetugas = User
-        '        Exit For
-        '        Me.Close()
-        '    Else
-        '        MsgBox("Login gagal, periksa Username & Password", MsgBoxStyle.Information)
-        '        If i = 3 Then
-        '            MsgBox("Gagal login 3 kali, Application shutdown", MsgBoxStyle.Critical)
-        '            Application.Exit()
-        '        End If
-        '    End If
-        'Next
-
         If oUser.isAktif Then
             My.Settings.KdPetugas = User
             Me.Close()
+            My.Settings.SuksesLogin = True
         Else
             MsgBox("Login gagal, periksa Username & Password", MsgBoxStyle.Information)
-            Application.Exit()
+            My.Settings.SuksesLogin = False
         End If
 
 

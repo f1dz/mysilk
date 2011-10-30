@@ -74,7 +74,20 @@ Public Class frmMain
     Private Sub frmMain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim oConn As New clsConn
         Dim oFrmLogin As New frmLogin
-        oFrmLogin.ShowDialog()
+        My.Settings.SuksesLogin = False
+
+        For i As Integer = 1 To 3
+            If My.Settings.SuksesLogin = False Then
+                oFrmLogin.ShowDialog()
+                oFrmLogin.txtUser.Focus()
+            End If
+
+            If My.Settings.SuksesLogin = False And i = 3 Then
+                MsgBox("3 kali gagal login, Aplikasi shutdown", MsgBoxStyle.Critical)
+                Application.Exit()
+            End If
+        Next
+
         xUser.Text = "Petugas : " & (My.Settings.KdPetugas).ToLower & "@" & (My.Computer.Name).ToLower
         xServer.Text = oConn.DB_NAME & "@" & oConn.DB_SERVER
         xVersion.Text = "Ver : " & My.Application.Info.Version.ToString
