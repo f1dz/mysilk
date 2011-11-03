@@ -296,6 +296,8 @@ Public Class frmTrsRegistrasi
         Dim oReg As New clsTrsRegistrasi
         Dim oSample As New clsTrsSample
         Dim oRjk As New clsPerujuk
+        Dim oMR As New clsMR
+        Dim xPasien As String = ""
         'oXcl.Visible = True
         'oXcl.UserControl = True
         'Dim oBooks As Object = oXcl.Workbooks
@@ -327,18 +329,27 @@ Public Class frmTrsRegistrasi
                 With oXcl
                     .Cells(10 + i, 1).value = i + 1
                     .Cells(10 + i, 2).value = oSample.xKode
-                    .Cells(10 + i, 3).value = oSample.xNmBentuk
-                    .Cells(10 + i, 4).value = oSample.xQty & " " & oSample.xSatQty
-                    .Cells(10 + i, 5).value = oSample.xNmWadah
-                    .Cells(10 + i, 6).value = oSample.xNmBahanWadah
-                    .Cells(10 + i, 7).value = oSample.xNmTutup
-                    .Cells(10 + i, 8).value = oSample.xSuhu & " " & oSample.xSatSuhu
+                    oMR.vKode = oSample.xKdMR
+                    .Cells(10 + i, 3).value = oMR.xNama
+                    .Cells(10 + i, 4).value = oSample.xNmBentuk
+                    .Cells(10 + i, 5).value = oSample.xQty & " " & oSample.xSatQty
+                    .Cells(10 + i, 6).value = oSample.xNmWadah
+                    .Cells(10 + i, 7).value = oSample.xNmBahanWadah
+                    .Cells(10 + i, 8).value = oSample.xNmTutup
+                    '.Cells(10 + i, 9).value = oSample.xSuhu & " " & oSample.xSatSuhu
                     .Cells(10 + i, 9).value = oSample.xNmJenisSample
+                    xPasien = oMR.xNama
                 End With
             Next
         End With
         oXcl.Cells.Replace("#Petugas#", oUser.NmUser)
-        oXcl.Cells.Replace("#Pelanggan#", oRjk.NamaPerujuk)
+
+        If oReg.KdRujukan = "UMUM" Then
+            oXcl.Cells.Replace("#Pelanggan#", xPasien)
+        Else
+            oXcl.Cells.Replace("#Pelanggan#", oRjk.NamaPerujuk)
+        End If
+
         oXcl.ActiveWorkbook.PrintOutEx()
         oXcl.ActiveWorkbook.Close(False)
         oXcl = Nothing

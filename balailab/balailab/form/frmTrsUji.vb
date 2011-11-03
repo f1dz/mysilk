@@ -198,6 +198,8 @@ Public Class frmTrsUji
         Dim oXcl As New Excel.Application
         Dim oSample As New clsTrsSample
         Dim xRow As Integer
+        Dim oReg As New clsTrsRegistrasi
+        Dim xPasien As String = ""
         Dim oBooks As Object = oXcl.Workbooks
         Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
         System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
@@ -208,19 +210,46 @@ Public Class frmTrsUji
         oTrs.KdReg = txtKdReg.Text
         oSample.xKdReg = txtKdReg.Text
 
+        Dim oMR As New clsMR
+        oReg.Kode = txtKdReg.Text
+        With oReg.SampleDS.Tables(0)
+            For i As Integer = 0 To .Rows.Count - 1
+                oMR.vKode = .Rows(i)("fs_mr")
+                xPasien = oMR.xNama
+            Next
+        End With
+
         oXcl.Workbooks.Add(My.Settings.AppPath & "\templates\BBLK_FPP-.xlt")
         With oXcl.Cells
             .Replace("#NoLab#", txtKdReg.Text)
             .Replace("#Waktu#", txtTglUji.Text)
-            .Replace("#NamaReg#", oReg.NmRujukan)
-            .Replace("#AlmReg1#", oRjk.Alm1)
-            .Replace("#AlmReg2#", oRjk.Alm2)
-            .Replace("#KotaReg#", oRjk.Kota)
-            .Replace("#TeleponReg#", oRjk.Telpon)
+            '.Replace("#NamaReg#", oReg.NmRujukan)
+            '.Replace("#AlmReg1#", oRjk.Alm1)
+            '.Replace("#AlmReg2#", oRjk.Alm2)
+            '.Replace("#KotaReg#", oRjk.Kota)
+            '.Replace("#TeleponReg#", oRjk.Telpon)
             .Replace("#Angka#", "Rp. " & txtTotal.Text)
             .Replace("#TglEst#", txtTglEstimasi.Text)
             .Replace("#Petugas#", oReg.NmPetugas)
-            .Replace("#Pelanggan#", oReg.NmRujukan)
+            '.Replace("#Pelanggan#", oReg.NmRujukan)
+
+
+            If oReg.KdRujukan = "UMUM" Then
+                .Replace("#NamaReg#", oMR.xNama)
+                .Replace("#AlmReg1#", oMR.xAlm1)
+                .Replace("#AlmReg2#", oMR.xAlm2)
+                .Replace("#KotaReg#", oMR.xKota)
+                .Replace("#TeleponReg#", oMR.xTelp)
+                oXcl.Cells.Replace("#Pelanggan#", xPasien)
+            Else
+                .Replace("#NamaReg#", oReg.NmRujukan)
+                .Replace("#AlmReg1#", oRjk.Alm1)
+                .Replace("#AlmReg2#", oRjk.Alm2)
+                .Replace("#KotaReg#", oRjk.Kota)
+                .Replace("#TeleponReg#", oRjk.Telpon)
+                .Replace("#Pelanggan#", oRjk.NamaPerujuk)
+            End If
+
             With oTrs.TarifDS.Tables(0)
                 For i As Integer = 0 To .Rows.Count - 1
                     oXcl.Cells(16 + i, 4).value = i + 1 & ". " & .Rows(i)("fs_nm_tarif")
@@ -257,6 +286,7 @@ Public Class frmTrsUji
                 End If
             End With
         End With
+
         oXcl.ActiveWorkbook.PrintOutEx()
         oXcl.ActiveWorkbook.Close(False)
         oXcl.Workbooks.Close()

@@ -209,14 +209,30 @@ Lanjut:
     Private Sub CetakKW()
         Dim oXcl As New Excel.Application
         Dim oBooks As Object = oXcl.Workbooks
+        Dim xNama As String = ""
+        Dim oMR As New clsMR
+        Dim oReg As New clsTrsRegistrasi
         Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
         System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
         oXcl.Workbooks.Add(My.Settings.AppPath & "\templates\BBLK_KW-.xlt")
 
         oTrs.vKodeBayar = txtKdBayarNew.Text
+
+        If oTrs.KdRujukan = "UMUM" Then
+            oReg.Kode = oTrs.KdReg
+            With oReg.SampleDS.Tables(0)
+                For i As Integer = 0 To .Rows.Count - 1
+                    oMR.vKode = .Rows(i)("fs_mr")
+                    xNama = oMR.xNama
+                Next
+            End With
+        Else
+            xNama = oTrs.NmRujukan
+        End If
+
         With oXcl.Cells
             .Replace("#NoLab#", oTrs.KdReg)
-            .Replace("#NamaReg#", oTrs.NmRujukan)
+            .Replace("#NamaReg#", xNama)
             .Replace("#Huruf#", LTrim(oHelper.AngkaToHuruf(oTrs.JmlBayar)) & " Rupiah")
             .Replace("#Angka#", oTrs.JmlBayar)
             .Replace("#Waktu#", oParam.tglDMY(oTrs.TglTrs))
