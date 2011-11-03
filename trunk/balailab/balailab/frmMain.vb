@@ -16,7 +16,8 @@ Public Class frmMain
         mnuJenisUji.Click, _
         mnuSetupUser.Click, _
         mnuGrupSample.Click, _
-        mnuJenisSample.Click
+        mnuJenisSample.Click, _
+        mnuLapKasir.Click
 
         Select Case sender.Name
             ' FO
@@ -37,6 +38,11 @@ Public Class frmMain
             Case "mnuCetakHasil"
                 frmCetakHasil.MdiParent = Me
                 frmCetakHasil.Show()
+
+                ' Laporan
+            Case "mnuLapKasir"
+                frmLaporanKasir.MdiParent = Me
+                frmLaporanKasir.Show()
 
                 ' Setup Master
             Case "mnuNamaTarif"
@@ -108,6 +114,10 @@ Public Class frmMain
         Next
 
         For Each ctrl As DevComponents.DotNetBar.ButtonItem In Me.RibbonBarBO.Items
+            ctrl.Enabled = oUser.Akses(ctrl.Name)
+        Next
+
+        For Each ctrl As DevComponents.DotNetBar.ButtonItem In Me.RibbonBarLaporan.Items
             ctrl.Enabled = oUser.Akses(ctrl.Name)
         Next
 

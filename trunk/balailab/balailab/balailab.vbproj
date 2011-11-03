@@ -71,7 +71,9 @@
     <ApplicationIcon>lab.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="C1.C1Report.2, Version=2.6.20112.54408, Culture=neutral, PublicKeyToken=594a0605db190bb9, processorArchitecture=MSIL" />
     <Reference Include="C1.Win.C1FlexGrid.2, Version=2.6.20112.624, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Report.2, Version=2.6.20112.54408, Culture=neutral, PublicKeyToken=41780e2fc605e636, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar2">
       <HintPath>C:\Program Files\DotNetBar\Bin\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
@@ -181,6 +183,12 @@
       <DependentUpon>frmEntryHasil.vb</DependentUpon>
     </Compile>
     <Compile Include="form\frmEntryHasil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frmLaporanKasir.Designer.vb">
+      <DependentUpon>frmLaporanKasir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmLaporanKasir.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\frmSetupGrupSample.Designer.vb">
@@ -334,6 +342,9 @@
     <EmbeddedResource Include="form\frmEntryHasil.resx">
       <DependentUpon>frmEntryHasil.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\frmLaporanKasir.resx">
+      <DependentUpon>frmLaporanKasir.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\frmSetupGrupSample.resx">
       <DependentUpon>frmSetupGrupSample.vb</DependentUpon>
     </EmbeddedResource>
@@ -411,6 +422,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Reporting\rptKasir.mht" />
+    <None Include="Reporting\rptTest.rpt" />
     <None Include="Resources\1282710390_Money_Bag-50x50.png" />
   </ItemGroup>
   <ItemGroup>
@@ -451,6 +464,10 @@
     <None Include="Resources\cetak_hasil-50x50.png" />
     <None Include="Resources\microscope-icon-50x50.png" />
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
