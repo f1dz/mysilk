@@ -1,6 +1,6 @@
 ﻿Imports DevComponents.DotNetBar
 Public Class frmMain
-    Inherits DevComponents.DotNetBar.Office2007Form
+    Inherits DevComponents.DotNetBar.Office2007RibbonForm
     Dim oUser As New clsUser
 
     Private Sub DotNetBarManager_ItemClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles _
@@ -101,6 +101,7 @@ Public Class frmMain
         My.Settings.AppPath = Application.StartupPath
         'Me.BackgroundImage. = My.Settings.AppPath & "background.jpg"
         UserAkses()
+
     End Sub
 
     Private Sub xTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xTimer.Tick
@@ -132,4 +133,37 @@ Public Class frmMain
         Next
     End Sub
 
+    ' Windows
+    Private Sub AddButtonsToMyChildren()
+        ' If there are child forms in the parent form, add Button controls to them.
+        Dim x As Integer
+        For x = 0 To (Me.MdiChildren.Length) - 1
+            ' Create a temporary Button control to add to the child form.
+            Dim tempButton As New Button()
+            ' Set the location and text of the Button control.
+            tempButton.Location = New Point(10, 10)
+            tempButton.Text = "OK"
+            ' Create a temporary instance of a child form (Form 2 in this case).
+            Dim tempChild As Form = CType(Me.MdiChildren(x), Form)
+            ' Add the Button control to the control collection of the form.
+            tempChild.Controls.Add(tempButton)
+        Next x
+    End Sub 'AddButtonsToMyChildren
+
+
+    Private Sub btnWindows_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnWindows.Click
+        'MsgBox(Me.MdiChildren.Length)
+        'MsgBox(Me.ActiveMdiChild.Name & " " & Me.MdiChildren(0).Text)
+        If Me.MdiChildren.Length > 0 Then
+
+            'For i As Integer = 0 To Me.MdiChildren.Length - 1
+            '    Dim btn As New ButtonItem
+            '    btn.Name = Me.MdiChildren(i).Name
+            '    btn.Text = Me.MdiChildren(i).Text
+            '    btnWindows.SubItems.Add(btn)
+            'Next
+            'Dim win As New MdiWindowListItem
+            'MsgBox()
+        End If
+    End Sub
 End Class
