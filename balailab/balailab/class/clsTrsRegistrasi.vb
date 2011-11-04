@@ -296,12 +296,28 @@ Public Class clsTrsRegistrasi
     Public Function Cari() As DataTable
         Dim table As New DataTable
         sSql = "SELECT  fs_kd_reg , " & vbCrLf _
-             & "        fd_tgl_reg, " & vbCrLf _
-             & "        fs_nm_rujukan, " & vbCrLf _
-             & "        fs_kota, " & vbCrLf _
+             & "        fd_tgl_reg , " & vbCrLf _
+             & "        CASE aa.fs_kd_rujukan " & vbCrLf _
+             & "          WHEN 'UMUM' THEN ( SELECT TOP 1 " & vbCrLf _
+             & "                                    yy.fs_nm_pasien " & vbCrLf _
+             & "                             FROM   TA_TRS_REG2 xx " & vbCrLf _
+             & "                                    INNER JOIN TC_MR yy ON xx.fs_mr = yy.fs_mr " & vbCrLf _
+             & "                             WHERE xx.fs_kd_reg = aa.fs_kd_reg " & vbCrLf _
+             & "                           ) " & vbCrLf _
+             & "          ELSE fs_nm_rujukan " & vbCrLf _
+             & "        END AS fs_nm_rujukan , " & vbCrLf _
+             & "        CASE aa.fs_kd_rujukan " & vbCrLf _
+             & "          WHEN 'UMUM' THEN ( SELECT TOP 1 " & vbCrLf _
+             & "                                    yy.fs_kota " & vbCrLf _
+             & "                             FROM   TA_TRS_REG2 xx " & vbCrLf _
+             & "                                    INNER JOIN TC_MR yy ON xx.fs_mr = yy.fs_mr " & vbCrLf _
+             & "                             WHERE xx.fs_kd_reg = aa.fs_kd_reg " & vbCrLf _
+             & "                           ) " & vbCrLf _
+             & "          ELSE fs_nm_rujukan " & vbCrLf _
+             & "        END AS fs_kota , " & vbCrLf _
              & "        fb_bayar " & vbCrLf _
              & "FROM    TA_TRS_REG aa " & vbCrLf _
-             & "INNER JOIN TA_RUJUKAN bb ON aa.fs_kd_rujukan = bb.fs_kd_rujukan " & vbCrLf _
+             & "        INNER JOIN TA_RUJUKAN bb ON aa.fs_kd_rujukan = bb.fs_kd_rujukan " & vbCrLf _
              & "WHERE   fd_tgl_void = '3000-01-01' " & vbCrLf _
              & "ORDER BY fs_nm_rujukan "
         Try
@@ -312,6 +328,24 @@ Public Class clsTrsRegistrasi
         End Try
         Return table
     End Function
+
+    Public WriteOnly Property vKodeRegGetMR As String
+        Set(ByVal value As String)
+            sSql = "SELECT TOP 1 fs_mr FROM TA_TRS_REG2 " & vbCrLf _
+                 & "WHERE fs_kd_reg = '" & value & "' "
+            Try
+                conn.open()
+                oCmd = New OleDbCommand(sSql, conn.oConn)
+                oDR = oCmd.ExecuteReader
+                oDR.Read()
+                NoMR = oDR("fs_mr")
+                conn.close()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+        End Set
+    End Property
 
     Public Function JumlahSample() As Integer
         Return Me.SampleDS.Tables(0).Rows.Count

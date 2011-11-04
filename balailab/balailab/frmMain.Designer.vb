@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class frmMain
-    Inherits DevComponents.DotNetBar.Office2007Form
+    Inherits DevComponents.DotNetBar.Office2007RibbonForm
     Public Sub New()
         MyBase.New()
 
@@ -65,6 +65,7 @@ Partial Class frmMain
         Me.RibbonTabItem1 = New DevComponents.DotNetBar.RibbonTabItem()
         Me.RibbonTabItem2 = New DevComponents.DotNetBar.RibbonTabItem()
         Me.rbnCP = New DevComponents.DotNetBar.RibbonTabItem()
+        Me.btnWindows = New DevComponents.DotNetBar.ButtonItem()
         Me.Office2007StartButton1 = New DevComponents.DotNetBar.Office2007StartButton()
         Me.ItemContainer1 = New DevComponents.DotNetBar.ItemContainer()
         Me.ItemContainer2 = New DevComponents.DotNetBar.ItemContainer()
@@ -84,7 +85,6 @@ Partial Class frmMain
         Me.ItemContainer4 = New DevComponents.DotNetBar.ItemContainer()
         Me.ButtonItem12 = New DevComponents.DotNetBar.ButtonItem()
         Me.ButtonItem13 = New DevComponents.DotNetBar.ButtonItem()
-        Me.ButtonItem1 = New DevComponents.DotNetBar.ButtonItem()
         Me.QatCustomizeItem1 = New DevComponents.DotNetBar.QatCustomizeItem()
         Me.DotNetBarManager = New DevComponents.DotNetBar.DotNetBarManager(Me.components)
         Me.DockSite4 = New DevComponents.DotNetBar.DockSite()
@@ -119,17 +119,19 @@ Partial Class frmMain
         '
         Me.RbnMain.BackgroundStyle.Class = ""
         Me.RbnMain.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RbnMain.CaptionVisible = True
         Me.RbnMain.Controls.Add(Me.RbnPanelTrs)
         Me.RbnMain.Controls.Add(Me.RibbonPanel2)
         Me.RbnMain.Controls.Add(Me.RibbonPanel3)
         Me.RbnMain.Dock = System.Windows.Forms.DockStyle.Top
-        Me.RbnMain.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.RibbonTabItem1, Me.RibbonTabItem2, Me.rbnCP})
+        Me.RbnMain.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.RibbonTabItem1, Me.RibbonTabItem2, Me.rbnCP, Me.btnWindows})
         Me.RbnMain.KeyTipsFont = New System.Drawing.Font("Tahoma", 7.0!)
-        Me.RbnMain.Location = New System.Drawing.Point(0, 0)
+        Me.RbnMain.Location = New System.Drawing.Point(5, 1)
+        Me.RbnMain.MdiSystemItemVisible = False
         Me.RbnMain.Name = "RbnMain"
         Me.RbnMain.Padding = New System.Windows.Forms.Padding(0, 0, 0, 2)
-        Me.RbnMain.QuickToolbarItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.Office2007StartButton1, Me.ButtonItem1, Me.QatCustomizeItem1})
-        Me.RbnMain.Size = New System.Drawing.Size(1008, 141)
+        Me.RbnMain.QuickToolbarItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.Office2007StartButton1, Me.QatCustomizeItem1})
+        Me.RbnMain.Size = New System.Drawing.Size(998, 172)
         Me.RbnMain.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.RbnMain.SystemText.MaximizeRibbonText = "&Maximize the Ribbon"
         Me.RbnMain.SystemText.MinimizeRibbonText = "Mi&nimize the Ribbon"
@@ -147,6 +149,7 @@ Partial Class frmMain
         Me.RbnMain.SystemText.QatPlaceBelowRibbonText = "&Place Quick Access Toolbar below the Ribbon"
         Me.RbnMain.SystemText.QatRemoveItemText = "&Remove from Quick Access Toolbar"
         Me.RbnMain.TabGroupHeight = 14
+        Me.RbnMain.TabGroupsVisible = True
         Me.RbnMain.TabIndex = 9
         Me.RbnMain.Text = "RibbonControl1"
         '
@@ -157,10 +160,10 @@ Partial Class frmMain
         Me.RbnPanelTrs.Controls.Add(Me.RibbonBarBO)
         Me.RbnPanelTrs.Controls.Add(Me.RibbonBarFO)
         Me.RbnPanelTrs.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RbnPanelTrs.Location = New System.Drawing.Point(0, 26)
+        Me.RbnPanelTrs.Location = New System.Drawing.Point(0, 57)
         Me.RbnPanelTrs.Name = "RbnPanelTrs"
         Me.RbnPanelTrs.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
-        Me.RbnPanelTrs.Size = New System.Drawing.Size(1008, 113)
+        Me.RbnPanelTrs.Size = New System.Drawing.Size(998, 113)
         '
         '
         '
@@ -355,10 +358,10 @@ Partial Class frmMain
         Me.RibbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.RibbonPanel2.Controls.Add(Me.RbnSetupMaster)
         Me.RibbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanel2.Location = New System.Drawing.Point(0, 26)
+        Me.RibbonPanel2.Location = New System.Drawing.Point(0, 57)
         Me.RibbonPanel2.Name = "RibbonPanel2"
         Me.RibbonPanel2.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
-        Me.RibbonPanel2.Size = New System.Drawing.Size(1008, 113)
+        Me.RibbonPanel2.Size = New System.Drawing.Size(998, 113)
         '
         '
         '
@@ -490,10 +493,10 @@ Partial Class frmMain
         Me.RibbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.RibbonPanel3.Controls.Add(Me.RbnControlPanel)
         Me.RibbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanel3.Location = New System.Drawing.Point(0, 26)
+        Me.RibbonPanel3.Location = New System.Drawing.Point(0, 57)
         Me.RibbonPanel3.Name = "RibbonPanel3"
         Me.RibbonPanel3.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
-        Me.RibbonPanel3.Size = New System.Drawing.Size(1008, 113)
+        Me.RibbonPanel3.Size = New System.Drawing.Size(998, 113)
         '
         '
         '
@@ -601,6 +604,12 @@ Partial Class frmMain
         Me.rbnCP.Panel = Me.RibbonPanel3
         Me.rbnCP.Text = "Control Panel"
         '
+        'btnWindows
+        '
+        Me.btnWindows.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far
+        Me.btnWindows.Name = "btnWindows"
+        Me.btnWindows.Text = "Window"
+        '
         'Office2007StartButton1
         '
         Me.Office2007StartButton1.AutoExpandOnClick = True
@@ -623,6 +632,7 @@ Partial Class frmMain
         Me.ItemContainer1.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical
         Me.ItemContainer1.Name = "ItemContainer1"
         Me.ItemContainer1.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ItemContainer2, Me.ItemContainer4})
+        Me.ItemContainer1.Visible = False
         '
         'ItemContainer2
         '
@@ -634,6 +644,7 @@ Partial Class frmMain
         Me.ItemContainer2.ItemSpacing = 0
         Me.ItemContainer2.Name = "ItemContainer2"
         Me.ItemContainer2.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ItemContainer3, Me.GalleryContainer1})
+        Me.ItemContainer2.Visible = False
         '
         'ItemContainer3
         '
@@ -705,6 +716,7 @@ Partial Class frmMain
         Me.GalleryContainer1.Name = "GalleryContainer1"
         Me.GalleryContainer1.PopupUsesStandardScrollbars = False
         Me.GalleryContainer1.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.labelItem8, Me.ButtonItem8, Me.ButtonItem9, Me.ButtonItem10, Me.ButtonItem11})
+        Me.GalleryContainer1.Visible = False
         '
         'labelItem8
         '
@@ -765,11 +777,6 @@ Partial Class frmMain
         Me.ButtonItem13.SubItemsExpandWidth = 24
         Me.ButtonItem13.Text = "E&xit"
         '
-        'ButtonItem1
-        '
-        Me.ButtonItem1.Name = "ButtonItem1"
-        Me.ButtonItem1.Text = "ButtonItem1"
-        '
         'QatCustomizeItem1
         '
         Me.QatCustomizeItem1.Name = "QatCustomizeItem1"
@@ -802,9 +809,9 @@ Partial Class frmMain
         Me.DockSite4.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
         Me.DockSite4.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.DockSite4.DocumentDockContainer = New DevComponents.DotNetBar.DocumentDockContainer()
-        Me.DockSite4.Location = New System.Drawing.Point(0, 562)
+        Me.DockSite4.Location = New System.Drawing.Point(5, 560)
         Me.DockSite4.Name = "DockSite4"
-        Me.DockSite4.Size = New System.Drawing.Size(1008, 0)
+        Me.DockSite4.Size = New System.Drawing.Size(998, 0)
         Me.DockSite4.TabIndex = 14
         Me.DockSite4.TabStop = False
         '
@@ -813,9 +820,9 @@ Partial Class frmMain
         Me.DockSite1.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
         Me.DockSite1.Dock = System.Windows.Forms.DockStyle.Left
         Me.DockSite1.DocumentDockContainer = New DevComponents.DotNetBar.DocumentDockContainer()
-        Me.DockSite1.Location = New System.Drawing.Point(0, 141)
+        Me.DockSite1.Location = New System.Drawing.Point(5, 173)
         Me.DockSite1.Name = "DockSite1"
-        Me.DockSite1.Size = New System.Drawing.Size(0, 421)
+        Me.DockSite1.Size = New System.Drawing.Size(0, 387)
         Me.DockSite1.TabIndex = 11
         Me.DockSite1.TabStop = False
         '
@@ -824,9 +831,9 @@ Partial Class frmMain
         Me.DockSite2.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
         Me.DockSite2.Dock = System.Windows.Forms.DockStyle.Right
         Me.DockSite2.DocumentDockContainer = New DevComponents.DotNetBar.DocumentDockContainer()
-        Me.DockSite2.Location = New System.Drawing.Point(1008, 141)
+        Me.DockSite2.Location = New System.Drawing.Point(1003, 173)
         Me.DockSite2.Name = "DockSite2"
-        Me.DockSite2.Size = New System.Drawing.Size(0, 421)
+        Me.DockSite2.Size = New System.Drawing.Size(0, 387)
         Me.DockSite2.TabIndex = 12
         Me.DockSite2.TabStop = False
         '
@@ -834,9 +841,9 @@ Partial Class frmMain
         '
         Me.DockSite8.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
         Me.DockSite8.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.DockSite8.Location = New System.Drawing.Point(0, 562)
+        Me.DockSite8.Location = New System.Drawing.Point(5, 560)
         Me.DockSite8.Name = "DockSite8"
-        Me.DockSite8.Size = New System.Drawing.Size(1008, 0)
+        Me.DockSite8.Size = New System.Drawing.Size(998, 0)
         Me.DockSite8.TabIndex = 18
         Me.DockSite8.TabStop = False
         '
@@ -844,9 +851,9 @@ Partial Class frmMain
         '
         Me.DockSite5.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
         Me.DockSite5.Dock = System.Windows.Forms.DockStyle.Left
-        Me.DockSite5.Location = New System.Drawing.Point(0, 0)
+        Me.DockSite5.Location = New System.Drawing.Point(5, 1)
         Me.DockSite5.Name = "DockSite5"
-        Me.DockSite5.Size = New System.Drawing.Size(0, 562)
+        Me.DockSite5.Size = New System.Drawing.Size(0, 559)
         Me.DockSite5.TabIndex = 15
         Me.DockSite5.TabStop = False
         '
@@ -854,9 +861,9 @@ Partial Class frmMain
         '
         Me.DockSite6.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
         Me.DockSite6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.DockSite6.Location = New System.Drawing.Point(1008, 0)
+        Me.DockSite6.Location = New System.Drawing.Point(1003, 1)
         Me.DockSite6.Name = "DockSite6"
-        Me.DockSite6.Size = New System.Drawing.Size(0, 562)
+        Me.DockSite6.Size = New System.Drawing.Size(0, 559)
         Me.DockSite6.TabIndex = 16
         Me.DockSite6.TabStop = False
         '
@@ -864,9 +871,9 @@ Partial Class frmMain
         '
         Me.DockSite7.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
         Me.DockSite7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.DockSite7.Location = New System.Drawing.Point(0, 0)
+        Me.DockSite7.Location = New System.Drawing.Point(5, 1)
         Me.DockSite7.Name = "DockSite7"
-        Me.DockSite7.Size = New System.Drawing.Size(1008, 0)
+        Me.DockSite7.Size = New System.Drawing.Size(998, 0)
         Me.DockSite7.TabIndex = 17
         Me.DockSite7.TabStop = False
         '
@@ -875,9 +882,9 @@ Partial Class frmMain
         Me.DockSite3.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
         Me.DockSite3.Dock = System.Windows.Forms.DockStyle.Top
         Me.DockSite3.DocumentDockContainer = New DevComponents.DotNetBar.DocumentDockContainer()
-        Me.DockSite3.Location = New System.Drawing.Point(0, 0)
+        Me.DockSite3.Location = New System.Drawing.Point(5, 1)
         Me.DockSite3.Name = "DockSite3"
-        Me.DockSite3.Size = New System.Drawing.Size(1008, 0)
+        Me.DockSite3.Size = New System.Drawing.Size(998, 0)
         Me.DockSite3.TabIndex = 13
         Me.DockSite3.TabStop = False
         '
@@ -885,11 +892,11 @@ Partial Class frmMain
         '
         Me.StatusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.xTglJam, Me.xServer, Me.xVersion, Me.xUser})
-        Me.StatusStrip.Location = New System.Drawing.Point(0, 538)
+        Me.StatusStrip.Location = New System.Drawing.Point(5, 536)
         Me.StatusStrip.Name = "StatusStrip"
         Me.StatusStrip.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.StatusStrip.ShowItemToolTips = True
-        Me.StatusStrip.Size = New System.Drawing.Size(1008, 24)
+        Me.StatusStrip.Size = New System.Drawing.Size(998, 24)
         Me.StatusStrip.TabIndex = 20
         '
         'xTglJam
@@ -959,7 +966,6 @@ Partial Class frmMain
         Me.Controls.Add(Me.DockSite6)
         Me.Controls.Add(Me.DockSite7)
         Me.Controls.Add(Me.DockSite8)
-        Me.DoubleBuffered = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.Name = "frmMain"
@@ -1001,7 +1007,6 @@ Partial Class frmMain
     Friend WithEvents ButtonItem13 As DevComponents.DotNetBar.ButtonItem
     Friend WithEvents RibbonTabItem1 As DevComponents.DotNetBar.RibbonTabItem
     Friend WithEvents RibbonTabItem2 As DevComponents.DotNetBar.RibbonTabItem
-    Friend WithEvents ButtonItem1 As DevComponents.DotNetBar.ButtonItem
     Friend WithEvents QatCustomizeItem1 As DevComponents.DotNetBar.QatCustomizeItem
     Friend WithEvents mnuTrsRegistrasi As DevComponents.DotNetBar.ButtonItem
     Friend WithEvents mnuTrsUji As DevComponents.DotNetBar.ButtonItem
@@ -1044,5 +1049,6 @@ Partial Class frmMain
     Friend WithEvents mnuGrupSample As DevComponents.DotNetBar.ButtonItem
     Friend WithEvents RibbonBarLaporan As DevComponents.DotNetBar.RibbonBar
     Friend WithEvents mnuLapKasir As DevComponents.DotNetBar.ButtonItem
+    Friend WithEvents btnWindows As DevComponents.DotNetBar.ButtonItem
 
 End Class

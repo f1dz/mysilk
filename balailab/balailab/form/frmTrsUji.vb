@@ -7,6 +7,7 @@ Public Class frmTrsUji
     Dim oTarif As New clsTarif
     Dim oTrs As New clsTrsUji
     Dim oUser As New clsUser
+    Dim oMR As New clsMR
 
     Private Sub frmTrsUji_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txtTglEstimasi.Text = Format(Today, "yyyy/MM/dd")
@@ -44,10 +45,21 @@ Public Class frmTrsUji
                 oReg.vKode = txtKdReg.Text
                 oRjk.vKode = oReg.KdRujukan
                 oTrs.KdReg = txtKdReg.Text
-                txtNmRujuk.Text = oRjk.NamaPerujuk
-                txtAlmRujuk1.Text = oRjk.Alm1
-                txtAlmRujuk2.Text = oRjk.Alm2
-                txtKotaRujuk.Text = oRjk.Kota
+
+                If oReg.KdRujukan = "UMUM" Then
+                    oReg.vKodeRegGetMR = txtKdReg.Text
+                    oMR.vKode = oReg.NoMR
+                    txtNmRujuk.Text = oMR.xNama
+                    txtAlmRujuk1.Text = oMR.xAlm1
+                    txtAlmRujuk2.Text = oMR.xAlm2
+                    txtKotaRujuk.Text = oMR.xKota
+                Else
+                    txtNmRujuk.Text = oRjk.NamaPerujuk
+                    txtAlmRujuk1.Text = oRjk.Alm1
+                    txtAlmRujuk2.Text = oRjk.Alm2
+                    txtKotaRujuk.Text = oRjk.Kota
+                End If
+
                 'txtTglEstimasi.MinDate = Format(Today, "yyyy/MM/dd")
                 ' Isi Grid
                 grid.Rows.Clear()
