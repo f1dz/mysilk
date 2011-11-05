@@ -65,7 +65,6 @@ Partial Class frmMain
         Me.RibbonTabItem1 = New DevComponents.DotNetBar.RibbonTabItem()
         Me.RibbonTabItem2 = New DevComponents.DotNetBar.RibbonTabItem()
         Me.rbnCP = New DevComponents.DotNetBar.RibbonTabItem()
-        Me.btnWindows = New DevComponents.DotNetBar.ButtonItem()
         Me.Office2007StartButton1 = New DevComponents.DotNetBar.Office2007StartButton()
         Me.ItemContainer1 = New DevComponents.DotNetBar.ItemContainer()
         Me.ItemContainer2 = New DevComponents.DotNetBar.ItemContainer()
@@ -124,7 +123,7 @@ Partial Class frmMain
         Me.RbnMain.Controls.Add(Me.RibbonPanel2)
         Me.RbnMain.Controls.Add(Me.RibbonPanel3)
         Me.RbnMain.Dock = System.Windows.Forms.DockStyle.Top
-        Me.RbnMain.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.RibbonTabItem1, Me.RibbonTabItem2, Me.rbnCP, Me.btnWindows})
+        Me.RbnMain.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.RibbonTabItem1, Me.RibbonTabItem2, Me.rbnCP})
         Me.RbnMain.KeyTipsFont = New System.Drawing.Font("Tahoma", 7.0!)
         Me.RbnMain.Location = New System.Drawing.Point(5, 1)
         Me.RbnMain.MdiSystemItemVisible = False
@@ -604,12 +603,6 @@ Partial Class frmMain
         Me.rbnCP.Panel = Me.RibbonPanel3
         Me.rbnCP.Text = "Control Panel"
         '
-        'btnWindows
-        '
-        Me.btnWindows.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far
-        Me.btnWindows.Name = "btnWindows"
-        Me.btnWindows.Text = "Window"
-        '
         'Office2007StartButton1
         '
         Me.Office2007StartButton1.AutoExpandOnClick = True
@@ -1049,6 +1042,5 @@ Partial Class frmMain
     Friend WithEvents mnuGrupSample As DevComponents.DotNetBar.ButtonItem
     Friend WithEvents RibbonBarLaporan As DevComponents.DotNetBar.RibbonBar
     Friend WithEvents mnuLapKasir As DevComponents.DotNetBar.ButtonItem
-    Friend WithEvents btnWindows As DevComponents.DotNetBar.ButtonItem
 
 End Class

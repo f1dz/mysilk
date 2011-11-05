@@ -28,8 +28,9 @@
 
     Private Sub frmLogin_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txtUser.Focus()
-        'txtUser.Text = "ADMIN"
-        'txtPassword.Text = "1"
+        txtUser.Text = "ADMIN"
+        txtPassword.Text = "123"
+        btnLogin.PerformClick()
     End Sub
 
     Private Sub txtUser_Enter(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtPassword.KeyDown, txtUser.KeyDown
