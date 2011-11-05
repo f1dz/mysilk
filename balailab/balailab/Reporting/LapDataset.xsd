@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LapDataset" targetNamespace="http://tempuri.org/LapDataset.xsd" xmlns:mstns="http://tempuri.org/LapDataset.xsd" xmlns="http://tempuri.org/LapDataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LapDataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LapDataset" msprop:Generator_UserDSName="LapDataset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LapKasir" msprop:Generator_TableClassName="LapKasirDataTable" msprop:Generator_TableVarName="tableLapKasir" msprop:Generator_TablePropName="LapKasir" msprop:Generator_RowDeletingName="LapKasirRowDeleting" msprop:Generator_UserTableName="LapKasir" msprop:Generator_RowChangingName="LapKasirRowChanging" msprop:Generator_RowEvHandlerName="LapKasirRowChangeEventHandler" msprop:Generator_RowDeletedName="LapKasirRowDeleted" msprop:Generator_RowEvArgName="LapKasirRowChangeEvent" msprop:Generator_RowChangedName="LapKasirRowChanged" msprop:Generator_RowClassName="LapKasirRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fs_kd_trs" msprop:Generator_ColumnVarNameInTable="columnfs_kd_trs" msprop:Generator_ColumnPropNameInRow="fs_kd_trs" msprop:Generator_ColumnPropNameInTable="fs_kd_trsColumn" msprop:Generator_UserColumnName="fs_kd_trs" type="xs:string" default="' '" />
+              <xs:element name="fd_tgl_trs" msprop:Generator_ColumnVarNameInTable="columnfd_tgl_trs" msprop:Generator_ColumnPropNameInRow="fd_tgl_trs" msprop:Generator_ColumnPropNameInTable="fd_tgl_trsColumn" msprop:Generator_UserColumnName="fd_tgl_trs" type="xs:string" default="' '" />
+              <xs:element name="fs_jam_trs" msprop:Generator_ColumnVarNameInTable="columnfs_jam_trs" msprop:Generator_ColumnPropNameInRow="fs_jam_trs" msprop:Generator_ColumnPropNameInTable="fs_jam_trsColumn" msprop:Generator_UserColumnName="fs_jam_trs" type="xs:string" default="' '" />
+              <xs:element name="fs_nm_rujukan" msprop:Generator_ColumnVarNameInTable="columnfs_nm_rujukan" msprop:Generator_ColumnPropNameInRow="fs_nm_rujukan" msprop:Generator_ColumnPropNameInTable="fs_nm_rujukanColumn" msprop:Generator_UserColumnName="fs_nm_rujukan" type="xs:string" default="' '" />
+              <xs:element name="fn_bayar" msprop:Generator_ColumnVarNameInTable="columnfn_bayar" msprop:Generator_ColumnPropNameInRow="fn_bayar" msprop:Generator_ColumnPropNameInTable="fn_bayarColumn" msprop:Generator_UserColumnName="fn_bayar" type="xs:double" minOccurs="0" />
+              <xs:element name="fs_kd_petugas" msprop:Generator_ColumnVarNameInTable="columnfs_kd_petugas" msprop:Generator_ColumnPropNameInRow="fs_kd_petugas" msprop:Generator_ColumnPropNameInTable="fs_kd_petugasColumn" msprop:Generator_UserColumnName="fs_kd_petugas" type="xs:string" minOccurs="0" />
+              <xs:element name="fd_tgl_void" msprop:Generator_ColumnVarNameInTable="columnfd_tgl_void" msprop:Generator_ColumnPropNameInRow="fd_tgl_void" msprop:Generator_ColumnPropNameInTable="fd_tgl_voidColumn" msprop:Generator_UserColumnName="fd_tgl_void" type="xs:string" minOccurs="0" />
+              <xs:element name="fs_jam_void" msprop:Generator_ColumnVarNameInTable="columnfs_jam_void" msprop:Generator_ColumnPropNameInRow="fs_jam_void" msprop:Generator_ColumnPropNameInTable="fs_jam_voidColumn" msprop:Generator_UserColumnName="fs_jam_void" type="xs:string" minOccurs="0" />
+              <xs:element name="fs_kd_petugas_void" msprop:Generator_ColumnVarNameInTable="columnfs_kd_petugas_void" msprop:Generator_ColumnPropNameInRow="fs_kd_petugas_void" msprop:Generator_ColumnPropNameInTable="fs_kd_petugas_voidColumn" msprop:Generator_UserColumnName="fs_kd_petugas_void" type="xs:string" minOccurs="0" />
+              <xs:element name="fb_lock" msprop:Generator_ColumnVarNameInTable="columnfb_lock" msprop:Generator_ColumnPropNameInRow="fb_lock" msprop:Generator_ColumnPropNameInTable="fb_lockColumn" msprop:Generator_UserColumnName="fb_lock" type="xs:short" minOccurs="0" />
+              <xs:element name="fs_kd_reg" msprop:Generator_ColumnVarNameInTable="columnfs_kd_reg" msprop:Generator_ColumnPropNameInRow="fs_kd_reg" msprop:Generator_ColumnPropNameInTable="fs_kd_regColumn" msprop:Generator_UserColumnName="fs_kd_reg" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
