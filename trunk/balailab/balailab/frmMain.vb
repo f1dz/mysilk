@@ -41,8 +41,8 @@ Public Class frmMain
 
                 ' Laporan
             Case "mnuLapKasir"
-                frmLaporanKasir.MdiParent = Me
-                frmLaporanKasir.Show()
+                'frmLaporanKasir.MdiParent = Me
+                frmLaporanKasir.ShowDialog()
 
                 ' Setup Master
             Case "mnuNamaTarif"
@@ -151,7 +151,7 @@ Public Class frmMain
     End Sub 'AddButtonsToMyChildren
 
 
-    Private Sub btnWindows_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnWindows.Click
+    Private Sub btnWindows_Click(ByVal sender As Object, ByVal e As System.EventArgs)
         'MsgBox(Me.MdiChildren.Length)
         'MsgBox(Me.ActiveMdiChild.Name & " " & Me.MdiChildren(0).Text)
         If Me.MdiChildren.Length > 0 Then
