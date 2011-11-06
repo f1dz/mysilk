@@ -81,8 +81,16 @@ Public Class frmMain
         Dim oConn As New clsConn
         Dim oFrmLogin As New frmLogin
         My.Settings.SuksesLogin = False
+        My.Settings.CancelLogin = False
+        Me.Hide()
 
         For i As Integer = 1 To 3
+
+            If My.Settings.CancelLogin Then
+                Application.Exit()
+                Exit For
+            End If
+
             If My.Settings.SuksesLogin = False Then
                 oFrmLogin.ShowDialog()
                 oFrmLogin.txtUser.Focus()
@@ -94,6 +102,7 @@ Public Class frmMain
             End If
         Next
 
+        Me.Show()
         xUser.Text = "Petugas : " & (My.Settings.KdPetugas).ToLower & "@" & (My.Computer.Name).ToLower
         xServer.Text = oConn.DB_NAME & "@" & oConn.DB_SERVER
         xVersion.Text = "Ver : " & My.Application.Info.Version.ToString

@@ -5,19 +5,21 @@
     'Dim i As Integer = 1
 
     Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
-        Application.Exit()
+        My.Settings.CancelLogin = True
+        Me.Close()
     End Sub
 
     Private Sub btnLogin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLogin.Click
         Dim User As String = Trim(txtUser.Text)
         Dim Pass As String = Trim(txtPassword.Text)
+        'Dim oFrmMain As New frmMain
         oUser.User = User
         oUser.Password = Pass
 
         If oUser.isAktif Then
-            My.Settings.KdPetugas = User
-            Me.Close()
+            My.Settings.KdPetugas = User 
             My.Settings.SuksesLogin = True
+            Me.Close()
         Else
             MsgBox("Login gagal, periksa Username & Password", MsgBoxStyle.Information)
             My.Settings.SuksesLogin = False
@@ -28,9 +30,9 @@
 
     Private Sub frmLogin_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txtUser.Focus()
-        txtUser.Text = "ADMIN"
-        txtPassword.Text = "123"
-        btnLogin.PerformClick()
+        'txtUser.Text = "ADMIN"
+        'txtPassword.Text = "123"
+        'btnLogin.PerformClick()
     End Sub
 
     Private Sub txtUser_Enter(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtPassword.KeyDown, txtUser.KeyDown

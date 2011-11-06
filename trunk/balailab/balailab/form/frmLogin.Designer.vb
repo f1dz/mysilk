@@ -44,7 +44,7 @@ Partial Class frmLogin
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btnCancel.TabIndex = 4
+        Me.btnCancel.TabIndex = 3
         Me.btnCancel.Text = "&Cancel"
         '
         'txtPassword
@@ -59,7 +59,7 @@ Partial Class frmLogin
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(148, 20)
-        Me.txtPassword.TabIndex = 3
+        Me.txtPassword.TabIndex = 1
         '
         'PictureBox1
         '
@@ -105,7 +105,7 @@ Partial Class frmLogin
         Me.txtUser.MaxLength = 50
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(148, 20)
-        Me.txtUser.TabIndex = 1
+        Me.txtUser.TabIndex = 0
         '
         'txtNmUser
         '
@@ -160,7 +160,7 @@ Partial Class frmLogin
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(75, 23)
         Me.btnLogin.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btnLogin.TabIndex = 3
+        Me.btnLogin.TabIndex = 2
         Me.btnLogin.Text = "&Login"
         '
         'frmLogin
