@@ -219,7 +219,7 @@ Partial Class frmMain
         Me.mnuLapKasir.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
         Me.mnuLapKasir.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
         Me.mnuLapKasir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.mnuLapKasir.Image = Global.balailab.My.Resources.Resources.microscope_icon_50x50
+        Me.mnuLapKasir.Image = Global.balailab.My.Resources.Resources.report_kasir
         Me.mnuLapKasir.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
         Me.mnuLapKasir.Name = "mnuLapKasir"
         Me.mnuLapKasir.RibbonWordWrap = False

@@ -149,6 +149,18 @@ Namespace My
                 Me("SuksesLogin") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property CancelLogin() As Boolean
+            Get
+                Return CType(Me("CancelLogin"),Boolean)
+            End Get
+            Set
+                Me("CancelLogin") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
