@@ -205,10 +205,10 @@
     <Compile Include="form\frmLaporanKasir.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\frmSetupGrupSample.Designer.vb">
-      <DependentUpon>frmSetupGrupSample.vb</DependentUpon>
+    <Compile Include="form\frmParamKomp.Designer.vb">
+      <DependentUpon>frmParamKomp.vb</DependentUpon>
     </Compile>
-    <Compile Include="form\frmSetupGrupSample.vb">
+    <Compile Include="form\frmParamKomp.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\frmSetupGrupJenisUji.Designer.vb">
@@ -217,16 +217,16 @@
     <Compile Include="form\frmSetupGrupJenisUji.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="form\frmSetupGrupSample.Designer.vb">
+      <DependentUpon>frmSetupGrupSample.vb</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmSetupGrupSample.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="form\frmSetupJenisSample.Designer.vb">
       <DependentUpon>frmSetupJenisSample.vb</DependentUpon>
     </Compile>
     <Compile Include="form\frmSetupJenisSample.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form\frmSetupJenisUji.Designer.vb">
-      <DependentUpon>frmSetupJenisUji.vb</DependentUpon>
-    </Compile>
-    <Compile Include="form\frmSetupJenisUji.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\frmLogin.Designer.vb">
@@ -247,16 +247,16 @@
     <Compile Include="form\frmCariPerujuk.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\frmParamKomp.Designer.vb">
-      <DependentUpon>frmParamKomp.vb</DependentUpon>
-    </Compile>
-    <Compile Include="form\frmParamKomp.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="form\frmPilihPasien.Designer.vb">
       <DependentUpon>frmPilihPasien.vb</DependentUpon>
     </Compile>
     <Compile Include="form\frmPilihPasien.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frmSetupJenisUji.Designer.vb">
+      <DependentUpon>frmSetupJenisUji.vb</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmSetupJenisUji.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\frmSetupKomponen.Designer.vb">
@@ -275,6 +275,12 @@
       <DependentUpon>frmSetupPerujuk.vb</DependentUpon>
     </Compile>
     <Compile Include="form\frmSetupPerujuk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frmSetupUser.Designer.vb">
+      <DependentUpon>frmSetupUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmSetupUser.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\frmTrsRegistrasi.Designer.vb">
@@ -299,12 +305,6 @@
       <DependentUpon>frmTrsUji.vb</DependentUpon>
     </Compile>
     <Compile Include="form\frmTrsUji.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form\frmSetupUser.Designer.vb">
-      <DependentUpon>frmSetupUser.vb</DependentUpon>
-    </Compile>
-    <Compile Include="form\frmSetupUser.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.vb">
@@ -380,17 +380,17 @@
     <EmbeddedResource Include="form\frmLaporanKasir.resx">
       <DependentUpon>frmLaporanKasir.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\frmSetupGrupSample.resx">
-      <DependentUpon>frmSetupGrupSample.vb</DependentUpon>
+    <EmbeddedResource Include="form\frmParamKomp.resx">
+      <DependentUpon>frmParamKomp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmSetupGrupJenisUji.resx">
       <DependentUpon>frmSetupGrupJenisUji.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\frmSetupGrupSample.resx">
+      <DependentUpon>frmSetupGrupSample.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\frmSetupJenisSample.resx">
       <DependentUpon>frmSetupJenisSample.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="form\frmSetupJenisUji.resx">
-      <DependentUpon>frmSetupJenisUji.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
@@ -401,11 +401,11 @@
     <EmbeddedResource Include="form\frmCariPerujuk.resx">
       <DependentUpon>frmCariPerujuk.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\frmParamKomp.resx">
-      <DependentUpon>frmParamKomp.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="form\frmPilihPasien.resx">
       <DependentUpon>frmPilihPasien.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frmSetupJenisUji.resx">
+      <DependentUpon>frmSetupJenisUji.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmSetupKomponen.resx">
       <DependentUpon>frmSetupKomponen.vb</DependentUpon>
