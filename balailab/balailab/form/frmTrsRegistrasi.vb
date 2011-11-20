@@ -344,7 +344,13 @@ Public Class frmTrsRegistrasi
         End With
         oXcl.Cells.Replace("#Petugas#", oUser.NmUser)
 
-        If oReg.KdRujukan = "UMUM" Then
+        'If oReg.KdRujukan = "UMUM" Then
+        '    oXcl.Cells.Replace("#Pelanggan#", xPasien)
+        'Else
+        '    oXcl.Cells.Replace("#Pelanggan#", oRjk.NamaPerujuk)
+        'End If
+
+        If oRjk.Kolektif = 0 Then
             oXcl.Cells.Replace("#Pelanggan#", xPasien)
         Else
             oXcl.Cells.Replace("#Pelanggan#", oRjk.NamaPerujuk)

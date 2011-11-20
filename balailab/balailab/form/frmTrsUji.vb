@@ -235,6 +235,7 @@ Public Class frmTrsUji
         With oXcl.Cells
             .Replace("#NoLab#", txtKdReg.Text)
             .Replace("#Waktu#", txtTglUji.Text)
+            .Replace("#Perujuk#", oRjk.NamaPerujuk)
             '.Replace("#NamaReg#", oReg.NmRujukan)
             '.Replace("#AlmReg1#", oRjk.Alm1)
             '.Replace("#AlmReg2#", oRjk.Alm2)

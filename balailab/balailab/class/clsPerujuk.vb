@@ -13,6 +13,7 @@ Public Class clsPerujuk
     Public Property Alm1 As String
     Public Property Alm2 As String
     Public Property Kota As String
+    Public Property Kolektif As Integer
 
     Public Sub Save()
         sSql = "INSERT INTO TA_RUJUKAN " & vbCrLf _
@@ -21,14 +22,16 @@ Public Class clsPerujuk
              & "    ,fs_telpon " & vbCrLf _
              & "    ,fs_alm_rujukan " & vbCrLf _
              & "    ,fs_alm_rujukan2 " & vbCrLf _
-             & "    ,fs_kota) " & vbCrLf _
+             & "    ,fs_kota " & vbCrLf _
+             & "    ,fb_kolektif) " & vbCrLf _
              & "VALUES " & vbCrLf _
              & "    ('" & KodePerujuk & "' " & vbCrLf _
              & "    ,'" & NamaPerujuk & "' " & vbCrLf _
              & "    ,'" & Telpon & "' " & vbCrLf _
              & "    ,'" & Alm1 & "' " & vbCrLf _
              & "    ,'" & Alm2 & "' " & vbCrLf _
-             & "    ,'" & Kota & "') "
+             & "    ,'" & Kota & "' " & vbCrLf _
+             & "    ," & Kolektif & ") "
         Try
             conn.open()
             oCmd = New OleDbCommand(sSql, conn.oConn)
@@ -45,7 +48,8 @@ Public Class clsPerujuk
              & "        fs_telpon = '" & Telpon & "' , " & vbCrLf _
              & "        fs_alm_rujukan = '" & Alm1 & "' , " & vbCrLf _
              & "        fs_alm_rujukan2 = '" & Alm2 & "' , " & vbCrLf _
-             & "        fs_kota = '" & Kota & "' " & vbCrLf _
+             & "        fs_kota = '" & Kota & "', " & vbCrLf _
+             & "        fb_kolektif = " & Kolektif & " " & vbCrLf _
              & "WHERE   fs_kd_rujukan = '" & KodePerujuk & "'"
         Try
             conn.open()
@@ -72,6 +76,7 @@ Public Class clsPerujuk
                     Alm1 = oDR("fs_alm_rujukan")
                     Alm2 = oDR("fs_alm_rujukan2")
                     Kota = oDR("fs_kota")
+                    Kolektif = oDR("fb_kolektif")
                 Else
                     MsgBox("Kode perujuk  " & value & " tidak ditemukan", MsgBoxStyle.Exclamation)
                 End If
