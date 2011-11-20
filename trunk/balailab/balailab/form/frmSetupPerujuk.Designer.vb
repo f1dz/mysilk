@@ -23,19 +23,20 @@ Partial Class frmSetupPerujuk
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PanelEx1 = New DevComponents.DotNetBar.PanelEx()
+        Me.LabelX6 = New DevComponents.DotNetBar.LabelX()
+        Me.txtKota = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.txtAlm2 = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.LabelX4 = New DevComponents.DotNetBar.LabelX()
+        Me.txtAlm1 = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.LabelX2 = New DevComponents.DotNetBar.LabelX()
+        Me.txtTelpon = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txtKode = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.LabelX3 = New DevComponents.DotNetBar.LabelX()
         Me.LabelX1 = New DevComponents.DotNetBar.LabelX()
         Me.txtNama = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.LabelX2 = New DevComponents.DotNetBar.LabelX()
-        Me.txtTelpon = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.LabelX4 = New DevComponents.DotNetBar.LabelX()
-        Me.txtAlm1 = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.txtAlm2 = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.LabelX6 = New DevComponents.DotNetBar.LabelX()
-        Me.txtKota = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.btnCancel = New DevComponents.DotNetBar.ButtonX()
         Me.btnSave = New DevComponents.DotNetBar.ButtonX()
+        Me.CbKolektif = New DevComponents.DotNetBar.Controls.CheckBoxX()
         Me.PanelEx1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -43,6 +44,7 @@ Partial Class frmSetupPerujuk
         '
         Me.PanelEx1.CanvasColor = System.Drawing.SystemColors.Control
         Me.PanelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.PanelEx1.Controls.Add(Me.CbKolektif)
         Me.PanelEx1.Controls.Add(Me.LabelX6)
         Me.PanelEx1.Controls.Add(Me.txtKota)
         Me.PanelEx1.Controls.Add(Me.txtAlm2)
@@ -65,6 +67,108 @@ Partial Class frmSetupPerujuk
         Me.PanelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText
         Me.PanelEx1.Style.GradientAngle = 90
         Me.PanelEx1.TabIndex = 0
+        '
+        'LabelX6
+        '
+        '
+        '
+        '
+        Me.LabelX6.BackgroundStyle.Class = ""
+        Me.LabelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX6.Location = New System.Drawing.Point(13, 142)
+        Me.LabelX6.Name = "LabelX6"
+        Me.LabelX6.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LabelX6.Size = New System.Drawing.Size(75, 23)
+        Me.LabelX6.TabIndex = 25
+        Me.LabelX6.Text = "Kota"
+        '
+        'txtKota
+        '
+        '
+        '
+        '
+        Me.txtKota.Border.Class = "TextBoxBorder"
+        Me.txtKota.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtKota.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtKota.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtKota.Location = New System.Drawing.Point(94, 145)
+        Me.txtKota.MaxLength = 20
+        Me.txtKota.Name = "txtKota"
+        Me.txtKota.Size = New System.Drawing.Size(167, 20)
+        Me.txtKota.TabIndex = 6
+        '
+        'txtAlm2
+        '
+        '
+        '
+        '
+        Me.txtAlm2.Border.Class = "TextBoxBorder"
+        Me.txtAlm2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtAlm2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtAlm2.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAlm2.Location = New System.Drawing.Point(94, 119)
+        Me.txtAlm2.MaxLength = 50
+        Me.txtAlm2.Name = "txtAlm2"
+        Me.txtAlm2.Size = New System.Drawing.Size(256, 20)
+        Me.txtAlm2.TabIndex = 5
+        '
+        'LabelX4
+        '
+        '
+        '
+        '
+        Me.LabelX4.BackgroundStyle.Class = ""
+        Me.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX4.Location = New System.Drawing.Point(13, 90)
+        Me.LabelX4.Name = "LabelX4"
+        Me.LabelX4.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LabelX4.Size = New System.Drawing.Size(75, 23)
+        Me.LabelX4.TabIndex = 21
+        Me.LabelX4.Text = "Alamat"
+        '
+        'txtAlm1
+        '
+        '
+        '
+        '
+        Me.txtAlm1.Border.Class = "TextBoxBorder"
+        Me.txtAlm1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtAlm1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtAlm1.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAlm1.Location = New System.Drawing.Point(94, 93)
+        Me.txtAlm1.MaxLength = 50
+        Me.txtAlm1.Name = "txtAlm1"
+        Me.txtAlm1.Size = New System.Drawing.Size(256, 20)
+        Me.txtAlm1.TabIndex = 4
+        '
+        'LabelX2
+        '
+        '
+        '
+        '
+        Me.LabelX2.BackgroundStyle.Class = ""
+        Me.LabelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX2.Location = New System.Drawing.Point(13, 64)
+        Me.LabelX2.Name = "LabelX2"
+        Me.LabelX2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LabelX2.Size = New System.Drawing.Size(75, 23)
+        Me.LabelX2.TabIndex = 19
+        Me.LabelX2.Text = "Telpon / Fax"
+        '
+        'txtTelpon
+        '
+        '
+        '
+        '
+        Me.txtTelpon.Border.Class = "TextBoxBorder"
+        Me.txtTelpon.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtTelpon.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtTelpon.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTelpon.Location = New System.Drawing.Point(94, 67)
+        Me.txtTelpon.MaxLength = 50
+        Me.txtTelpon.Name = "txtTelpon"
+        Me.txtTelpon.Size = New System.Drawing.Size(256, 20)
+        Me.txtTelpon.TabIndex = 3
         '
         'txtKode
         '
@@ -126,108 +230,6 @@ Partial Class frmSetupPerujuk
         Me.txtNama.Size = New System.Drawing.Size(256, 20)
         Me.txtNama.TabIndex = 2
         '
-        'LabelX2
-        '
-        '
-        '
-        '
-        Me.LabelX2.BackgroundStyle.Class = ""
-        Me.LabelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.LabelX2.Location = New System.Drawing.Point(13, 64)
-        Me.LabelX2.Name = "LabelX2"
-        Me.LabelX2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LabelX2.Size = New System.Drawing.Size(75, 23)
-        Me.LabelX2.TabIndex = 19
-        Me.LabelX2.Text = "Telpon / Fax"
-        '
-        'txtTelpon
-        '
-        '
-        '
-        '
-        Me.txtTelpon.Border.Class = "TextBoxBorder"
-        Me.txtTelpon.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txtTelpon.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtTelpon.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTelpon.Location = New System.Drawing.Point(94, 67)
-        Me.txtTelpon.MaxLength = 50
-        Me.txtTelpon.Name = "txtTelpon"
-        Me.txtTelpon.Size = New System.Drawing.Size(256, 20)
-        Me.txtTelpon.TabIndex = 3
-        '
-        'LabelX4
-        '
-        '
-        '
-        '
-        Me.LabelX4.BackgroundStyle.Class = ""
-        Me.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.LabelX4.Location = New System.Drawing.Point(13, 90)
-        Me.LabelX4.Name = "LabelX4"
-        Me.LabelX4.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LabelX4.Size = New System.Drawing.Size(75, 23)
-        Me.LabelX4.TabIndex = 21
-        Me.LabelX4.Text = "Alamat"
-        '
-        'txtAlm1
-        '
-        '
-        '
-        '
-        Me.txtAlm1.Border.Class = "TextBoxBorder"
-        Me.txtAlm1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txtAlm1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtAlm1.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAlm1.Location = New System.Drawing.Point(94, 93)
-        Me.txtAlm1.MaxLength = 50
-        Me.txtAlm1.Name = "txtAlm1"
-        Me.txtAlm1.Size = New System.Drawing.Size(256, 20)
-        Me.txtAlm1.TabIndex = 4
-        '
-        'txtAlm2
-        '
-        '
-        '
-        '
-        Me.txtAlm2.Border.Class = "TextBoxBorder"
-        Me.txtAlm2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txtAlm2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtAlm2.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAlm2.Location = New System.Drawing.Point(94, 119)
-        Me.txtAlm2.MaxLength = 50
-        Me.txtAlm2.Name = "txtAlm2"
-        Me.txtAlm2.Size = New System.Drawing.Size(256, 20)
-        Me.txtAlm2.TabIndex = 5
-        '
-        'LabelX6
-        '
-        '
-        '
-        '
-        Me.LabelX6.BackgroundStyle.Class = ""
-        Me.LabelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.LabelX6.Location = New System.Drawing.Point(13, 142)
-        Me.LabelX6.Name = "LabelX6"
-        Me.LabelX6.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LabelX6.Size = New System.Drawing.Size(75, 23)
-        Me.LabelX6.TabIndex = 25
-        Me.LabelX6.Text = "Kota"
-        '
-        'txtKota
-        '
-        '
-        '
-        '
-        Me.txtKota.Border.Class = "TextBoxBorder"
-        Me.txtKota.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txtKota.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtKota.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtKota.Location = New System.Drawing.Point(94, 145)
-        Me.txtKota.MaxLength = 20
-        Me.txtKota.Name = "txtKota"
-        Me.txtKota.Size = New System.Drawing.Size(167, 20)
-        Me.txtKota.TabIndex = 6
-        '
         'btnCancel
         '
         Me.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
@@ -250,6 +252,23 @@ Partial Class frmSetupPerujuk
         Me.btnSave.TabIndex = 7
         Me.btnSave.Text = "&Save"
         '
+        'CbKolektif
+        '
+        '
+        '
+        '
+        Me.CbKolektif.BackgroundStyle.Class = ""
+        Me.CbKolektif.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.CbKolektif.CheckValue = "0"
+        Me.CbKolektif.CheckValueChecked = "1"
+        Me.CbKolektif.CheckValueUnchecked = "0"
+        Me.CbKolektif.Location = New System.Drawing.Point(178, 15)
+        Me.CbKolektif.Name = "CbKolektif"
+        Me.CbKolektif.Size = New System.Drawing.Size(100, 23)
+        Me.CbKolektif.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.CbKolektif.TabIndex = 26
+        Me.CbKolektif.Text = "Kolektif"
+        '
         'frmSetupPerujuk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -258,7 +277,6 @@ Partial Class frmSetupPerujuk
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.PanelEx1)
-        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "frmSetupPerujuk"
@@ -282,4 +300,5 @@ Partial Class frmSetupPerujuk
     Friend WithEvents txtTelpon As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents btnCancel As DevComponents.DotNetBar.ButtonX
     Friend WithEvents btnSave As DevComponents.DotNetBar.ButtonX
+    Friend WithEvents CbKolektif As DevComponents.DotNetBar.Controls.CheckBoxX
 End Class

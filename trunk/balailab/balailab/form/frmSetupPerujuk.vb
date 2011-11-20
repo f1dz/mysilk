@@ -10,6 +10,7 @@
         oRjk.Alm1 = txtAlm1.Text
         oRjk.Alm2 = txtAlm2.Text
         oRjk.Kota = txtKota.Text
+        oRjk.Kolektif = CbKolektif.CheckState
         If oRjk.isExist(Trim(txtKode.Text)) Then
             oRjk.Update()
         Else
@@ -32,6 +33,7 @@
             txtAlm1.Text = oRjk.Alm1
             txtAlm2.Text = oRjk.Alm2
             txtKota.Text = oRjk.Kota
+            CbKolektif.Checked = oRjk.Kolektif
         End If
 
     End Sub

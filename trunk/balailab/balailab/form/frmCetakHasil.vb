@@ -117,7 +117,8 @@ Public Class frmCetakHasil
                     .Columns(1).HeaderText = "Kode Uji"
                     .Columns(1).ReadOnly = True
                     .Columns(1).Name = "KodeUji"
-                    .Columns(1).Width = 70
+                    .Columns(1).Width = 60
+                    .Columns(1).Visible = False
                     .Columns(2).HeaderText = "Pengujian"
                     .Columns(2).ReadOnly = True
                     .Columns(2).Name = "NamaUji"
