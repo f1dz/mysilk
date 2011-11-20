@@ -101,29 +101,55 @@ Public Class frmCetakHasil
         txtTelp.Text = oMR.xTelp
 
         grid.Dock = DockStyle.Fill
-        grid.Tree.Style = TreeStyleFlags.Simple
-        grid.Tree.Column = 0
-        grid.Tree.Show(1)
-        grid.AutoSizeCols()
-        grid.AllowMerging = AllowMergingEnum.Nodes
-        grid.DataSource = oHasil.UjiPerInstDS.Tables(0)
+        'grid.DataSource = oHasil.UjiPerInstDS.Tables(0)
 
-        With grid
-            .Cols(1).Caption = "Grup Uji"
-            .Cols(2).Caption = "Kode"
-            .Cols(3).Caption = "Pengujian"
-            .Cols(4).Caption = "Satuan"
-            .Cols(5).Caption = "Hasil"
-            .Cols(6).Caption = "Nilai Normal"
-            .Cols(7).Caption = "Metode"
-            .Cols(8).Caption = "Sample"
-            .Cols(8).Visible = False
+        With oHasil.UjiPerInstDS
+            If .Tables(0).Rows.Count > 0 Then
+                grid.DataSource = .Tables(0)
+
+
+                With grid
+                    .Dock = DockStyle.Fill
+                    .RowHeadersWidth = 20
+                    .Columns(0).HeaderText = "Grup Uji"
+                    .Columns(0).ReadOnly = True
+                    .Columns(0).Name = "KodeGrupUji"
+                    .Columns(1).HeaderText = "Kode Uji"
+                    .Columns(1).ReadOnly = True
+                    .Columns(1).Name = "KodeUji"
+                    .Columns(1).Width = 70
+                    .Columns(2).HeaderText = "Pengujian"
+                    .Columns(2).ReadOnly = True
+                    .Columns(2).Name = "NamaUji"
+                    .Columns(2).MinimumWidth = 200
+                    .Columns(2).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                    .Columns(3).HeaderText = "Satuan"
+                    .Columns(3).ReadOnly = True
+                    .Columns(3).Name = "Satuan"
+                    .Columns(3).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                    .Columns(4).HeaderText = "Hasil"
+                    .Columns(4).Name = "Hasil"
+                    .Columns(4).MinimumWidth = 100
+                    .Columns(4).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                    .Columns(5).HeaderText = "Standar"
+                    .Columns(5).ReadOnly = True
+                    .Columns(5).Name = "Standar"
+                    .Columns(5).Width = 140
+                    .Columns(5).ToolTipText = .Columns(5).Selected.ToString
+                    .Columns(6).HeaderText = "Metode"
+                    .Columns(6).ReadOnly = True
+                    .Columns(6).Name = "Metode"
+                    .Columns(6).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                    .Columns(7).Name = "KodeSample"
+                    .Columns(7).Visible = False
+                End With
+            End If
         End With
     End Sub
 
     Private Sub ClrScr()
         grid.DataSource = Nothing
-        grid.Rows.Count = 1
+        grid.Rows.Clear()
         txtKdSample.Clear()
         txtJnsBahan.Clear()
         txtKemasan.Clear()
@@ -209,27 +235,27 @@ Public Class frmCetakHasil
 
             Dim xGroup As String = ""
             Dim xRow As Integer = 13
-            For i As Integer = 1 To .Rows.Count
-                Dim filter As New C1.Win.C1FlexGrid.ConditionFilter
+            For i As Integer = 1 To .Rows.Count - 1
+                'Dim filter As New C1.Win.C1FlexGrid.ConditionFilter
                 With oXcl
-                    If grid(i, 1) <> xGroup Then
+                    If grid.Item(0, i).Value <> xGroup Then
                         xRow += 1
-                        .Cells(xRow, 2).Value = UCase(grid(i, 1))
+                        .Cells(xRow, 2).Value = UCase(grid.Item(0, i).Value)
                         .Cells(xRow, 2).Font.FontStyle = "Bold"
                         oXcl.Rows(xRow + 1).insert()
 
-                        xGroup = grid(i, 1)
+                        xGroup = grid.Item(0, i).Value
                         Dim n As Integer = 1
-                        For j As Integer = 1 To grid.Rows.Count - 1
-                            If xGroup = grid(j, 1) Then
+                        For j As Integer = 0 To grid.Rows.Count - 1
+                            If xGroup = grid.Item(0, j).Value Then
                                 'xRow += 1
 
                                 .Cells(xRow + 1, 1).value = n
-                                .Cells(xRow + 1, 2).Value = grid(j, 3)
-                                .Cells(xRow + 1, 4).Value = grid(j, 4)
-                                .Cells(xRow + 1, 5).Value = grid(j, 5)
-                                .Cells(xRow + 1, 6).Value = Replace(grid(j, 6), vbCrLf, "")
-                                .Cells(xRow + 1, 8).Value = Replace(grid(j, 7), vbCrLf, "")
+                                .Cells(xRow + 1, 2).Value = grid.Item(2, j).Value
+                                .Cells(xRow + 1, 4).Value = grid.Item(3, j).Value
+                                .Cells(xRow + 1, 5).Value = grid.Item(4, j).Value
+                                .Cells(xRow + 1, 6).Value = Replace(grid.Item(5, j).Value, vbCrLf, "")
+                                .Cells(xRow + 1, 8).Value = Replace(grid.Item(6, j).Value, vbCrLf, "")
                                 .Cells(xRow + 1, 2).Font.FontStyle = ""
                                 'xRow = 14 + j
                                 xRow += 1
@@ -250,6 +276,43 @@ Public Class frmCetakHasil
         oXcl.ActiveWorkbook.Close(False)
         oXcl = Nothing
     End Sub
+
+#Region "Cell Painting"
+    'e.g. Vertically merge the same cells of the fourth column  
+    Private Sub grid_CellPainting(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellPaintingEventArgs) Handles grid.CellPainting
+
+        If e.ColumnIndex = 0 AndAlso e.RowIndex <> -1 Then
+
+            Using gridBrush As Brush = New SolidBrush(Me.grid.GridColor),
+                backColorBrush As Brush = New SolidBrush(e.CellStyle.BackColor)
+
+                Using gridLinePen As Pen = New Pen(gridBrush)
+                    ' Clear cell  
+                    e.Graphics.FillRectangle(backColorBrush, e.CellBounds)
+
+                    ' Draw line (bottom border and right border of current cell)  
+                    'If next row cell has different content, only draw bottom border line of current cell  
+                    If e.RowIndex < grid.Rows.Count - 2 AndAlso grid.Rows(e.RowIndex + 1).Cells(e.ColumnIndex).Value.ToString() <> e.Value.ToString() Then
+                        e.Graphics.DrawLine(gridLinePen, e.CellBounds.Left, e.CellBounds.Bottom - 1, e.CellBounds.Right - 1, e.CellBounds.Bottom - 1)
+                    End If
+
+                    ' Draw right border line of current cell  
+                    e.Graphics.DrawLine(gridLinePen, e.CellBounds.Right - 1, e.CellBounds.Top, e.CellBounds.Right - 1, e.CellBounds.Bottom)
+
+                    ' draw/fill content in current cell, and fill only one cell of multiple same cells  
+                    If Not e.Value Is Nothing Then
+                        If e.RowIndex > 0 AndAlso grid.Rows(e.RowIndex - 1).Cells(e.ColumnIndex).Value.ToString() = e.Value.ToString() Then
+                        Else
+                            e.Graphics.DrawString(CType(e.Value, String), e.CellStyle.Font, Brushes.Black, e.CellBounds.X + 2, e.CellBounds.Y + 5, StringFormat.GenericDefault)
+                        End If
+                    End If
+
+                    e.Handled = True
+                End Using
+            End Using
+        End If
+    End Sub
+#End Region
 
     Private Sub btnEditHasil_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEditHasil.Click
         oHasil.vKode = txtKdHasil.Text

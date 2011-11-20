@@ -71,7 +71,6 @@
     <ApplicationIcon>lab.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.6.20112.624, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -79,9 +78,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
     <Reference Include="DevComponents.DotNetBar2, Version=10.0.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
@@ -106,7 +102,6 @@
     <Reference Include="System.Drawing">
       <Private>False</Private>
     </Reference>
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms">
       <Private>False</Private>
     </Reference>

@@ -23,10 +23,10 @@ Partial Class frmSetupGrupJenisUji
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PanelEx1 = New DevComponents.DotNetBar.PanelEx()
+        Me.LabelX1 = New DevComponents.DotNetBar.LabelX()
         Me.txtNmGrupUji = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.LabelX3 = New DevComponents.DotNetBar.LabelX()
         Me.txtKdGrupUji = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.LabelX1 = New DevComponents.DotNetBar.LabelX()
         Me.BtnSave = New DevComponents.DotNetBar.ButtonX()
         Me.BtnExit = New DevComponents.DotNetBar.ButtonX()
         Me.PanelEx1.SuspendLayout()
@@ -51,6 +51,20 @@ Partial Class frmSetupGrupJenisUji
         Me.PanelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText
         Me.PanelEx1.Style.GradientAngle = 90
         Me.PanelEx1.TabIndex = 0
+        '
+        'LabelX1
+        '
+        '
+        '
+        '
+        Me.LabelX1.BackgroundStyle.Class = ""
+        Me.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX1.Location = New System.Drawing.Point(17, 45)
+        Me.LabelX1.Name = "LabelX1"
+        Me.LabelX1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LabelX1.Size = New System.Drawing.Size(75, 23)
+        Me.LabelX1.TabIndex = 10
+        Me.LabelX1.Text = "Grup Uji"
         '
         'txtNmGrupUji
         '
@@ -93,20 +107,6 @@ Partial Class frmSetupGrupJenisUji
         Me.txtKdGrupUji.Size = New System.Drawing.Size(59, 20)
         Me.txtKdGrupUji.TabIndex = 7
         '
-        'LabelX1
-        '
-        '
-        '
-        '
-        Me.LabelX1.BackgroundStyle.Class = ""
-        Me.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.LabelX1.Location = New System.Drawing.Point(17, 45)
-        Me.LabelX1.Name = "LabelX1"
-        Me.LabelX1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LabelX1.Size = New System.Drawing.Size(75, 23)
-        Me.LabelX1.TabIndex = 10
-        Me.LabelX1.Text = "Grup Uji"
-        '
         'BtnSave
         '
         Me.BtnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
@@ -137,7 +137,11 @@ Partial Class frmSetupGrupJenisUji
         Me.Controls.Add(Me.BtnSave)
         Me.Controls.Add(Me.BtnExit)
         Me.Controls.Add(Me.PanelEx1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmSetupGrupJenisUji"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Grup Jenis Uji"
         Me.PanelEx1.ResumeLayout(False)
         Me.ResumeLayout(False)

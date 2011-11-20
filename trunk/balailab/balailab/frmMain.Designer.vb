@@ -35,6 +35,16 @@ Partial Class frmMain
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.StyleManager = New DevComponents.DotNetBar.StyleManager(Me.components)
         Me.RbnMain = New DevComponents.DotNetBar.RibbonControl()
+        Me.RbnPanelTrs = New DevComponents.DotNetBar.RibbonPanel()
+        Me.RibbonBarLaporan = New DevComponents.DotNetBar.RibbonBar()
+        Me.mnuLapKasir = New DevComponents.DotNetBar.ButtonItem()
+        Me.RibbonBarBO = New DevComponents.DotNetBar.RibbonBar()
+        Me.mnuEntryHasil = New DevComponents.DotNetBar.ButtonItem()
+        Me.mnuCetakHasil = New DevComponents.DotNetBar.ButtonItem()
+        Me.RibbonBarFO = New DevComponents.DotNetBar.RibbonBar()
+        Me.mnuTrsRegistrasi = New DevComponents.DotNetBar.ButtonItem()
+        Me.mnuTrsUji = New DevComponents.DotNetBar.ButtonItem()
+        Me.mnuTrsKasir = New DevComponents.DotNetBar.ButtonItem()
         Me.RibbonPanel2 = New DevComponents.DotNetBar.RibbonPanel()
         Me.RbnSetupMaster = New DevComponents.DotNetBar.RibbonBar()
         Me.mnuTarif = New DevComponents.DotNetBar.ButtonItem()
@@ -52,16 +62,6 @@ Partial Class frmMain
         Me.mnuParamSystem = New DevComponents.DotNetBar.ButtonItem()
         Me.mnuParamKomp = New DevComponents.DotNetBar.ButtonItem()
         Me.mnuSetupUser = New DevComponents.DotNetBar.ButtonItem()
-        Me.RbnPanelTrs = New DevComponents.DotNetBar.RibbonPanel()
-        Me.RibbonBarLaporan = New DevComponents.DotNetBar.RibbonBar()
-        Me.mnuLapKasir = New DevComponents.DotNetBar.ButtonItem()
-        Me.RibbonBarBO = New DevComponents.DotNetBar.RibbonBar()
-        Me.mnuEntryHasil = New DevComponents.DotNetBar.ButtonItem()
-        Me.mnuCetakHasil = New DevComponents.DotNetBar.ButtonItem()
-        Me.RibbonBarFO = New DevComponents.DotNetBar.RibbonBar()
-        Me.mnuTrsRegistrasi = New DevComponents.DotNetBar.ButtonItem()
-        Me.mnuTrsUji = New DevComponents.DotNetBar.ButtonItem()
-        Me.mnuTrsKasir = New DevComponents.DotNetBar.ButtonItem()
         Me.RibbonTabItem1 = New DevComponents.DotNetBar.RibbonTabItem()
         Me.RibbonTabItem2 = New DevComponents.DotNetBar.RibbonTabItem()
         Me.rbnCP = New DevComponents.DotNetBar.RibbonTabItem()
@@ -101,9 +101,9 @@ Partial Class frmMain
         Me.xUser = New System.Windows.Forms.ToolStripStatusLabel()
         Me.xTimer = New System.Windows.Forms.Timer(Me.components)
         Me.RbnMain.SuspendLayout()
+        Me.RbnPanelTrs.SuspendLayout()
         Me.RibbonPanel2.SuspendLayout()
         Me.RibbonPanel3.SuspendLayout()
-        Me.RbnPanelTrs.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -120,10 +120,11 @@ Partial Class frmMain
         Me.RbnMain.BackgroundStyle.Class = ""
         Me.RbnMain.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.RbnMain.CaptionVisible = True
+        Me.RbnMain.Controls.Add(Me.RbnPanelTrs)
         Me.RbnMain.Controls.Add(Me.RibbonPanel2)
         Me.RbnMain.Controls.Add(Me.RibbonPanel3)
-        Me.RbnMain.Controls.Add(Me.RbnPanelTrs)
         Me.RbnMain.Dock = System.Windows.Forms.DockStyle.Top
+        Me.RbnMain.Expanded = False
         Me.RbnMain.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.RibbonTabItem1, Me.RibbonTabItem2, Me.rbnCP})
         Me.RbnMain.KeyTipsFont = New System.Drawing.Font("Tahoma", 7.0!)
         Me.RbnMain.Location = New System.Drawing.Point(5, 1)
@@ -153,6 +154,206 @@ Partial Class frmMain
         Me.RbnMain.TabIndex = 9
         Me.RbnMain.Text = "RibbonControl1"
         '
+        'RbnPanelTrs
+        '
+        Me.RbnPanelTrs.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.RbnPanelTrs.Controls.Add(Me.RibbonBarLaporan)
+        Me.RbnPanelTrs.Controls.Add(Me.RibbonBarBO)
+        Me.RbnPanelTrs.Controls.Add(Me.RibbonBarFO)
+        Me.RbnPanelTrs.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RbnPanelTrs.Location = New System.Drawing.Point(0, 57)
+        Me.RbnPanelTrs.Name = "RbnPanelTrs"
+        Me.RbnPanelTrs.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.RbnPanelTrs.Size = New System.Drawing.Size(998, 113)
+        '
+        '
+        '
+        Me.RbnPanelTrs.Style.Class = ""
+        Me.RbnPanelTrs.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.RbnPanelTrs.StyleMouseDown.Class = ""
+        Me.RbnPanelTrs.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.RbnPanelTrs.StyleMouseOver.Class = ""
+        Me.RbnPanelTrs.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RbnPanelTrs.TabIndex = 1
+        '
+        'RibbonBarLaporan
+        '
+        Me.RibbonBarLaporan.AutoOverflowEnabled = True
+        '
+        '
+        '
+        Me.RibbonBarLaporan.BackgroundMouseOverStyle.Class = ""
+        Me.RibbonBarLaporan.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.RibbonBarLaporan.BackgroundStyle.Class = ""
+        Me.RibbonBarLaporan.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonBarLaporan.ContainerControlProcessDialogKey = True
+        Me.RibbonBarLaporan.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.mnuLapKasir})
+        Me.RibbonBarLaporan.Location = New System.Drawing.Point(379, 0)
+        Me.RibbonBarLaporan.Name = "RibbonBarLaporan"
+        Me.RibbonBarLaporan.ResizeItemsToFit = False
+        Me.RibbonBarLaporan.Size = New System.Drawing.Size(176, 92)
+        Me.RibbonBarLaporan.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.RibbonBarLaporan.TabIndex = 2
+        Me.RibbonBarLaporan.Text = "Laporan"
+        '
+        '
+        '
+        Me.RibbonBarLaporan.TitleStyle.Class = ""
+        Me.RibbonBarLaporan.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.RibbonBarLaporan.TitleStyleMouseOver.Class = ""
+        Me.RibbonBarLaporan.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonBarLaporan.VerticalItemAlignment = DevComponents.DotNetBar.eVerticalItemsAlignment.Middle
+        '
+        'mnuLapKasir
+        '
+        Me.mnuLapKasir.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
+        Me.mnuLapKasir.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.mnuLapKasir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.mnuLapKasir.Image = Global.balailab.My.Resources.Resources.report_kasir
+        Me.mnuLapKasir.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.mnuLapKasir.Name = "mnuLapKasir"
+        Me.mnuLapKasir.RibbonWordWrap = False
+        Me.mnuLapKasir.SubItemsExpandWidth = 14
+        Me.mnuLapKasir.Text = "Laporan Kasir"
+        '
+        'RibbonBarBO
+        '
+        Me.RibbonBarBO.AutoOverflowEnabled = True
+        '
+        '
+        '
+        Me.RibbonBarBO.BackgroundMouseOverStyle.Class = ""
+        Me.RibbonBarBO.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.RibbonBarBO.BackgroundStyle.Class = ""
+        Me.RibbonBarBO.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonBarBO.ContainerControlProcessDialogKey = True
+        Me.RibbonBarBO.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.mnuEntryHasil, Me.mnuCetakHasil})
+        Me.RibbonBarBO.Location = New System.Drawing.Point(197, 0)
+        Me.RibbonBarBO.Name = "RibbonBarBO"
+        Me.RibbonBarBO.ResizeItemsToFit = False
+        Me.RibbonBarBO.Size = New System.Drawing.Size(176, 92)
+        Me.RibbonBarBO.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.RibbonBarBO.TabIndex = 1
+        Me.RibbonBarBO.Text = "Back Office"
+        '
+        '
+        '
+        Me.RibbonBarBO.TitleStyle.Class = ""
+        Me.RibbonBarBO.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.RibbonBarBO.TitleStyleMouseOver.Class = ""
+        Me.RibbonBarBO.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonBarBO.VerticalItemAlignment = DevComponents.DotNetBar.eVerticalItemsAlignment.Middle
+        '
+        'mnuEntryHasil
+        '
+        Me.mnuEntryHasil.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
+        Me.mnuEntryHasil.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.mnuEntryHasil.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.mnuEntryHasil.Image = Global.balailab.My.Resources.Resources.microscope_icon_50x50
+        Me.mnuEntryHasil.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.mnuEntryHasil.Name = "mnuEntryHasil"
+        Me.mnuEntryHasil.SubItemsExpandWidth = 14
+        Me.mnuEntryHasil.Text = "Hasil Uji"
+        '
+        'mnuCetakHasil
+        '
+        Me.mnuCetakHasil.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
+        Me.mnuCetakHasil.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.mnuCetakHasil.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.mnuCetakHasil.Image = Global.balailab.My.Resources.Resources.cetak_hasil_50x50
+        Me.mnuCetakHasil.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.mnuCetakHasil.Name = "mnuCetakHasil"
+        Me.mnuCetakHasil.RibbonWordWrap = False
+        Me.mnuCetakHasil.SubItemsExpandWidth = 14
+        Me.mnuCetakHasil.Text = "Cetak Hasil"
+        '
+        'RibbonBarFO
+        '
+        Me.RibbonBarFO.AutoOverflowEnabled = True
+        '
+        '
+        '
+        Me.RibbonBarFO.BackgroundMouseOverStyle.Class = ""
+        Me.RibbonBarFO.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.RibbonBarFO.BackgroundStyle.Class = ""
+        Me.RibbonBarFO.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonBarFO.ContainerControlProcessDialogKey = True
+        Me.RibbonBarFO.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.mnuTrsRegistrasi, Me.mnuTrsUji, Me.mnuTrsKasir})
+        Me.RibbonBarFO.Location = New System.Drawing.Point(3, 0)
+        Me.RibbonBarFO.Name = "RibbonBarFO"
+        Me.RibbonBarFO.ResizeItemsToFit = False
+        Me.RibbonBarFO.Size = New System.Drawing.Size(192, 92)
+        Me.RibbonBarFO.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.RibbonBarFO.TabIndex = 0
+        Me.RibbonBarFO.Text = "Front Office"
+        '
+        '
+        '
+        Me.RibbonBarFO.TitleStyle.Class = ""
+        Me.RibbonBarFO.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        '
+        '
+        '
+        Me.RibbonBarFO.TitleStyleMouseOver.Class = ""
+        Me.RibbonBarFO.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.RibbonBarFO.VerticalItemAlignment = DevComponents.DotNetBar.eVerticalItemsAlignment.Middle
+        '
+        'mnuTrsRegistrasi
+        '
+        Me.mnuTrsRegistrasi.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
+        Me.mnuTrsRegistrasi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.mnuTrsRegistrasi.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.mnuTrsRegistrasi.GlobalName = "mnuTrsRegistrasi"
+        Me.mnuTrsRegistrasi.Image = Global.balailab.My.Resources.Resources._1282709929_PatientFile_50x50
+        Me.mnuTrsRegistrasi.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.[Default]
+        Me.mnuTrsRegistrasi.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.mnuTrsRegistrasi.Name = "mnuTrsRegistrasi"
+        Me.mnuTrsRegistrasi.SubItemsExpandWidth = 14
+        Me.mnuTrsRegistrasi.Text = "Sampling"
+        '
+        'mnuTrsUji
+        '
+        Me.mnuTrsUji.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
+        Me.mnuTrsUji.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.mnuTrsUji.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.mnuTrsUji.Image = Global.balailab.My.Resources.Resources._1282710427_laboratory_50x50
+        Me.mnuTrsUji.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.mnuTrsUji.Name = "mnuTrsUji"
+        Me.mnuTrsUji.SubItemsExpandWidth = 14
+        Me.mnuTrsUji.Text = "Billing"
+        '
+        'mnuTrsKasir
+        '
+        Me.mnuTrsKasir.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
+        Me.mnuTrsKasir.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.mnuTrsKasir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.mnuTrsKasir.Image = Global.balailab.My.Resources.Resources._1282710390_Money_Bag_50x50
+        Me.mnuTrsKasir.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+        Me.mnuTrsKasir.Name = "mnuTrsKasir"
+        Me.mnuTrsKasir.SubItemsExpandWidth = 14
+        Me.mnuTrsKasir.Text = "Kasir"
+        '
         'RibbonPanel2
         '
         Me.RibbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
@@ -178,6 +379,7 @@ Partial Class frmMain
         Me.RibbonPanel2.StyleMouseOver.Class = ""
         Me.RibbonPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.RibbonPanel2.TabIndex = 2
+        Me.RibbonPanel2.Visible = False
         '
         'RbnSetupMaster
         '
@@ -384,216 +586,15 @@ Partial Class frmMain
         Me.mnuSetupUser.SubItemsExpandWidth = 14
         Me.mnuSetupUser.Text = "User"
         '
-        'RbnPanelTrs
-        '
-        Me.RbnPanelTrs.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.RbnPanelTrs.Controls.Add(Me.RibbonBarLaporan)
-        Me.RbnPanelTrs.Controls.Add(Me.RibbonBarBO)
-        Me.RbnPanelTrs.Controls.Add(Me.RibbonBarFO)
-        Me.RbnPanelTrs.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RbnPanelTrs.Location = New System.Drawing.Point(0, 57)
-        Me.RbnPanelTrs.Name = "RbnPanelTrs"
-        Me.RbnPanelTrs.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
-        Me.RbnPanelTrs.Size = New System.Drawing.Size(998, 113)
-        '
-        '
-        '
-        Me.RbnPanelTrs.Style.Class = ""
-        Me.RbnPanelTrs.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
-        '
-        Me.RbnPanelTrs.StyleMouseDown.Class = ""
-        Me.RbnPanelTrs.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
-        '
-        Me.RbnPanelTrs.StyleMouseOver.Class = ""
-        Me.RbnPanelTrs.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.RbnPanelTrs.TabIndex = 1
-        Me.RbnPanelTrs.Visible = False
-        '
-        'RibbonBarLaporan
-        '
-        Me.RibbonBarLaporan.AutoOverflowEnabled = True
-        '
-        '
-        '
-        Me.RibbonBarLaporan.BackgroundMouseOverStyle.Class = ""
-        Me.RibbonBarLaporan.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
-        '
-        Me.RibbonBarLaporan.BackgroundStyle.Class = ""
-        Me.RibbonBarLaporan.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.RibbonBarLaporan.ContainerControlProcessDialogKey = True
-        Me.RibbonBarLaporan.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.mnuLapKasir})
-        Me.RibbonBarLaporan.Location = New System.Drawing.Point(379, 0)
-        Me.RibbonBarLaporan.Name = "RibbonBarLaporan"
-        Me.RibbonBarLaporan.ResizeItemsToFit = False
-        Me.RibbonBarLaporan.Size = New System.Drawing.Size(176, 92)
-        Me.RibbonBarLaporan.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.RibbonBarLaporan.TabIndex = 2
-        Me.RibbonBarLaporan.Text = "Laporan"
-        '
-        '
-        '
-        Me.RibbonBarLaporan.TitleStyle.Class = ""
-        Me.RibbonBarLaporan.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
-        '
-        Me.RibbonBarLaporan.TitleStyleMouseOver.Class = ""
-        Me.RibbonBarLaporan.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.RibbonBarLaporan.VerticalItemAlignment = DevComponents.DotNetBar.eVerticalItemsAlignment.Middle
-        '
-        'mnuLapKasir
-        '
-        Me.mnuLapKasir.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
-        Me.mnuLapKasir.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.mnuLapKasir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.mnuLapKasir.Image = Global.balailab.My.Resources.Resources.report_kasir
-        Me.mnuLapKasir.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.mnuLapKasir.Name = "mnuLapKasir"
-        Me.mnuLapKasir.RibbonWordWrap = False
-        Me.mnuLapKasir.SubItemsExpandWidth = 14
-        Me.mnuLapKasir.Text = "Laporan Kasir"
-        '
-        'RibbonBarBO
-        '
-        Me.RibbonBarBO.AutoOverflowEnabled = True
-        '
-        '
-        '
-        Me.RibbonBarBO.BackgroundMouseOverStyle.Class = ""
-        Me.RibbonBarBO.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
-        '
-        Me.RibbonBarBO.BackgroundStyle.Class = ""
-        Me.RibbonBarBO.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.RibbonBarBO.ContainerControlProcessDialogKey = True
-        Me.RibbonBarBO.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.mnuEntryHasil, Me.mnuCetakHasil})
-        Me.RibbonBarBO.Location = New System.Drawing.Point(197, 0)
-        Me.RibbonBarBO.Name = "RibbonBarBO"
-        Me.RibbonBarBO.ResizeItemsToFit = False
-        Me.RibbonBarBO.Size = New System.Drawing.Size(176, 92)
-        Me.RibbonBarBO.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.RibbonBarBO.TabIndex = 1
-        Me.RibbonBarBO.Text = "Back Office"
-        '
-        '
-        '
-        Me.RibbonBarBO.TitleStyle.Class = ""
-        Me.RibbonBarBO.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
-        '
-        Me.RibbonBarBO.TitleStyleMouseOver.Class = ""
-        Me.RibbonBarBO.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.RibbonBarBO.VerticalItemAlignment = DevComponents.DotNetBar.eVerticalItemsAlignment.Middle
-        '
-        'mnuEntryHasil
-        '
-        Me.mnuEntryHasil.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
-        Me.mnuEntryHasil.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.mnuEntryHasil.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.mnuEntryHasil.Image = Global.balailab.My.Resources.Resources.microscope_icon_50x50
-        Me.mnuEntryHasil.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.mnuEntryHasil.Name = "mnuEntryHasil"
-        Me.mnuEntryHasil.SubItemsExpandWidth = 14
-        Me.mnuEntryHasil.Text = "Hasil Uji"
-        '
-        'mnuCetakHasil
-        '
-        Me.mnuCetakHasil.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
-        Me.mnuCetakHasil.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.mnuCetakHasil.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.mnuCetakHasil.Image = Global.balailab.My.Resources.Resources.cetak_hasil_50x50
-        Me.mnuCetakHasil.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.mnuCetakHasil.Name = "mnuCetakHasil"
-        Me.mnuCetakHasil.RibbonWordWrap = False
-        Me.mnuCetakHasil.SubItemsExpandWidth = 14
-        Me.mnuCetakHasil.Text = "Cetak Hasil"
-        '
-        'RibbonBarFO
-        '
-        Me.RibbonBarFO.AutoOverflowEnabled = True
-        '
-        '
-        '
-        Me.RibbonBarFO.BackgroundMouseOverStyle.Class = ""
-        Me.RibbonBarFO.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
-        '
-        Me.RibbonBarFO.BackgroundStyle.Class = ""
-        Me.RibbonBarFO.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.RibbonBarFO.ContainerControlProcessDialogKey = True
-        Me.RibbonBarFO.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.mnuTrsRegistrasi, Me.mnuTrsUji, Me.mnuTrsKasir})
-        Me.RibbonBarFO.Location = New System.Drawing.Point(3, 0)
-        Me.RibbonBarFO.Name = "RibbonBarFO"
-        Me.RibbonBarFO.ResizeItemsToFit = False
-        Me.RibbonBarFO.Size = New System.Drawing.Size(192, 92)
-        Me.RibbonBarFO.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.RibbonBarFO.TabIndex = 0
-        Me.RibbonBarFO.Text = "Front Office"
-        '
-        '
-        '
-        Me.RibbonBarFO.TitleStyle.Class = ""
-        Me.RibbonBarFO.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        '
-        '
-        '
-        Me.RibbonBarFO.TitleStyleMouseOver.Class = ""
-        Me.RibbonBarFO.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.RibbonBarFO.VerticalItemAlignment = DevComponents.DotNetBar.eVerticalItemsAlignment.Middle
-        '
-        'mnuTrsRegistrasi
-        '
-        Me.mnuTrsRegistrasi.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
-        Me.mnuTrsRegistrasi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.mnuTrsRegistrasi.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.mnuTrsRegistrasi.GlobalName = "mnuTrsRegistrasi"
-        Me.mnuTrsRegistrasi.Image = Global.balailab.My.Resources.Resources._1282709929_PatientFile_50x50
-        Me.mnuTrsRegistrasi.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.[Default]
-        Me.mnuTrsRegistrasi.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.mnuTrsRegistrasi.Name = "mnuTrsRegistrasi"
-        Me.mnuTrsRegistrasi.SubItemsExpandWidth = 14
-        Me.mnuTrsRegistrasi.Text = "Sampling"
-        '
-        'mnuTrsUji
-        '
-        Me.mnuTrsUji.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
-        Me.mnuTrsUji.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.mnuTrsUji.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.mnuTrsUji.Image = Global.balailab.My.Resources.Resources._1282710427_laboratory_50x50
-        Me.mnuTrsUji.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.mnuTrsUji.Name = "mnuTrsUji"
-        Me.mnuTrsUji.SubItemsExpandWidth = 14
-        Me.mnuTrsUji.Text = "Billing"
-        '
-        'mnuTrsKasir
-        '
-        Me.mnuTrsKasir.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
-        Me.mnuTrsKasir.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.mnuTrsKasir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.mnuTrsKasir.Image = Global.balailab.My.Resources.Resources._1282710390_Money_Bag_50x50
-        Me.mnuTrsKasir.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
-        Me.mnuTrsKasir.Name = "mnuTrsKasir"
-        Me.mnuTrsKasir.SubItemsExpandWidth = 14
-        Me.mnuTrsKasir.Text = "Kasir"
-        '
         'RibbonTabItem1
         '
+        Me.RibbonTabItem1.Checked = True
         Me.RibbonTabItem1.Name = "RibbonTabItem1"
         Me.RibbonTabItem1.Panel = Me.RbnPanelTrs
         Me.RibbonTabItem1.Text = "Transaksi"
         '
         'RibbonTabItem2
         '
-        Me.RibbonTabItem2.Checked = True
         Me.RibbonTabItem2.Name = "RibbonTabItem2"
         Me.RibbonTabItem2.Panel = Me.RibbonPanel2
         Me.RibbonTabItem2.Text = "Master"
@@ -803,7 +804,7 @@ Partial Class frmMain
         Me.DockSite4.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
         Me.DockSite4.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.DockSite4.DocumentDockContainer = New DevComponents.DotNetBar.DocumentDockContainer()
-        Me.DockSite4.Location = New System.Drawing.Point(5, 555)
+        Me.DockSite4.Location = New System.Drawing.Point(5, 550)
         Me.DockSite4.Name = "DockSite4"
         Me.DockSite4.Size = New System.Drawing.Size(998, 0)
         Me.DockSite4.TabIndex = 14
@@ -816,7 +817,7 @@ Partial Class frmMain
         Me.DockSite1.DocumentDockContainer = New DevComponents.DotNetBar.DocumentDockContainer()
         Me.DockSite1.Location = New System.Drawing.Point(5, 173)
         Me.DockSite1.Name = "DockSite1"
-        Me.DockSite1.Size = New System.Drawing.Size(0, 382)
+        Me.DockSite1.Size = New System.Drawing.Size(0, 377)
         Me.DockSite1.TabIndex = 11
         Me.DockSite1.TabStop = False
         '
@@ -827,7 +828,7 @@ Partial Class frmMain
         Me.DockSite2.DocumentDockContainer = New DevComponents.DotNetBar.DocumentDockContainer()
         Me.DockSite2.Location = New System.Drawing.Point(1003, 173)
         Me.DockSite2.Name = "DockSite2"
-        Me.DockSite2.Size = New System.Drawing.Size(0, 382)
+        Me.DockSite2.Size = New System.Drawing.Size(0, 377)
         Me.DockSite2.TabIndex = 12
         Me.DockSite2.TabStop = False
         '
@@ -835,7 +836,7 @@ Partial Class frmMain
         '
         Me.DockSite8.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
         Me.DockSite8.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.DockSite8.Location = New System.Drawing.Point(5, 555)
+        Me.DockSite8.Location = New System.Drawing.Point(5, 550)
         Me.DockSite8.Name = "DockSite8"
         Me.DockSite8.Size = New System.Drawing.Size(998, 0)
         Me.DockSite8.TabIndex = 18
@@ -847,7 +848,7 @@ Partial Class frmMain
         Me.DockSite5.Dock = System.Windows.Forms.DockStyle.Left
         Me.DockSite5.Location = New System.Drawing.Point(5, 1)
         Me.DockSite5.Name = "DockSite5"
-        Me.DockSite5.Size = New System.Drawing.Size(0, 554)
+        Me.DockSite5.Size = New System.Drawing.Size(0, 549)
         Me.DockSite5.TabIndex = 15
         Me.DockSite5.TabStop = False
         '
@@ -857,7 +858,7 @@ Partial Class frmMain
         Me.DockSite6.Dock = System.Windows.Forms.DockStyle.Right
         Me.DockSite6.Location = New System.Drawing.Point(1003, 1)
         Me.DockSite6.Name = "DockSite6"
-        Me.DockSite6.Size = New System.Drawing.Size(0, 554)
+        Me.DockSite6.Size = New System.Drawing.Size(0, 549)
         Me.DockSite6.TabIndex = 16
         Me.DockSite6.TabStop = False
         '
@@ -886,7 +887,7 @@ Partial Class frmMain
         '
         Me.StatusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.xTglJam, Me.xServer, Me.xVersion, Me.xUser})
-        Me.StatusStrip.Location = New System.Drawing.Point(5, 533)
+        Me.StatusStrip.Location = New System.Drawing.Point(5, 528)
         Me.StatusStrip.Name = "StatusStrip"
         Me.StatusStrip.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.StatusStrip.ShowItemToolTips = True
@@ -949,7 +950,7 @@ Partial Class frmMain
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.balailab.My.Resources.Resources.background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(1008, 557)
+        Me.ClientSize = New System.Drawing.Size(1008, 552)
         Me.Controls.Add(Me.StatusStrip)
         Me.Controls.Add(Me.DockSite2)
         Me.Controls.Add(Me.DockSite1)
@@ -968,9 +969,9 @@ Partial Class frmMain
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.RbnMain.ResumeLayout(False)
         Me.RbnMain.PerformLayout()
+        Me.RbnPanelTrs.ResumeLayout(False)
         Me.RibbonPanel2.ResumeLayout(False)
         Me.RibbonPanel3.ResumeLayout(False)
-        Me.RbnPanelTrs.ResumeLayout(False)
         Me.StatusStrip.ResumeLayout(False)
         Me.StatusStrip.PerformLayout()
         Me.ResumeLayout(False)
