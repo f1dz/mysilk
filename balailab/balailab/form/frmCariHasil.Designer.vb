@@ -22,31 +22,32 @@ Partial Class frmCariHasil
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelEx1 = New DevComponents.DotNetBar.PanelEx()
-        Me.btnExit = New DevComponents.DotNetBar.ButtonX()
-        Me.btnOK = New DevComponents.DotNetBar.ButtonX()
-        Me.PanelEx2 = New DevComponents.DotNetBar.PanelEx()
         Me.PanelEx3 = New DevComponents.DotNetBar.PanelEx()
         Me.grid = New DevComponents.DotNetBar.Controls.DataGridViewX()
-        Me.txtQuery = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.LabelX1 = New DevComponents.DotNetBar.LabelX()
-        Me.TglReg1 = New DevComponents.Editors.DateTimeAdv.DateTimeInput()
-        Me.TglReg2 = New DevComponents.Editors.DateTimeAdv.DateTimeInput()
-        Me.LabelX2 = New DevComponents.DotNetBar.LabelX()
-        Me.LabelX3 = New DevComponents.DotNetBar.LabelX()
+        Me.PanelEx2 = New DevComponents.DotNetBar.PanelEx()
         Me.LabelX4 = New DevComponents.DotNetBar.LabelX()
         Me.LabelX5 = New DevComponents.DotNetBar.LabelX()
         Me.TglEst2 = New DevComponents.Editors.DateTimeAdv.DateTimeInput()
         Me.TglEst1 = New DevComponents.Editors.DateTimeAdv.DateTimeInput()
+        Me.LabelX3 = New DevComponents.DotNetBar.LabelX()
+        Me.LabelX2 = New DevComponents.DotNetBar.LabelX()
+        Me.TglReg2 = New DevComponents.Editors.DateTimeAdv.DateTimeInput()
+        Me.TglReg1 = New DevComponents.Editors.DateTimeAdv.DateTimeInput()
+        Me.LabelX1 = New DevComponents.DotNetBar.LabelX()
+        Me.txtQuery = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.btnExit = New DevComponents.DotNetBar.ButtonX()
+        Me.btnOK = New DevComponents.DotNetBar.ButtonX()
         Me.PanelEx1.SuspendLayout()
-        Me.PanelEx2.SuspendLayout()
         Me.PanelEx3.SuspendLayout()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TglReg1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TglReg2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelEx2.SuspendLayout()
         CType(Me.TglEst2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TglEst1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TglReg2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TglReg1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelEx1
@@ -68,27 +69,49 @@ Partial Class frmCariHasil
         Me.PanelEx1.TabIndex = 0
         Me.PanelEx1.Text = "PanelEx1"
         '
-        'btnExit
+        'PanelEx3
         '
-        Me.btnExit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btnExit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btnExit.Location = New System.Drawing.Point(543, 304)
-        Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(81, 25)
-        Me.btnExit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btnExit.TabIndex = 1
-        Me.btnExit.Text = "E&xit"
+        Me.PanelEx3.CanvasColor = System.Drawing.SystemColors.Control
+        Me.PanelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.PanelEx3.Controls.Add(Me.grid)
+        Me.PanelEx3.Location = New System.Drawing.Point(3, 100)
+        Me.PanelEx3.Name = "PanelEx3"
+        Me.PanelEx3.Size = New System.Drawing.Size(615, 191)
+        Me.PanelEx3.Style.Alignment = System.Drawing.StringAlignment.Center
+        Me.PanelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
+        Me.PanelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
+        Me.PanelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine
+        Me.PanelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder
+        Me.PanelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText
+        Me.PanelEx3.Style.GradientAngle = 90
+        Me.PanelEx3.TabIndex = 1
+        Me.PanelEx3.Text = "PanelEx3"
         '
-        'btnOK
+        'grid
         '
-        Me.btnOK.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.btnOK.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btnOK.Location = New System.Drawing.Point(456, 304)
-        Me.btnOK.Name = "btnOK"
-        Me.btnOK.Size = New System.Drawing.Size(81, 25)
-        Me.btnOK.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btnOK.TabIndex = 2
-        Me.btnOK.Text = "&OK"
+        Me.grid.AllowUserToAddRows = False
+        Me.grid.AllowUserToDeleteRows = False
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.grid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.grid.DefaultCellStyle = DataGridViewCellStyle4
+        Me.grid.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grid.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
+        Me.grid.Location = New System.Drawing.Point(0, 0)
+        Me.grid.MultiSelect = False
+        Me.grid.Name = "grid"
+        Me.grid.ReadOnly = True
+        Me.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.grid.Size = New System.Drawing.Size(615, 191)
+        Me.grid.TabIndex = 0
         '
         'PanelEx2
         '
@@ -115,210 +138,6 @@ Partial Class frmCariHasil
         Me.PanelEx2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText
         Me.PanelEx2.Style.GradientAngle = 90
         Me.PanelEx2.TabIndex = 0
-        '
-        'PanelEx3
-        '
-        Me.PanelEx3.CanvasColor = System.Drawing.SystemColors.Control
-        Me.PanelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.PanelEx3.Controls.Add(Me.grid)
-        Me.PanelEx3.Location = New System.Drawing.Point(3, 100)
-        Me.PanelEx3.Name = "PanelEx3"
-        Me.PanelEx3.Size = New System.Drawing.Size(615, 191)
-        Me.PanelEx3.Style.Alignment = System.Drawing.StringAlignment.Center
-        Me.PanelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
-        Me.PanelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
-        Me.PanelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine
-        Me.PanelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder
-        Me.PanelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText
-        Me.PanelEx3.Style.GradientAngle = 90
-        Me.PanelEx3.TabIndex = 1
-        Me.PanelEx3.Text = "PanelEx3"
-        '
-        'grid
-        '
-        Me.grid.AllowUserToAddRows = False
-        Me.grid.AllowUserToDeleteRows = False
-        Me.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.grid.DefaultCellStyle = DataGridViewCellStyle2
-        Me.grid.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grid.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
-        Me.grid.Location = New System.Drawing.Point(0, 0)
-        Me.grid.Name = "grid"
-        Me.grid.ReadOnly = True
-        Me.grid.Size = New System.Drawing.Size(615, 191)
-        Me.grid.TabIndex = 0
-        '
-        'txtQuery
-        '
-        '
-        '
-        '
-        Me.txtQuery.Border.Class = "TextBoxBorder"
-        Me.txtQuery.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txtQuery.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtQuery.Location = New System.Drawing.Point(80, 5)
-        Me.txtQuery.Name = "txtQuery"
-        Me.txtQuery.Size = New System.Drawing.Size(252, 22)
-        Me.txtQuery.TabIndex = 0
-        '
-        'LabelX1
-        '
-        '
-        '
-        '
-        Me.LabelX1.BackgroundStyle.Class = ""
-        Me.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.LabelX1.Location = New System.Drawing.Point(14, 3)
-        Me.LabelX1.Name = "LabelX1"
-        Me.LabelX1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LabelX1.Size = New System.Drawing.Size(60, 23)
-        Me.LabelX1.TabIndex = 1
-        Me.LabelX1.Text = "Keyword"
-        '
-        'TglReg1
-        '
-        Me.TglReg1.AllowEmptyState = False
-        '
-        '
-        '
-        Me.TglReg1.BackgroundStyle.Class = "DateTimeInputBackground"
-        Me.TglReg1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.TglReg1.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown
-        Me.TglReg1.ButtonDropDown.Visible = True
-        Me.TglReg1.CustomFormat = "yyyy-MM-dd"
-        Me.TglReg1.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TglReg1.Format = DevComponents.Editors.eDateTimePickerFormat.Custom
-        Me.TglReg1.IsPopupCalendarOpen = False
-        Me.TglReg1.Location = New System.Drawing.Point(80, 33)
-        '
-        '
-        '
-        Me.TglReg1.MonthCalendar.AnnuallyMarkedDates = New Date(-1) {}
-        '
-        '
-        '
-        Me.TglReg1.MonthCalendar.BackgroundStyle.Class = ""
-        Me.TglReg1.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.TglReg1.MonthCalendar.ClearButtonVisible = True
-        '
-        '
-        '
-        Me.TglReg1.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2
-        Me.TglReg1.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90
-        Me.TglReg1.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground
-        Me.TglReg1.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid
-        Me.TglReg1.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder
-        Me.TglReg1.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1
-        Me.TglReg1.MonthCalendar.CommandsBackgroundStyle.Class = ""
-        Me.TglReg1.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.TglReg1.MonthCalendar.DisplayMonth = New Date(2011, 11, 1, 0, 0, 0, 0)
-        Me.TglReg1.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday
-        Me.TglReg1.MonthCalendar.MarkedDates = New Date(-1) {}
-        Me.TglReg1.MonthCalendar.MonthlyMarkedDates = New Date(-1) {}
-        '
-        '
-        '
-        Me.TglReg1.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
-        Me.TglReg1.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90
-        Me.TglReg1.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
-        Me.TglReg1.MonthCalendar.NavigationBackgroundStyle.Class = ""
-        Me.TglReg1.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.TglReg1.MonthCalendar.TodayButtonVisible = True
-        Me.TglReg1.MonthCalendar.WeeklyMarkedDays = New System.DayOfWeek(-1) {}
-        Me.TglReg1.Name = "TglReg1"
-        Me.TglReg1.Size = New System.Drawing.Size(94, 20)
-        Me.TglReg1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.TglReg1.TabIndex = 2
-        Me.TglReg1.Value = New Date(2011, 1, 1, 0, 0, 0, 0)
-        '
-        'TglReg2
-        '
-        Me.TglReg2.AllowEmptyState = False
-        '
-        '
-        '
-        Me.TglReg2.BackgroundStyle.Class = "DateTimeInputBackground"
-        Me.TglReg2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.TglReg2.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown
-        Me.TglReg2.ButtonDropDown.Visible = True
-        Me.TglReg2.CustomFormat = "yyyy-MM-dd"
-        Me.TglReg2.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TglReg2.Format = DevComponents.Editors.eDateTimePickerFormat.Custom
-        Me.TglReg2.IsPopupCalendarOpen = False
-        Me.TglReg2.Location = New System.Drawing.Point(199, 33)
-        '
-        '
-        '
-        Me.TglReg2.MonthCalendar.AnnuallyMarkedDates = New Date(-1) {}
-        '
-        '
-        '
-        Me.TglReg2.MonthCalendar.BackgroundStyle.Class = ""
-        Me.TglReg2.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.TglReg2.MonthCalendar.ClearButtonVisible = True
-        '
-        '
-        '
-        Me.TglReg2.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2
-        Me.TglReg2.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90
-        Me.TglReg2.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground
-        Me.TglReg2.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid
-        Me.TglReg2.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder
-        Me.TglReg2.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1
-        Me.TglReg2.MonthCalendar.CommandsBackgroundStyle.Class = ""
-        Me.TglReg2.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.TglReg2.MonthCalendar.DisplayMonth = New Date(2011, 11, 1, 0, 0, 0, 0)
-        Me.TglReg2.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday
-        Me.TglReg2.MonthCalendar.MarkedDates = New Date(-1) {}
-        Me.TglReg2.MonthCalendar.MonthlyMarkedDates = New Date(-1) {}
-        '
-        '
-        '
-        Me.TglReg2.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
-        Me.TglReg2.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90
-        Me.TglReg2.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
-        Me.TglReg2.MonthCalendar.NavigationBackgroundStyle.Class = ""
-        Me.TglReg2.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.TglReg2.MonthCalendar.TodayButtonVisible = True
-        Me.TglReg2.MonthCalendar.WeeklyMarkedDays = New System.DayOfWeek(-1) {}
-        Me.TglReg2.Name = "TglReg2"
-        Me.TglReg2.Size = New System.Drawing.Size(94, 20)
-        Me.TglReg2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.TglReg2.TabIndex = 3
-        '
-        'LabelX2
-        '
-        '
-        '
-        '
-        Me.LabelX2.BackgroundStyle.Class = ""
-        Me.LabelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.LabelX2.Location = New System.Drawing.Point(184, 30)
-        Me.LabelX2.Name = "LabelX2"
-        Me.LabelX2.Size = New System.Drawing.Size(10, 23)
-        Me.LabelX2.TabIndex = 4
-        Me.LabelX2.Text = "-"
-        '
-        'LabelX3
-        '
-        '
-        '
-        '
-        Me.LabelX3.BackgroundStyle.Class = ""
-        Me.LabelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.LabelX3.Location = New System.Drawing.Point(14, 30)
-        Me.LabelX3.Name = "LabelX3"
-        Me.LabelX3.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LabelX3.Size = New System.Drawing.Size(60, 23)
-        Me.LabelX3.TabIndex = 5
-        Me.LabelX3.Text = "Tgl Reg"
         '
         'LabelX4
         '
@@ -458,6 +277,193 @@ Partial Class frmCariHasil
         Me.TglEst1.TabIndex = 6
         Me.TglEst1.Value = New Date(2011, 1, 1, 0, 0, 0, 0)
         '
+        'LabelX3
+        '
+        '
+        '
+        '
+        Me.LabelX3.BackgroundStyle.Class = ""
+        Me.LabelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX3.Location = New System.Drawing.Point(14, 30)
+        Me.LabelX3.Name = "LabelX3"
+        Me.LabelX3.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LabelX3.Size = New System.Drawing.Size(60, 23)
+        Me.LabelX3.TabIndex = 5
+        Me.LabelX3.Text = "Tgl Reg"
+        '
+        'LabelX2
+        '
+        '
+        '
+        '
+        Me.LabelX2.BackgroundStyle.Class = ""
+        Me.LabelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX2.Location = New System.Drawing.Point(184, 30)
+        Me.LabelX2.Name = "LabelX2"
+        Me.LabelX2.Size = New System.Drawing.Size(10, 23)
+        Me.LabelX2.TabIndex = 4
+        Me.LabelX2.Text = "-"
+        '
+        'TglReg2
+        '
+        Me.TglReg2.AllowEmptyState = False
+        '
+        '
+        '
+        Me.TglReg2.BackgroundStyle.Class = "DateTimeInputBackground"
+        Me.TglReg2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.TglReg2.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown
+        Me.TglReg2.ButtonDropDown.Visible = True
+        Me.TglReg2.CustomFormat = "yyyy-MM-dd"
+        Me.TglReg2.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TglReg2.Format = DevComponents.Editors.eDateTimePickerFormat.Custom
+        Me.TglReg2.IsPopupCalendarOpen = False
+        Me.TglReg2.Location = New System.Drawing.Point(199, 33)
+        '
+        '
+        '
+        Me.TglReg2.MonthCalendar.AnnuallyMarkedDates = New Date(-1) {}
+        '
+        '
+        '
+        Me.TglReg2.MonthCalendar.BackgroundStyle.Class = ""
+        Me.TglReg2.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.TglReg2.MonthCalendar.ClearButtonVisible = True
+        '
+        '
+        '
+        Me.TglReg2.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2
+        Me.TglReg2.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90
+        Me.TglReg2.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground
+        Me.TglReg2.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid
+        Me.TglReg2.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder
+        Me.TglReg2.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1
+        Me.TglReg2.MonthCalendar.CommandsBackgroundStyle.Class = ""
+        Me.TglReg2.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.TglReg2.MonthCalendar.DisplayMonth = New Date(2011, 11, 1, 0, 0, 0, 0)
+        Me.TglReg2.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday
+        Me.TglReg2.MonthCalendar.MarkedDates = New Date(-1) {}
+        Me.TglReg2.MonthCalendar.MonthlyMarkedDates = New Date(-1) {}
+        '
+        '
+        '
+        Me.TglReg2.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
+        Me.TglReg2.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90
+        Me.TglReg2.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
+        Me.TglReg2.MonthCalendar.NavigationBackgroundStyle.Class = ""
+        Me.TglReg2.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.TglReg2.MonthCalendar.TodayButtonVisible = True
+        Me.TglReg2.MonthCalendar.WeeklyMarkedDays = New System.DayOfWeek(-1) {}
+        Me.TglReg2.Name = "TglReg2"
+        Me.TglReg2.Size = New System.Drawing.Size(94, 20)
+        Me.TglReg2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.TglReg2.TabIndex = 3
+        '
+        'TglReg1
+        '
+        Me.TglReg1.AllowEmptyState = False
+        '
+        '
+        '
+        Me.TglReg1.BackgroundStyle.Class = "DateTimeInputBackground"
+        Me.TglReg1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.TglReg1.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown
+        Me.TglReg1.ButtonDropDown.Visible = True
+        Me.TglReg1.CustomFormat = "yyyy-MM-dd"
+        Me.TglReg1.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TglReg1.Format = DevComponents.Editors.eDateTimePickerFormat.Custom
+        Me.TglReg1.IsPopupCalendarOpen = False
+        Me.TglReg1.Location = New System.Drawing.Point(80, 33)
+        '
+        '
+        '
+        Me.TglReg1.MonthCalendar.AnnuallyMarkedDates = New Date(-1) {}
+        '
+        '
+        '
+        Me.TglReg1.MonthCalendar.BackgroundStyle.Class = ""
+        Me.TglReg1.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.TglReg1.MonthCalendar.ClearButtonVisible = True
+        '
+        '
+        '
+        Me.TglReg1.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2
+        Me.TglReg1.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90
+        Me.TglReg1.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground
+        Me.TglReg1.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid
+        Me.TglReg1.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder
+        Me.TglReg1.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1
+        Me.TglReg1.MonthCalendar.CommandsBackgroundStyle.Class = ""
+        Me.TglReg1.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.TglReg1.MonthCalendar.DisplayMonth = New Date(2011, 11, 1, 0, 0, 0, 0)
+        Me.TglReg1.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday
+        Me.TglReg1.MonthCalendar.MarkedDates = New Date(-1) {}
+        Me.TglReg1.MonthCalendar.MonthlyMarkedDates = New Date(-1) {}
+        '
+        '
+        '
+        Me.TglReg1.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
+        Me.TglReg1.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90
+        Me.TglReg1.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
+        Me.TglReg1.MonthCalendar.NavigationBackgroundStyle.Class = ""
+        Me.TglReg1.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.TglReg1.MonthCalendar.TodayButtonVisible = True
+        Me.TglReg1.MonthCalendar.WeeklyMarkedDays = New System.DayOfWeek(-1) {}
+        Me.TglReg1.Name = "TglReg1"
+        Me.TglReg1.Size = New System.Drawing.Size(94, 20)
+        Me.TglReg1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.TglReg1.TabIndex = 2
+        Me.TglReg1.Value = New Date(2011, 1, 1, 0, 0, 0, 0)
+        '
+        'LabelX1
+        '
+        '
+        '
+        '
+        Me.LabelX1.BackgroundStyle.Class = ""
+        Me.LabelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX1.Location = New System.Drawing.Point(14, 3)
+        Me.LabelX1.Name = "LabelX1"
+        Me.LabelX1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LabelX1.Size = New System.Drawing.Size(60, 23)
+        Me.LabelX1.TabIndex = 1
+        Me.LabelX1.Text = "Keyword"
+        '
+        'txtQuery
+        '
+        '
+        '
+        '
+        Me.txtQuery.Border.Class = "TextBoxBorder"
+        Me.txtQuery.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtQuery.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtQuery.Location = New System.Drawing.Point(80, 5)
+        Me.txtQuery.Name = "txtQuery"
+        Me.txtQuery.Size = New System.Drawing.Size(252, 22)
+        Me.txtQuery.TabIndex = 0
+        '
+        'btnExit
+        '
+        Me.btnExit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btnExit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btnExit.Location = New System.Drawing.Point(543, 304)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(81, 25)
+        Me.btnExit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btnExit.TabIndex = 1
+        Me.btnExit.Text = "E&xit"
+        '
+        'btnOK
+        '
+        Me.btnOK.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.btnOK.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.btnOK.Location = New System.Drawing.Point(456, 304)
+        Me.btnOK.Name = "btnOK"
+        Me.btnOK.Size = New System.Drawing.Size(81, 25)
+        Me.btnOK.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.btnOK.TabIndex = 2
+        Me.btnOK.Text = "&OK"
+        '
         'frmCariHasil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -466,16 +472,20 @@ Partial Class frmCariHasil
         Me.Controls.Add(Me.btnOK)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.PanelEx1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmCariHasil"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cari Hasil"
         Me.PanelEx1.ResumeLayout(False)
-        Me.PanelEx2.ResumeLayout(False)
         Me.PanelEx3.ResumeLayout(False)
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TglReg1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TglReg2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelEx2.ResumeLayout(False)
         CType(Me.TglEst2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TglEst1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TglReg2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TglReg1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

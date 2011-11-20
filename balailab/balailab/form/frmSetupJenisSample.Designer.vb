@@ -23,6 +23,8 @@ Partial Class frmSetupJenisSample
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PanelEx1 = New DevComponents.DotNetBar.PanelEx()
+        Me.txtKdJnsSample = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.txtNmJnsSample = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.LabelX2 = New DevComponents.DotNetBar.LabelX()
         Me.txtNmGrupSample = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.LabelX4 = New DevComponents.DotNetBar.LabelX()
@@ -31,8 +33,6 @@ Partial Class frmSetupJenisSample
         Me.LabelX3 = New DevComponents.DotNetBar.LabelX()
         Me.BtnSave = New DevComponents.DotNetBar.ButtonX()
         Me.BtnExit = New DevComponents.DotNetBar.ButtonX()
-        Me.txtNmJnsSample = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.txtKdJnsSample = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.PanelEx1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -59,6 +59,33 @@ Partial Class frmSetupJenisSample
         Me.PanelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText
         Me.PanelEx1.Style.GradientAngle = 90
         Me.PanelEx1.TabIndex = 0
+        '
+        'txtKdJnsSample
+        '
+        '
+        '
+        '
+        Me.txtKdJnsSample.Border.Class = "TextBoxBorder"
+        Me.txtKdJnsSample.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtKdJnsSample.ButtonCustom.Visible = True
+        Me.txtKdJnsSample.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtKdJnsSample.Location = New System.Drawing.Point(124, 9)
+        Me.txtKdJnsSample.Name = "txtKdJnsSample"
+        Me.txtKdJnsSample.Size = New System.Drawing.Size(59, 20)
+        Me.txtKdJnsSample.TabIndex = 20
+        '
+        'txtNmJnsSample
+        '
+        '
+        '
+        '
+        Me.txtNmJnsSample.Border.Class = "TextBoxBorder"
+        Me.txtNmJnsSample.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtNmJnsSample.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNmJnsSample.Location = New System.Drawing.Point(124, 35)
+        Me.txtNmJnsSample.Name = "txtNmJnsSample"
+        Me.txtNmJnsSample.Size = New System.Drawing.Size(191, 20)
+        Me.txtNmJnsSample.TabIndex = 19
         '
         'LabelX2
         '
@@ -165,33 +192,6 @@ Partial Class frmSetupJenisSample
         Me.BtnExit.TabIndex = 5
         Me.BtnExit.Text = "E&xit"
         '
-        'txtNmJnsSample
-        '
-        '
-        '
-        '
-        Me.txtNmJnsSample.Border.Class = "TextBoxBorder"
-        Me.txtNmJnsSample.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txtNmJnsSample.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNmJnsSample.Location = New System.Drawing.Point(124, 35)
-        Me.txtNmJnsSample.Name = "txtNmJnsSample"
-        Me.txtNmJnsSample.Size = New System.Drawing.Size(191, 20)
-        Me.txtNmJnsSample.TabIndex = 19
-        '
-        'txtKdJnsSample
-        '
-        '
-        '
-        '
-        Me.txtKdJnsSample.Border.Class = "TextBoxBorder"
-        Me.txtKdJnsSample.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txtKdJnsSample.ButtonCustom.Visible = True
-        Me.txtKdJnsSample.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtKdJnsSample.Location = New System.Drawing.Point(124, 9)
-        Me.txtKdJnsSample.Name = "txtKdJnsSample"
-        Me.txtKdJnsSample.Size = New System.Drawing.Size(59, 20)
-        Me.txtKdJnsSample.TabIndex = 20
-        '
         'frmSetupJenisSample
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -200,7 +200,11 @@ Partial Class frmSetupJenisSample
         Me.Controls.Add(Me.BtnSave)
         Me.Controls.Add(Me.BtnExit)
         Me.Controls.Add(Me.PanelEx1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmSetupJenisSample"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Setup Jenis Sample"
         Me.PanelEx1.ResumeLayout(False)
         Me.ResumeLayout(False)

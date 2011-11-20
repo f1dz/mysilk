@@ -136,7 +136,11 @@ Partial Class frmSetupGrupSample
         Me.Controls.Add(Me.BtnSave)
         Me.Controls.Add(Me.BtnExit)
         Me.Controls.Add(Me.PanelEx1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmSetupGrupSample"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Grup Sample"
         Me.PanelEx1.ResumeLayout(False)
         Me.ResumeLayout(False)

@@ -22,10 +22,11 @@ Partial Class frmCetakHasil
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCetakHasil))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelEx1 = New DevComponents.DotNetBar.PanelEx()
         Me.PanelEx6 = New DevComponents.DotNetBar.PanelEx()
-        Me.grid = New C1.Win.C1FlexGrid.C1FlexGrid()
+        Me.grid = New DevComponents.DotNetBar.Controls.DataGridViewX()
         Me.PanelEx2 = New DevComponents.DotNetBar.PanelEx()
         Me.PanelEx5 = New DevComponents.DotNetBar.PanelEx()
         Me.txtNama = New DevComponents.DotNetBar.Controls.TextBoxX()
@@ -134,20 +135,25 @@ Partial Class frmCetakHasil
         '
         'grid
         '
-        Me.grid.AllowDragging = C1.Win.C1FlexGrid.AllowDraggingEnum.None
-        Me.grid.AllowEditing = False
-        Me.grid.AutoResize = True
-        Me.grid.ColumnInfo = "21,1,0,0,0,95,Columns:1{Name:""Kode"";Caption:""Kode"";}" & Global.Microsoft.VisualBasic.ChrW(9)
+        Me.grid.AllowUserToAddRows = False
+        Me.grid.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.grid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.grid.DefaultCellStyle = DataGridViewCellStyle2
         Me.grid.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grid.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
         Me.grid.Location = New System.Drawing.Point(0, 0)
         Me.grid.Name = "grid"
-        Me.grid.Rows.Count = 1
-        Me.grid.Rows.DefaultSize = 19
         Me.grid.Size = New System.Drawing.Size(888, 290)
-        Me.grid.StyleInfo = resources.GetString("grid.StyleInfo")
-        Me.grid.TabIndex = 0
-        Me.grid.Tree.Column = 2
-        Me.grid.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.Office2010Blue
+        Me.grid.TabIndex = 9
         '
         'PanelEx2
         '
@@ -703,6 +709,7 @@ Partial Class frmCetakHasil
         Me.txtTglHasil.CustomFormat = "dd-MM-yyyy"
         Me.txtTglHasil.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTglHasil.Format = DevComponents.Editors.eDateTimePickerFormat.Custom
+        Me.txtTglHasil.IsPopupCalendarOpen = False
         Me.txtTglHasil.Location = New System.Drawing.Point(84, 80)
         Me.txtTglHasil.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
         '
@@ -728,6 +735,7 @@ Partial Class frmCetakHasil
         Me.txtTglHasil.MonthCalendar.CommandsBackgroundStyle.Class = ""
         Me.txtTglHasil.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.txtTglHasil.MonthCalendar.DisplayMonth = New Date(2011, 9, 1, 0, 0, 0, 0)
+        Me.txtTglHasil.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday
         Me.txtTglHasil.MonthCalendar.MarkedDates = New Date(-1) {}
         Me.txtTglHasil.MonthCalendar.MonthlyMarkedDates = New Date(-1) {}
         '
@@ -1014,7 +1022,6 @@ Partial Class frmCetakHasil
         Me.Controls.Add(Me.btnCetak)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.PanelEx1)
-        Me.DoubleBuffered = True
         Me.Name = "frmCetakHasil"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cetak Hasil Laboratorium"
@@ -1072,7 +1079,6 @@ Partial Class frmCetakHasil
     Friend WithEvents LabelX3 As DevComponents.DotNetBar.LabelX
     Friend WithEvents LabelX4 As DevComponents.DotNetBar.LabelX
     Friend WithEvents PanelEx6 As DevComponents.DotNetBar.PanelEx
-    Friend WithEvents grid As C1.Win.C1FlexGrid.C1FlexGrid
     Friend WithEvents btnExit As DevComponents.DotNetBar.ButtonX
     Friend WithEvents btnCetak As DevComponents.DotNetBar.ButtonX
     Friend WithEvents SuperTabControl1 As DevComponents.DotNetBar.SuperTabControl
@@ -1091,4 +1097,5 @@ Partial Class frmCetakHasil
     Friend WithEvents txtNoSeri As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents LabelX14 As DevComponents.DotNetBar.LabelX
     Friend WithEvents btnEditHasil As DevComponents.DotNetBar.ButtonX
+    Friend WithEvents grid As DevComponents.DotNetBar.Controls.DataGridViewX
 End Class

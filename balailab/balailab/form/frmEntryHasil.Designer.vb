@@ -23,6 +23,7 @@ Partial Class frmEntryHasil
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupPanel1 = New DevComponents.DotNetBar.Controls.GroupPanel()
         Me.PanelEx2 = New DevComponents.DotNetBar.PanelEx()
@@ -161,6 +162,8 @@ Partial Class frmEntryHasil
         '
         Me.grid.AllowUserToAddRows = False
         Me.grid.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.grid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
@@ -749,6 +752,7 @@ Partial Class frmEntryHasil
         Me.txtTglHasil.CustomFormat = "dd-MM-yyyy"
         Me.txtTglHasil.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTglHasil.Format = DevComponents.Editors.eDateTimePickerFormat.Custom
+        Me.txtTglHasil.IsPopupCalendarOpen = False
         Me.txtTglHasil.Location = New System.Drawing.Point(89, 80)
         Me.txtTglHasil.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
         '
@@ -774,6 +778,7 @@ Partial Class frmEntryHasil
         Me.txtTglHasil.MonthCalendar.CommandsBackgroundStyle.Class = ""
         Me.txtTglHasil.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.txtTglHasil.MonthCalendar.DisplayMonth = New Date(2011, 9, 1, 0, 0, 0, 0)
+        Me.txtTglHasil.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday
         Me.txtTglHasil.MonthCalendar.MarkedDates = New Date(-1) {}
         Me.txtTglHasil.MonthCalendar.MonthlyMarkedDates = New Date(-1) {}
         '
@@ -1049,7 +1054,6 @@ Partial Class frmEntryHasil
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.GroupPanel1)
-        Me.DoubleBuffered = True
         Me.Name = "frmEntryHasil"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Entry Hasil"
