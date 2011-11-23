@@ -24,8 +24,6 @@
             MsgBox("Login gagal, periksa Username & Password", MsgBoxStyle.Information)
             My.Settings.SuksesLogin = False
         End If
-
-
     End Sub
 
     Private Sub frmLogin_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load

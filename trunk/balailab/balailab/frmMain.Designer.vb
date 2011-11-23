@@ -804,7 +804,7 @@ Partial Class frmMain
         Me.DockSite4.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
         Me.DockSite4.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.DockSite4.DocumentDockContainer = New DevComponents.DotNetBar.DocumentDockContainer()
-        Me.DockSite4.Location = New System.Drawing.Point(5, 550)
+        Me.DockSite4.Location = New System.Drawing.Point(5, 548)
         Me.DockSite4.Name = "DockSite4"
         Me.DockSite4.Size = New System.Drawing.Size(998, 0)
         Me.DockSite4.TabIndex = 14
@@ -817,7 +817,7 @@ Partial Class frmMain
         Me.DockSite1.DocumentDockContainer = New DevComponents.DotNetBar.DocumentDockContainer()
         Me.DockSite1.Location = New System.Drawing.Point(5, 173)
         Me.DockSite1.Name = "DockSite1"
-        Me.DockSite1.Size = New System.Drawing.Size(0, 377)
+        Me.DockSite1.Size = New System.Drawing.Size(0, 375)
         Me.DockSite1.TabIndex = 11
         Me.DockSite1.TabStop = False
         '
@@ -828,7 +828,7 @@ Partial Class frmMain
         Me.DockSite2.DocumentDockContainer = New DevComponents.DotNetBar.DocumentDockContainer()
         Me.DockSite2.Location = New System.Drawing.Point(1003, 173)
         Me.DockSite2.Name = "DockSite2"
-        Me.DockSite2.Size = New System.Drawing.Size(0, 377)
+        Me.DockSite2.Size = New System.Drawing.Size(0, 375)
         Me.DockSite2.TabIndex = 12
         Me.DockSite2.TabStop = False
         '
@@ -836,7 +836,7 @@ Partial Class frmMain
         '
         Me.DockSite8.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
         Me.DockSite8.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.DockSite8.Location = New System.Drawing.Point(5, 550)
+        Me.DockSite8.Location = New System.Drawing.Point(5, 548)
         Me.DockSite8.Name = "DockSite8"
         Me.DockSite8.Size = New System.Drawing.Size(998, 0)
         Me.DockSite8.TabIndex = 18
@@ -848,7 +848,7 @@ Partial Class frmMain
         Me.DockSite5.Dock = System.Windows.Forms.DockStyle.Left
         Me.DockSite5.Location = New System.Drawing.Point(5, 1)
         Me.DockSite5.Name = "DockSite5"
-        Me.DockSite5.Size = New System.Drawing.Size(0, 549)
+        Me.DockSite5.Size = New System.Drawing.Size(0, 547)
         Me.DockSite5.TabIndex = 15
         Me.DockSite5.TabStop = False
         '
@@ -858,7 +858,7 @@ Partial Class frmMain
         Me.DockSite6.Dock = System.Windows.Forms.DockStyle.Right
         Me.DockSite6.Location = New System.Drawing.Point(1003, 1)
         Me.DockSite6.Name = "DockSite6"
-        Me.DockSite6.Size = New System.Drawing.Size(0, 549)
+        Me.DockSite6.Size = New System.Drawing.Size(0, 547)
         Me.DockSite6.TabIndex = 16
         Me.DockSite6.TabStop = False
         '
@@ -887,7 +887,7 @@ Partial Class frmMain
         '
         Me.StatusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.xTglJam, Me.xServer, Me.xVersion, Me.xUser})
-        Me.StatusStrip.Location = New System.Drawing.Point(5, 528)
+        Me.StatusStrip.Location = New System.Drawing.Point(5, 526)
         Me.StatusStrip.Name = "StatusStrip"
         Me.StatusStrip.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.StatusStrip.ShowItemToolTips = True
@@ -950,7 +950,7 @@ Partial Class frmMain
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.balailab.My.Resources.Resources.background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(1008, 552)
+        Me.ClientSize = New System.Drawing.Size(1008, 550)
         Me.Controls.Add(Me.StatusStrip)
         Me.Controls.Add(Me.DockSite2)
         Me.Controls.Add(Me.DockSite1)
