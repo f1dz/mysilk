@@ -10,17 +10,31 @@
     End Sub
 
     Private Sub BtnSave_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSave.Click
+        Me.oUser.User = Me.txtKdPetugas.Text
+        Me.oUser.NmUser = Me.txtNmPetugas.Text
+        Me.oUser.KdInstalasi = Me.txtKdInstalasi.Text
+        Me.oUser.Nip = Me.txtNIP.Text
+        Me.oUser.Password = Me.txtPassword1.Text
+        Me.oUser.Aktif = Me.CbAktif.CheckValue
         If (Strings.Trim(Me.txtPassword1.Text) <> Strings.Trim(Me.txtPassword2.Text)) Then
             Interaction.MsgBox("Pasword tidak sama", MsgBoxStyle.Exclamation, Nothing)
-        ElseIf (Strings.Trim(Me.txtKdPetugas.Text) <> "") Then
-            Me.oUser.User = Me.txtKdPetugas.Text
-            Me.oUser.NmUser = Me.txtNmPetugas.Text
-            Me.oUser.KdInstalasi = Me.txtKdInstalasi.Text
-            Me.oUser.Nip = Me.txtNIP.Text
-            Me.oUser.Password = Me.txtPassword1.Text
-            Me.oUser.Aktif = Me.CbAktif.CheckValue
+            Exit Sub
+        ElseIf (Strings.Trim(Me.txtKdPetugas.Text) <> "") AndAlso oUser.isExist(txtKdPetugas.Text) Then
             Me.oUser.Update()
             Me.oUser.DeleteAkses()
+            For i As Integer = 0 To grid.Rows.Count - 1
+                If grid.Item(3, i).Value = 1 Or grid.Item(3, i).Value Then
+                    oUser.xMenu = grid.Item(0, i).Value
+                    oUser.InsertAkses()
+                End If
+            Next
+
+            Me.ClrScr()
+            Me.txtKdPetugas.Clear()
+            Interaction.MsgBox("Data berhasil disimpan", MsgBoxStyle.Information, Nothing)
+        ElseIf Not oUser.isExist(txtKdPetugas.Text) Then
+            oUser.Insert()
+            oUser.DeleteAkses()
             For i As Integer = 0 To grid.Rows.Count - 1
                 If grid.Item(3, i).Value = 1 Or grid.Item(3, i).Value Then
                     oUser.xMenu = grid.Item(0, i).Value
@@ -153,6 +167,7 @@
             Me.FillGrid()
         ElseIf (Strings.Trim(Me.txtKdPetugas.Text) <> "") Then
             Me.ClrScr()
+            FillGrid()
         Else
             Me.ClrScr()
             Me.txtKdPetugas.Clear()

@@ -26,6 +26,10 @@ Partial Class frmSetupUser
         Me.PanelEx1 = New DevComponents.DotNetBar.PanelEx()
         Me.PanelEx3 = New DevComponents.DotNetBar.PanelEx()
         Me.grid = New DevComponents.DotNetBar.Controls.DataGridViewX()
+        Me.Kode = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Grup = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.xMenu = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Akses = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.PanelEx2 = New DevComponents.DotNetBar.PanelEx()
         Me.LabelX6 = New DevComponents.DotNetBar.LabelX()
         Me.txtPassword2 = New DevComponents.DotNetBar.Controls.TextBoxX()
@@ -43,10 +47,6 @@ Partial Class frmSetupUser
         Me.txtKdPetugas = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.BtnSave = New DevComponents.DotNetBar.ButtonX()
         Me.BtnExit = New DevComponents.DotNetBar.ButtonX()
-        Me.Kode = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Grup = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.xMenu = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Akses = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.PanelEx1.SuspendLayout()
         Me.PanelEx3.SuspendLayout()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -110,6 +110,33 @@ Partial Class frmSetupUser
         Me.grid.Name = "grid"
         Me.grid.Size = New System.Drawing.Size(570, 218)
         Me.grid.TabIndex = 0
+        '
+        'Kode
+        '
+        Me.Kode.HeaderText = "Kode"
+        Me.Kode.Name = "Kode"
+        Me.Kode.Visible = False
+        '
+        'Grup
+        '
+        Me.Grup.HeaderText = "Grup"
+        Me.Grup.Name = "Grup"
+        Me.Grup.ReadOnly = True
+        '
+        'xMenu
+        '
+        Me.xMenu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.xMenu.HeaderText = "Menu"
+        Me.xMenu.Name = "xMenu"
+        Me.xMenu.ReadOnly = True
+        '
+        'Akses
+        '
+        Me.Akses.FalseValue = "0"
+        Me.Akses.HeaderText = "Akses"
+        Me.Akses.Name = "Akses"
+        Me.Akses.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Akses.TrueValue = "1"
         '
         'PanelEx2
         '
@@ -305,6 +332,7 @@ Partial Class frmSetupUser
         Me.CbAktif.CheckValue = "1"
         Me.CbAktif.CheckValueChecked = "1"
         Me.CbAktif.CheckValueUnchecked = "0"
+        Me.CbAktif.ConsiderEmptyStringAsNull = False
         Me.CbAktif.Location = New System.Drawing.Point(217, 6)
         Me.CbAktif.Name = "CbAktif"
         Me.CbAktif.Size = New System.Drawing.Size(62, 23)
@@ -363,33 +391,6 @@ Partial Class frmSetupUser
         Me.BtnExit.TabIndex = 3
         Me.BtnExit.Text = "E&xit"
         '
-        'Kode
-        '
-        Me.Kode.HeaderText = "Kode"
-        Me.Kode.Name = "Kode"
-        Me.Kode.Visible = False
-        '
-        'Grup
-        '
-        Me.Grup.HeaderText = "Grup"
-        Me.Grup.Name = "Grup"
-        Me.Grup.ReadOnly = True
-        '
-        'xMenu
-        '
-        Me.xMenu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.xMenu.HeaderText = "Menu"
-        Me.xMenu.Name = "xMenu"
-        Me.xMenu.ReadOnly = True
-        '
-        'Akses
-        '
-        Me.Akses.FalseValue = "0"
-        Me.Akses.HeaderText = "Akses"
-        Me.Akses.Name = "Akses"
-        Me.Akses.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Akses.TrueValue = "1"
-        '
         'frmSetupUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -398,6 +399,7 @@ Partial Class frmSetupUser
         Me.Controls.Add(Me.BtnSave)
         Me.Controls.Add(Me.BtnExit)
         Me.Controls.Add(Me.PanelEx1)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MaximizeBox = False
         Me.Name = "frmSetupUser"
