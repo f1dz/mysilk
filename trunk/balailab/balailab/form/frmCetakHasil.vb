@@ -1,5 +1,4 @@
-﻿Imports C1.Win.C1FlexGrid
-Imports Excel = Microsoft.Office.Interop.Excel
+﻿Imports Excel = Microsoft.Office.Interop.Excel
 
 Public Class frmCetakHasil
     Dim oHasil As New clsEntryHasil

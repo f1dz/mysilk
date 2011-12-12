@@ -13,7 +13,7 @@ Public Class clsUser
     Public Property Password As String
     Public Property Nip As String
     Public Property KdInstalasi As String
-    Public Property Aktif As Boolean
+    Public Property Aktif As Integer
     Public Property xMenu As String
 
     Public Function isAktif() As Boolean
