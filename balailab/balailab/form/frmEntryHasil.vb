@@ -216,6 +216,8 @@ Public Class frmEntryHasil
 
                     txtJnsBahan.Text = oSample.xNmJenisSample
                     txtKemasan.Text = oSample.xNmWadah
+                    txtMerk.Text = oSample.xMerk
+                    txtPengambil.Text = oSample.xNmPengambil
                     txtJumlah.Text = oSample.xQty & " " & oSample.xSatQty
 
                     txtNama.Text = oMR.xNama
@@ -297,12 +299,12 @@ Public Class frmEntryHasil
         oHasil.Pengambil = txtPengambil.Text
         oHasil.Kesimpulan = txtKesimpulan.Text
         oHasil.KodePetugas = My.Settings.KdPetugas
-        oHasil.Permenkes = txtPermenkes.Text
-        oHasil.ISO = txtISO.Text
+        'oHasil.Permenkes = txtPermenkes.Text ' -> Dipindah ke cetak hasil
+        'oHasil.ISO = txtISO.Text ' -> Dipindah ke cetak hasil
         oHasil.Ket = txtKet.Text
         oHasil.NoInstalasi = txtNoInstalasi.Text
 
-        ' Jika Kode Hasil Kosong
+        ' Jika Kode Hasil Kosong -> TRS Baru
         If Trim(txtKdHasil.Text) = "" Then
             If Trim(txtKdReg.Text) = "" Or Trim(txtKdSample.Text) = "" Then
                 Exit Sub
@@ -310,7 +312,7 @@ Public Class frmEntryHasil
             oHasil.KodeHasil = oParam.getKode("HS")
             oHasil.Save()
 
-            ' Jika Kode Hasil Terisi
+            ' Jika Kode Hasil Terisi -> Update TRS
         Else
             oHasil.KodeHasil = txtKdHasil.Text
             oHasil.Delete()

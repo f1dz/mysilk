@@ -407,6 +407,7 @@ Partial Class frmEntryHasil
         Me.txtPengambil.Location = New System.Drawing.Point(83, 105)
         Me.txtPengambil.MaxLength = 30
         Me.txtPengambil.Name = "txtPengambil"
+        Me.txtPengambil.ReadOnly = True
         Me.txtPengambil.Size = New System.Drawing.Size(222, 20)
         Me.txtPengambil.TabIndex = 7
         '
@@ -469,6 +470,7 @@ Partial Class frmEntryHasil
         Me.txtMerk.Location = New System.Drawing.Point(83, 56)
         Me.txtMerk.MaxLength = 30
         Me.txtMerk.Name = "txtMerk"
+        Me.txtMerk.ReadOnly = True
         Me.txtMerk.Size = New System.Drawing.Size(222, 20)
         Me.txtMerk.TabIndex = 6
         '
@@ -920,9 +922,9 @@ Partial Class frmEntryHasil
         '
         Me.SuperTabControlPanel2.Controls.Add(Me.txtPermenkes)
         Me.SuperTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SuperTabControlPanel2.Location = New System.Drawing.Point(0, 0)
+        Me.SuperTabControlPanel2.Location = New System.Drawing.Point(0, 25)
         Me.SuperTabControlPanel2.Name = "SuperTabControlPanel2"
-        Me.SuperTabControlPanel2.Size = New System.Drawing.Size(601, 77)
+        Me.SuperTabControlPanel2.Size = New System.Drawing.Size(601, 52)
         Me.SuperTabControlPanel2.TabIndex = 0
         Me.SuperTabControlPanel2.TabItem = Me.SuperTabItem2
         '
@@ -952,9 +954,9 @@ Partial Class frmEntryHasil
         '
         Me.SuperTabControlPanel3.Controls.Add(Me.txtISO)
         Me.SuperTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SuperTabControlPanel3.Location = New System.Drawing.Point(0, 0)
+        Me.SuperTabControlPanel3.Location = New System.Drawing.Point(0, 25)
         Me.SuperTabControlPanel3.Name = "SuperTabControlPanel3"
-        Me.SuperTabControlPanel3.Size = New System.Drawing.Size(601, 77)
+        Me.SuperTabControlPanel3.Size = New System.Drawing.Size(601, 52)
         Me.SuperTabControlPanel3.TabIndex = 0
         Me.SuperTabControlPanel3.TabItem = Me.SuperTabItem3
         '
@@ -1054,6 +1056,7 @@ Partial Class frmEntryHasil
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.GroupPanel1)
+        Me.DoubleBuffered = True
         Me.Name = "frmEntryHasil"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Entry Hasil"
