@@ -29,6 +29,8 @@ Public Class clsTrsSample
     Public Property xKetDetil As String
     Public Property xKdJenisSample As String
     Public Property xNmJenisSample As String
+    Public Property xMerk As String
+    Public Property xNmPengambil As String
 
     ' Combo dataset
     Public Function xSample(ByVal xTable As String) As DataSet
@@ -46,40 +48,44 @@ Public Class clsTrsSample
 
     ' Masukkan data
     Public Sub Save()
-        sSql = "INSERT INTO TA_TRS_SAMPLE" _
-             & "(fs_kd_sample " _
-             & ",fs_kd_reg " _
-             & ",fs_kd_bentuk_sample " _
-             & ",fs_bentuk_lainnya " _
-             & ",fn_qty " _
-             & ",fs_sat_qty " _
-             & ",fn_suhu " _
-             & ",fs_sat_suhu " _
-             & ",fs_kd_wadah_sample " _
-             & ",fs_wadah_lainnya " _
-             & ",fs_kd_bahan_wadah " _
-             & ",fs_bahan_wadah_lainnya " _
-             & ",fs_kd_tutup_sample " _
-             & ",fs_tutup_sample_lainnya" _
-             & ",fs_ket_wadah " _
-             & ",fs_kd_jenis_sample) " _
-             & "VALUES " _
-             & "('" & xKode & "'" _
-             & ",'" & xKdReg & "'" _
-             & ",'" & xKdBentuk & "'" _
-             & ",'" & xBentukLain & "'" _
-             & ",'" & xQty & "'" _
-             & ",'" & xSatQty & "'" _
-             & ",'" & xSuhu & "'" _
-             & ",'" & xSatSuhu & "'" _
-             & ",'" & xKdWadah & "'" _
-             & ",'" & xWadahLain & "'" _
-             & ",'" & xKdBahanWadah & "'" _
-             & ",'" & xBahanWadahLain & "'" _
-             & ",'" & xKdTutup & "'" _
-             & ",'" & xTutupLain & "'" _
-             & ",'" & xKet & "'" _
-             & ",'" & xKdJenisSample & "')"
+        sSql = "INSERT  INTO TA_TRS_SAMPLE" _
+             & "        (fs_kd_sample " _
+             & "        ,fs_kd_reg " _
+             & "        ,fs_kd_bentuk_sample " _
+             & "        ,fs_bentuk_lainnya " _
+             & "        ,fn_qty " _
+             & "        ,fs_sat_qty " _
+             & "        ,fn_suhu " _
+             & "        ,fs_sat_suhu " _
+             & "        ,fs_kd_wadah_sample " _
+             & "        ,fs_wadah_lainnya " _
+             & "        ,fs_kd_bahan_wadah " _
+             & "        ,fs_bahan_wadah_lainnya " _
+             & "        ,fs_kd_tutup_sample " _
+             & "        ,fs_tutup_sample_lainnya" _
+             & "        ,fs_ket_wadah " _
+             & "        ,fs_kd_jenis_sample " _
+             & "        ,fs_merk " _
+             & "        ,fs_pengambil) " _
+             & "    VALUES " _
+             & "        ('" & xKode & "'" _
+             & "        ,'" & xKdReg & "'" _
+             & "        ,'" & xKdBentuk & "'" _
+             & "        ,'" & xBentukLain & "'" _
+             & "        ,'" & xQty & "'" _
+             & "        ,'" & xSatQty & "'" _
+             & "        ,'" & xSuhu & "'" _
+             & "        ,'" & xSatSuhu & "'" _
+             & "        ,'" & xKdWadah & "'" _
+             & "        ,'" & xWadahLain & "'" _
+             & "        ,'" & xKdBahanWadah & "'" _
+             & "        ,'" & xBahanWadahLain & "'" _
+             & "        ,'" & xKdTutup & "'" _
+             & "        ,'" & xTutupLain & "'" _
+             & "        ,'" & xKet & "'" _
+             & "        ,'" & xKdJenisSample & "'" _
+             & "        ,'" & xMerk & "'" _
+             & "        ,'" & xNmPengambil & "')"
         Try
             conn.open()
             oCmd = New OleDbCommand(sSql, conn.oConn)
@@ -153,6 +159,8 @@ Public Class clsTrsSample
                             & xNmTutup
                 xKdJenisSample = oDR("fs_kd_jenis_sample")
                 xNmJenisSample = oDR("fs_nm_jenis_sample")
+                xMerk = oDR("fs_merk")
+                xNmPengambil = oDR("fs_pengambil")
                 oDR.Close()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
@@ -177,6 +185,8 @@ Public Class clsTrsSample
              & "        ,fs_sat_suhu = '" & xSatSuhu & "' " & vbCrLf _
              & "        ,fs_ket_wadah = '" & xKet & "' " & vbCrLf _
              & "        ,fs_kd_jenis_sample = '" & xKdJenisSample & "' " & vbCrLf _
+             & "        ,fs_merk = '" & xMerk & "' " & vbCrLf _
+             & "        ,fs_pengambil = '" & xNmPengambil & "' " & vbCrLf _
              & "WHERE   fs_kd_sample = '" & xKode & "' "
         Try
             conn.open()

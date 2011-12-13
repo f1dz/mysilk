@@ -80,6 +80,8 @@ Partial Class frmCetakHasil
         Me.txtNoSeri = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.LabelX14 = New DevComponents.DotNetBar.LabelX()
         Me.btnEditHasil = New DevComponents.DotNetBar.ButtonX()
+        Me.LabelX16 = New DevComponents.DotNetBar.LabelX()
+        Me.TxtNoInstalasi = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.PanelEx1.SuspendLayout()
         Me.PanelEx6.SuspendLayout()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -382,6 +384,7 @@ Partial Class frmCetakHasil
         Me.txtPengambil.Location = New System.Drawing.Point(83, 105)
         Me.txtPengambil.MaxLength = 30
         Me.txtPengambil.Name = "txtPengambil"
+        Me.txtPengambil.ReadOnly = True
         Me.txtPengambil.Size = New System.Drawing.Size(222, 20)
         Me.txtPengambil.TabIndex = 7
         '
@@ -444,6 +447,7 @@ Partial Class frmCetakHasil
         Me.txtMerk.Location = New System.Drawing.Point(83, 56)
         Me.txtMerk.MaxLength = 30
         Me.txtMerk.Name = "txtMerk"
+        Me.txtMerk.ReadOnly = True
         Me.txtMerk.Size = New System.Drawing.Size(222, 20)
         Me.txtMerk.TabIndex = 6
         '
@@ -788,9 +792,9 @@ Partial Class frmCetakHasil
         '
         Me.btnExit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.btnExit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btnExit.Location = New System.Drawing.Point(821, 482)
+        Me.btnExit.Location = New System.Drawing.Point(821, 498)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(75, 36)
+        Me.btnExit.Size = New System.Drawing.Size(75, 26)
         Me.btnExit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.btnExit.TabIndex = 3
         Me.btnExit.Text = "E&xit"
@@ -799,9 +803,9 @@ Partial Class frmCetakHasil
         '
         Me.btnCetak.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.btnCetak.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btnCetak.Location = New System.Drawing.Point(659, 482)
+        Me.btnCetak.Location = New System.Drawing.Point(659, 498)
         Me.btnCetak.Name = "btnCetak"
-        Me.btnCetak.Size = New System.Drawing.Size(75, 36)
+        Me.btnCetak.Size = New System.Drawing.Size(75, 26)
         Me.btnCetak.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.btnCetak.TabIndex = 4
         Me.btnCetak.Text = "&Cetak"
@@ -821,10 +825,10 @@ Partial Class frmCetakHasil
         Me.SuperTabControl1.ControlBox.MenuBox.Name = ""
         Me.SuperTabControl1.ControlBox.Name = ""
         Me.SuperTabControl1.ControlBox.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.SuperTabControl1.ControlBox.MenuBox, Me.SuperTabControl1.ControlBox.CloseBox})
-        Me.SuperTabControl1.Controls.Add(Me.SuperTabControlPanel1)
         Me.SuperTabControl1.Controls.Add(Me.SuperTabControlPanel2)
-        Me.SuperTabControl1.Controls.Add(Me.SuperTabControlPanel3)
         Me.SuperTabControl1.Controls.Add(Me.SuperTabControlPanel4)
+        Me.SuperTabControl1.Controls.Add(Me.SuperTabControlPanel1)
+        Me.SuperTabControl1.Controls.Add(Me.SuperTabControlPanel3)
         Me.SuperTabControl1.Location = New System.Drawing.Point(2, 447)
         Me.SuperTabControl1.Name = "SuperTabControl1"
         Me.SuperTabControl1.ReorderTabsEnabled = True
@@ -873,9 +877,9 @@ Partial Class frmCetakHasil
         '
         Me.SuperTabControlPanel2.Controls.Add(Me.txtPermenkes)
         Me.SuperTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SuperTabControlPanel2.Location = New System.Drawing.Point(0, 0)
+        Me.SuperTabControlPanel2.Location = New System.Drawing.Point(0, 25)
         Me.SuperTabControlPanel2.Name = "SuperTabControlPanel2"
-        Me.SuperTabControlPanel2.Size = New System.Drawing.Size(598, 77)
+        Me.SuperTabControlPanel2.Size = New System.Drawing.Size(598, 52)
         Me.SuperTabControlPanel2.TabIndex = 0
         Me.SuperTabControlPanel2.TabItem = Me.SuperTabItem2
         '
@@ -891,7 +895,6 @@ Partial Class frmCetakHasil
         Me.txtPermenkes.MaxLength = 250
         Me.txtPermenkes.Multiline = True
         Me.txtPermenkes.Name = "txtPermenkes"
-        Me.txtPermenkes.ReadOnly = True
         Me.txtPermenkes.Size = New System.Drawing.Size(586, 45)
         Me.txtPermenkes.TabIndex = 10
         '
@@ -906,9 +909,9 @@ Partial Class frmCetakHasil
         '
         Me.SuperTabControlPanel3.Controls.Add(Me.txtISO)
         Me.SuperTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SuperTabControlPanel3.Location = New System.Drawing.Point(0, 0)
+        Me.SuperTabControlPanel3.Location = New System.Drawing.Point(0, 25)
         Me.SuperTabControlPanel3.Name = "SuperTabControlPanel3"
-        Me.SuperTabControlPanel3.Size = New System.Drawing.Size(598, 77)
+        Me.SuperTabControlPanel3.Size = New System.Drawing.Size(598, 52)
         Me.SuperTabControlPanel3.TabIndex = 0
         Me.SuperTabControlPanel3.TabItem = Me.SuperTabItem3
         '
@@ -924,7 +927,6 @@ Partial Class frmCetakHasil
         Me.txtISO.MaxLength = 250
         Me.txtISO.Multiline = True
         Me.txtISO.Name = "txtISO"
-        Me.txtISO.ReadOnly = True
         Me.txtISO.Size = New System.Drawing.Size(586, 45)
         Me.txtISO.TabIndex = 10
         '
@@ -939,9 +941,9 @@ Partial Class frmCetakHasil
         '
         Me.SuperTabControlPanel4.Controls.Add(Me.txtKet)
         Me.SuperTabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SuperTabControlPanel4.Location = New System.Drawing.Point(0, 0)
+        Me.SuperTabControlPanel4.Location = New System.Drawing.Point(0, 25)
         Me.SuperTabControlPanel4.Name = "SuperTabControlPanel4"
-        Me.SuperTabControlPanel4.Size = New System.Drawing.Size(598, 77)
+        Me.SuperTabControlPanel4.Size = New System.Drawing.Size(598, 52)
         Me.SuperTabControlPanel4.TabIndex = 0
         Me.SuperTabControlPanel4.TabItem = Me.tabKet
         '
@@ -957,7 +959,6 @@ Partial Class frmCetakHasil
         Me.txtKet.MaxLength = 250
         Me.txtKet.Multiline = True
         Me.txtKet.Name = "txtKet"
-        Me.txtKet.ReadOnly = True
         Me.txtKet.Size = New System.Drawing.Size(586, 45)
         Me.txtKet.TabIndex = 11
         '
@@ -977,7 +978,7 @@ Partial Class frmCetakHasil
         Me.txtNoSeri.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.txtNoSeri.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNoSeri.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNoSeri.Location = New System.Drawing.Point(685, 450)
+        Me.txtNoSeri.Location = New System.Drawing.Point(682, 472)
         Me.txtNoSeri.MaxLength = 20
         Me.txtNoSeri.Name = "txtNoSeri"
         Me.txtNoSeri.Size = New System.Drawing.Size(211, 20)
@@ -992,7 +993,7 @@ Partial Class frmCetakHasil
         '
         Me.LabelX14.BackgroundStyle.Class = ""
         Me.LabelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.LabelX14.Location = New System.Drawing.Point(613, 450)
+        Me.LabelX14.Location = New System.Drawing.Point(610, 472)
         Me.LabelX14.Name = "LabelX14"
         Me.LabelX14.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.LabelX14.Size = New System.Drawing.Size(66, 23)
@@ -1003,18 +1004,53 @@ Partial Class frmCetakHasil
         '
         Me.btnEditHasil.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.btnEditHasil.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btnEditHasil.Location = New System.Drawing.Point(740, 482)
+        Me.btnEditHasil.Location = New System.Drawing.Point(740, 498)
         Me.btnEditHasil.Name = "btnEditHasil"
-        Me.btnEditHasil.Size = New System.Drawing.Size(75, 36)
+        Me.btnEditHasil.Size = New System.Drawing.Size(75, 26)
         Me.btnEditHasil.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.btnEditHasil.TabIndex = 46
         Me.btnEditHasil.Text = "&Edit Hasil"
+        '
+        'LabelX16
+        '
+        Me.LabelX16.BackColor = System.Drawing.Color.Transparent
+        '
+        '
+        '
+        Me.LabelX16.BackgroundStyle.Class = ""
+        Me.LabelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX16.Location = New System.Drawing.Point(610, 450)
+        Me.LabelX16.Name = "LabelX16"
+        Me.LabelX16.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LabelX16.Size = New System.Drawing.Size(66, 23)
+        Me.LabelX16.TabIndex = 48
+        Me.LabelX16.Text = "No. Instalasi"
+        '
+        'TxtNoInstalasi
+        '
+        '
+        '
+        '
+        Me.TxtNoInstalasi.Border.Class = "TextBoxBorder"
+        Me.TxtNoInstalasi.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.TxtNoInstalasi.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtNoInstalasi.Enabled = False
+        Me.TxtNoInstalasi.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtNoInstalasi.Location = New System.Drawing.Point(682, 450)
+        Me.TxtNoInstalasi.MaxLength = 20
+        Me.TxtNoInstalasi.Name = "TxtNoInstalasi"
+        Me.TxtNoInstalasi.ReadOnly = True
+        Me.TxtNoInstalasi.Size = New System.Drawing.Size(211, 20)
+        Me.TxtNoInstalasi.TabIndex = 47
+        Me.TxtNoInstalasi.TabStop = False
         '
         'frmCetakHasil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(897, 524)
+        Me.Controls.Add(Me.LabelX16)
+        Me.Controls.Add(Me.TxtNoInstalasi)
         Me.Controls.Add(Me.btnEditHasil)
         Me.Controls.Add(Me.LabelX14)
         Me.Controls.Add(Me.txtNoSeri)
@@ -1022,6 +1058,7 @@ Partial Class frmCetakHasil
         Me.Controls.Add(Me.btnCetak)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.PanelEx1)
+        Me.DoubleBuffered = True
         Me.Name = "frmCetakHasil"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cetak Hasil Laboratorium"
@@ -1098,4 +1135,6 @@ Partial Class frmCetakHasil
     Friend WithEvents LabelX14 As DevComponents.DotNetBar.LabelX
     Friend WithEvents btnEditHasil As DevComponents.DotNetBar.ButtonX
     Friend WithEvents grid As DevComponents.DotNetBar.Controls.DataGridViewX
+    Friend WithEvents LabelX16 As DevComponents.DotNetBar.LabelX
+    Friend WithEvents TxtNoInstalasi As DevComponents.DotNetBar.Controls.TextBoxX
 End Class

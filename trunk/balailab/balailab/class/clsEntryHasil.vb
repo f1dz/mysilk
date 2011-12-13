@@ -232,9 +232,12 @@ Public Class clsEntryHasil
         End Set
     End Property
 
-    Public Sub UpdateNoSeri()
+    Public Sub UpdateNomor()
         sSql = "UPDATE  TA_TRS_HASIL " & vbCrLf _
              & "   SET  fs_no_seri = '" & NoSeri & "' " & vbCrLf _
+             & "        ,fs_iso = '" & ISO & "' " & vbCrLf _
+             & "        ,fs_permenkes = '" & Permenkes & "' " & vbCrLf _
+             & "        ,fs_ket = '" & Ket & "' " & vbCrLf _
              & "WHERE   fs_kd_trs = '" & KodeHasil & "' "
         Try
             conn.open()

@@ -128,6 +128,8 @@ Public Class frmTrsSample
         oTrs.xTutupLain = txtTutupSampleLain.Text
         oTrs.xKet = txtKetSample.Text
         oTrs.xKdJenisSample = txtKdJenisSample.Text
+        oTrs.xMerk = txtMerk.Text
+        oTrs.xNmPengambil = txtNmPengambil.Text
 
         Dim xLanjut As Boolean = True
         If Trim(txtKdJenisSample.Text) = "" Then
@@ -168,5 +170,12 @@ Public Class frmTrsSample
         Dim oJns As New clsTrsSample
         oJns.vKodeJenis = txtKdJenisSample.Text
         txtNmJenisSample.Text = oJns.xNmJenisSample
+    End Sub
+
+    Private Sub BtnTambah_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnTambah.Click
+        Dim frm As New frmSetupJenisSample
+        frm.ShowDialog()
+        Me.TopMost = False
+        grid.Refresh()
     End Sub
 End Class

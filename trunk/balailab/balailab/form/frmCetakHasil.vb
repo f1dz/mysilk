@@ -85,7 +85,7 @@ Public Class frmCetakHasil
         txtNoSeri.Text = oHasil.NoSeri
         oInst.vKodeInst = txtKdInstalasi.Text
         txtNmInstalasi.Text = oInst.NamaInst
-        txtNoSeri.Text = oHasil.NoSeri
+        TxtNoInstalasi.Text = oHasil.NoInstalasi
 
         oSample.vKode = txtKdSample.Text
         txtJnsBahan.Text = oSample.xNmJenisSample
@@ -165,6 +165,10 @@ Public Class frmCetakHasil
         txtKdHasil.Clear()
         txtKesimpulan.Clear()
         txtNoSeri.Clear()
+        txtISO.Clear()
+        TxtNoInstalasi.Clear()
+        txtPermenkes.Clear()
+        txtKet.Clear()
     End Sub
 
     Private Sub btnExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExit.Click
@@ -175,9 +179,13 @@ Public Class frmCetakHasil
         ' Cetaaaaaaak
         If Trim(txtKdHasil.Text) <> "" Then
             oHasil.NoSeri = txtNoSeri.Text
-            oHasil.UpdateNoSeri()
+            oHasil.Permenkes = txtPermenkes.Text
+            oHasil.ISO = txtISO.Text
+            oHasil.Ket = txtKet.Text
+            oHasil.UpdateNomor()
             If MsgBox("Cetak Hasil ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                 CetakHasil()
+                ClrScr()
             End If
         End If
     End Sub
