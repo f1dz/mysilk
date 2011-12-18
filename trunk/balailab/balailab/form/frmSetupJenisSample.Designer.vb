@@ -70,9 +70,10 @@ Partial Class frmSetupJenisSample
         Me.txtKdJnsSample.ButtonCustom.Visible = True
         Me.txtKdJnsSample.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKdJnsSample.Location = New System.Drawing.Point(124, 9)
+        Me.txtKdJnsSample.MaxLength = 3
         Me.txtKdJnsSample.Name = "txtKdJnsSample"
         Me.txtKdJnsSample.Size = New System.Drawing.Size(59, 20)
-        Me.txtKdJnsSample.TabIndex = 20
+        Me.txtKdJnsSample.TabIndex = 1
         '
         'txtNmJnsSample
         '
@@ -83,9 +84,10 @@ Partial Class frmSetupJenisSample
         Me.txtNmJnsSample.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.txtNmJnsSample.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNmJnsSample.Location = New System.Drawing.Point(124, 35)
+        Me.txtNmJnsSample.MaxLength = 30
         Me.txtNmJnsSample.Name = "txtNmJnsSample"
         Me.txtNmJnsSample.Size = New System.Drawing.Size(191, 20)
-        Me.txtNmJnsSample.TabIndex = 19
+        Me.txtNmJnsSample.TabIndex = 2
         '
         'LabelX2
         '
@@ -108,9 +110,12 @@ Partial Class frmSetupJenisSample
         '
         Me.txtNmGrupSample.Border.Class = "TextBoxBorder"
         Me.txtNmGrupSample.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtNmGrupSample.Enabled = False
         Me.txtNmGrupSample.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNmGrupSample.Location = New System.Drawing.Point(124, 87)
+        Me.txtNmGrupSample.MaxLength = 30
         Me.txtNmGrupSample.Name = "txtNmGrupSample"
+        Me.txtNmGrupSample.ReadOnly = True
         Me.txtNmGrupSample.Size = New System.Drawing.Size(191, 20)
         Me.txtNmGrupSample.TabIndex = 17
         '
@@ -138,6 +143,7 @@ Partial Class frmSetupJenisSample
         Me.txtKdGrupSample.ButtonCustom.Visible = True
         Me.txtKdGrupSample.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKdGrupSample.Location = New System.Drawing.Point(124, 61)
+        Me.txtKdGrupSample.MaxLength = 3
         Me.txtKdGrupSample.Name = "txtKdGrupSample"
         Me.txtKdGrupSample.Size = New System.Drawing.Size(59, 20)
         Me.txtKdGrupSample.TabIndex = 15
@@ -200,6 +206,7 @@ Partial Class frmSetupJenisSample
         Me.Controls.Add(Me.BtnSave)
         Me.Controls.Add(Me.BtnExit)
         Me.Controls.Add(Me.PanelEx1)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MaximizeBox = False
         Me.MinimizeBox = False

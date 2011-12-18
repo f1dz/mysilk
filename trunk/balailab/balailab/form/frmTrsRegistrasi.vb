@@ -35,6 +35,7 @@ Public Class frmTrsRegistrasi
         oReg.Tgl = oParam.tglYMD(txtTglReg.Text)
         oReg.Jam = txtJamReg.Text
         oReg.KdPetugas = My.Settings.KdPetugas
+        oReg.NmPelanggan = TxtNmPelannggan.Text
         If Trim(txtKdReg.Text) = "" Then
             oReg.Kode = oParam.getKode("RG")
             oReg.Save()
@@ -106,7 +107,7 @@ Public Class frmTrsRegistrasi
                 Select Case col
                     Case 1
                         Dim mrKode As String = ""
-                        'mrKode = dgvSample.CurrentCell.Value
+                        mrKode = dgvSample.CurrentCell.Value
                         Dim oFrmMR As New frmMR(mrKode)
                         Dim oMR As New clsMR
                         Dim oSample As New clsTrsSample
@@ -214,6 +215,8 @@ Public Class frmTrsRegistrasi
                 txtKdRujuk.Text = oReg.KdRujukan
                 txtTglReg.Text = oParam.tglYMDdp(oReg.Tgl)
                 txtJamReg.Text = oReg.Jam
+                TxtNmPelannggan.Text = oReg.NmPelanggan
+                oHelper.SendTab()
                 oReg.Kode = txtKdReg.Text
 
                 'Clear Grid sebelum diisi
@@ -383,6 +386,7 @@ Public Class frmTrsRegistrasi
         txtAlmRujuk2.Clear()
         txtKotaRujuk.Clear()
         dgvSample.Rows.Clear()
+        TxtNmPelannggan.Clear()
     End Sub
 
     Private Sub dgvSample_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvSample.CellDoubleClick
@@ -415,6 +419,12 @@ Public Class frmTrsRegistrasi
             oSample.vKode = dgvSample.Item(0, dgvSample.CurrentRow.Index).Value
             dgvSample.Item(2, dgvSample.CurrentRow.Index).Value = _
                 oMR.xNama & " | " & oSample.xKetDetil
+        End If
+    End Sub
+
+    Private Sub TxtNmPelannggan_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtNmPelannggan.KeyDown
+        If e.KeyCode = Keys.F12 Then
+            TxtNmPelannggan.Text = txtNmRujuk.Text
         End If
     End Sub
 End Class

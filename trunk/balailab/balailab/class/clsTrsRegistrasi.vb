@@ -20,6 +20,7 @@ Public Class clsTrsRegistrasi
     Public Property KdSample As String
     Public Property NoMR As String
     Public Property NoUrut As Integer
+    Public Property NmPelanggan As String
 
     Public Sub Save()
         sSql = "INSERT  INTO TA_TRS_REG " & vbCrLf _
@@ -27,13 +28,15 @@ Public Class clsTrsRegistrasi
              & "        ,fd_tgl_reg " & vbCrLf _
              & "        ,fs_jam_reg " & vbCrLf _
              & "        ,fs_kd_petugas " & vbCrLf _
-             & "        ,fs_kd_rujukan) " & vbCrLf _
+             & "        ,fs_kd_rujukan " & vbCrLf _
+             & "        ,fs_nm_pelanggan) " & vbCrLf _
              & "VALUES " & vbCrLf _
              & "        ('" & Kode & "' " & vbCrLf _
              & "        ,'" & Tgl & "' " & vbCrLf _
              & "        ,'" & Jam & "' " & vbCrLf _
              & "        ,'" & KdPetugas & "' " & vbCrLf _
-             & "        ,'" & KdRujukan & "')"
+             & "        ,'" & KdRujukan & "'" & vbCrLf _
+             & "        ,'" & NmPelanggan & "')"
         Try
             conn.open()
             oCmd = New OleDbCommand(sSql, conn.oConn)
@@ -174,6 +177,7 @@ Public Class clsTrsRegistrasi
                     NmPetugasVoid = oDR("fs_nm_petugas_void")
                     KdRujukan = oDR("fs_kd_rujukan")
                     NmRujukan = oDR("fs_nm_rujukan")
+                    NmPelanggan = oDR("fs_nm_pelanggan")
                 Else
                     '
                 End If

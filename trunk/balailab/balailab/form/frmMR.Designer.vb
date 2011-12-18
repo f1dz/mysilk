@@ -67,7 +67,7 @@ Partial Class frmMR
         Me.PanelEx1.Controls.Add(Me.txtNama)
         Me.PanelEx1.Location = New System.Drawing.Point(12, 12)
         Me.PanelEx1.Name = "PanelEx1"
-        Me.PanelEx1.Size = New System.Drawing.Size(369, 218)
+        Me.PanelEx1.Size = New System.Drawing.Size(447, 218)
         Me.PanelEx1.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
         Me.PanelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
@@ -233,6 +233,7 @@ Partial Class frmMR
         Me.txtTglLahir.CustomFormat = "dd-MM-yyyy"
         Me.txtTglLahir.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTglLahir.Format = DevComponents.Editors.eDateTimePickerFormat.Custom
+        Me.txtTglLahir.IsPopupCalendarOpen = False
         Me.txtTglLahir.Location = New System.Drawing.Point(98, 60)
         Me.txtTglLahir.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         '
@@ -286,9 +287,9 @@ Partial Class frmMR
         Me.txtTelp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtTelp.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTelp.Location = New System.Drawing.Point(98, 164)
-        Me.txtTelp.MaxLength = 20
+        Me.txtTelp.MaxLength = 50
         Me.txtTelp.Name = "txtTelp"
-        Me.txtTelp.Size = New System.Drawing.Size(144, 20)
+        Me.txtTelp.Size = New System.Drawing.Size(256, 20)
         Me.txtTelp.TabIndex = 7
         '
         'txtKota
@@ -346,16 +347,16 @@ Partial Class frmMR
         Me.txtNama.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNama.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNama.Location = New System.Drawing.Point(98, 34)
-        Me.txtNama.MaxLength = 50
+        Me.txtNama.MaxLength = 100
         Me.txtNama.Name = "txtNama"
-        Me.txtNama.Size = New System.Drawing.Size(256, 20)
+        Me.txtNama.Size = New System.Drawing.Size(346, 20)
         Me.txtNama.TabIndex = 1
         '
         'btnCancel
         '
         Me.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btnCancel.Location = New System.Drawing.Point(306, 236)
+        Me.btnCancel.Location = New System.Drawing.Point(384, 236)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
@@ -366,7 +367,7 @@ Partial Class frmMR
         '
         Me.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.btnSave.Location = New System.Drawing.Point(225, 236)
+        Me.btnSave.Location = New System.Drawing.Point(303, 236)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 23)
         Me.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
@@ -377,7 +378,7 @@ Partial Class frmMR
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(393, 266)
+        Me.ClientSize = New System.Drawing.Size(470, 266)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.PanelEx1)
