@@ -9,7 +9,7 @@
     Private Sub btnSave_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSave.Click
         Me.oSample.KdJnsSample = Me.txtKdJnsSample.Text
         Me.oSample.NmJnsSample = Me.txtNmJnsSample.Text
-        Me.oSample.KdGrupSample = Me.txtKdJnsSample.Text
+        Me.oSample.KdGrupSample = Me.txtKdGrupSample.Text
         If (((Strings.Trim(Me.txtKdJnsSample.Text) <> "") And Me.oSample.isExistJnsSample(Strings.Trim(Me.txtKdJnsSample.Text))) And Me.oSample.isExistGrupSample(Me.txtKdGrupSample.Text)) Then
             Me.oSample.UpdateJenisSample()
         ElseIf (((Strings.Trim(Me.txtKdJnsSample.Text) <> "") And Not Me.oSample.isExistJnsSample(Strings.Trim(Me.txtKdJnsSample.Text))) And Me.oSample.isExistGrupSample(Me.txtKdGrupSample.Text)) Then
@@ -74,6 +74,13 @@
                 Exit Select
         End Select
     End Sub
+
+    Private Sub txtKdJnsSample_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtKdJnsSample.KeyUp
+        If Len(txtKdJnsSample.Text) = 3 Then
+            oHP.SendTab()
+        End If
+    End Sub
+
 
     Private Sub txtKdJnsSample_Validating(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles txtKdJnsSample.Validating
         If ((Strings.Trim(Me.txtKdJnsSample.Text) <> "") And Me.oSample.isExistJnsSample(Strings.Trim(Me.txtKdJnsSample.Text))) Then

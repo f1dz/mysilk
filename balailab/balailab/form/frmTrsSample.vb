@@ -72,6 +72,8 @@ Public Class frmTrsSample
             txtKetSample.Text = oSample.xKet
             txtKdJenisSample.Text = oSample.xKdJenisSample
             txtNmJenisSample.Text = oSample.xNmJenisSample
+            txtNmPengambil.Text = oSample.xNmPengambil
+            txtMerk.Text = oSample.xMerk
         End If
     End Sub
 
@@ -174,8 +176,20 @@ Public Class frmTrsSample
 
     Private Sub BtnTambah_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnTambah.Click
         Dim frm As New frmSetupJenisSample
-        frm.ShowDialog()
         Me.TopMost = False
-        grid.Refresh()
+        frm.ShowDialog()
+        Me.TopMost = True
+
+        ' List Jenis Sample
+        Dim oJenis As New clsTrsSample
+        grid.DataSource = Nothing
+        Me.grid.DataSource = oBind
+        oBind.DataSource = oJenis.CariData
+        grid.Dock = DockStyle.Fill
+        grid.RowHeadersWidth = 10
+        grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        grid.Columns(0).HeaderText = "Kode"
+        grid.Columns(0).FillWeight = 40
+        grid.Columns(1).HeaderText = "Jenis Sample"
     End Sub
 End Class
