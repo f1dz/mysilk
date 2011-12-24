@@ -1,6 +1,6 @@
 ﻿Imports Excel = Microsoft.Office.Interop.Excel
 Imports DevComponents.DotNetBar
-
+Imports System.Data.OleDb
 Public Class frmTrsRegistrasi
     Dim tmpDataSample As New DataSet
     'Dim tmpRetrive As My.Settings.myTmpSample
@@ -62,7 +62,8 @@ Public Class frmTrsRegistrasi
         txtKdRegNew.Text = oReg.Kode
         txtKdReg.Clear()
         If MsgBox("Cetak Penerimaan Sample ?", MsgBoxStyle.YesNo + MsgBoxStyle.Question) = MsgBoxResult.Yes Then
-            CetakSample()
+            'CetakSample()
+            CetakSampleCR()
         End If
         ClrScr()
         txtKdReg.Focus()
@@ -293,7 +294,7 @@ Public Class frmTrsRegistrasi
     '    oXcl = Nothing
     'End Sub
 #End Region
-
+#Region "Cetak Excel 2"
     Private Sub CetakSample()
         Dim oXcl As New Excel.Application
         Dim oReg As New clsTrsRegistrasi
@@ -363,7 +364,54 @@ Public Class frmTrsRegistrasi
         oXcl.ActiveWorkbook.Close(False)
         oXcl = Nothing
     End Sub
+#End Region
 
+#Region "Cetak CR"
+    Private Sub CetakSampleCR()
+        Dim TblSample As DataTable
+        Dim proses As New clsConn2
+        Dim sSQL As String
+        Dim ds As New ctkDataset
+        Dim da As New OleDbDataAdapter
+        Dim rpt As New ctkTerimaSample
+
+        sSQL = "SELECT  aa.* , " & vbCrLf _
+             & "        dd.fs_nm_pasien , " & vbCrLf _
+             & "        CAST(fn_qty AS VARCHAR) + ' ' + fs_sat_qty AS fs_jumlah," & vbCrLf _
+             & "        CASE bb.fs_kd_bentuk_sample " & vbCrLf _
+             & "            WHEN '999' THEN bb.fs_bentuk_lainnya " & vbCrLf _
+             & "            ELSE ISNULL(ee.fs_nm_bentuk_sample, '') " & vbCrLf _
+             & "        END AS fs_nm_bentuk_sample , " & vbCrLf _
+             & "        CASE bb.fs_kd_wadah_sample " & vbCrLf _
+             & "            WHEN '999' THEN bb.fs_wadah_lainnya " & vbCrLf _
+             & "            ELSE ISNULL(ff.fs_nm_wadah_sample, '') " & vbCrLf _
+             & "        END AS fs_nm_wadah_sample , " & vbCrLf _
+             & "        CASE bb.fs_kd_bahan_wadah " & vbCrLf _
+             & "            WHEN '999' THEN bb.fs_bahan_wadah_lainnya " & vbCrLf _
+             & "            ELSE ISNULL(gg.fs_nm_bahan_wadah, '') " & vbCrLf _
+             & "        END AS fs_nm_bahan_wadah , " & vbCrLf _
+             & "        CASE bb.fs_kd_tutup_sample " & vbCrLf _
+             & "            WHEN '999' THEN bb.fs_tutup_sample_lainnya " & vbCrLf _
+             & "            ELSE ISNULL(hh.fs_nm_tutup_sample, '') " & vbCrLf _
+             & "        END AS fs_nm_tutup_sample , " & vbCrLf _
+             & "        ISNULL(cc.fs_kd_jenis_sample, '') AS fs_kd_jenis_sample , " & vbCrLf _
+             & "        ISNULL(cc.fs_nm_jenis_sample, '') AS fs_nm_jenis_sample, " & vbCrLf _
+             & "        bb.fs_ket_wadah " & vbCrLf _
+             & "FROM    TA_TRS_REG2 aa " & vbCrLf _
+             & "        LEFT JOIN TA_TRS_SAMPLE bb ON aa.fs_kd_sample = bb.fs_kd_sample " & vbCrLf _
+             & "        LEFT JOIN TA_JENIS_SAMPLE cc ON bb.fs_kd_jenis_sample = cc.fs_kd_jenis_sample " & vbCrLf _
+             & "        LEFT JOIN TC_MR dd ON dd.fs_mr = aa.fs_mr " & vbCrLf _
+             & "        LEFT JOIN TA_BENTUK_SAMPLE ee ON ee.fs_kd_bentuk_sample = bb.fs_kd_bentuk_sample " & vbCrLf _
+             & "        LEFT JOIN TA_WADAH_SAMPLE ff ON ff.fs_kd_wadah_sample = bb.fs_kd_wadah_sample " & vbCrLf _
+             & "        LEFT JOIN TA_BAHAN_WADAH gg ON gg.fs_kd_bahan_wadah = bb.fs_kd_bahan_wadah " & vbCrLf _
+             & "        LEFT JOIN TA_TUTUP_SAMPLE hh ON hh.fs_kd_tutup_sample = bb.fs_kd_tutup_sample " & vbCrLf _
+             & "WHERE   aa.fs_kd_reg = '" & txtKdRegNew.Text & "' " & vbCrLf _
+             & "ORDER BY fn_urut "
+        TblSample = proses.ExecuteQuery(sSQL)
+        rpt.SetDataSource(TblSample)
+        rpt.PrintToPrinter(1, False, 0, 0)
+    End Sub
+#End Region
     Private Sub btnVoid_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVoid.Click
         Dim oReg As New clsTrsRegistrasi
         Dim oParam As New clsParam

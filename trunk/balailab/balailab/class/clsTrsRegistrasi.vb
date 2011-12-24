@@ -189,11 +189,11 @@ Public Class clsTrsRegistrasi
     End Property
 
     Public Function SampleDS() As DataSet
-        sSql = "SELECT aa.*,ISNULL(cc.fs_nm_jenis_sample,' ') AS fs_nm_jenis_sample FROM TA_TRS_REG2 aa " & vbCrLf _
-             & "LEFT JOIN TA_TRS_SAMPLE bb ON aa.fs_kd_sample = bb.fs_kd_sample " & vbCrLf _
-             & "LEFT JOIN TA_JENIS_SAMPLE cc ON bb.fs_kd_jenis_sample = cc.fs_kd_jenis_sample " & vbCrLf _
-             & "WHERE aa.fs_kd_reg = '" & Kode & "' " & vbCrLf _
-             & "ORDER BY fn_urut "
+        sSql = "SELECT  aa.*,ISNULL(cc.fs_nm_jenis_sample,' ') AS fs_nm_jenis_sample FROM TA_TRS_REG2 aa " & vbCrLf _
+             & "        LEFT JOIN TA_TRS_SAMPLE bb ON aa.fs_kd_sample = bb.fs_kd_sample " & vbCrLf _
+             & "        LEFT JOIN TA_JENIS_SAMPLE cc ON bb.fs_kd_jenis_sample = cc.fs_kd_jenis_sample " & vbCrLf _
+             & "WHERE   aa.fs_kd_reg = '" & Kode & "' " & vbCrLf _
+             & "ORDER   BY fn_urut "
         Try
             oDS.Clear()
             conn.open()

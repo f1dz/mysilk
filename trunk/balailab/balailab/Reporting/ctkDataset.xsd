@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ctkDataset" targetNamespace="http://tempuri.org/ctkDataset.xsd" xmlns:mstns="http://tempuri.org/ctkDataset.xsd" xmlns="http://tempuri.org/ctkDataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ctkDataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ctkDataset" msprop:Generator_UserDSName="ctkDataset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ctkTerimaSample" msprop:Generator_TableClassName="ctkTerimaSampleDataTable" msprop:Generator_TableVarName="tablectkTerimaSample" msprop:Generator_TablePropName="ctkTerimaSample" msprop:Generator_RowDeletingName="ctkTerimaSampleRowDeleting" msprop:Generator_UserTableName="ctkTerimaSample" msprop:Generator_RowChangingName="ctkTerimaSampleRowChanging" msprop:Generator_RowEvHandlerName="ctkTerimaSampleRowChangeEventHandler" msprop:Generator_RowDeletedName="ctkTerimaSampleRowDeleted" msprop:Generator_RowEvArgName="ctkTerimaSampleRowChangeEvent" msprop:Generator_RowChangedName="ctkTerimaSampleRowChanged" msprop:Generator_RowClassName="ctkTerimaSampleRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fs_kd_reg" msprop:Generator_ColumnVarNameInTable="columnfs_kd_reg" msprop:Generator_ColumnPropNameInRow="fs_kd_reg" msprop:Generator_ColumnPropNameInTable="fs_kd_regColumn" msprop:Generator_UserColumnName="fs_kd_reg">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fn_urut" msprop:Generator_ColumnVarNameInTable="columnfn_urut" msprop:Generator_ColumnPropNameInRow="fn_urut" msprop:Generator_ColumnPropNameInTable="fn_urutColumn" msprop:Generator_UserColumnName="fn_urut" type="xs:int" />
+              <xs:element name="fs_kd_sample" msprop:Generator_ColumnVarNameInTable="columnfs_kd_sample" msprop:Generator_ColumnPropNameInRow="fs_kd_sample" msprop:Generator_ColumnPropNameInTable="fs_kd_sampleColumn" msprop:Generator_UserColumnName="fs_kd_sample" type="xs:string" />
+              <xs:element name="fs_mr" msprop:Generator_ColumnVarNameInTable="columnfs_mr" msprop:Generator_ColumnPropNameInRow="fs_mr" msprop:Generator_ColumnPropNameInTable="fs_mrColumn" msprop:Generator_UserColumnName="fs_mr" type="xs:string" />
+              <xs:element name="fs_nm_pasien" msprop:Generator_ColumnVarNameInTable="columnfs_nm_pasien" msprop:Generator_ColumnPropNameInRow="fs_nm_pasien" msprop:Generator_ColumnPropNameInTable="fs_nm_pasienColumn" msprop:Generator_UserColumnName="fs_nm_pasien" type="xs:string" />
+              <xs:element name="fs_nm_bentuk_sample" msprop:Generator_ColumnVarNameInTable="columnfs_nm_bentuk_sample" msprop:Generator_ColumnPropNameInRow="fs_nm_bentuk_sample" msprop:Generator_ColumnPropNameInTable="fs_nm_bentuk_sampleColumn" msprop:Generator_UserColumnName="fs_nm_bentuk_sample" type="xs:string" />
+              <xs:element name="fs_nm_wadah_sample" msprop:Generator_ColumnVarNameInTable="columnfs_nm_wadah_sample" msprop:Generator_ColumnPropNameInRow="fs_nm_wadah_sample" msprop:Generator_ColumnPropNameInTable="fs_nm_wadah_sampleColumn" msprop:Generator_UserColumnName="fs_nm_wadah_sample" type="xs:string" />
+              <xs:element name="fs_nm_bahan_wadah" msprop:Generator_ColumnVarNameInTable="columnfs_nm_bahan_wadah" msprop:Generator_ColumnPropNameInRow="fs_nm_bahan_wadah" msprop:Generator_ColumnPropNameInTable="fs_nm_bahan_wadahColumn" msprop:Generator_UserColumnName="fs_nm_bahan_wadah" type="xs:string" />
+              <xs:element name="fs_nm_tutup_sample" msprop:Generator_ColumnVarNameInTable="columnfs_nm_tutup_sample" msprop:Generator_ColumnPropNameInRow="fs_nm_tutup_sample" msprop:Generator_ColumnPropNameInTable="fs_nm_tutup_sampleColumn" msprop:Generator_UserColumnName="fs_nm_tutup_sample" type="xs:string" />
+              <xs:element name="fs_kd_jenis_sample" msprop:Generator_ColumnVarNameInTable="columnfs_kd_jenis_sample" msprop:Generator_ColumnPropNameInRow="fs_kd_jenis_sample" msprop:Generator_ColumnPropNameInTable="fs_kd_jenis_sampleColumn" msprop:Generator_UserColumnName="fs_kd_jenis_sample" type="xs:string" />
+              <xs:element name="fs_nm_jenis_sample" msprop:Generator_ColumnVarNameInTable="columnfs_nm_jenis_sample" msprop:Generator_ColumnPropNameInRow="fs_nm_jenis_sample" msprop:Generator_ColumnPropNameInTable="fs_nm_jenis_sampleColumn" msprop:Generator_UserColumnName="fs_nm_jenis_sample" type="xs:string" />
+              <xs:element name="fs_ket_wadah" msprop:Generator_ColumnVarNameInTable="columnfs_ket_wadah" msprop:Generator_ColumnPropNameInRow="fs_ket_wadah" msprop:Generator_ColumnPropNameInTable="fs_ket_wadahColumn" msprop:Generator_UserColumnName="fs_ket_wadah" type="xs:string" />
+              <xs:element name="fs_jumlah" msprop:Generator_ColumnVarNameInTable="columnfs_jumlah" msprop:Generator_ColumnPropNameInRow="fs_jumlah" msprop:Generator_ColumnPropNameInTable="fs_jumlahColumn" msprop:Generator_UserColumnName="fs_jumlah" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
