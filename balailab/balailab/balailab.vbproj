@@ -137,6 +137,7 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="class\clsConn.vb" />
+    <Compile Include="class\clsConn2.vb" />
     <Compile Include="class\clsEntryHasil.vb" />
     <Compile Include="class\clsHelper.vb" />
     <Compile Include="class\clsInstalasi.vb" />
@@ -331,6 +332,20 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Reporting\ctkDataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ctkDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\ctkDataset.vb">
+      <DependentUpon>ctkDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\ctkTerimaSample.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ctkTerimaSample.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reporting\LapDataset.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -443,6 +458,10 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\ctkTerimaSample.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ctkTerimaSample.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reporting\rptKasir.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptKasir.vb</LastGenOutput>
@@ -468,6 +487,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Reporting\ctkDataset.xsc">
+      <DependentUpon>ctkDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Reporting\ctkDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ctkDataset.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Reporting\ctkDataset.xss">
+      <DependentUpon>ctkDataset.xsd</DependentUpon>
+    </None>
     <None Include="Reporting\LapDataset.xsc">
       <DependentUpon>LapDataset.xsd</DependentUpon>
     </None>
