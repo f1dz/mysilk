@@ -295,75 +295,69 @@ Public Class frmTrsRegistrasi
     'End Sub
 #End Region
 #Region "Cetak Excel 2"
-    Private Sub CetakSample()
-        Dim oXcl As New Excel.Application
-        Dim oReg As New clsTrsRegistrasi
-        Dim oSample As New clsTrsSample
-        Dim oRjk As New clsPerujuk
-        Dim oMR As New clsMR
-        Dim xPasien As String = ""
-        'oXcl.Visible = True
-        'oXcl.UserControl = True
-        'Dim oBooks As Object = oXcl.Workbooks
-        'Dim ci As System.Globalization.CultureInfo = New System.Globalization.CultureInfo("en-US")
-        'oBooks.GetType().InvokeMember("Add", Reflection.BindingFlags.InvokeMethod, Nothing, oBooks, Nothing, ci)
+    'Private Sub CetakSample()
+    '    Dim oXcl As New Excel.Application
+    '    Dim oReg As New clsTrsRegistrasi
+    '    Dim oSample As New clsTrsSample
+    '    Dim oRjk As New clsPerujuk
+    '    Dim oMR As New clsMR
+    '    Dim xPasien As String = ""
 
-        Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
-        System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
+    '    Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
+    '    System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
 
-        oReg.Kode = txtKdRegNew.Text
-        oReg.vKode = oReg.Kode
-        oUser.vKode = My.Settings.KdPetugas
-        oRjk.vKode = oReg.KdRujukan
-        oXcl.Visible = False
-        With oReg.SampleDS.Tables(0)
-            oXcl.Workbooks.Add(My.Settings.AppPath & "\templates\BBLK_FPC-.xlt")
-            'System.Threading.Thread.CurrentThread.CurrentCulture = oldCI
+    '    oReg.Kode = txtKdRegNew.Text
+    '    oReg.vKode = oReg.Kode
+    '    oUser.vKode = My.Settings.KdPetugas
+    '    oRjk.vKode = oReg.KdRujukan
+    '    oXcl.Visible = False
+    '    With oReg.SampleDS.Tables(0)
+    '        oXcl.Workbooks.Add(My.Settings.AppPath & "\templates\BBLK_FPC-.xlt")
 
-            oXcl.Cells.Replace("#KdReg#", oReg.Kode)
-            If .Rows.Count > 1 Then
-                oXcl.Cells.Replace("#KodeSample#", "'" & .Rows(0)("fs_kd_sample") & " - " & .Rows(.Rows.Count - 1)("fs_kd_sample"))
-            Else
-                oXcl.Cells.Replace("#KodeSample#", "'" & .Rows(0)("fs_kd_sample"))
+    '        oXcl.Cells.Replace("#KdReg#", oReg.Kode)
+    '        If .Rows.Count > 1 Then
+    '            oXcl.Cells.Replace("#KodeSample#", "'" & .Rows(0)("fs_kd_sample") & " - " & .Rows(.Rows.Count - 1)("fs_kd_sample"))
+    '        Else
+    '            oXcl.Cells.Replace("#KodeSample#", "'" & .Rows(0)("fs_kd_sample"))
 
-            End If
-            oXcl.Cells.Replace("#Tgl#", "'" & oReg.Tgl)
-            For i As Integer = 0 To .Rows.Count - 1
-                oSample.vKode = .Rows(i)("fs_kd_sample")
-                With oXcl
-                    .Cells(10 + i, 1).value = i + 1
-                    .Cells(10 + i, 2).value = oSample.xKode
-                    oMR.vKode = oSample.xKdMR
-                    .Cells(10 + i, 3).value = oMR.xNama
-                    .Cells(10 + i, 4).value = oSample.xNmBentuk
-                    .Cells(10 + i, 5).value = oSample.xQty & " " & oSample.xSatQty
-                    .Cells(10 + i, 6).value = oSample.xNmWadah
-                    .Cells(10 + i, 7).value = oSample.xNmBahanWadah
-                    .Cells(10 + i, 8).value = oSample.xNmTutup
-                    '.Cells(10 + i, 9).value = oSample.xSuhu & " " & oSample.xSatSuhu
-                    .Cells(10 + i, 9).value = oSample.xNmJenisSample
-                    xPasien = oMR.xNama
-                End With
-            Next
-        End With
-        oXcl.Cells.Replace("#Petugas#", oUser.NmUser)
+    '        End If
+    '        oXcl.Cells.Replace("#Tgl#", "'" & oReg.Tgl)
+    '        For i As Integer = 0 To .Rows.Count - 1
+    '            oSample.vKode = .Rows(i)("fs_kd_sample")
+    '            With oXcl
+    '                .Cells(10 + i, 1).value = i + 1
+    '                .Cells(10 + i, 2).value = oSample.xKode
+    '                oMR.vKode = oSample.xKdMR
+    '                .Cells(10 + i, 3).value = oMR.xNama
+    '                .Cells(10 + i, 4).value = oSample.xNmBentuk
+    '                .Cells(10 + i, 5).value = oSample.xQty & " " & oSample.xSatQty
+    '                .Cells(10 + i, 6).value = oSample.xNmWadah
+    '                .Cells(10 + i, 7).value = oSample.xNmBahanWadah
+    '                .Cells(10 + i, 8).value = oSample.xNmTutup
+    '                '.Cells(10 + i, 9).value = oSample.xSuhu & " " & oSample.xSatSuhu
+    '                .Cells(10 + i, 9).value = oSample.xNmJenisSample
+    '                xPasien = oMR.xNama
+    '            End With
+    '        Next
+    '    End With
+    '    oXcl.Cells.Replace("#Petugas#", oUser.NmUser)
 
-        'If oReg.KdRujukan = "UMUM" Then
-        '    oXcl.Cells.Replace("#Pelanggan#", xPasien)
-        'Else
-        '    oXcl.Cells.Replace("#Pelanggan#", oRjk.NamaPerujuk)
-        'End If
+    '    'If oReg.KdRujukan = "UMUM" Then
+    '    '    oXcl.Cells.Replace("#Pelanggan#", xPasien)
+    '    'Else
+    '    '    oXcl.Cells.Replace("#Pelanggan#", oRjk.NamaPerujuk)
+    '    'End If
 
-        If oRjk.Kolektif = 0 Then
-            oXcl.Cells.Replace("#Pelanggan#", xPasien)
-        Else
-            oXcl.Cells.Replace("#Pelanggan#", oRjk.NamaPerujuk)
-        End If
+    '    If oRjk.Kolektif = 0 Then
+    '        oXcl.Cells.Replace("#Pelanggan#", xPasien)
+    '    Else
+    '        oXcl.Cells.Replace("#Pelanggan#", oRjk.NamaPerujuk)
+    '    End If
 
-        oXcl.ActiveWorkbook.PrintOutEx()
-        oXcl.ActiveWorkbook.Close(False)
-        oXcl = Nothing
-    End Sub
+    '    oXcl.ActiveWorkbook.PrintOutEx()
+    '    oXcl.ActiveWorkbook.Close(False)
+    '    oXcl = Nothing
+    'End Sub
 #End Region
 
 #Region "Cetak CR"
@@ -409,6 +403,13 @@ Public Class frmTrsRegistrasi
              & "ORDER BY fn_urut "
         TblSample = proses.ExecuteQuery(sSQL)
         rpt.SetDataSource(TblSample)
+        rpt.SetParameterValue("NoPesan", TblSample.Compute("MIN(fs_kd_sample)", Nothing) & " - " & TblSample.Compute("MAX(fs_kd_sample)", Nothing))
+        rpt.SetParameterValue("NomorLab", txtKdRegNew.Text)
+        rpt.SetParameterValue("Tgl", txtTglReg.Text)
+
+        oUser.vKode = My.Settings.KdPetugas
+        rpt.SetParameterValue("NmPetugas", oUser.NmUser)
+        rpt.SetParameterValue("NmPelanggan", TxtNmPelannggan.Text)
         rpt.PrintToPrinter(1, False, 0, 0)
     End Sub
 #End Region

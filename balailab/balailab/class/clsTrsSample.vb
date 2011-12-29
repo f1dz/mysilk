@@ -309,8 +309,4 @@ Public Class clsTrsSample
         End Try
         Return table
     End Function
-
-    Public Function CetakSample() As DataTable
-
-    End Function
 End Class
