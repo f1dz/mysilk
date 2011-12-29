@@ -365,7 +365,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rptLapKasir.rpt</DependentUpon>
       <SubType>Component</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Settings.vb" />
   </ItemGroup>
@@ -469,7 +468,6 @@
     <EmbeddedResource Include="Reporting\rptLapKasir.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptLapKasir.vb</LastGenOutput>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
