@@ -37,6 +37,44 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ctkFPPTarif" msprop:Generator_TableClassName="ctkFPPTarifDataTable" msprop:Generator_TableVarName="tablectkFPPTarif" msprop:Generator_TablePropName="ctkFPPTarif" msprop:Generator_RowDeletingName="ctkFPPTarifRowDeleting" msprop:Generator_UserTableName="ctkFPPTarif" msprop:Generator_RowChangingName="ctkFPPTarifRowChanging" msprop:Generator_RowEvHandlerName="ctkFPPTarifRowChangeEventHandler" msprop:Generator_RowDeletedName="ctkFPPTarifRowDeleted" msprop:Generator_RowEvArgName="ctkFPPTarifRowChangeEvent" msprop:Generator_RowChangedName="ctkFPPTarifRowChanged" msprop:Generator_RowClassName="ctkFPPTarifRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fs_kd_reg" msprop:Generator_ColumnVarNameInTable="columnfs_kd_reg" msprop:Generator_ColumnPropNameInRow="fs_kd_reg" msprop:Generator_ColumnPropNameInTable="fs_kd_regColumn" msprop:Generator_UserColumnName="fs_kd_reg">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fs_kd_tarif" msprop:Generator_ColumnVarNameInTable="columnfs_kd_tarif" msprop:Generator_ColumnPropNameInRow="fs_kd_tarif" msprop:Generator_ColumnPropNameInTable="fs_kd_tarifColumn" msprop:Generator_UserColumnName="fs_kd_tarif" type="xs:string" />
+              <xs:element name="fn_qty" msprop:Generator_ColumnVarNameInTable="columnfn_qty" msprop:Generator_ColumnPropNameInRow="fn_qty" msprop:Generator_ColumnPropNameInTable="fn_qtyColumn" msprop:Generator_UserColumnName="fn_qty" type="xs:int" />
+              <xs:element name="fn_tarif" msprop:Generator_ColumnVarNameInTable="columnfn_tarif" msprop:Generator_ColumnPropNameInRow="fn_tarif" msprop:Generator_ColumnPropNameInTable="fn_tarifColumn" msprop:Generator_UserColumnName="fn_tarif" type="xs:double" />
+              <xs:element name="fn_sub_total" msprop:Generator_ColumnVarNameInTable="columnfn_sub_total" msprop:Generator_ColumnPropNameInRow="fn_sub_total" msprop:Generator_ColumnPropNameInTable="fn_sub_totalColumn" msprop:Generator_UserColumnName="fn_sub_total" type="xs:double" />
+              <xs:element name="fs_nm_tarif" msprop:Generator_ColumnVarNameInTable="columnfs_nm_tarif" msprop:Generator_ColumnPropNameInRow="fs_nm_tarif" msprop:Generator_ColumnPropNameInTable="fs_nm_tarifColumn" msprop:Generator_UserColumnName="fs_nm_tarif" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ctkFPPSample" msprop:Generator_TableClassName="ctkFPPSampleDataTable" msprop:Generator_TableVarName="tablectkFPPSample" msprop:Generator_TablePropName="ctkFPPSample" msprop:Generator_RowDeletingName="ctkFPPSampleRowDeleting" msprop:Generator_UserTableName="ctkFPPSample" msprop:Generator_RowChangingName="ctkFPPSampleRowChanging" msprop:Generator_RowEvHandlerName="ctkFPPSampleRowChangeEventHandler" msprop:Generator_RowDeletedName="ctkFPPSampleRowDeleted" msprop:Generator_RowEvArgName="ctkFPPSampleRowChangeEvent" msprop:Generator_RowChangedName="ctkFPPSampleRowChanged" msprop:Generator_RowClassName="ctkFPPSampleRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fs_kd_jenis_sample" msprop:Generator_ColumnVarNameInTable="columnfs_kd_jenis_sample" msprop:Generator_ColumnPropNameInRow="fs_kd_jenis_sample" msprop:Generator_ColumnPropNameInTable="fs_kd_jenis_sampleColumn" msprop:Generator_UserColumnName="fs_kd_jenis_sample" type="xs:string" />
+              <xs:element name="fs_nm_jenis_sample" msprop:Generator_ColumnVarNameInTable="columnfs_nm_jenis_sample" msprop:Generator_ColumnPropNameInRow="fs_nm_jenis_sample" msprop:Generator_ColumnPropNameInTable="fs_nm_jenis_sampleColumn" msprop:Generator_UserColumnName="fs_nm_jenis_sample" type="xs:string" />
+              <xs:element name="fn_sub_total" msprop:Generator_ColumnVarNameInTable="columnfn_sub_total" msprop:Generator_ColumnPropNameInRow="fn_sub_total" msprop:Generator_ColumnPropNameInTable="fn_sub_totalColumn" msprop:Generator_UserColumnName="fn_sub_total" type="xs:int" />
+              <xs:element name="fs_kd_reg" msprop:Generator_ColumnVarNameInTable="columnfs_kd_reg" msprop:Generator_ColumnPropNameInRow="fs_kd_reg" msprop:Generator_ColumnPropNameInTable="fs_kd_regColumn" msprop:Generator_UserColumnName="fs_kd_reg" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TblFPP" msprop:Generator_TableClassName="TblFPPDataTable" msprop:Generator_TableVarName="tableTblFPP" msprop:Generator_TablePropName="TblFPP" msprop:Generator_RowDeletingName="TblFPPRowDeleting" msprop:Generator_UserTableName="TblFPP" msprop:Generator_RowChangingName="TblFPPRowChanging" msprop:Generator_RowEvHandlerName="TblFPPRowChangeEventHandler" msprop:Generator_RowDeletedName="TblFPPRowDeleted" msprop:Generator_RowEvArgName="TblFPPRowChangeEvent" msprop:Generator_RowChangedName="TblFPPRowChanged" msprop:Generator_RowClassName="TblFPPRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fs_nm_jenis_sample" msprop:Generator_ColumnVarNameInTable="columnfs_nm_jenis_sample" msprop:Generator_ColumnPropNameInRow="fs_nm_jenis_sample" msprop:Generator_ColumnPropNameInTable="fs_nm_jenis_sampleColumn" msprop:Generator_UserColumnName="fs_nm_jenis_sample" type="xs:string" />
+              <xs:element name="fs_nm_tarif" msprop:Generator_ColumnVarNameInTable="columnfs_nm_tarif" msprop:Generator_ColumnPropNameInRow="fs_nm_tarif" msprop:Generator_ColumnPropNameInTable="fs_nm_tarifColumn" msprop:Generator_UserColumnName="fs_nm_tarif" type="xs:string" />
+              <xs:element name="fn_qty" msprop:Generator_ColumnVarNameInTable="columnfn_qty" msprop:Generator_ColumnPropNameInRow="fn_qty" msprop:Generator_ColumnPropNameInTable="fn_qtyColumn" msprop:Generator_UserColumnName="fn_qty" type="xs:int" />
+              <xs:element name="fn_nilai" msprop:Generator_ColumnVarNameInTable="columnfn_nilai" msprop:Generator_ColumnPropNameInRow="fn_nilai" msprop:Generator_ColumnPropNameInTable="fn_nilaiColumn" msprop:Generator_UserColumnName="fn_nilai" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

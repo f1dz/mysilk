@@ -36,6 +36,10 @@ Public Class frmTrsRegistrasi
         oReg.Jam = txtJamReg.Text
         oReg.KdPetugas = My.Settings.KdPetugas
         oReg.NmPelanggan = TxtNmPelannggan.Text
+        oReg.Alm1 = txtAlm1.Text
+        oReg.Alm2 = txtAlm2.Text
+        oReg.Kota = txtKota.Text
+        oReg.Telp = TxtTelp.Text
         If Trim(txtKdReg.Text) = "" Then
             oReg.Kode = oParam.getKode("RG")
             oReg.Save()
@@ -152,9 +156,9 @@ Public Class frmTrsRegistrasi
                     Dim oRjk As New clsPerujuk
                     oRjk.vKode = Trim(txtKdRujuk.Text)
                     txtNmRujuk.Text = oRjk.NamaPerujuk
-                    txtAlmRujuk1.Text = oRjk.Alm1
-                    txtAlmRujuk2.Text = oRjk.Alm2
-                    txtKotaRujuk.Text = oRjk.Kota
+                    'txtAlm1.Text = oRjk.Alm1
+                    'txtAlm2.Text = oRjk.Alm2
+                    'txtKota.Text = oRjk.Kota
                 End If
         End Select
     End Sub
@@ -167,9 +171,9 @@ Public Class frmTrsRegistrasi
             txtKdRujuk.Focus()
         Else
             txtNmRujuk.Text = oRjk.NamaPerujuk
-            txtAlmRujuk1.Text = oRjk.Alm1
-            txtAlmRujuk2.Text = oRjk.Alm2
-            txtKotaRujuk.Text = oRjk.Kota
+            'txtAlm1.Text = oRjk.Alm1
+            'txtAlm2.Text = oRjk.Alm2
+            'txtKota.Text = oRjk.Kota
         End If
     End Sub
 
@@ -177,7 +181,12 @@ Public Class frmTrsRegistrasi
         txtKdReg.KeyDown, _
         txtKdRujuk.KeyDown, _
         txtTglReg.KeyDown, _
-        txtJamReg.KeyDown
+        txtJamReg.KeyDown, _
+        txtAlm1.KeyDown, _
+        txtAlm2.KeyDown, _
+        txtKota.KeyDown, _
+        TxtTelp.KeyDown, _
+        TxtNmPelannggan.KeyDown
         Select Case e.KeyCode
             Case Keys.Enter
                 oHelper.SendTab()
@@ -217,6 +226,10 @@ Public Class frmTrsRegistrasi
                 txtTglReg.Text = oParam.tglYMDdp(oReg.Tgl)
                 txtJamReg.Text = oReg.Jam
                 TxtNmPelannggan.Text = oReg.NmPelanggan
+                txtAlm1.Text = oReg.Alm1
+                txtAlm2.Text = oReg.Alm2
+                txtKota.Text = oReg.Kota
+                TxtTelp.Text = oReg.Telp
                 oHelper.SendTab()
                 oReg.Kode = txtKdReg.Text
 
@@ -363,45 +376,10 @@ Public Class frmTrsRegistrasi
 #Region "Cetak CR"
     Private Sub CetakSampleCR()
         Dim TblSample As DataTable
-        Dim proses As New clsConn2
-        Dim sSQL As String
-        Dim ds As New ctkDataset
-        Dim da As New OleDbDataAdapter
         Dim rpt As New ctkTerimaSample
+        Dim Cetak As New clsCetak
 
-        sSQL = "SELECT  aa.* , " & vbCrLf _
-             & "        dd.fs_nm_pasien , " & vbCrLf _
-             & "        CAST(fn_qty AS VARCHAR) + ' ' + fs_sat_qty AS fs_jumlah," & vbCrLf _
-             & "        CASE bb.fs_kd_bentuk_sample " & vbCrLf _
-             & "            WHEN '999' THEN bb.fs_bentuk_lainnya " & vbCrLf _
-             & "            ELSE ISNULL(ee.fs_nm_bentuk_sample, '') " & vbCrLf _
-             & "        END AS fs_nm_bentuk_sample , " & vbCrLf _
-             & "        CASE bb.fs_kd_wadah_sample " & vbCrLf _
-             & "            WHEN '999' THEN bb.fs_wadah_lainnya " & vbCrLf _
-             & "            ELSE ISNULL(ff.fs_nm_wadah_sample, '') " & vbCrLf _
-             & "        END AS fs_nm_wadah_sample , " & vbCrLf _
-             & "        CASE bb.fs_kd_bahan_wadah " & vbCrLf _
-             & "            WHEN '999' THEN bb.fs_bahan_wadah_lainnya " & vbCrLf _
-             & "            ELSE ISNULL(gg.fs_nm_bahan_wadah, '') " & vbCrLf _
-             & "        END AS fs_nm_bahan_wadah , " & vbCrLf _
-             & "        CASE bb.fs_kd_tutup_sample " & vbCrLf _
-             & "            WHEN '999' THEN bb.fs_tutup_sample_lainnya " & vbCrLf _
-             & "            ELSE ISNULL(hh.fs_nm_tutup_sample, '') " & vbCrLf _
-             & "        END AS fs_nm_tutup_sample , " & vbCrLf _
-             & "        ISNULL(cc.fs_kd_jenis_sample, '') AS fs_kd_jenis_sample , " & vbCrLf _
-             & "        ISNULL(cc.fs_nm_jenis_sample, '') AS fs_nm_jenis_sample, " & vbCrLf _
-             & "        bb.fs_ket_wadah " & vbCrLf _
-             & "FROM    TA_TRS_REG2 aa " & vbCrLf _
-             & "        LEFT JOIN TA_TRS_SAMPLE bb ON aa.fs_kd_sample = bb.fs_kd_sample " & vbCrLf _
-             & "        LEFT JOIN TA_JENIS_SAMPLE cc ON bb.fs_kd_jenis_sample = cc.fs_kd_jenis_sample " & vbCrLf _
-             & "        LEFT JOIN TC_MR dd ON dd.fs_mr = aa.fs_mr " & vbCrLf _
-             & "        LEFT JOIN TA_BENTUK_SAMPLE ee ON ee.fs_kd_bentuk_sample = bb.fs_kd_bentuk_sample " & vbCrLf _
-             & "        LEFT JOIN TA_WADAH_SAMPLE ff ON ff.fs_kd_wadah_sample = bb.fs_kd_wadah_sample " & vbCrLf _
-             & "        LEFT JOIN TA_BAHAN_WADAH gg ON gg.fs_kd_bahan_wadah = bb.fs_kd_bahan_wadah " & vbCrLf _
-             & "        LEFT JOIN TA_TUTUP_SAMPLE hh ON hh.fs_kd_tutup_sample = bb.fs_kd_tutup_sample " & vbCrLf _
-             & "WHERE   aa.fs_kd_reg = '" & txtKdRegNew.Text & "' " & vbCrLf _
-             & "ORDER BY fn_urut "
-        TblSample = proses.ExecuteQuery(sSQL)
+        TblSample = Cetak.TblSample(txtKdRegNew.Text)
         rpt.SetDataSource(TblSample)
         rpt.SetParameterValue("NoPesan", TblSample.Compute("MIN(fs_kd_sample)", Nothing) & " - " & TblSample.Compute("MAX(fs_kd_sample)", Nothing))
         rpt.SetParameterValue("NomorLab", txtKdRegNew.Text)
@@ -431,11 +409,12 @@ Public Class frmTrsRegistrasi
         txtKdReg.Clear()
         txtKdRujuk.Clear()
         txtNmRujuk.Clear()
-        txtAlmRujuk1.Clear()
-        txtAlmRujuk2.Clear()
-        txtKotaRujuk.Clear()
+        txtAlm1.Clear()
+        txtAlm2.Clear()
+        txtKota.Clear()
         dgvSample.Rows.Clear()
         TxtNmPelannggan.Clear()
+        TxtTelp.Clear()
     End Sub
 
     Private Sub dgvSample_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvSample.CellDoubleClick
