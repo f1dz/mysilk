@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="class\clsCetak.vb" />
     <Compile Include="class\clsConn.vb" />
     <Compile Include="class\clsConn2.vb" />
     <Compile Include="class\clsEntryHasil.vb" />
@@ -340,6 +341,12 @@
     <Compile Include="Reporting\ctkDataset.vb">
       <DependentUpon>ctkDataset.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reporting\ctkFPP.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ctkFPP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reporting\ctkTerimaSample.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -456,6 +463,10 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\ctkFPP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ctkFPP.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporting\ctkTerimaSample.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

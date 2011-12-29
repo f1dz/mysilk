@@ -21,6 +21,10 @@ Public Class clsTrsRegistrasi
     Public Property NoMR As String
     Public Property NoUrut As Integer
     Public Property NmPelanggan As String
+    Public Property Alm1 As String
+    Public Property Alm2 As String
+    Public Property Kota As String
+    Public Property Telp As String
 
     Public Sub Save()
         sSql = "INSERT  INTO TA_TRS_REG " & vbCrLf _
@@ -29,14 +33,22 @@ Public Class clsTrsRegistrasi
              & "        ,fs_jam_reg " & vbCrLf _
              & "        ,fs_kd_petugas " & vbCrLf _
              & "        ,fs_kd_rujukan " & vbCrLf _
-             & "        ,fs_nm_pelanggan) " & vbCrLf _
+             & "        ,fs_nm_pelanggan " & vbCrLf _
+             & "        ,fs_alm1 " & vbCrLf _
+             & "        ,fs_alm2 " & vbCrLf _
+             & "        ,fs_kota " & vbCrLf _
+             & "        ,fs_telp) " & vbCrLf _
              & "VALUES " & vbCrLf _
              & "        ('" & Kode & "' " & vbCrLf _
              & "        ,'" & Tgl & "' " & vbCrLf _
              & "        ,'" & Jam & "' " & vbCrLf _
              & "        ,'" & KdPetugas & "' " & vbCrLf _
-             & "        ,'" & KdRujukan & "'" & vbCrLf _
-             & "        ,'" & NmPelanggan & "')"
+             & "        ,'" & KdRujukan & "' " & vbCrLf _
+             & "        ,'" & NmPelanggan & "' " & vbCrLf _
+             & "        ,'" & Alm1 & "' " & vbCrLf _
+             & "        ,'" & Alm2 & "' " & vbCrLf _
+             & "        ,'" & Kota & "' " & vbCrLf _
+             & "        ,'" & Telp & "')"
         Try
             conn.open()
             oCmd = New OleDbCommand(sSql, conn.oConn)
@@ -178,6 +190,10 @@ Public Class clsTrsRegistrasi
                     KdRujukan = oDR("fs_kd_rujukan")
                     NmRujukan = oDR("fs_nm_rujukan")
                     NmPelanggan = oDR("fs_nm_pelanggan")
+                    Alm1 = oDR("fs_alm1")
+                    Alm2 = oDR("fs_alm2")
+                    Kota = oDR("fs_kota")
+                    Telp = oDR("fs_telp")
                 Else
                     '
                 End If

@@ -192,7 +192,8 @@ Public Class frmTrsUji
         Next
         oTrs.CleanTrs()
         If MsgBox("Cetak Formulir Permohonan Pengujian ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-            CetakFPP()
+            'CetakFPP()
+            Call CetakFPP_CR()
         End If
         clrScr()
     End Sub
@@ -206,6 +207,31 @@ Public Class frmTrsUji
         txtTotal.Text = Total
     End Sub
 
+    Private Sub CetakFPP_CR()
+        Dim TblFPP As New DataTable
+        Dim rpt As New ctkFPP
+        Dim Cetak As New clsCetak
+
+        oReg.vKode = txtKdReg.Text
+        oRjk.vKode = oReg.KdRujukan
+        TblFPP = Cetak.TblFPP(txtKdReg.Text)
+        rpt.SetDataSource(TblFPP)
+        rpt.SetParameterValue("KdReg", txtKdReg.Text)
+        rpt.SetParameterValue("Tanggal", txtTglUji.Text)
+        rpt.SetParameterValue("TanggalEst", txtTglEstimasi.Text)
+        rpt.SetParameterValue("NmPerujuk", txtNmRujuk.Text)
+        rpt.SetParameterValue("NmPelanggan", oReg.NmPelanggan)
+        rpt.SetParameterValue("NmPerujuk", oReg.NmRujukan)
+        rpt.SetParameterValue("AlmPelanggan1", oReg.Alm1)
+        rpt.SetParameterValue("AlmPelanggan2", oReg.Alm2)
+        rpt.SetParameterValue("KotaPelanggan", oReg.Kota)
+        rpt.SetParameterValue("TlpFax", oReg.Telp)
+        oUser.vKode = My.Settings.KdPetugas
+        rpt.SetParameterValue("NmPetugas", oUser.NmUser)
+        rpt.PrintToPrinter(1, False, 0, 0)
+    End Sub
+
+#Region "Cetak Lama"
     Private Sub CetakFPP()
         Dim oXcl As New Excel.Application
         Dim oSample As New clsTrsSample
@@ -306,6 +332,7 @@ Public Class frmTrsUji
         oXcl = Nothing
 
     End Sub
+#End Region
 
     Private Sub txtKdReg_Keydown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtKdReg.KeyDown
         Dim oHelper As New clsHelper

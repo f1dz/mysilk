@@ -23,10 +23,10 @@ Partial Class frmTrsRegistrasi
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupPanel1 = New DevComponents.DotNetBar.Controls.GroupPanel()
         Me.LabelX6 = New DevComponents.DotNetBar.LabelX()
         Me.btnVoid = New DevComponents.DotNetBar.ButtonX()
@@ -38,17 +38,19 @@ Partial Class frmTrsRegistrasi
         Me.kodeMR = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ketSample = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PanelEx1 = New DevComponents.DotNetBar.PanelEx()
+        Me.LabelX4 = New DevComponents.DotNetBar.LabelX()
+        Me.TxtTelp = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.LabelX8 = New DevComponents.DotNetBar.LabelX()
         Me.LabelX7 = New DevComponents.DotNetBar.LabelX()
         Me.TxtNmPelannggan = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txtKdRegNew = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.LabelX5 = New DevComponents.DotNetBar.LabelX()
-        Me.LabelX4 = New DevComponents.DotNetBar.LabelX()
         Me.LabelX3 = New DevComponents.DotNetBar.LabelX()
         Me.LabelX2 = New DevComponents.DotNetBar.LabelX()
         Me.LabelX1 = New DevComponents.DotNetBar.LabelX()
-        Me.txtKotaRujuk = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.txtAlmRujuk2 = New DevComponents.DotNetBar.Controls.TextBoxX()
-        Me.txtAlmRujuk1 = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.txtKota = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.txtAlm2 = New DevComponents.DotNetBar.Controls.TextBoxX()
+        Me.txtAlm1 = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txtNmRujuk = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txtJamReg = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txtTglReg = New DevComponents.Editors.DateTimeAdv.DateTimeInput()
@@ -157,6 +159,9 @@ Partial Class frmTrsRegistrasi
         '
         'PanelEx2
         '
+        Me.PanelEx2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelEx2.CanvasColor = System.Drawing.SystemColors.Control
         Me.PanelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.PanelEx2.Controls.Add(Me.dgvSample)
@@ -177,40 +182,40 @@ Partial Class frmTrsRegistrasi
         '
         Me.dgvSample.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvSample.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSample.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSample.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvSample.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSample.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kodeSample, Me.kodeMR, Me.ketSample})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvSample.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvSample.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvSample.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvSample.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
         Me.dgvSample.Location = New System.Drawing.Point(0, 0)
         Me.dgvSample.Name = "dgvSample"
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSample.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvSample.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSample.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvSample.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvSample.Size = New System.Drawing.Size(756, 301)
-        Me.dgvSample.TabIndex = 0
+        Me.dgvSample.TabIndex = 8
         '
         'kodeSample
         '
@@ -242,17 +247,19 @@ Partial Class frmTrsRegistrasi
         '
         Me.PanelEx1.CanvasColor = System.Drawing.SystemColors.Control
         Me.PanelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.PanelEx1.Controls.Add(Me.LabelX4)
+        Me.PanelEx1.Controls.Add(Me.TxtTelp)
+        Me.PanelEx1.Controls.Add(Me.LabelX8)
         Me.PanelEx1.Controls.Add(Me.LabelX7)
         Me.PanelEx1.Controls.Add(Me.TxtNmPelannggan)
         Me.PanelEx1.Controls.Add(Me.txtKdRegNew)
         Me.PanelEx1.Controls.Add(Me.LabelX5)
-        Me.PanelEx1.Controls.Add(Me.LabelX4)
         Me.PanelEx1.Controls.Add(Me.LabelX3)
         Me.PanelEx1.Controls.Add(Me.LabelX2)
         Me.PanelEx1.Controls.Add(Me.LabelX1)
-        Me.PanelEx1.Controls.Add(Me.txtKotaRujuk)
-        Me.PanelEx1.Controls.Add(Me.txtAlmRujuk2)
-        Me.PanelEx1.Controls.Add(Me.txtAlmRujuk1)
+        Me.PanelEx1.Controls.Add(Me.txtKota)
+        Me.PanelEx1.Controls.Add(Me.txtAlm2)
+        Me.PanelEx1.Controls.Add(Me.txtAlm1)
         Me.PanelEx1.Controls.Add(Me.txtNmRujuk)
         Me.PanelEx1.Controls.Add(Me.txtJamReg)
         Me.PanelEx1.Controls.Add(Me.txtTglReg)
@@ -269,6 +276,48 @@ Partial Class frmTrsRegistrasi
         Me.PanelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText
         Me.PanelEx1.Style.GradientAngle = 90
         Me.PanelEx1.TabIndex = 0
+        '
+        'LabelX4
+        '
+        '
+        '
+        '
+        Me.LabelX4.BackgroundStyle.Class = ""
+        Me.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX4.Location = New System.Drawing.Point(386, 94)
+        Me.LabelX4.Name = "LabelX4"
+        Me.LabelX4.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LabelX4.Size = New System.Drawing.Size(75, 23)
+        Me.LabelX4.TabIndex = 18
+        Me.LabelX4.Text = "Telepon/Fax"
+        '
+        'TxtTelp
+        '
+        '
+        '
+        '
+        Me.TxtTelp.Border.Class = "TextBoxBorder"
+        Me.TxtTelp.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.TxtTelp.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtTelp.Location = New System.Drawing.Point(467, 97)
+        Me.TxtTelp.MaxLength = 100
+        Me.TxtTelp.Name = "TxtTelp"
+        Me.TxtTelp.Size = New System.Drawing.Size(208, 20)
+        Me.TxtTelp.TabIndex = 7
+        '
+        'LabelX8
+        '
+        '
+        '
+        '
+        Me.LabelX8.BackgroundStyle.Class = ""
+        Me.LabelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX8.Location = New System.Drawing.Point(436, 68)
+        Me.LabelX8.Name = "LabelX8"
+        Me.LabelX8.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LabelX8.Size = New System.Drawing.Size(25, 23)
+        Me.LabelX8.TabIndex = 16
+        Me.LabelX8.Text = "Kota"
         '
         'LabelX7
         '
@@ -291,12 +340,11 @@ Partial Class frmTrsRegistrasi
         '
         Me.TxtNmPelannggan.Border.Class = "TextBoxBorder"
         Me.TxtNmPelannggan.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.TxtNmPelannggan.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtNmPelannggan.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtNmPelannggan.Location = New System.Drawing.Point(119, 97)
         Me.TxtNmPelannggan.MaxLength = 50
         Me.TxtNmPelannggan.Name = "TxtNmPelannggan"
-        Me.TxtNmPelannggan.Size = New System.Drawing.Size(265, 20)
+        Me.TxtNmPelannggan.Size = New System.Drawing.Size(261, 20)
         Me.TxtNmPelannggan.TabIndex = 3
         '
         'txtKdRegNew
@@ -324,26 +372,12 @@ Partial Class frmTrsRegistrasi
         '
         Me.LabelX5.BackgroundStyle.Class = ""
         Me.LabelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.LabelX5.Location = New System.Drawing.Point(385, 45)
+        Me.LabelX5.Location = New System.Drawing.Point(386, 19)
         Me.LabelX5.Name = "LabelX5"
         Me.LabelX5.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.LabelX5.Size = New System.Drawing.Size(75, 23)
         Me.LabelX5.TabIndex = 12
         Me.LabelX5.Text = "Alamat"
-        '
-        'LabelX4
-        '
-        '
-        '
-        '
-        Me.LabelX4.BackgroundStyle.Class = ""
-        Me.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.LabelX4.Location = New System.Drawing.Point(385, 19)
-        Me.LabelX4.Name = "LabelX4"
-        Me.LabelX4.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LabelX4.Size = New System.Drawing.Size(75, 23)
-        Me.LabelX4.TabIndex = 11
-        Me.LabelX4.Text = "Nama Perujuk"
         '
         'LabelX3
         '
@@ -387,53 +421,47 @@ Partial Class frmTrsRegistrasi
         Me.LabelX1.TabIndex = 8
         Me.LabelX1.Text = "Kode Reg"
         '
-        'txtKotaRujuk
+        'txtKota
         '
         '
         '
         '
-        Me.txtKotaRujuk.Border.Class = "TextBoxBorder"
-        Me.txtKotaRujuk.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txtKotaRujuk.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtKotaRujuk.Location = New System.Drawing.Point(466, 97)
-        Me.txtKotaRujuk.MaxLength = 100
-        Me.txtKotaRujuk.Name = "txtKotaRujuk"
-        Me.txtKotaRujuk.ReadOnly = True
-        Me.txtKotaRujuk.Size = New System.Drawing.Size(266, 20)
-        Me.txtKotaRujuk.TabIndex = 7
-        Me.txtKotaRujuk.TabStop = False
+        Me.txtKota.Border.Class = "TextBoxBorder"
+        Me.txtKota.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtKota.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtKota.Location = New System.Drawing.Point(467, 71)
+        Me.txtKota.MaxLength = 100
+        Me.txtKota.Name = "txtKota"
+        Me.txtKota.Size = New System.Drawing.Size(208, 20)
+        Me.txtKota.TabIndex = 6
         '
-        'txtAlmRujuk2
+        'txtAlm2
         '
         '
         '
         '
-        Me.txtAlmRujuk2.Border.Class = "TextBoxBorder"
-        Me.txtAlmRujuk2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txtAlmRujuk2.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAlmRujuk2.Location = New System.Drawing.Point(466, 71)
-        Me.txtAlmRujuk2.MaxLength = 100
-        Me.txtAlmRujuk2.Name = "txtAlmRujuk2"
-        Me.txtAlmRujuk2.ReadOnly = True
-        Me.txtAlmRujuk2.Size = New System.Drawing.Size(266, 20)
-        Me.txtAlmRujuk2.TabIndex = 6
-        Me.txtAlmRujuk2.TabStop = False
+        Me.txtAlm2.Border.Class = "TextBoxBorder"
+        Me.txtAlm2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtAlm2.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAlm2.Location = New System.Drawing.Point(467, 45)
+        Me.txtAlm2.MaxLength = 100
+        Me.txtAlm2.Name = "txtAlm2"
+        Me.txtAlm2.Size = New System.Drawing.Size(266, 20)
+        Me.txtAlm2.TabIndex = 5
         '
-        'txtAlmRujuk1
+        'txtAlm1
         '
         '
         '
         '
-        Me.txtAlmRujuk1.Border.Class = "TextBoxBorder"
-        Me.txtAlmRujuk1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.txtAlmRujuk1.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAlmRujuk1.Location = New System.Drawing.Point(466, 45)
-        Me.txtAlmRujuk1.MaxLength = 100
-        Me.txtAlmRujuk1.Name = "txtAlmRujuk1"
-        Me.txtAlmRujuk1.ReadOnly = True
-        Me.txtAlmRujuk1.Size = New System.Drawing.Size(266, 20)
-        Me.txtAlmRujuk1.TabIndex = 5
-        Me.txtAlmRujuk1.TabStop = False
+        Me.txtAlm1.Border.Class = "TextBoxBorder"
+        Me.txtAlm1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtAlm1.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAlm1.Location = New System.Drawing.Point(467, 19)
+        Me.txtAlm1.MaxLength = 100
+        Me.txtAlm1.Name = "txtAlm1"
+        Me.txtAlm1.Size = New System.Drawing.Size(266, 20)
+        Me.txtAlm1.TabIndex = 4
         '
         'txtNmRujuk
         '
@@ -443,11 +471,11 @@ Partial Class frmTrsRegistrasi
         Me.txtNmRujuk.Border.Class = "TextBoxBorder"
         Me.txtNmRujuk.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.txtNmRujuk.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNmRujuk.Location = New System.Drawing.Point(466, 19)
+        Me.txtNmRujuk.Location = New System.Drawing.Point(216, 71)
         Me.txtNmRujuk.MaxLength = 100
         Me.txtNmRujuk.Name = "txtNmRujuk"
         Me.txtNmRujuk.ReadOnly = True
-        Me.txtNmRujuk.Size = New System.Drawing.Size(266, 20)
+        Me.txtNmRujuk.Size = New System.Drawing.Size(197, 20)
         Me.txtNmRujuk.TabIndex = 4
         Me.txtNmRujuk.TabStop = False
         '
@@ -588,12 +616,11 @@ Partial Class frmTrsRegistrasi
     Friend WithEvents txtTglReg As DevComponents.Editors.DateTimeAdv.DateTimeInput
     Friend WithEvents txtKdRujuk As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents txtJamReg As DevComponents.DotNetBar.Controls.TextBoxX
-    Friend WithEvents txtKotaRujuk As DevComponents.DotNetBar.Controls.TextBoxX
-    Friend WithEvents txtAlmRujuk2 As DevComponents.DotNetBar.Controls.TextBoxX
-    Friend WithEvents txtAlmRujuk1 As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents txtKota As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents txtAlm2 As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents txtAlm1 As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents txtNmRujuk As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents LabelX5 As DevComponents.DotNetBar.LabelX
-    Friend WithEvents LabelX4 As DevComponents.DotNetBar.LabelX
     Friend WithEvents LabelX3 As DevComponents.DotNetBar.LabelX
     Friend WithEvents LabelX2 As DevComponents.DotNetBar.LabelX
     Friend WithEvents LabelX1 As DevComponents.DotNetBar.LabelX
@@ -610,4 +637,7 @@ Partial Class frmTrsRegistrasi
     Friend WithEvents LabelX6 As DevComponents.DotNetBar.LabelX
     Friend WithEvents LabelX7 As DevComponents.DotNetBar.LabelX
     Friend WithEvents TxtNmPelannggan As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents LabelX8 As DevComponents.DotNetBar.LabelX
+    Friend WithEvents LabelX4 As DevComponents.DotNetBar.LabelX
+    Friend WithEvents TxtTelp As DevComponents.DotNetBar.Controls.TextBoxX
 End Class
