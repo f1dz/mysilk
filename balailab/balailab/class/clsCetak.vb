@@ -60,19 +60,19 @@
     End Function
 
     Function TblFPP(ByVal KdReg) As DataTable
-        sSQL = "SELECT  cc.fs_nm_jenis_sample , " & vbCrLf _
-             & "        dd.fs_nm_tarif , " & vbCrLf _
-             & "        COUNT(cc.fs_nm_jenis_sample) AS fn_qty , " & vbCrLf _
+        sSQL = "SELECT  ISNULL(dd.fs_nm_jenis_sample,'') AS fs_nm_jenis_sample , " & vbCrLf _
+             & "        ISNULL(ee.fs_nm_tarif,'') AS fs_nm_tarif , " & vbCrLf _
+             & "        COUNT(aa.fs_kd_sample) AS fn_qty, " & vbCrLf _
              & "        SUM(fn_nilai) AS fn_nilai " & vbCrLf _
              & "FROM    TA_TRS_UJI4 aa " & vbCrLf _
-             & "INNER JOIN TA_TRS_SAMPLE bb ON aa.fs_kd_sample = bb.fs_kd_sample " & vbCrLf _
-             & "INNER JOIN TA_JENIS_SAMPLE cc ON bb.fs_kd_jenis_sample = cc.fs_kd_jenis_sample " & vbCrLf _
-             & "INNER JOIN TA_TARIF dd ON aa.fs_kd_tarif = dd.fs_kd_tarif " & vbCrLf _
-             & "INNER JOIN TA_TARIF3 ee ON dd.fs_kd_tarif = ee.fs_kd_tarif " & vbCrLf _
+             & "        LEFT JOIN TA_TARIF2 bb ON aa.fs_kd_tarif = bb.fs_kd_tarif " & vbCrLf _
+             & "        LEFT JOIN TA_TRS_SAMPLE cc ON aa.fs_kd_sample = cc.fs_kd_sample " & vbCrLf _
+             & "        LEFT JOIN TA_JENIS_SAMPLE dd ON cc.fs_kd_jenis_sample = dd.fs_kd_jenis_sample " & vbCrLf _
+             & "        LEFT JOIN TA_TARIF ee ON bb.fs_kd_tarif = ee.fs_kd_tarif " & vbCrLf _
              & "WHERE   aa.fs_kd_reg = '" & KdReg & "' " & vbCrLf _
-             & "GROUP BY cc.fs_nm_jenis_sample , " & vbCrLf _
-             & "        dd.fs_nm_tarif " & vbCrLf _
-             & "ORDER BY cc.fs_nm_jenis_sample "
+             & "GROUP BY dd.fs_nm_jenis_sample , " & vbCrLf _
+             & "        ee.fs_nm_tarif " & vbCrLf _
+             & "ORDER BY dd.fs_nm_jenis_sample "
         Return proses.ExecuteQuery(sSQL)
     End Function
 End Class

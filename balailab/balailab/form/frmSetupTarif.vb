@@ -149,6 +149,10 @@
                     oTarif.InsertTarifUji()
                 End If
             Next
+
+            ' Delete & Insert TA_TARIF2
+            oTarif.InsertTarif2()
+
             MsgBox("Tarif berhasil disimpan", MsgBoxStyle.Information)
             ClrScr()
             txtKdTarif.Clear()

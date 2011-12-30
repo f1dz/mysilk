@@ -383,4 +383,21 @@ Public Class clsTarif
         End Try
         Return status
     End Function
+
+    Public Sub InsertTarif2()
+        Dim proses As New clsConn2
+        Dim sSql2 As String
+        'Delete old Data
+        sSql = "DELETE TA_TARIF2 WHERE fs_kd_tarif = '" & Kode & "'"
+        sSql2 = "INSERT INTO TA_TARIF2 " & vbCrLf _
+             & "SELECT  fs_kd_tarif,COUNT(fs_kd_tarif),SUM(fn_nilai) FROM TA_TARIF3 " & vbCrLf _
+             & "WHERE   fs_kd_tarif = '" & Kode & "' " & vbCrLf _
+             & "GROUP BY fs_kd_tarif "
+        Try
+            proses.ExecuteNonQuery(sSql)
+            proses.ExecuteNonQuery(sSql2)
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Exclamation)
+        End Try
+    End Sub
 End Class
