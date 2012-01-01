@@ -1,4 +1,4 @@
-﻿Imports Excel = Microsoft.Office.Interop.Excel
+﻿'Imports Excel = Microsoft.Office.Interop.Excel
 
 Public Class frmCetakHasil
     Dim oHasil As New clsEntryHasil
@@ -184,107 +184,150 @@ Public Class frmCetakHasil
             oHasil.Ket = txtKet.Text
             oHasil.UpdateNomor()
             If MsgBox("Cetak Hasil ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-                CetakHasil()
+                'CetakHasil()
+                CetakHasil_CR()
                 ClrScr()
             End If
         End If
     End Sub
 
-    Private Sub CetakHasil()
-        Dim oXcl As New Excel.Application
+    Private Sub CetakHasil_CR()
+        Dim rpt As New ctkHasil
+        Dim oCetak As New clsCetak
+        Dim TblHasil As New DataTable
         Dim oReg As New clsTrsRegistrasi
         Dim oSample As New clsTrsSample
-        Dim oRjk As New clsPerujuk
-        Dim oHasil As New clsEntryHasil
-        Dim oMR As New clsMR
         Dim oInst As New clsInstalasi
-        Dim oBooks As Object = oXcl.Workbooks
-        Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
-        System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
 
-        oHasil.vKode = txtKdHasil.Text
-        oSample.vKode = txtKdSample.Text
-        oMR.vKode = oSample.xKdMR
-        oInst.vKodeInst = txtKdInstalasi.Text
         oReg.vKode = txtKdReg.Text
-        oXcl.Visible = False
-        With oHasil.UjiPerInstDS.Tables(0)
-            oXcl.Workbooks.Add(My.Settings.AppPath & "\templates\BBLK_HS-.xlt")
-            With oXcl.Cells
-                .Replace("#NoSeri#", oHasil.NoSeri)
-                .Replace("#NamaMR#", oMR.xNama & " - " & oSample.xKdMR)
-                .Replace("#Alamat#", oMR.xAlm1 & " " & oMR.xAlm2)
-                .Replace("#Kota#", oMR.xKota)
-                .Replace("#Telp#", oMR.xTelp)
-                .Replace("#NamaRujuk#", oReg.NmRujukan)
-                .Replace("#NoReg#", txtKdReg.Text)
-                .Replace("#Instalasi#", oHasil.NoInstalasi)
-                .Replace("#NoSample#", txtKdSample.Text)
-                .Replace("#Sample#", oSample.xNmJenisSample)
-                .Replace("#Qty#", oSample.xQty & " " & oSample.xSatQty)
-                .Replace("#Pengambil#", txtPengambil.Text)
-                .Replace("#TglReg#", oParam.tglDMY(oReg.Tgl))
-                .Replace("#TglUji#", txtTglHasil.Text)
-                .Replace("#Kesimpulan#", txtKesimpulan.Text)
-                .Replace("#Permenkes#", txtPermenkes.Text)
-                Dim xISO As String
-                If Trim(txtISO.Text) = "" Then
-                    xISO = ""
-                Else
-                    xISO = "*) " & txtISO.Text
-                End If
-                .Replace("#ISO#", xISO)
-                .Replace("#Ket#", txtKet.Text)
-                .Replace("#Waktu#", Format(Today, "dd-MM-yyyy"))
-                .Replace("#NamaInstalasi#", oInst.NamaInst)
-                .Replace("#NamaKepInstalasi#", oInst.NamaKepInst)
-                .Replace("#Nip#", oInst.NipKepInst)
-            End With
+        oSample.vKode = txtKdSample.Text
+        oInst.vKodeInst = txtKdInstalasi.Text
 
-            Dim xGroup As String = ""
-            Dim xRow As Integer = 13
-            For i As Integer = 1 To .Rows.Count - 1
-                'Dim filter As New C1.Win.C1FlexGrid.ConditionFilter
-                With oXcl
-                    If grid.Item(0, i).Value <> xGroup Then
-                        xRow += 1
-                        .Cells(xRow, 2).Value = UCase(grid.Item(0, i).Value)
-                        .Cells(xRow, 2).Font.FontStyle = "Bold"
-                        oXcl.Rows(xRow + 1).insert()
+        oCetak.KodeReg = txtKdReg.Text
+        oCetak.KodeSample = txtKdSample.Text
+        oCetak.KodeInstalasi = txtKdInstalasi.Text
+        TblHasil = oCetak.TblHasil
 
-                        xGroup = grid.Item(0, i).Value
-                        Dim n As Integer = 1
-                        For j As Integer = 0 To grid.Rows.Count - 1
-                            If xGroup = grid.Item(0, j).Value Then
-                                'xRow += 1
+        rpt.SetDataSource(TblHasil)
+        rpt.SetParameterValue("NmPelanggan", oReg.NmPelanggan)
+        rpt.SetParameterValue("AlmPelanggan", oReg.Alm1 & ", " & oReg.Alm2)
+        rpt.SetParameterValue("TelpPelanggan", oReg.Telp)
+        rpt.SetParameterValue("NoLab", txtKdReg.Text)
+        rpt.SetParameterValue("NoInstalasi", Trim(TxtNoInstalasi.Text))
+        rpt.SetParameterValue("NoSeri", Trim(txtNoSeri.Text))
+        rpt.SetParameterValue("NmPengirim", oReg.NmRujukan)
+        rpt.SetParameterValue("JenisBahan", oSample.xNmJenisSample)
+        rpt.SetParameterValue("JmlBahan", oSample.xQty & " " & oSample.xSatQty)
+        rpt.SetParameterValue("NmPengambil", txtPengambil.Text)
+        rpt.SetParameterValue("TglUji", txtTglHasil.Text)
+        rpt.SetParameterValue("TglTerima", Format(CType(oReg.Tgl, Date), "dd-MM-yyyy"))
+        rpt.SetParameterValue("Kesimpulan", txtKesimpulan.Text)
+        rpt.SetParameterValue("ISO", "*) " & LTrim(txtISO.Text))
+        rpt.SetParameterValue("Keterangan", LTrim(txtKet.Text))
+        rpt.SetParameterValue("TglCetak", Format(Date.Today, "dd-MM-yyyy"))
+        rpt.SetParameterValue("NmKepalaInst", oInst.NamaKepInst)
+        rpt.SetParameterValue("NmInstalasi", oInst.NamaInst)
+        rpt.SetParameterValue("NipKepInst", "NIP. " & oInst.NipKepInst)
 
-                                .Cells(xRow + 1, 1).value = n
-                                .Cells(xRow + 1, 2).Value = grid.Item(2, j).Value
-                                .Cells(xRow + 1, 4).Value = grid.Item(3, j).Value
-                                .Cells(xRow + 1, 5).Value = grid.Item(4, j).Value
-                                .Cells(xRow + 1, 6).Value = Replace(grid.Item(5, j).Value, vbCrLf, "")
-                                .Cells(xRow + 1, 8).Value = Replace(grid.Item(6, j).Value, vbCrLf, "")
-                                .Cells(xRow + 1, 2).Font.FontStyle = ""
-                                'xRow = 14 + j
-                                xRow += 1
-                                oXcl.Rows(xRow + 1).insert()
-                                n += 1
-                            End If
-                        Next
-
-                    End If
-
-                End With
-            Next
-
-        End With
+        rpt.PrintToPrinter(1, True, 0, 0)
         oHasil.Cetak = 1
         oHasil.UpdateStatusCetak()
-        oXcl.ActiveWorkbook.PrintOutEx()
-        oXcl.ActiveWorkbook.Close(False)
-        oXcl = Nothing
     End Sub
 
+#Region "CEtak Hasil Lama"
+    'Private Sub CetakHasil()
+    '    Dim oXcl As New Excel.Application
+    '    Dim oReg As New clsTrsRegistrasi
+    '    Dim oSample As New clsTrsSample
+    '    Dim oRjk As New clsPerujuk
+    '    Dim oHasil As New clsEntryHasil
+    '    Dim oMR As New clsMR
+    '    Dim oInst As New clsInstalasi
+    '    Dim oBooks As Object = oXcl.Workbooks
+    '    Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
+    '    System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
+
+    '    oHasil.vKode = txtKdHasil.Text
+    '    oSample.vKode = txtKdSample.Text
+    '    oMR.vKode = oSample.xKdMR
+    '    oInst.vKodeInst = txtKdInstalasi.Text
+    '    oReg.vKode = txtKdReg.Text
+    '    oXcl.Visible = False
+    '    With oHasil.UjiPerInstDS.Tables(0)
+    '        oXcl.Workbooks.Add(My.Settings.AppPath & "\templates\BBLK_HS-.xlt")
+    '        With oXcl.Cells
+    '            .Replace("#NoSeri#", oHasil.NoSeri)
+    '            .Replace("#NamaMR#", oMR.xNama & " - " & oSample.xKdMR)
+    '            .Replace("#Alamat#", oMR.xAlm1 & " " & oMR.xAlm2)
+    '            .Replace("#Kota#", oMR.xKota)
+    '            .Replace("#Telp#", oMR.xTelp)
+    '            .Replace("#NamaRujuk#", oReg.NmRujukan)
+    '            .Replace("#NoReg#", txtKdReg.Text)
+    '            .Replace("#Instalasi#", oHasil.NoInstalasi)
+    '            .Replace("#NoSample#", txtKdSample.Text)
+    '            .Replace("#Sample#", oSample.xNmJenisSample)
+    '            .Replace("#Qty#", oSample.xQty & " " & oSample.xSatQty)
+    '            .Replace("#Pengambil#", txtPengambil.Text)
+    '            .Replace("#TglReg#", oParam.tglDMY(oReg.Tgl))
+    '            .Replace("#TglUji#", txtTglHasil.Text)
+    '            .Replace("#Kesimpulan#", txtKesimpulan.Text)
+    '            .Replace("#Permenkes#", txtPermenkes.Text)
+    '            Dim xISO As String
+    '            If Trim(txtISO.Text) = "" Then
+    '                xISO = ""
+    '            Else
+    '                xISO = "*) " & txtISO.Text
+    '            End If
+    '            .Replace("#ISO#", xISO)
+    '            .Replace("#Ket#", txtKet.Text)
+    '            .Replace("#Waktu#", Format(Today, "dd-MM-yyyy"))
+    '            .Replace("#NamaInstalasi#", oInst.NamaInst)
+    '            .Replace("#NamaKepInstalasi#", oInst.NamaKepInst)
+    '            .Replace("#Nip#", oInst.NipKepInst)
+    '        End With
+
+    '        Dim xGroup As String = ""
+    '        Dim xRow As Integer = 13
+    '        For i As Integer = 1 To .Rows.Count - 1
+    '            'Dim filter As New C1.Win.C1FlexGrid.ConditionFilter
+    '            With oXcl
+    '                If grid.Item(0, i).Value <> xGroup Then
+    '                    xRow += 1
+    '                    .Cells(xRow, 2).Value = UCase(grid.Item(0, i).Value)
+    '                    .Cells(xRow, 2).Font.FontStyle = "Bold"
+    '                    oXcl.Rows(xRow + 1).insert()
+
+    '                    xGroup = grid.Item(0, i).Value
+    '                    Dim n As Integer = 1
+    '                    For j As Integer = 0 To grid.Rows.Count - 1
+    '                        If xGroup = grid.Item(0, j).Value Then
+    '                            'xRow += 1
+
+    '                            .Cells(xRow + 1, 1).value = n
+    '                            .Cells(xRow + 1, 2).Value = grid.Item(2, j).Value
+    '                            .Cells(xRow + 1, 4).Value = grid.Item(3, j).Value
+    '                            .Cells(xRow + 1, 5).Value = grid.Item(4, j).Value
+    '                            .Cells(xRow + 1, 6).Value = Replace(grid.Item(5, j).Value, vbCrLf, "")
+    '                            .Cells(xRow + 1, 8).Value = Replace(grid.Item(6, j).Value, vbCrLf, "")
+    '                            .Cells(xRow + 1, 2).Font.FontStyle = ""
+    '                            'xRow = 14 + j
+    '                            xRow += 1
+    '                            oXcl.Rows(xRow + 1).insert()
+    '                            n += 1
+    '                        End If
+    '                    Next
+
+    '                End If
+
+    '            End With
+    '        Next
+
+    '    End With
+    '    oXcl.ActiveWorkbook.PrintOutEx()
+    '    oXcl.ActiveWorkbook.Close(False)
+    '    oXcl = Nothing
+    'End Sub
+#End Region
 #Region "Cell Painting"
     'e.g. Vertically merge the same cells of the fourth column  
     Private Sub grid_CellPainting(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellPaintingEventArgs) Handles grid.CellPainting

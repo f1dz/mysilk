@@ -1,4 +1,4 @@
-﻿Imports Excel = Microsoft.Office.Interop.Excel
+﻿'Imports Excel = Microsoft.Office.Interop.Excel
 Imports DevComponents.DotNetBar
 Imports System.Data.OleDb
 Public Class frmTrsRegistrasi

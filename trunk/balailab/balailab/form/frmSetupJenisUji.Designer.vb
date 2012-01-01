@@ -408,7 +408,9 @@ Partial Class frmSetupJenisUji
         Me.Controls.Add(Me.BtnSave)
         Me.Controls.Add(Me.BtnExit)
         Me.Controls.Add(Me.PanelEx1)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "frmSetupJenisUji"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

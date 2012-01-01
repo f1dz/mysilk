@@ -33,6 +33,8 @@ Partial Public Class ctkDataset
     
     Private tableTblFPP As TblFPPDataTable
     
+    Private tablectkHasil As ctkHasilDataTable
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -73,6 +75,9 @@ Partial Public Class ctkDataset
             End If
             If (Not (ds.Tables("TblFPP")) Is Nothing) Then
                 MyBase.Tables.Add(New TblFPPDataTable(ds.Tables("TblFPP")))
+            End If
+            If (Not (ds.Tables("ctkHasil")) Is Nothing) Then
+                MyBase.Tables.Add(New ctkHasilDataTable(ds.Tables("ctkHasil")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -128,6 +133,16 @@ Partial Public Class ctkDataset
     Public ReadOnly Property TblFPP() As TblFPPDataTable
         Get
             Return Me.tableTblFPP
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property ctkHasil() As ctkHasilDataTable
+        Get
+            Return Me.tablectkHasil
         End Get
     End Property
     
@@ -210,6 +225,9 @@ Partial Public Class ctkDataset
             If (Not (ds.Tables("TblFPP")) Is Nothing) Then
                 MyBase.Tables.Add(New TblFPPDataTable(ds.Tables("TblFPP")))
             End If
+            If (Not (ds.Tables("ctkHasil")) Is Nothing) Then
+                MyBase.Tables.Add(New ctkHasilDataTable(ds.Tables("ctkHasil")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -266,6 +284,12 @@ Partial Public Class ctkDataset
                 Me.tableTblFPP.InitVars
             End If
         End If
+        Me.tablectkHasil = CType(MyBase.Tables("ctkHasil"),ctkHasilDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tablectkHasil) Is Nothing) Then
+                Me.tablectkHasil.InitVars
+            End If
+        End If
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -284,6 +308,8 @@ Partial Public Class ctkDataset
         MyBase.Tables.Add(Me.tablectkFPPSample)
         Me.tableTblFPP = New TblFPPDataTable()
         MyBase.Tables.Add(Me.tableTblFPP)
+        Me.tablectkHasil = New ctkHasilDataTable()
+        MyBase.Tables.Add(Me.tablectkHasil)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -307,6 +333,12 @@ Partial Public Class ctkDataset
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Function ShouldSerializeTblFPP() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializectkHasil() As Boolean
         Return false
     End Function
     
@@ -379,6 +411,9 @@ Partial Public Class ctkDataset
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub TblFPPRowChangeEventHandler(ByVal sender As Object, ByVal e As TblFPPRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub ctkHasilRowChangeEventHandler(ByVal sender As Object, ByVal e As ctkHasilRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -1716,6 +1751,357 @@ Partial Public Class ctkDataset
     End Class
     
     '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class ctkHasilDataTable
+        Inherits Global.System.Data.TypedTableBase(Of ctkHasilRow)
+        
+        Private columnfs_nm_grup_jenis_uji As Global.System.Data.DataColumn
+        
+        Private columnfs_kd_jenis_uji As Global.System.Data.DataColumn
+        
+        Private columnfs_nm_jenis_uji As Global.System.Data.DataColumn
+        
+        Private columnfs_satuan As Global.System.Data.DataColumn
+        
+        Private columnfs_hasil As Global.System.Data.DataColumn
+        
+        Private columnfs_standar As Global.System.Data.DataColumn
+        
+        Private columnfs_metode As Global.System.Data.DataColumn
+        
+        Private columnfs_kd_sample As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "ctkHasil"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property fs_nm_grup_jenis_ujiColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnfs_nm_grup_jenis_uji
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property fs_kd_jenis_ujiColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnfs_kd_jenis_uji
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property fs_nm_jenis_ujiColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnfs_nm_jenis_uji
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property fs_satuanColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnfs_satuan
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property fs_hasilColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnfs_hasil
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property fs_standarColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnfs_standar
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property fs_metodeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnfs_metode
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property fs_kd_sampleColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnfs_kd_sample
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As ctkHasilRow
+            Get
+                Return CType(Me.Rows(index),ctkHasilRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event ctkHasilRowChanging As ctkHasilRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event ctkHasilRowChanged As ctkHasilRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event ctkHasilRowDeleting As ctkHasilRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event ctkHasilRowDeleted As ctkHasilRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub AddctkHasilRow(ByVal row As ctkHasilRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function AddctkHasilRow(ByVal fs_nm_grup_jenis_uji As String, ByVal fs_kd_jenis_uji As String, ByVal fs_nm_jenis_uji As String, ByVal fs_satuan As String, ByVal fs_hasil As String, ByVal fs_standar As String, ByVal fs_metode As String, ByVal fs_kd_sample As String) As ctkHasilRow
+            Dim rowctkHasilRow As ctkHasilRow = CType(Me.NewRow,ctkHasilRow)
+            Dim columnValuesArray() As Object = New Object() {fs_nm_grup_jenis_uji, fs_kd_jenis_uji, fs_nm_jenis_uji, fs_satuan, fs_hasil, fs_standar, fs_metode, fs_kd_sample}
+            rowctkHasilRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowctkHasilRow)
+            Return rowctkHasilRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As ctkHasilDataTable = CType(MyBase.Clone,ctkHasilDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New ctkHasilDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnfs_nm_grup_jenis_uji = MyBase.Columns("fs_nm_grup_jenis_uji")
+            Me.columnfs_kd_jenis_uji = MyBase.Columns("fs_kd_jenis_uji")
+            Me.columnfs_nm_jenis_uji = MyBase.Columns("fs_nm_jenis_uji")
+            Me.columnfs_satuan = MyBase.Columns("fs_satuan")
+            Me.columnfs_hasil = MyBase.Columns("fs_hasil")
+            Me.columnfs_standar = MyBase.Columns("fs_standar")
+            Me.columnfs_metode = MyBase.Columns("fs_metode")
+            Me.columnfs_kd_sample = MyBase.Columns("fs_kd_sample")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnfs_nm_grup_jenis_uji = New Global.System.Data.DataColumn("fs_nm_grup_jenis_uji", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfs_nm_grup_jenis_uji)
+            Me.columnfs_kd_jenis_uji = New Global.System.Data.DataColumn("fs_kd_jenis_uji", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfs_kd_jenis_uji)
+            Me.columnfs_nm_jenis_uji = New Global.System.Data.DataColumn("fs_nm_jenis_uji", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfs_nm_jenis_uji)
+            Me.columnfs_satuan = New Global.System.Data.DataColumn("fs_satuan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfs_satuan)
+            Me.columnfs_hasil = New Global.System.Data.DataColumn("fs_hasil", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfs_hasil)
+            Me.columnfs_standar = New Global.System.Data.DataColumn("fs_standar", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfs_standar)
+            Me.columnfs_metode = New Global.System.Data.DataColumn("fs_metode", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfs_metode)
+            Me.columnfs_kd_sample = New Global.System.Data.DataColumn("fs_kd_sample", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfs_kd_sample)
+            Me.columnfs_nm_grup_jenis_uji.AllowDBNull = false
+            Me.columnfs_kd_jenis_uji.AllowDBNull = false
+            Me.columnfs_nm_jenis_uji.AllowDBNull = false
+            Me.columnfs_satuan.AllowDBNull = false
+            Me.columnfs_hasil.AllowDBNull = false
+            Me.columnfs_standar.AllowDBNull = false
+            Me.columnfs_metode.AllowDBNull = false
+            Me.columnfs_kd_sample.AllowDBNull = false
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function NewctkHasilRow() As ctkHasilRow
+            Return CType(Me.NewRow,ctkHasilRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New ctkHasilRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(ctkHasilRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.ctkHasilRowChangedEvent) Is Nothing) Then
+                RaiseEvent ctkHasilRowChanged(Me, New ctkHasilRowChangeEvent(CType(e.Row,ctkHasilRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.ctkHasilRowChangingEvent) Is Nothing) Then
+                RaiseEvent ctkHasilRowChanging(Me, New ctkHasilRowChangeEvent(CType(e.Row,ctkHasilRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.ctkHasilRowDeletedEvent) Is Nothing) Then
+                RaiseEvent ctkHasilRowDeleted(Me, New ctkHasilRowChangeEvent(CType(e.Row,ctkHasilRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.ctkHasilRowDeletingEvent) Is Nothing) Then
+                RaiseEvent ctkHasilRowDeleting(Me, New ctkHasilRowChangeEvent(CType(e.Row,ctkHasilRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub RemovectkHasilRow(ByVal row As ctkHasilRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As ctkDataset = New ctkDataset()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "ctkHasilDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
     Partial Public Class ctkTerimaSampleRow
@@ -2093,6 +2479,110 @@ Partial Public Class ctkDataset
     End Class
     
     '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class ctkHasilRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tablectkHasil As ctkHasilDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tablectkHasil = CType(Me.Table,ctkHasilDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property fs_nm_grup_jenis_uji() As String
+            Get
+                Return CType(Me(Me.tablectkHasil.fs_nm_grup_jenis_ujiColumn),String)
+            End Get
+            Set
+                Me(Me.tablectkHasil.fs_nm_grup_jenis_ujiColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property fs_kd_jenis_uji() As String
+            Get
+                Return CType(Me(Me.tablectkHasil.fs_kd_jenis_ujiColumn),String)
+            End Get
+            Set
+                Me(Me.tablectkHasil.fs_kd_jenis_ujiColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property fs_nm_jenis_uji() As String
+            Get
+                Return CType(Me(Me.tablectkHasil.fs_nm_jenis_ujiColumn),String)
+            End Get
+            Set
+                Me(Me.tablectkHasil.fs_nm_jenis_ujiColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property fs_satuan() As String
+            Get
+                Return CType(Me(Me.tablectkHasil.fs_satuanColumn),String)
+            End Get
+            Set
+                Me(Me.tablectkHasil.fs_satuanColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property fs_hasil() As String
+            Get
+                Return CType(Me(Me.tablectkHasil.fs_hasilColumn),String)
+            End Get
+            Set
+                Me(Me.tablectkHasil.fs_hasilColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property fs_standar() As String
+            Get
+                Return CType(Me(Me.tablectkHasil.fs_standarColumn),String)
+            End Get
+            Set
+                Me(Me.tablectkHasil.fs_standarColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property fs_metode() As String
+            Get
+                Return CType(Me(Me.tablectkHasil.fs_metodeColumn),String)
+            End Get
+            Set
+                Me(Me.tablectkHasil.fs_metodeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property fs_kd_sample() As String
+            Get
+                Return CType(Me(Me.tablectkHasil.fs_kd_sampleColumn),String)
+            End Get
+            Set
+                Me(Me.tablectkHasil.fs_kd_sampleColumn) = value
+            End Set
+        End Property
+    End Class
+    
+    '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -2222,6 +2712,42 @@ Partial Public Class ctkDataset
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property Row() As TblFPPRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class ctkHasilRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As ctkHasilRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As ctkHasilRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As ctkHasilRow
             Get
                 Return Me.eventRow
             End Get
