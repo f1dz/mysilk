@@ -1,6 +1,9 @@
 ﻿Public Class clsCetak
     Dim proses As New clsConn2
     Dim sSQL As String
+    Public Kodereg As String
+    Public KodeSample As String
+    Public KodeInstalasi As String
 
     Function TblSample(ByVal Kdreg) As DataTable
         sSQL = "SELECT  aa.* , " & vbCrLf _
@@ -73,6 +76,26 @@
              & "GROUP BY dd.fs_nm_jenis_sample , " & vbCrLf _
              & "        ee.fs_nm_tarif " & vbCrLf _
              & "ORDER BY dd.fs_nm_jenis_sample "
+        Return proses.ExecuteQuery(sSQL)
+    End Function
+
+    Function TblHasil() As DataTable
+        sSQL = "SELECT  dd.fs_nm_grup_jenis_uji , " & vbCrLf _
+             & "        bb.fs_kd_jenis_uji , " & vbCrLf _
+             & "        cc.fs_nm_jenis_uji , " & vbCrLf _
+             & "        cc.fs_satuan , " & vbCrLf _
+             & "        ISNULL(ee.fs_hasil,'') AS fs_hasil , " & vbCrLf _
+             & "        cc.fs_standar, " & vbCrLf _
+             & "        cc.fs_Metode, " & vbCrLf _
+             & "        aa.fs_kd_sample " & vbCrLf _
+             & "FROM    TA_TRS_UJI4 aa " & vbCrLf _
+             & "INNER JOIN TA_TARIF4 bb ON aa.fs_kd_tarif = bb.fs_kd_tarif " & vbCrLf _
+             & "INNER JOIN TA_JENIS_UJI cc ON bb.fs_kd_jenis_uji = cc.fs_kd_jenis_uji " & vbCrLf _
+             & "INNER JOIN TA_GRUP_JENIS_UJI dd ON cc.fs_kd_grup_jenis_uji = dd.fs_kd_grup_jenis_uji " & vbCrLf _
+             & "LEFT JOIN TA_TRS_HASIL2 ee ON ee.fs_kd_jenis_uji = cc.fs_kd_jenis_uji AND aa.fs_kd_sample = ee.fs_kd_sample " & vbCrLf _
+             & "WHERE   fs_kd_reg = '" & Kodereg & "' " & vbCrLf _
+             & "        AND aa.fs_kd_sample = '" & KodeSample & "' " & vbCrLf _
+             & "        AND cc.fs_kd_instalasi = '" & KodeInstalasi & "' "
         Return proses.ExecuteQuery(sSQL)
     End Function
 End Class

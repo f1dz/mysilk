@@ -1,4 +1,4 @@
-﻿Imports Excel = Microsoft.Office.Interop.Excel
+﻿'Imports Excel = Microsoft.Office.Interop.Excel
 
 Public Class frmTrsKasir
     Dim oUser As New clsUser
@@ -129,7 +129,7 @@ Lanjut:
 
             ' Cetak
             If MsgBox("Cetak Kwitansi ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-                CetakKW()
+                CetakKW_CR()
             End If
             clrScr()
         End If
@@ -206,44 +206,50 @@ Lanjut:
         End If
     End Sub
 
-    Private Sub CetakKW()
-        Dim oXcl As New Excel.Application
-        Dim oBooks As Object = oXcl.Workbooks
-        Dim xNama As String = ""
-        Dim oMR As New clsMR
-        Dim oReg As New clsTrsRegistrasi
-        Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
-        System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
-        oXcl.Workbooks.Add(My.Settings.AppPath & "\templates\BBLK_KW-.xlt")
-
-        oTrs.vKodeBayar = txtKdBayarNew.Text
-
-        If oTrs.KdRujukan = "UMUM" Then
-            oReg.Kode = oTrs.KdReg
-            With oReg.SampleDS.Tables(0)
-                For i As Integer = 0 To .Rows.Count - 1
-                    oMR.vKode = .Rows(i)("fs_mr")
-                    xNama = oMR.xNama
-                Next
-            End With
-        Else
-            xNama = oTrs.NmRujukan
-        End If
-
-        With oXcl.Cells
-            .Replace("#NoLab#", oTrs.KdReg)
-            .Replace("#NamaReg#", xNama)
-            .Replace("#Huruf#", LTrim(oHelper.AngkaToHuruf(oTrs.JmlBayar)) & " Rupiah")
-            .Replace("#Angka#", oTrs.JmlBayar)
-            .Replace("#Waktu#", oParam.tglDMY(oTrs.TglTrs))
-            .Replace("#Petugas#", oTrs.NmPetugas)
-            oXcl.Cells(12, 7).value = oTrs.JmlBayar
-        End With
-        oXcl.ActiveWorkbook.PrintOutEx()
-        oXcl.ActiveWorkbook.Close(False)
-        oXcl.Workbooks.Close()
-        oXcl = Nothing
+    Private Sub CetakKW_CR()
+        MsgBox("Under Construction :D", MsgBoxStyle.Information)
     End Sub
+
+#Region "Cetak Lama"
+    'Private Sub CetakKW()
+    '    Dim oXcl As New Excel.Application
+    '    Dim oBooks As Object = oXcl.Workbooks
+    '    Dim xNama As String = ""
+    '    Dim oMR As New clsMR
+    '    Dim oReg As New clsTrsRegistrasi
+    '    Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
+    '    System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
+    '    oXcl.Workbooks.Add(My.Settings.AppPath & "\templates\BBLK_KW-.xlt")
+
+    '    oTrs.vKodeBayar = txtKdBayarNew.Text
+
+    '    If oTrs.KdRujukan = "UMUM" Then
+    '        oReg.Kode = oTrs.KdReg
+    '        With oReg.SampleDS.Tables(0)
+    '            For i As Integer = 0 To .Rows.Count - 1
+    '                oMR.vKode = .Rows(i)("fs_mr")
+    '                xNama = oMR.xNama
+    '            Next
+    '        End With
+    '    Else
+    '        xNama = oTrs.NmRujukan
+    '    End If
+
+    '    With oXcl.Cells
+    '        .Replace("#NoLab#", oTrs.KdReg)
+    '        .Replace("#NamaReg#", xNama)
+    '        .Replace("#Huruf#", LTrim(oHelper.AngkaToHuruf(oTrs.JmlBayar)) & " Rupiah")
+    '        .Replace("#Angka#", oTrs.JmlBayar)
+    '        .Replace("#Waktu#", oParam.tglDMY(oTrs.TglTrs))
+    '        .Replace("#Petugas#", oTrs.NmPetugas)
+    '        oXcl.Cells(12, 7).value = oTrs.JmlBayar
+    '    End With
+    '    oXcl.ActiveWorkbook.PrintOutEx()
+    '    oXcl.ActiveWorkbook.Close(False)
+    '    oXcl.Workbooks.Close()
+    '    oXcl = Nothing
+    'End Sub
+#End Region
 
     Private Sub txtKdBayar_Validating(ByVal sender As System.Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles txtKdBayar.Validating
 

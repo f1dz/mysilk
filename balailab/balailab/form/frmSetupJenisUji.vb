@@ -6,11 +6,11 @@
         Me.Close()
     End Sub
 
-    Private Sub btnSave_Click(ByVal sender As Object, ByVal e As EventArgs)
+    Private Sub btnSave_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnSave.Click
         If (Strings.Trim(Me.txtKdJenisUji.Text) <> "") Then
             Me.oJenisUji.Kode = Me.txtKdJenisUji.Text
             Me.oJenisUji.Nama = Me.txtNmJenisUji.Text
-            Me.oJenisUji.Kualitatif = Convert.ToBoolean(Me.txtKdMetode.Text)
+            Me.oJenisUji.Kualitatif = CType(txtKdMetode.Text, Boolean) 'Convert.ToBoolean(txtKdMetode.Text)
             Me.oJenisUji.KdInstalasi = Me.txtKdInstalasi.Text
             Me.oJenisUji.KdGrupUji = Me.txtKdGrupUji.Text
             Me.oJenisUji.Satuan = Me.txtSatHasil.Text
@@ -163,4 +163,10 @@
             End If
         End If
     End Sub
+
+    'Private Sub frmSetupJenisUji_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+    '    If e.KeyCode = Keys.Return And (sender.Name <> "txtStandar") And sender.Name <> "txtMetode" Then
+    '        oHp.SendTab()
+    '    End If
+    'End Sub
 End Class

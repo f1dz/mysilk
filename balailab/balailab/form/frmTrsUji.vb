@@ -1,4 +1,4 @@
-﻿Imports Excel = Microsoft.Office.Interop.Excel
+﻿'Imports Excel = Microsoft.Office.Interop.Excel
 
 Public Class frmTrsUji
     Dim oParam As New clsParam
@@ -232,106 +232,106 @@ Public Class frmTrsUji
     End Sub
 
 #Region "Cetak Lama"
-    Private Sub CetakFPP()
-        Dim oXcl As New Excel.Application
-        Dim oSample As New clsTrsSample
-        Dim xRow As Integer
-        Dim oReg As New clsTrsRegistrasi
-        Dim xPasien As String = ""
-        Dim oBooks As Object = oXcl.Workbooks
-        Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
-        System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
+    'Private Sub CetakFPP()
+    '    Dim oXcl As New Excel.Application
+    '    Dim oSample As New clsTrsSample
+    '    Dim xRow As Integer
+    '    Dim oReg As New clsTrsRegistrasi
+    '    Dim xPasien As String = ""
+    '    Dim oBooks As Object = oXcl.Workbooks
+    '    Dim oldCI As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
+    '    System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
 
-        oUser.vKode = My.Settings.KdPetugas
-        oReg.vKode = txtKdReg.Text
-        oRjk.vKode = oReg.KdRujukan
-        oTrs.KdReg = txtKdReg.Text
-        oSample.xKdReg = txtKdReg.Text
+    '    oUser.vKode = My.Settings.KdPetugas
+    '    oReg.vKode = txtKdReg.Text
+    '    oRjk.vKode = oReg.KdRujukan
+    '    oTrs.KdReg = txtKdReg.Text
+    '    oSample.xKdReg = txtKdReg.Text
 
-        Dim oMR As New clsMR
-        oReg.Kode = txtKdReg.Text
-        With oReg.SampleDS.Tables(0)
-            For i As Integer = 0 To .Rows.Count - 1
-                oMR.vKode = .Rows(i)("fs_mr")
-                xPasien = oMR.xNama
-            Next
-        End With
+    '    Dim oMR As New clsMR
+    '    oReg.Kode = txtKdReg.Text
+    '    With oReg.SampleDS.Tables(0)
+    '        For i As Integer = 0 To .Rows.Count - 1
+    '            oMR.vKode = .Rows(i)("fs_mr")
+    '            xPasien = oMR.xNama
+    '        Next
+    '    End With
 
-        oXcl.Workbooks.Add(My.Settings.AppPath & "\templates\BBLK_FPP-.xlt")
-        With oXcl.Cells
-            .Replace("#NoLab#", txtKdReg.Text)
-            .Replace("#Waktu#", txtTglUji.Text)
-            .Replace("#Perujuk#", oRjk.NamaPerujuk)
-            '.Replace("#NamaReg#", oReg.NmRujukan)
-            '.Replace("#AlmReg1#", oRjk.Alm1)
-            '.Replace("#AlmReg2#", oRjk.Alm2)
-            '.Replace("#KotaReg#", oRjk.Kota)
-            '.Replace("#TeleponReg#", oRjk.Telpon)
-            .Replace("#Angka#", "Rp. " & txtTotal.Text)
-            .Replace("#TglEst#", txtTglEstimasi.Text)
-            .Replace("#Petugas#", oReg.NmPetugas)
-            '.Replace("#Pelanggan#", oReg.NmRujukan)
+    '    oXcl.Workbooks.Add(My.Settings.AppPath & "\templates\BBLK_FPP-.xlt")
+    '    With oXcl.Cells
+    '        .Replace("#NoLab#", txtKdReg.Text)
+    '        .Replace("#Waktu#", txtTglUji.Text)
+    '        .Replace("#Perujuk#", oRjk.NamaPerujuk)
+    '        '.Replace("#NamaReg#", oReg.NmRujukan)
+    '        '.Replace("#AlmReg1#", oRjk.Alm1)
+    '        '.Replace("#AlmReg2#", oRjk.Alm2)
+    '        '.Replace("#KotaReg#", oRjk.Kota)
+    '        '.Replace("#TeleponReg#", oRjk.Telpon)
+    '        .Replace("#Angka#", "Rp. " & txtTotal.Text)
+    '        .Replace("#TglEst#", txtTglEstimasi.Text)
+    '        .Replace("#Petugas#", oReg.NmPetugas)
+    '        '.Replace("#Pelanggan#", oReg.NmRujukan)
 
 
-            If oReg.KdRujukan = "UMUM" Then
-                .Replace("#NamaReg#", oMR.xNama)
-                .Replace("#AlmReg1#", oMR.xAlm1)
-                .Replace("#AlmReg2#", oMR.xAlm2)
-                .Replace("#KotaReg#", oMR.xKota)
-                .Replace("#TeleponReg#", oMR.xTelp)
-                oXcl.Cells.Replace("#Pelanggan#", xPasien)
-            Else
-                .Replace("#NamaReg#", oReg.NmRujukan)
-                .Replace("#AlmReg1#", oRjk.Alm1)
-                .Replace("#AlmReg2#", oRjk.Alm2)
-                .Replace("#KotaReg#", oRjk.Kota)
-                .Replace("#TeleponReg#", oRjk.Telpon)
-                .Replace("#Pelanggan#", oRjk.NamaPerujuk)
-            End If
+    '        If oReg.KdRujukan = "UMUM" Then
+    '            .Replace("#NamaReg#", oMR.xNama)
+    '            .Replace("#AlmReg1#", oMR.xAlm1)
+    '            .Replace("#AlmReg2#", oMR.xAlm2)
+    '            .Replace("#KotaReg#", oMR.xKota)
+    '            .Replace("#TeleponReg#", oMR.xTelp)
+    '            oXcl.Cells.Replace("#Pelanggan#", xPasien)
+    '        Else
+    '            .Replace("#NamaReg#", oReg.NmRujukan)
+    '            .Replace("#AlmReg1#", oRjk.Alm1)
+    '            .Replace("#AlmReg2#", oRjk.Alm2)
+    '            .Replace("#KotaReg#", oRjk.Kota)
+    '            .Replace("#TeleponReg#", oRjk.Telpon)
+    '            .Replace("#Pelanggan#", oRjk.NamaPerujuk)
+    '        End If
 
-            With oTrs.TarifDS.Tables(0)
-                For i As Integer = 0 To .Rows.Count - 1
-                    oXcl.Cells(16 + i, 4).value = i + 1 & ". " & .Rows(i)("fs_nm_tarif")
-                    If i > 0 And i < .Rows.Count - 1 Then
-                        oXcl.Rows(17 + i).insert()
-                    End If
-                    xRow = 17 + i
-                Next
+    '        With oTrs.TarifDS.Tables(0)
+    '            For i As Integer = 0 To .Rows.Count - 1
+    '                oXcl.Cells(16 + i, 4).value = i + 1 & ". " & .Rows(i)("fs_nm_tarif")
+    '                If i > 0 And i < .Rows.Count - 1 Then
+    '                    oXcl.Rows(17 + i).insert()
+    '                End If
+    '                xRow = 17 + i
+    '            Next
 
-            End With
+    '        End With
 
-            With oSample.JmlSampleDS.Tables(0)
+    '        With oSample.JmlSampleDS.Tables(0)
 
-                If oTrs.TarifDS.Tables(0).Rows.Count < 3 Then
-                    If .Rows.Count < 2 Then
-                        For i As Integer = 0 To .Rows.Count - 1
-                            oXcl.Cells(18 + i, 4).value = "- " & .Rows(i)("fs_nm_jenis_sample") & " = " & .Rows(i)("sub_total")
-                        Next
-                    Else
-                        For i As Integer = 0 To .Rows.Count - 1
-                            If i > 1 Then
-                                oXcl.Rows(xRow + 1 + i).insert()
-                            End If
-                            oXcl.Cells(xRow + 1 + i, 4).value = "- " & .Rows(i)("fs_nm_jenis_sample") & " = " & .Rows(i)("sub_total")
-                        Next
-                    End If
-                Else
-                    For i As Integer = 0 To .Rows.Count - 1
-                        If i > 1 Then
-                            oXcl.Rows(xRow + i).insert()
-                        End If
-                        oXcl.Cells(xRow + i, 4).value = "- " & .Rows(i)("fs_nm_jenis_sample") & " = " & .Rows(i)("sub_total")
-                    Next
-                End If
-            End With
-        End With
+    '            If oTrs.TarifDS.Tables(0).Rows.Count < 3 Then
+    '                If .Rows.Count < 2 Then
+    '                    For i As Integer = 0 To .Rows.Count - 1
+    '                        oXcl.Cells(18 + i, 4).value = "- " & .Rows(i)("fs_nm_jenis_sample") & " = " & .Rows(i)("sub_total")
+    '                    Next
+    '                Else
+    '                    For i As Integer = 0 To .Rows.Count - 1
+    '                        If i > 1 Then
+    '                            oXcl.Rows(xRow + 1 + i).insert()
+    '                        End If
+    '                        oXcl.Cells(xRow + 1 + i, 4).value = "- " & .Rows(i)("fs_nm_jenis_sample") & " = " & .Rows(i)("sub_total")
+    '                    Next
+    '                End If
+    '            Else
+    '                For i As Integer = 0 To .Rows.Count - 1
+    '                    If i > 1 Then
+    '                        oXcl.Rows(xRow + i).insert()
+    '                    End If
+    '                    oXcl.Cells(xRow + i, 4).value = "- " & .Rows(i)("fs_nm_jenis_sample") & " = " & .Rows(i)("sub_total")
+    '                Next
+    '            End If
+    '        End With
+    '    End With
 
-        oXcl.ActiveWorkbook.PrintOutEx()
-        oXcl.ActiveWorkbook.Close(False)
-        oXcl.Workbooks.Close()
-        oXcl = Nothing
+    '    oXcl.ActiveWorkbook.PrintOutEx()
+    '    oXcl.ActiveWorkbook.Close(False)
+    '    oXcl.Workbooks.Close()
+    '    oXcl = Nothing
 
-    End Sub
+    'End Sub
 #End Region
 
     Private Sub txtKdReg_Keydown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtKdReg.KeyDown

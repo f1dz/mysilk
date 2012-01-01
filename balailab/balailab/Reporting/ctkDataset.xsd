@@ -75,6 +75,20 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ctkHasil" msprop:Generator_TableClassName="ctkHasilDataTable" msprop:Generator_TableVarName="tablectkHasil" msprop:Generator_TablePropName="ctkHasil" msprop:Generator_RowDeletingName="ctkHasilRowDeleting" msprop:Generator_UserTableName="ctkHasil" msprop:Generator_RowChangingName="ctkHasilRowChanging" msprop:Generator_RowEvHandlerName="ctkHasilRowChangeEventHandler" msprop:Generator_RowDeletedName="ctkHasilRowDeleted" msprop:Generator_RowEvArgName="ctkHasilRowChangeEvent" msprop:Generator_RowChangedName="ctkHasilRowChanged" msprop:Generator_RowClassName="ctkHasilRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fs_nm_grup_jenis_uji" msprop:nullValue="' '" msprop:Generator_ColumnPropNameInRow="fs_nm_grup_jenis_uji" msprop:Generator_ColumnVarNameInTable="columnfs_nm_grup_jenis_uji" msprop:Generator_ColumnPropNameInTable="fs_nm_grup_jenis_ujiColumn" msprop:Generator_UserColumnName="fs_nm_grup_jenis_uji" type="xs:string" />
+              <xs:element name="fs_kd_jenis_uji" msprop:nullValue="' '" msprop:Generator_ColumnPropNameInRow="fs_kd_jenis_uji" msprop:Generator_ColumnVarNameInTable="columnfs_kd_jenis_uji" msprop:Generator_ColumnPropNameInTable="fs_kd_jenis_ujiColumn" msprop:Generator_UserColumnName="fs_kd_jenis_uji" type="xs:string" />
+              <xs:element name="fs_nm_jenis_uji" msprop:nullValue="' '" msprop:Generator_ColumnPropNameInRow="fs_nm_jenis_uji" msprop:Generator_ColumnVarNameInTable="columnfs_nm_jenis_uji" msprop:Generator_ColumnPropNameInTable="fs_nm_jenis_ujiColumn" msprop:Generator_UserColumnName="fs_nm_jenis_uji" type="xs:string" />
+              <xs:element name="fs_satuan" msprop:nullValue="' '" msprop:Generator_ColumnPropNameInRow="fs_satuan" msprop:Generator_ColumnVarNameInTable="columnfs_satuan" msprop:Generator_ColumnPropNameInTable="fs_satuanColumn" msprop:Generator_UserColumnName="fs_satuan" type="xs:string" />
+              <xs:element name="fs_hasil" msprop:nullValue="' '" msprop:Generator_ColumnPropNameInRow="fs_hasil" msprop:Generator_ColumnVarNameInTable="columnfs_hasil" msprop:Generator_ColumnPropNameInTable="fs_hasilColumn" msprop:Generator_UserColumnName="fs_hasil" type="xs:string" />
+              <xs:element name="fs_standar" msprop:nullValue="' '" msprop:Generator_ColumnPropNameInRow="fs_standar" msprop:Generator_ColumnVarNameInTable="columnfs_standar" msprop:Generator_ColumnPropNameInTable="fs_standarColumn" msprop:Generator_UserColumnName="fs_standar" type="xs:string" />
+              <xs:element name="fs_metode" msprop:nullValue="' '" msprop:Generator_ColumnPropNameInRow="fs_metode" msprop:Generator_ColumnVarNameInTable="columnfs_metode" msprop:Generator_ColumnPropNameInTable="fs_metodeColumn" msprop:Generator_UserColumnName="fs_metode" type="xs:string" />
+              <xs:element name="fs_kd_sample" msprop:nullValue="' '" msprop:Generator_ColumnPropNameInRow="fs_kd_sample" msprop:Generator_ColumnVarNameInTable="columnfs_kd_sample" msprop:Generator_ColumnPropNameInTable="fs_kd_sampleColumn" msprop:Generator_UserColumnName="fs_kd_sample" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
