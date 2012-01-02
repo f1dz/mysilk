@@ -89,6 +89,14 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ctkKwitansi" msprop:Generator_TableClassName="ctkKwitansiDataTable" msprop:Generator_TableVarName="tablectkKwitansi" msprop:Generator_TablePropName="ctkKwitansi" msprop:Generator_RowDeletingName="ctkKwitansiRowDeleting" msprop:Generator_UserTableName="ctkKwitansi" msprop:Generator_RowChangingName="ctkKwitansiRowChanging" msprop:Generator_RowEvHandlerName="ctkKwitansiRowChangeEventHandler" msprop:Generator_RowDeletedName="ctkKwitansiRowDeleted" msprop:Generator_RowEvArgName="ctkKwitansiRowChangeEvent" msprop:Generator_RowChangedName="ctkKwitansiRowChanged" msprop:Generator_RowClassName="ctkKwitansiRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fs_nm_komponen" msprop:Generator_ColumnVarNameInTable="columnfs_nm_komponen" msprop:Generator_ColumnPropNameInRow="fs_nm_komponen" msprop:Generator_ColumnPropNameInTable="fs_nm_komponenColumn" msprop:Generator_UserColumnName="fs_nm_komponen" type="xs:string" minOccurs="0" />
+              <xs:element name="fn_sub_total" msprop:Generator_ColumnVarNameInTable="columnfn_sub_total" msprop:Generator_ColumnPropNameInRow="fn_sub_total" msprop:Generator_ColumnPropNameInTable="fn_sub_totalColumn" msprop:Generator_UserColumnName="fn_sub_total" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
