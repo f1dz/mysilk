@@ -1,7 +1,7 @@
 ﻿Public Class clsCetak
     Dim proses As New clsConn2
     Dim sSQL As String
-    Public Kodereg As String
+    Public KodeReg As String
     Public KodeSample As String
     Public KodeInstalasi As String
 
@@ -93,9 +93,19 @@
              & "INNER JOIN TA_JENIS_UJI cc ON bb.fs_kd_jenis_uji = cc.fs_kd_jenis_uji " & vbCrLf _
              & "INNER JOIN TA_GRUP_JENIS_UJI dd ON cc.fs_kd_grup_jenis_uji = dd.fs_kd_grup_jenis_uji " & vbCrLf _
              & "LEFT JOIN TA_TRS_HASIL2 ee ON ee.fs_kd_jenis_uji = cc.fs_kd_jenis_uji AND aa.fs_kd_sample = ee.fs_kd_sample " & vbCrLf _
-             & "WHERE   fs_kd_reg = '" & Kodereg & "' " & vbCrLf _
+             & "WHERE   fs_kd_reg = '" & KodeReg & "' " & vbCrLf _
              & "        AND aa.fs_kd_sample = '" & KodeSample & "' " & vbCrLf _
              & "        AND cc.fs_kd_instalasi = '" & KodeInstalasi & "' "
+        Return proses.ExecuteQuery(sSQL)
+    End Function
+
+    Function TblKwitansi() As DataTable
+        sSQL = "SELECT  bb.fs_nm_komponen , " & vbCrLf _
+             & "        SUM(aa.fn_sub_total) AS fn_sub_total " & vbCrLf _
+             & "FROM    TA_TRS_UJI3 aa " & vbCrLf _
+             & "INNER JOIN TA_KOMPONEN bb ON aa.fs_kd_komponen = bb.fs_kd_komponen " & vbCrLf _
+             & "WHERE   aa.fs_kd_reg = '" & KodeReg & "' " & vbCrLf _
+             & "GROUP BY bb.fs_nm_komponen "
         Return proses.ExecuteQuery(sSQL)
     End Function
 End Class

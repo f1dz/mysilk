@@ -115,13 +115,13 @@ Lanjut:
                 oTrs.KdKasir = oParam.getKode("KS")
                 oTrs.Save()
                 oTrs.UpdateRegBayar()
-                clrScr()
+                'clrScr()
                 txtKdReg.Focus()
             Else
                 oTrs.KdKasir = txtKdBayar.Text
                 oTrs.Update()
                 oTrs.UpdateRegBayar()
-                clrScr()
+                'clrScr()
                 txtKdReg.Focus()
                 txtKdReg.ReadOnly = False
             End If
@@ -207,7 +207,22 @@ Lanjut:
     End Sub
 
     Private Sub CetakKW_CR()
-        MsgBox("Under Construction :D", MsgBoxStyle.Information)
+        Dim TblKwitansi As New DataTable
+        Dim oCetak As New clsCetak
+        Dim rpt As New ctkKwitansi
+
+        oUser.vKode = My.Settings.KdPetugas
+        oCetak.KodeReg = txtKdReg.Text
+        oReg.vKode = txtKdReg.Text
+
+        TblKwitansi = oCetak.TblKwitansi
+        rpt.SetDataSource(TblKwitansi)
+        rpt.SetParameterValue("KdReg", txtKdReg.Text & "/" & txtKdBayar.Text)
+        rpt.SetParameterValue("NmPetugas", oUser.NmUser)
+        rpt.SetParameterValue("NmPelanggan", oReg.NmPelanggan)
+        rpt.SetParameterValue("JmlBayar", txtBayar.Value)
+        rpt.SetParameterValue("Terbilang", oHelper.AngkaToHuruf(txtBayar.Value))
+        rpt.PrintToPrinter(1, True, 0, 0)
     End Sub
 
 #Region "Cetak Lama"
