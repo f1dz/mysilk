@@ -69,7 +69,7 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>lab.ico</ApplicationIcon>
+    <ApplicationIcon>lab2.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
@@ -562,6 +562,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="lab.ico" />
+    <Content Include="lab2.ico" />
     <Content Include="laboratory.ico" />
     <None Include="Resources\report_kasir.png" />
     <None Include="Resources\sample2.png" />

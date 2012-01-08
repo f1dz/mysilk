@@ -251,7 +251,7 @@ Public Class frmTrsRegistrasi
         ElseIf Trim(txtKdReg.Text) = "" Then
             'Else
             txtKdRujuk.Text = "UMUM"
-            txtTglReg.Text = oParam.CurDate
+            txtTglReg.Value = CType(oParam.CurDateTime, Date)
             txtJamReg.Text = oParam.CurTime
             dgvSample.Rows.Clear()
         End If

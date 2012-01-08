@@ -887,11 +887,11 @@ Partial Class frmMain
         '
         Me.StatusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.xTglJam, Me.xServer, Me.xVersion, Me.xUser})
-        Me.StatusStrip.Location = New System.Drawing.Point(5, 526)
+        Me.StatusStrip.Location = New System.Drawing.Point(5, 524)
         Me.StatusStrip.Name = "StatusStrip"
         Me.StatusStrip.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.StatusStrip.ShowItemToolTips = True
-        Me.StatusStrip.Size = New System.Drawing.Size(998, 22)
+        Me.StatusStrip.Size = New System.Drawing.Size(998, 24)
         Me.StatusStrip.TabIndex = 20
         '
         'xTglJam
@@ -902,7 +902,7 @@ Partial Class frmMain
                     Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
         Me.xTglJam.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter
         Me.xTglJam.Name = "xTglJam"
-        Me.xTglJam.Size = New System.Drawing.Size(50, 17)
+        Me.xTglJam.Size = New System.Drawing.Size(54, 19)
         Me.xTglJam.Text = "xTglJam"
         '
         'xServer
@@ -913,7 +913,7 @@ Partial Class frmMain
                     Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
         Me.xServer.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter
         Me.xServer.Name = "xServer"
-        Me.xServer.Size = New System.Drawing.Size(53, 17)
+        Me.xServer.Size = New System.Drawing.Size(52, 19)
         Me.xServer.Text = "Server : "
         '
         'xVersion
@@ -924,7 +924,7 @@ Partial Class frmMain
                     Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
         Me.xVersion.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter
         Me.xVersion.Name = "xVersion"
-        Me.xVersion.Size = New System.Drawing.Size(34, 17)
+        Me.xVersion.Size = New System.Drawing.Size(34, 19)
         Me.xVersion.Text = "Ver :"
         '
         'xUser
@@ -935,7 +935,7 @@ Partial Class frmMain
                     Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
         Me.xUser.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter
         Me.xUser.Name = "xUser"
-        Me.xUser.Size = New System.Drawing.Size(60, 17)
+        Me.xUser.Size = New System.Drawing.Size(62, 19)
         Me.xUser.Text = "Petugas : "
         '
         'xTimer
