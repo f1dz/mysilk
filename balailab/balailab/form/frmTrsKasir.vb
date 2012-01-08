@@ -217,7 +217,7 @@ Lanjut:
 
         TblKwitansi = oCetak.TblKwitansi
         rpt.SetDataSource(TblKwitansi)
-        rpt.SetParameterValue("KdReg", txtKdReg.Text & "/" & txtKdBayar.Text)
+        rpt.SetParameterValue("KdReg", txtKdReg.Text & "/" & txtKdBayarNew.Text)
         rpt.SetParameterValue("NmPetugas", oUser.NmUser)
         rpt.SetParameterValue("NmPelanggan", oReg.NmPelanggan)
         rpt.SetParameterValue("JmlBayar", txtBayar.Value)

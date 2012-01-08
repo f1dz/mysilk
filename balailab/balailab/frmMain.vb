@@ -111,6 +111,25 @@ Public Class frmMain
         'Me.BackgroundImage. = My.Settings.AppPath & "background.jpg"
         UserAkses()
 
+        ' Paint BG color
+        Dim ctl As Control
+        Dim ctlMDI As MdiClient
+
+        ' Loop through all of the form's controls looking
+        ' for the control of type MdiClient.
+        For Each ctl In Me.Controls
+            Try
+                ' Attempt to cast the control to type MdiClient.
+                ctlMDI = CType(ctl, MdiClient)
+
+                ' Set the BackColor of the MdiClient control.
+                ctlMDI.BackColor = Color.White
+
+            Catch exc As InvalidCastException
+                ' Catch and ignore the error if casting failed.
+            End Try
+        Next
+
     End Sub
 
     Private Sub xTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xTimer.Tick

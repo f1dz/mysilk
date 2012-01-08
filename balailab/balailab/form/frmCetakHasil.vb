@@ -214,6 +214,7 @@ Public Class frmCetakHasil
         rpt.SetParameterValue("TelpPelanggan", oReg.Telp)
         rpt.SetParameterValue("NoLab", txtKdReg.Text)
         rpt.SetParameterValue("NoInstalasi", Trim(TxtNoInstalasi.Text))
+        rpt.SetParameterValue("NoHasil", Trim(txtKdHasil.Text))
         rpt.SetParameterValue("NoSeri", Trim(txtNoSeri.Text))
         rpt.SetParameterValue("NmPengirim", oReg.NmRujukan)
         rpt.SetParameterValue("JenisBahan", oSample.xNmJenisSample)
