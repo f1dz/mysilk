@@ -24,6 +24,9 @@ Public Class clsTrsUji
     Public Property NilaiTarif As Double
     Public Property NoUrut As Integer
     Public Property TglEstimasi As String
+    Public Property NmPetugas As String
+    Public Property NmPetugasVoid As String
+    Public Property Metode As String
 
     ' Berisi Header Transaksi Uji
     Public Sub InsertUji()
@@ -33,14 +36,16 @@ Public Class clsTrsUji
              & "            ,fs_jam_uji " & vbCrLf _
              & "            ,fs_kd_petugas " & vbCrLf _
              & "            ,fn_total " & vbCrLf _
-             & "            ,fd_tgl_estimasi) " & vbCrLf _
+             & "            ,fd_tgl_estimasi " & vbCrLf _
+             & "            ,fs_metode) " & vbCrLf _
              & "VALUES  " & vbCrLf _
              & "            ('" & KdReg & "' " & vbCrLf _
              & "            ,'" & TglUji & "' " & vbCrLf _
              & "            ,'" & JamUji & "' " & vbCrLf _
              & "            ,'" & KdPetugas & "' " & vbCrLf _
              & "            ," & Total & " " & vbCrLf _
-             & "            ,'" & TglEstimasi & "') "
+             & "            ,'" & TglEstimasi & "' " & vbCrLf _
+             & "            ,'" & Metode & "') "
         Try
             conn.open()
             oCmd = New OleDbCommand(sSql, conn.oConn)
@@ -255,6 +260,41 @@ Public Class clsTrsUji
         End Try
         conn.close()
     End Sub
+
+    Public WriteOnly Property vKodeReg As String
+        Set(ByVal value As String)
+            sSql = "SELECT  aa.* , " & vbCrLf _
+                 & "        ISNULL(bb.fs_nm_user,'') AS fs_nm_petugas , " & vbCrLf _
+                 & "        ISNULL(cc.fs_nm_user,'') AS fs_nm_petugas_void " & vbCrLf _
+                 & "FROM    TA_TRS_UJI aa " & vbCrLf _
+                 & "        LEFT JOIN TZ_USER bb ON bb.fs_kd_user = aa.fs_kd_petugas " & vbCrLf _
+                 & "        LEFT JOIN TZ_USER cc ON cc.fs_kd_user = aa.fs_kd_petugas_void  " & vbCrLf _
+                 & "WHERE   fs_kd_reg = '" & value & "' "
+            Try
+                conn.open()
+                oCmd = New OleDbCommand(sSql, conn.oConn)
+                oDR = oCmd.ExecuteReader
+                oDR.Read()
+                If oDR.HasRows Then
+                    KdReg = oDR("fs_kd_reg")
+                    TglUji = oDR("fd_tgl_uji")
+                    JamUji = oDR("fs_jam_uji")
+                    KdPetugas = oDR("fs_kd_petugas")
+                    KdPetugasVoid = oDR("fs_kd_petugas_void")
+                    NmPetugas = oDR("fs_nm_petugas")
+                    NmPetugasVoid = oDR("fs_nm_petugas_void")
+                    TglVoid = oDR("fd_tgl_void")
+                    JamVoid = oDR("fs_jam_void")
+                    Total = oDR("fn_total")
+                    TglEstimasi = oDR("fd_tgl_estimasi")
+                    Metode = oDR("fs_metode")
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+            conn.close()
+        End Set
+    End Property
 
     ' Clean Un Used tarif
     'Public Sub CleanAfterInsert()

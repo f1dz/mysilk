@@ -14,10 +14,10 @@ Public Class frmTrsUji
     End Sub
 
     Private Sub xTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xTimer.Tick
-        'If Trim(txtKdReg.Text) = "" Then
-        txtJamUji.Text = Format(TimeOfDay, "HH:mm:ss")
-        txtTglUji.Text = Format(Today, "yyyy/MM/dd")
-        'End If
+        If Trim(txtKdReg.Text) = "" Then
+            txtJamUji.Text = Format(TimeOfDay, "HH:mm:ss")
+            txtTglUji.Text = Format(Today, "yyyy/MM/dd")
+        End If
     End Sub
 
     Private Sub txtKdReg_Validating(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtKdReg.Validating
@@ -42,9 +42,13 @@ Public Class frmTrsUji
                 ' Jika Exist dan Valid
             ElseIf oReg.isExist(txtKdReg.Text) Then
                 My.Settings.tmpKdReg = txtKdReg.Text
+                Dim oParam As New clsParam
                 oReg.vKode = txtKdReg.Text
                 oRjk.vKode = oReg.KdRujukan
-                oTrs.KdReg = txtKdReg.Text
+                oTrs.vKodeReg = txtKdReg.Text
+                txtTglUji.Value = Format(CType(oParam.tglDMYdp(oTrs.TglUji), Date), "dd-MM-yyyy")
+                txtJamUji.Text = oTrs.JamUji
+                txtMetode.Text = oTrs.Metode
 
                 If oReg.KdRujukan = "UMUM" Then
                     oReg.vKodeRegGetMR = txtKdReg.Text
@@ -162,6 +166,7 @@ Public Class frmTrsUji
         oTrs.TglUji = oParam.tglYMD(txtTglUji.Text)
         oTrs.TglEstimasi = oParam.tglYMD(txtTglEstimasi.Text)
         oTrs.KdPetugas = My.Settings.KdPetugas
+        oTrs.Metode = txtMetode.Text
 
         ' Hitung Total
         Dim Total As Double
@@ -226,6 +231,7 @@ Public Class frmTrsUji
         rpt.SetParameterValue("AlmPelanggan2", oReg.Alm2)
         rpt.SetParameterValue("KotaPelanggan", oReg.Kota)
         rpt.SetParameterValue("TlpFax", oReg.Telp)
+        rpt.SetParameterValue("Metode", txtMetode.Text)
         oUser.vKode = My.Settings.KdPetugas
         rpt.SetParameterValue("NmPetugas", oUser.NmUser)
         rpt.PrintToPrinter(1, False, 0, 0)
@@ -356,7 +362,7 @@ Public Class frmTrsUji
         txtKotaRujuk.Text = ""
         txtKdReg.Text = ""
         grid.Rows.Clear()
-
+        txtMetode.Clear()
     End Sub
 
     Private Sub txtTgl_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtTglUji.KeyDown, txtJamUji.KeyDown

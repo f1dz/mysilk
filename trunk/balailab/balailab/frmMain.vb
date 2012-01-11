@@ -17,7 +17,8 @@ Public Class frmMain
         mnuSetupUser.Click, _
         mnuGrupSample.Click, _
         mnuJenisSample.Click, _
-        mnuLapKasir.Click
+        mnuLapKasir.Click, _
+        mnuParamSystem.Click
 
         Select Case sender.Name
             ' FO
@@ -65,6 +66,9 @@ Public Class frmMain
             Case "mnuSetupUser"
                 frmSetupUser.MdiParent = Me
                 frmSetupUser.Show()
+            Case "mnuParamSystem"
+                frmParamSystem.MdiParent = Me
+                frmParamSystem.Show()
 
                 ' Uji
             Case "mnuGrupUji"
