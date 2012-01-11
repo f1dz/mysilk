@@ -221,7 +221,7 @@ Lanjut:
         rpt.SetParameterValue("NmPetugas", oUser.NmUser)
         rpt.SetParameterValue("NmPelanggan", oReg.NmPelanggan)
         rpt.SetParameterValue("JmlBayar", txtBayar.Value)
-        rpt.SetParameterValue("Terbilang", oHelper.AngkaToHuruf(txtBayar.Value) & " Rupiah")
+        rpt.SetParameterValue("Terbilang", oHelper.AngkaToHuruf(txtBayar.Value) & " Rupiah xxxxxxxxxxx  xxxxxxxxxxx  xxxxxxxxxxxx  xxxxxxxxxxxx  xxxxxxxx")
         rpt.PrintToPrinter(1, True, 0, 0)
     End Sub
 
