@@ -69,6 +69,7 @@ Public Class frmCetakHasil
         Dim oSample As New clsTrsSample
         Dim oInst As New clsInstalasi
         Dim oMR As New clsMR
+        Dim oSystem As New clsParamSystem
         oHasil.vKode = KodeHasil
 
         ' Fill Text
@@ -86,8 +87,8 @@ Public Class frmCetakHasil
         oInst.vKodeInst = txtKdInstalasi.Text
         txtNmInstalasi.Text = oInst.NamaInst
         TxtNoInstalasi.Text = oHasil.NoInstalasi
-        txtNmDirektur.Text = ""
-        txtNipDirektur.Text = ""
+        txtNmDirektur.Text = oSystem.NmDirektur
+        txtNipDirektur.Text = oSystem.NipDirektur
         txtNmKepInst.Text = oInst.KodeKepInst
         txtNipKepInst.Text = oInst.NipKepInst
 
@@ -233,6 +234,8 @@ Public Class frmCetakHasil
         rpt.SetParameterValue("NmKepalaInst", oInst.NamaKepInst)
         rpt.SetParameterValue("NmInstalasi", oInst.NamaInst)
         rpt.SetParameterValue("NipKepInst", "NIP. " & oInst.NipKepInst)
+        rpt.SetParameterValue("NmDirektur", txtNmDirektur.Text)
+        rpt.SetParameterValue("NipDirektur", txtNipDirektur.Text)
 
         rpt.PrintToPrinter(1, True, 0, 0)
         oHasil.Cetak = 1

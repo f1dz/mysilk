@@ -10,4 +10,10 @@ Public Class frmParamSystem
         Me.Close()
     End Sub
 
+    Private Sub BtnSave_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSave.Click
+        oParam.NmDirektur = txtNmDirektur.Text
+        oParam.NipDirektur = txtNipDirektur.Text
+        oParam.insert()
+        MsgBox("Data berhasil di update", MsgBoxStyle.Information)
+    End Sub
 End Class

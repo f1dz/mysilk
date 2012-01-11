@@ -34,7 +34,12 @@
     End Sub
 
     Public Sub insert()
-
+        Call CleanParam()
+        sSQL = "INSERT INTO TZ_PARAMETER_SISTEM (fs_kd_parameter,fs_value) " & vbCrLf _
+             & "VALUES " & vbCrLf _
+             & " ('nm_direktur','" & NmDirektur & "') " & vbCrLf _
+             & ",('nip_direktur','" & NipDirektur & "') " & vbCrLf
+        proses.ExecuteNonQuery(sSQL)
     End Sub
 
 End Class
