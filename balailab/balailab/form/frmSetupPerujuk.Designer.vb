@@ -23,6 +23,7 @@ Partial Class frmSetupPerujuk
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PanelEx1 = New DevComponents.DotNetBar.PanelEx()
+        Me.CbKolektif = New DevComponents.DotNetBar.Controls.CheckBoxX()
         Me.LabelX6 = New DevComponents.DotNetBar.LabelX()
         Me.txtKota = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.txtAlm2 = New DevComponents.DotNetBar.Controls.TextBoxX()
@@ -36,7 +37,6 @@ Partial Class frmSetupPerujuk
         Me.txtNama = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.btnCancel = New DevComponents.DotNetBar.ButtonX()
         Me.btnSave = New DevComponents.DotNetBar.ButtonX()
-        Me.CbKolektif = New DevComponents.DotNetBar.Controls.CheckBoxX()
         Me.PanelEx1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -67,6 +67,23 @@ Partial Class frmSetupPerujuk
         Me.PanelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText
         Me.PanelEx1.Style.GradientAngle = 90
         Me.PanelEx1.TabIndex = 0
+        '
+        'CbKolektif
+        '
+        '
+        '
+        '
+        Me.CbKolektif.BackgroundStyle.Class = ""
+        Me.CbKolektif.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.CbKolektif.CheckValue = "0"
+        Me.CbKolektif.CheckValueChecked = "1"
+        Me.CbKolektif.CheckValueUnchecked = "0"
+        Me.CbKolektif.Location = New System.Drawing.Point(178, 15)
+        Me.CbKolektif.Name = "CbKolektif"
+        Me.CbKolektif.Size = New System.Drawing.Size(100, 23)
+        Me.CbKolektif.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.CbKolektif.TabIndex = 26
+        Me.CbKolektif.Text = "Kolektif"
         '
         'LabelX6
         '
@@ -252,23 +269,6 @@ Partial Class frmSetupPerujuk
         Me.btnSave.TabIndex = 7
         Me.btnSave.Text = "&Save"
         '
-        'CbKolektif
-        '
-        '
-        '
-        '
-        Me.CbKolektif.BackgroundStyle.Class = ""
-        Me.CbKolektif.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.CbKolektif.CheckValue = "0"
-        Me.CbKolektif.CheckValueChecked = "1"
-        Me.CbKolektif.CheckValueUnchecked = "0"
-        Me.CbKolektif.Location = New System.Drawing.Point(178, 15)
-        Me.CbKolektif.Name = "CbKolektif"
-        Me.CbKolektif.Size = New System.Drawing.Size(100, 23)
-        Me.CbKolektif.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.CbKolektif.TabIndex = 26
-        Me.CbKolektif.Text = "Kolektif"
-        '
         'frmSetupPerujuk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -277,7 +277,9 @@ Partial Class frmSetupPerujuk
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.PanelEx1)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "frmSetupPerujuk"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
