@@ -288,6 +288,8 @@ Public Class clsTrsUji
                     Total = oDR("fn_total")
                     TglEstimasi = oDR("fd_tgl_estimasi")
                     Metode = oDR("fs_metode")
+                Else
+                    KdReg = ""
                 End If
             Catch ex As Exception
                 MsgBox(ex.Message)

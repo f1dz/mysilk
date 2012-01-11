@@ -1,5 +1,6 @@
 ﻿Public Class frmSetupPerujuk
     Dim oRjk As New clsPerujuk
+    Dim oHp As New clsHelper
     Public Kode As String
 
     Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
@@ -40,5 +41,11 @@
 
     Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
         Me.Close()
+    End Sub
+
+    Private Sub txt_Enter(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            oHp.SendTab()
+        End If
     End Sub
 End Class

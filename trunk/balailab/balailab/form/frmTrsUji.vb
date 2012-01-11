@@ -8,13 +8,14 @@ Public Class frmTrsUji
     Dim oTrs As New clsTrsUji
     Dim oUser As New clsUser
     Dim oMR As New clsMR
+    Dim KdReg As String
 
     Private Sub frmTrsUji_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txtTglEstimasi.Text = Format(Today, "yyyy/MM/dd")
     End Sub
 
     Private Sub xTimer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles xTimer.Tick
-        If Trim(txtKdReg.Text) = "" Then
+        If KdReg = "" Then
             txtJamUji.Text = Format(TimeOfDay, "HH:mm:ss")
             txtTglUji.Text = Format(Today, "yyyy/MM/dd")
         End If
@@ -46,9 +47,16 @@ Public Class frmTrsUji
                 oReg.vKode = txtKdReg.Text
                 oRjk.vKode = oReg.KdRujukan
                 oTrs.vKodeReg = txtKdReg.Text
-                txtTglUji.Value = Format(CType(oParam.tglDMYdp(oTrs.TglUji), Date), "dd-MM-yyyy")
-                txtJamUji.Text = oTrs.JamUji
                 txtMetode.Text = oTrs.Metode
+                KdReg = oTrs.KdReg
+
+                If oTrs.TglUji Is Nothing Then
+                    txtTglUji.Value = Date.Today
+                    txtJamUji.Text = Format(TimeOfDay, "HH:mm:ss")
+                Else
+                    txtTglUji.Text = oParam.tglYMDdp(oTrs.TglUji)
+                    txtJamUji.Text = oTrs.JamUji
+                End If
 
                 If oReg.KdRujukan = "UMUM" Then
                     oReg.vKodeRegGetMR = txtKdReg.Text
@@ -76,7 +84,7 @@ Public Class frmTrsUji
                     Next
                 End With
 
-            End If
+                End If
         Else
             'MsgBox("Nomor Lab tidak boleh kosong", MsgBoxStyle.Exclamation)
             'txtKdReg.Focus()
