@@ -120,9 +120,9 @@ Partial Class frmMain
         Me.RbnMain.BackgroundStyle.Class = ""
         Me.RbnMain.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.RbnMain.CaptionVisible = True
+        Me.RbnMain.Controls.Add(Me.RibbonPanel3)
         Me.RbnMain.Controls.Add(Me.RbnPanelTrs)
         Me.RbnMain.Controls.Add(Me.RibbonPanel2)
-        Me.RbnMain.Controls.Add(Me.RibbonPanel3)
         Me.RbnMain.Dock = System.Windows.Forms.DockStyle.Top
         Me.RbnMain.Expanded = False
         Me.RbnMain.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.RibbonTabItem1, Me.RibbonTabItem2, Me.rbnCP})
@@ -181,6 +181,7 @@ Partial Class frmMain
         Me.RbnPanelTrs.StyleMouseOver.Class = ""
         Me.RbnPanelTrs.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.RbnPanelTrs.TabIndex = 1
+        Me.RbnPanelTrs.Visible = False
         '
         'RibbonBarLaporan
         '
@@ -514,7 +515,6 @@ Partial Class frmMain
         Me.RibbonPanel3.StyleMouseOver.Class = ""
         Me.RibbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.RibbonPanel3.TabIndex = 3
-        Me.RibbonPanel3.Visible = False
         '
         'RbnControlPanel
         '
@@ -566,9 +566,8 @@ Partial Class frmMain
         '
         'mnuParamSystem
         '
-        Me.mnuParamSystem.Enabled = False
         Me.mnuParamSystem.Name = "mnuParamSystem"
-        Me.mnuParamSystem.Text = "System [Reserved]"
+        Me.mnuParamSystem.Text = "System"
         '
         'mnuParamKomp
         '
@@ -588,7 +587,6 @@ Partial Class frmMain
         '
         'RibbonTabItem1
         '
-        Me.RibbonTabItem1.Checked = True
         Me.RibbonTabItem1.Name = "RibbonTabItem1"
         Me.RibbonTabItem1.Panel = Me.RbnPanelTrs
         Me.RibbonTabItem1.Text = "Transaksi"
@@ -601,6 +599,7 @@ Partial Class frmMain
         '
         'rbnCP
         '
+        Me.rbnCP.Checked = True
         Me.rbnCP.Name = "rbnCP"
         Me.rbnCP.Panel = Me.RibbonPanel3
         Me.rbnCP.Text = "Control Panel"

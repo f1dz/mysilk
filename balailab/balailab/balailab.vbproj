@@ -140,6 +140,7 @@
     <Compile Include="class\clsMasterSample.vb" />
     <Compile Include="class\clsMR.vb" />
     <Compile Include="class\clsParam.vb" />
+    <Compile Include="class\clsParamSystem.vb" />
     <Compile Include="class\clsPerujuk.vb" />
     <Compile Include="class\clsReport.vb" />
     <Compile Include="class\clsSetupGrupUji.vb" />
@@ -207,6 +208,12 @@
       <DependentUpon>frmParamKomp.vb</DependentUpon>
     </Compile>
     <Compile Include="form\frmParamKomp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frmParamSystem.Designer.vb">
+      <DependentUpon>frmParamSystem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmParamSystem.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\frmSetupGrupJenisUji.Designer.vb">
@@ -411,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmParamKomp.resx">
       <DependentUpon>frmParamKomp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frmParamSystem.resx">
+      <DependentUpon>frmParamSystem.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmSetupGrupJenisUji.resx">
       <DependentUpon>frmSetupGrupJenisUji.vb</DependentUpon>

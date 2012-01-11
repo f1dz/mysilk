@@ -57,6 +57,8 @@ Partial Class frmTrsUji
         Me.btnVoid = New DevComponents.DotNetBar.ButtonX()
         Me.btnSave = New DevComponents.DotNetBar.ButtonX()
         Me.txtTotal = New DevComponents.Editors.DoubleInput()
+        Me.LabelX6 = New DevComponents.DotNetBar.LabelX()
+        Me.txtMetode = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.GroupPanel1.SuspendLayout()
         Me.PanelEx2.SuspendLayout()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -258,6 +260,8 @@ Partial Class frmTrsUji
         '
         Me.PanelEx1.CanvasColor = System.Drawing.SystemColors.Control
         Me.PanelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.PanelEx1.Controls.Add(Me.LabelX6)
+        Me.PanelEx1.Controls.Add(Me.txtMetode)
         Me.PanelEx1.Controls.Add(Me.LabelX2)
         Me.PanelEx1.Controls.Add(Me.txtTglEstimasi)
         Me.PanelEx1.Controls.Add(Me.LabelX3)
@@ -311,6 +315,7 @@ Partial Class frmTrsUji
         Me.txtTglEstimasi.CustomFormat = "dd-MM-yyyy"
         Me.txtTglEstimasi.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTglEstimasi.Format = DevComponents.Editors.eDateTimePickerFormat.Custom
+        Me.txtTglEstimasi.IsPopupCalendarOpen = False
         Me.txtTglEstimasi.Location = New System.Drawing.Point(101, 66)
         Me.txtTglEstimasi.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
         '
@@ -407,12 +412,12 @@ Partial Class frmTrsUji
         '
         Me.LabelX4.BackgroundStyle.Class = ""
         Me.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.LabelX4.Location = New System.Drawing.Point(487, 11)
+        Me.LabelX4.Location = New System.Drawing.Point(441, 11)
         Me.LabelX4.Name = "LabelX4"
         Me.LabelX4.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LabelX4.Size = New System.Drawing.Size(75, 23)
+        Me.LabelX4.Size = New System.Drawing.Size(121, 23)
         Me.LabelX4.TabIndex = 18
-        Me.LabelX4.Text = "Nama Perujuk"
+        Me.LabelX4.Text = "Nama Pelanggan"
         '
         'txtKotaRujuk
         '
@@ -506,6 +511,7 @@ Partial Class frmTrsUji
         Me.txtTglUji.CustomFormat = "dd-MM-yyyy"
         Me.txtTglUji.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTglUji.Format = DevComponents.Editors.eDateTimePickerFormat.Custom
+        Me.txtTglUji.IsPopupCalendarOpen = False
         Me.txtTglUji.Location = New System.Drawing.Point(101, 40)
         Me.txtTglUji.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
         '
@@ -623,6 +629,36 @@ Partial Class frmTrsUji
         Me.txtTotal.Size = New System.Drawing.Size(213, 38)
         Me.txtTotal.TabIndex = 4
         '
+        'LabelX6
+        '
+        Me.LabelX6.BackColor = System.Drawing.Color.Transparent
+        '
+        '
+        '
+        Me.LabelX6.BackgroundStyle.Class = ""
+        Me.LabelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX6.Location = New System.Drawing.Point(20, 92)
+        Me.LabelX6.Name = "LabelX6"
+        Me.LabelX6.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LabelX6.Size = New System.Drawing.Size(75, 23)
+        Me.LabelX6.TabIndex = 23
+        Me.LabelX6.Text = "Metode"
+        '
+        'txtMetode
+        '
+        '
+        '
+        '
+        Me.txtMetode.Border.Class = "TextBoxBorder"
+        Me.txtMetode.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txtMetode.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMetode.Location = New System.Drawing.Point(101, 92)
+        Me.txtMetode.MaxLength = 100
+        Me.txtMetode.Name = "txtMetode"
+        Me.txtMetode.Size = New System.Drawing.Size(266, 20)
+        Me.txtMetode.TabIndex = 22
+        Me.txtMetode.TabStop = False
+        '
         'frmTrsUji
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -680,4 +716,6 @@ Partial Class frmTrsUji
     Friend WithEvents txtTotal As DevComponents.Editors.DoubleInput
     Friend WithEvents LabelX2 As DevComponents.DotNetBar.LabelX
     Friend WithEvents txtTglEstimasi As DevComponents.Editors.DateTimeAdv.DateTimeInput
+    Friend WithEvents LabelX6 As DevComponents.DotNetBar.LabelX
+    Friend WithEvents txtMetode As DevComponents.DotNetBar.Controls.TextBoxX
 End Class

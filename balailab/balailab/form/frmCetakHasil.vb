@@ -86,6 +86,10 @@ Public Class frmCetakHasil
         oInst.vKodeInst = txtKdInstalasi.Text
         txtNmInstalasi.Text = oInst.NamaInst
         TxtNoInstalasi.Text = oHasil.NoInstalasi
+        txtNmDirektur.Text = ""
+        txtNipDirektur.Text = ""
+        txtNmKepInst.Text = oInst.KodeKepInst
+        txtNipKepInst.Text = oInst.NipKepInst
 
         oSample.vKode = txtKdSample.Text
         txtJnsBahan.Text = oSample.xNmJenisSample
