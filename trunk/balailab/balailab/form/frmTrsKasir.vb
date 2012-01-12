@@ -223,6 +223,8 @@ Lanjut:
         rpt.SetParameterValue("NmPelanggan", oReg.NmPelanggan)
         rpt.SetParameterValue("JmlBayar", txtBayar.Value)
         rpt.SetParameterValue("Terbilang", oHelper.AngkaToHuruf(txtBayar.Value) & " Rupiah")
+        rpt.PrintOptions.PaperSize = System.Drawing.Printing.PaperKind.A5Transverse
+        rpt.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Portrait
         rpt.PrintToPrinter(1, True, 0, 0)
     End Sub
 
